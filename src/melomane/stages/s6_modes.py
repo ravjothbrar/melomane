@@ -14,7 +14,7 @@ from ..probes import mode_coherence
 from ..prompts import load_prompt
 from ..runtime import get_logger, jsonable, write_json
 from .common import available_models, corpus_of, labels_of, load_embeddings, vocab_of
-from .s1_curation import get_llm
+from .s1_curation import credit_gate, get_llm
 
 log = get_logger("melomane.s6")
 MODES_SCHEMA = {"type": "object", "additionalProperties": False, "required": ["modes"], "properties": {"modes": {"type": "array", "items": {
@@ -148,4 +148,5 @@ class Modes(Stage):
         if llm is None:
             res.status = PARTIAL; res.notes.append("no LLM: modes are unlabelled")
         res.metrics = {"models": len(summary), **{f"modes_{k}": v["n_modes"] for k, v in summary.items()}}
+        credit_gate(ctx, llm, res, "S6")
         return res

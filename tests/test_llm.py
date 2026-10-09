@@ -78,3 +78,26 @@ def test_gives_up_and_parallel_many(tmp_path):
     res = c2.complete_json_many([dict(system="s", user=f"job{i}", schema=SCHEMA) for i in range(12)], workers=4)
     assert all(r == {"label": "p"} for r in res)
     s2.close()
+
+
+def test_402_out_of_credits_stops_llm_work_cleanly_and_is_not_retried(tmp_path):
+    """OpenRouter answers 402 when the key's credit is gone.  That is not transient: no retries, and every later call must fail
+    fast *without touching the network*, as a BudgetExceeded so stages degrade with one clear message instead of 1,300 silent failures."""
+    from melomane.llm import CreditsExhausted
+    s = Server([ok("fine"), (402, {"error": {"message": "This request requires more credits"}}, {})])
+    try:
+        c = client(s, tmp_path)
+        assert c.complete_json("sys", "cached", SCHEMA)["label"] == "fine"           # call 1 succeeds and is cached
+        with pytest.raises(CreditsExhausted) as e:
+            c.complete_json("sys", "needs the network", SCHEMA)
+        assert s.calls == 2 and isinstance(e.value, BudgetExceeded) and "credit" in str(e.value).lower()
+        with pytest.raises(CreditsExhausted):
+            c.complete_json("sys", "another new prompt", SCHEMA)
+        assert s.calls == 2                                                        # short-circuited: no new HTTP request
+        assert c.complete_json("sys", "cached", SCHEMA)["label"] == "fine"          # cached answers keep working
+        assert c.credits_exhausted is True
+        with pytest.raises(BudgetExceeded):                                        # the batch helper surfaces it too
+            c.complete_json_many([dict(system="sys", user=f"u{i}", schema=SCHEMA) for i in range(3)], workers=2)
+        assert s.calls == 2
+    finally:
+        s.close()

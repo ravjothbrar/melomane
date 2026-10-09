@@ -14,6 +14,8 @@ import jsonschema
 
 
 class BudgetExceeded(RuntimeError): ...
+class CreditsExhausted(BudgetExceeded):
+    """HTTP 402: the OpenRouter key has no credit left.  Not transient, so never retried; the client then refuses further network calls."""
 class LLMError(RuntimeError): ...
 
 
@@ -41,7 +43,7 @@ class LLMClient:
         self.db = sqlite3.connect(cache_path, check_same_thread=False); self.lock = threading.Lock()
         self.db.execute("CREATE TABLE IF NOT EXISTS cache (k TEXT PRIMARY KEY, resp TEXT, cost REAL, tin INT, tout INT)")
         self.db.execute("CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v REAL)")
-        self.db.commit(); self.calls = 0; self.cache_hits = 0
+        self.db.commit(); self.calls = 0; self.cache_hits = 0; self.credits_exhausted = False
 
     # ---- accounting ----------------------------------------------------------------------------------------------
     def spent(self) -> float:
@@ -62,6 +64,8 @@ class LLMClient:
         if row:
             self.cache_hits += 1
             return json.loads(row[0])
+        if self.credits_exhausted:
+            raise CreditsExhausted("OpenRouter credits exhausted (HTTP 402 earlier in this run): top up the key's credit; cached answers still work")
         if self.spent() >= self.budget:
             raise BudgetExceeded(f"LLM budget ${self.budget:.2f} reached (spent ${self.spent():.2f})")
         body = {"model": self.model, "temperature": temperature, "max_tokens": max_tokens,
@@ -78,6 +82,9 @@ class LLMClient:
                     ra = r.headers.get("Retry-After")
                     self._sleep(float(ra) if ra and ra.replace(".", "").isdigit() else min(60, 2 ** attempt) * (0.5 + random.random()))
                     last_err = LLMError(f"HTTP {r.status_code}"); continue
+                if r.status_code == 402:
+                    self.credits_exhausted = True
+                    raise CreditsExhausted("OpenRouter credits exhausted (HTTP 402): the key cannot afford this request; top up its credit limit")
                 if r.status_code >= 400:
                     raise LLMError(f"HTTP {r.status_code}: {r.text[:300]}")
                 data = r.json()

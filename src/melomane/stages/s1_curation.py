@@ -26,6 +26,17 @@ def get_llm(ctx: Ctx):
         return None
 
 
+def credit_gate(ctx: Ctx, llm, res, stage: str) -> None:
+    """If the OpenRouter key ran out of credit (HTTP 402) during this stage, say so as a question for the owner, with the exact
+    resume command.  LLM work stopped at the first 402; cached answers were still used, and what was left unlabelled is not faked."""
+    if llm is not None and getattr(llm, "credits_exhausted", False):
+        res.status = PARTIAL
+        res.questions.append(
+            f"{stage}: the OpenRouter key is out of credit (HTTP 402), so the LLM part was skipped (unlabelled items stay unlabelled, "
+            f"results are marked degraded). Top up the key's credit limit (configs/llm.yaml caps spend at ${llm.budget:.0f}), then resume with "
+            f"`python -m melomane run --stage {stage} --corpus {ctx.corpus} --profile {ctx.profile_name} --force` (cached answers make this cheap).")
+
+
 def load_prompts(ws, names: dict[str, str]) -> dict:
     return {k: load_prompt(ws.root, v) for k, v in names.items()}
 
@@ -121,4 +132,5 @@ class Curation(Stage):
                                    "audit_agreement_merge": audit.get("agreement_merge")}, notes=r.degraded[:4] + ([tags_note] if tags_note else []))
         if r.degraded:
             res.status = PARTIAL
+        credit_gate(ctx, llm, res, "S1")
         return res

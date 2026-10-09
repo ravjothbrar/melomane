@@ -149,3 +149,18 @@ def test_readme_generated_region_is_replaced_in_place_and_idempotent():
     assert "1.5 ± 0.1" in once and "SUPPORTED" in once and "Do not edit by hand" in once
     assert pt.inject_readme(once, block) == once                       # idempotent
     assert pt.inject_readme("no markers here", block) == "no markers here"
+
+
+def test_credit_gate_turns_a_402_into_a_question_with_the_resume_command():
+    from types import SimpleNamespace
+    from melomane.pipeline import StageResult
+    from melomane.stages.s1_curation import credit_gate
+    ctx = SimpleNamespace(corpus="onion", profile_name="standard")
+    res = StageResult()
+    credit_gate(ctx, SimpleNamespace(credits_exhausted=False, budget=30.0), res, "S2")
+    credit_gate(ctx, None, res, "S2")
+    assert res.questions == [] and res.status != "PARTIAL"                      # nothing wrong, nothing said
+    credit_gate(ctx, SimpleNamespace(credits_exhausted=True, budget=30.0), res, "S2")
+    assert res.status == "PARTIAL" and len(res.questions) == 1
+    q = res.questions[0]
+    assert "out of credit" in q and "--stage S2 --corpus onion --profile standard --force" in q and "$30" in q

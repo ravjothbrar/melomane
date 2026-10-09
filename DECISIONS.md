@@ -119,3 +119,15 @@ Each entry: **decision** · why · alternatives considered. The pre-registration
 11. **Repo prepared for GitHub but nothing pushed**: `LICENSE` (MIT), `DATA_LICENSE.md`, `CITATION.cff` (preprint pending), CI, `.gitignore`
    (bundles, local notes). `docs/HANDOFF.md` is personal/agent-internal and is excluded from the public repo.
 12. **arXiv**: not referenced; the paper/README say "preprint pending".
+
+13. **Curation (S1) stays rules-only for this run; training starts before any LLM stage.** The OpenRouter key ran out of credit (HTTP 402)
+    during S1: 1,300 of 1,333 refinement requests failed, the same failure that cost S2 most of its labels on 2026-10-06 (the
+    client previously hid this behind generic retries; it now stops at the first 402, see `CreditsExhausted`). Training (S5) needs no LLM
+    and takes ≈7.5 GPU-hours, while a late LLM curation pass would change the vocabulary and force a re-train; curation changed
+    <1 % of tracks even in this degraded state (53,787 → 53,309 incl. rules and the 33 successful requests). So: train on the current
+    vocabulary, mark curation **degraded** (paper limitation, `S1_curation.json: degraded`), and run the credit-dependent stages (S2
+    labels, S6 mode names, S1 audits) when credit is restored. A full-LLM curation is then an E7 ablation, not a silent replacement.
+    *Alternatives rejected:* waiting for credit (idle GPU, unknown delay); re-running S1 later in place (invalidates every downstream result).
+14. **S4 is PARTIAL by 0.12 percentage points** (max compound cluster = 5.12 % of tracks, limit 5 %). Recorded, not tuned (the sensitivity
+    grid E8 covers k); `PLAN.md` §6 S4 acceptance is therefore reported as narrowly missed.
+15. **S3 same-artist edge share is 12.2 %** with real artists (it was 0 only because artists were unknown); the artist-masked Cooc ablation removes them.

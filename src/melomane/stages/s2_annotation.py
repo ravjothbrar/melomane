@@ -7,7 +7,7 @@ from ..annotation import DIMS, annotate, binary_pass, llm_vs_measured, reliabili
 from ..pipeline import Ctx, Stage, StageResult, register, PARTIAL
 from ..runtime import get_logger
 from .common import corpus_of, vocab_of
-from .s1_curation import get_llm, load_prompts
+from .s1_curation import credit_gate, get_llm, load_prompts
 
 log = get_logger("melomane.s2")
 
@@ -115,4 +115,5 @@ class Annotation(Stage):
         res.metrics.update({"coverage": st["coverage"], "spent_usd": stats["spent_usd"], "h5_share": h5["share_positive_ci"]})
         if st["coverage"] < 0.999:
             res.status = PARTIAL; res.notes.append(f"coverage {st['coverage']:.1%} (<100%): unlabelled rows stay NaN, never fabricated")
+        credit_gate(ctx, llm, res, "S2")
         return res
