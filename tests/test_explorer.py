@@ -32,7 +32,7 @@ def test_app_files_exist_and_are_dependency_free():
     for f in APP_FILES:
         assert (app / f).exists()
     for f in APP_FILES:
-        text = (app / f).read_text(encoding="utf-8")
+        text = (app / f).read_text(encoding="utf-8").replace('xmlns="http://www.w3.org/2000/svg"', "")   # an XML namespace id, not a request
         for bad in ("cdn.", "cdnjs", "unpkg", "jsdelivr", "googleapis", "http://", "eval(", "document.write"):
             assert bad not in text, (f, bad)
         assert not re.search(r"\.(inner|outer)HTML\s*[+]?=", text), f            # payload strings only ever go in via textContent
@@ -269,5 +269,15 @@ def test_explorer_ui_smoke_under_node_with_dom_and_webgl_stubs(built):
     assert o["modes_visible"] and o["mode_detail_children"] >= 3 and o["mode_focus"] > 0 and o["mode_filter_none"] == 0
     assert 0 < o["suggestions"] <= 8
     assert o["hover"] == 42 and o["tooltip_visible"] and p.tracks["title"][42] in o["tooltip_text"]
-    assert o["clicked_seed"] == 42 and o["drag_moved_view"] and o["wheel_zoomed"] and o["reset"]
+    assert o["clicked_seed"] == 42 and o["drag_moved_view"] and o["wheel_zoomed"] and o["reset"] and o["fit_zoom_sane"]
     assert o["draw_calls"]["arrays"] > 0 and o["draw_calls"]["elements"] > 0
+
+
+@pytest.mark.skipif(NODE is None, reason="node not installed")
+def test_label_placement_and_palette_under_node():
+    """Pure helpers behind the readable labels: placeLabels() never overlaps / leaves the viewport / drops the seed, and the
+    categorical palette is bright and distinct enough for the dark stage."""
+    r = subprocess.run([NODE, str(TESTS / "node_labels_check.mjs")], capture_output=True, text=True, timeout=60)
+    assert r.returncode == 0, r.stderr
+    checks = json.loads(r.stdout)
+    assert all(checks.values()), {k: v for k, v in checks.items() if not v}

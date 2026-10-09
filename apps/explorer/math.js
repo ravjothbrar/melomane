@@ -197,14 +197,15 @@ export function pickNearest(xy, n, view, w, h, sx, sy, radiusPx, visible) {
 }
 
 // ---- colours --------------------------------------------------------------------------------------------------------
-const OKABE = [[0, 114, 178], [230, 159, 0], [0, 158, 115], [204, 121, 167], [86, 180, 233], [213, 94, 0], [240, 228, 66],
-  [148, 103, 189], [140, 86, 75], [127, 127, 127]];
+// Twelve luminous, well-separated hues that stay readable (and glow) on the dark stage; golden-angle hues after that.
+const GLOW = [[255, 107, 107], [255, 169, 77], [255, 212, 59], [169, 227, 75], [81, 207, 102], [32, 201, 151],
+  [34, 184, 207], [77, 171, 247], [116, 143, 252], [151, 117, 250], [218, 119, 242], [247, 131, 172]];
 
-/** Categorical colour i (colour-blind-safe palette first, golden-angle hues after). */
+/** Categorical colour i (bright palette first, golden-angle hues after). */
 export function categoricalColor(i) {
   if (i < 0) return [150, 150, 150];
-  if (i < OKABE.length) return OKABE[i];
-  return hslToRgb(((i * 137.508) % 360) / 360, 0.6, 0.5);
+  if (i < GLOW.length) return GLOW[i];
+  return hslToRgb(((i * 137.508) % 360) / 360, 0.66, 0.64);
 }
 
 export function hslToRgb(h, s, l) {
@@ -256,4 +257,46 @@ export function searchLinks(artist, title) {
     { name: "Spotify", url: `https://open.spotify.com/search/${q}` },
     { name: "Apple Music", url: `https://music.apple.com/search?term=${q}` },
   ];
+}
+
+
+// ---- label placement ------------------------------------------------------------------------------------------------
+/**
+ * Greedy, priority-ordered placement of pill labels so that none overlap and none leave the viewport.
+ * `cands` come highest-priority first: {id, x, y (anchor point, px), w, h (pill size), required?}.  Each label tries to sit
+ * above its anchor, then below, to the right, to the left; the first free spot wins, otherwise the label is dropped
+ * (unless `required`, which is always placed at its first in-bounds spot).  Pure function: used by the overlay and unit-tested.
+ * @returns {Array<{id, x, y, w, h, x0, y0, anchor}>} placed labels (x0, y0 = top-left of the pill)
+ */
+export function placeLabels(cands, W, H, { pad = 3, gap = 7, maxLabels = 120, margin = 4 } = {}) {
+  const taken = [], out = [];
+  const clash = (b) => {
+    for (const t of taken) if (b.x < t.x + t.w + pad && b.x + b.w + pad > t.x && b.y < t.y + t.h + pad && b.y + b.h + pad > t.y) return true;
+    return false;
+  };
+  for (const c of cands) {
+    if (out.length >= maxLabels && !c.required) continue;
+    if (c.x < -c.w || c.x > W + c.w || c.y < -c.h || c.y > H + c.h) continue;
+    const spots = [
+      { x: c.x - c.w / 2, y: c.y - c.h - gap, a: "above" }, { x: c.x - c.w / 2, y: c.y + gap, a: "below" },
+      { x: c.x + gap, y: c.y - c.h / 2, a: "right" }, { x: c.x - c.w - gap, y: c.y - c.h / 2, a: "left" },
+    ];
+    const inb = (o) => o.x >= margin && o.y >= margin && o.x + c.w <= W - margin && o.y + c.h <= H - margin;
+    let pick = null;
+    for (const o of spots) if (inb(o) && !clash({ x: o.x, y: o.y, w: c.w, h: c.h })) { pick = o; break; }
+    if (!pick && c.fan !== false) {    // crowded: fan out on rings of increasing radius around the anchor (drawn with a leader line)
+      for (let k = 1; k <= 4 && !pick; k++) {
+        for (let a = 0; a < 12 && !pick; a++) {
+          const ang = (a * Math.PI) / 6 + (k % 2) * (Math.PI / 12);
+          const o = { x: c.x + Math.cos(ang) * (c.w / 2 + gap + k * 34) - c.w / 2, y: c.y + Math.sin(ang) * (c.h / 2 + gap + k * (c.h + 8)) - c.h / 2, a: "ring", leader: true };
+          if (inb(o) && !clash({ x: o.x, y: o.y, w: c.w, h: c.h })) pick = o;
+        }
+      }
+    }
+    if (!pick && c.required) pick = spots.find(inb) || spots[0];
+    if (!pick) continue;
+    taken.push({ x: pick.x, y: pick.y, w: c.w, h: c.h });
+    out.push({ ...c, x0: pick.x, y0: pick.y, anchor: pick.a, leader: !!pick.leader });
+  }
+  return out;
 }

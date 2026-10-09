@@ -81,6 +81,8 @@ const $ = (id) => env.document.getElementById(id);
 const app = await start(env);
 await tick();
 out.started = !!app;
+const fit0 = { ...app.state.view };            // the auto-fitted opening view
+out.fit_zoom_sane = fit0.zoom >= 0.6 && fit0.zoom <= 6;
 out.toggle_buttons = $("model-toggle").children.length;
 out.status = $("status").textContent;
 out.attribution = $("attribution").textContent;
@@ -153,7 +155,12 @@ await cv.fire("pointerup", { clientX: 160, clientY: 130, pointerId: 1 });
 out.drag_moved_view = app.state.view.cx !== v0.cx && app.state.view.cy !== v0.cy && app.state.seed === out.clicked_seed;
 await cv.fire("wheel", { clientX: 400, clientY: 300, deltaY: -200 });
 out.wheel_zoomed = app.state.view.zoom > v0.zoom;
-await $("zoom-reset").fire("click"); out.reset = app.state.view.zoom === 0.95;
+await $("zoom-reset").fire("click");
+const r1 = { ...app.state.view };
+await $("zoom-reset").fire("click");
+const r2 = { ...app.state.view };
+// reset = auto-fit of the *current* model: a sane view inside the layout, and idempotent
+out.reset = r1.zoom >= 0.6 && r1.zoom <= 6 && Math.abs(r1.cx) <= 1 && Math.abs(r1.cy) <= 1 && ["cx", "cy", "zoom"].every((k) => r1[k] === r2[k]);
 await tick();
 out.draw_calls = drawCalls;
 console.log(JSON.stringify(out));
