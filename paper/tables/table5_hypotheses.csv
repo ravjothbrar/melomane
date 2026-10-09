@@ -1,0 +1,9 @@
+Hypothesis,Claim,Status,Notes
+H1,Hypothesis 1,not evaluable,"""S7 unrun"""
+H2,Hypothesis 2,not evaluable,"""S7 unrun"""
+H3,Hypothesis 3,not evaluable,"""S7 unrun"""
+H4,Curated vocabulary > size-matched raw on artist-disjoint kNN purity (lift > 1),not evaluable,"""E7 unrun"""
+H5,LLM dimensions correlate with measured counterparts for >= 70% of dimensions,not evaluable,"""S2 unrun"""
+H6,>= 90% of full-precision held-out rho is retained at <= 64 dims for Composition,not evaluable,"""E1 unrun"""
+H7,SLERP target-dominance (precision@10) increases with theta up to 60 deg for >= 80% of poles,not evaluable,"""S8 unrun"""
+H8,Conclusions on standard profile match those on paper profile subset,not evaluable,"""H8 unrun"""

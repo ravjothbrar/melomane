@@ -1,0 +1,38 @@
+# Data sources (see docs/data_sources.md). Everything here is open (no sign-ups) unless stated.
+onion:
+  zenodo_records: [15394646, 6609677]   # v2 preferred, v1 fallback; CC BY 4.0
+  min_free_gb: 60
+playlist2vec:
+  zenodo_record: 5002584                # Papreja 2020; you download the SQL dump yourself (stays wherever you saved it)
+  search_dirs: []                       # extra folders to look in (Downloads and data/raw/playlist2vec are always searched)
+  min_playlist_len: 5
+  max_playlist_len: 300
+  wait_for_download_hours: 24
+matching:
+  level: strict
+  fuzzy: true
+  threshold: 0.85
+# ---- Track B (MusicBrainz / ListenBrainz / AcousticBrainz / LRCLIB stack): opt-in, big (`melomane run-all --with-track-b`) ----
+trackb:
+  name: mbid_stack
+  download: false                 # true = fetch the core files listed in reports/trackb_plan.md (~235 GB, resumable)
+  min_users_per_track: 5
+  max_tracks: 200000
+  year_range: null                # e.g. [2015, 2023]
+  ab_archives: []                 # which of the 30 AcousticBrainz low-level archives to stream-filter (each ~20 GB); [] = CSV features only
+  lrclib_api: false               # true = <= 1 req/s LRCLIB API lookups (slow); a decompressed LRCLIB SQLite dump is used when present
+  raw_subdir: trackb              # under data/raw/
+# ---- Track C (no behaviour): put the files here yourself (licences: Jamendo metadata CC BY-NC-SA -> results flagged non-releasable) ----
+trackc:
+  jamendo_dir: jamendo            # data/raw/jamendo: autotagging*.tsv or raw_30s*.tsv + a folder/tar of Essentia JSON features
+  fma_dir: fma                    # data/raw/fma: tracks.csv, genres.csv, features.csv (unzipped fma_metadata.zip)
+  k: 200
+  top_m: 3
+# ---- release policy (S12/S14): only CC-BY-compatible corpora are bundled; anything else stays local ----
+release:
+  corpora: [onion, mbid_stack]        # playlist2vec (unofficial Spotify-API re-scrape, licence unclear) and Jamendo (CC BY-NC-SA) are NEVER bundled
+  explorer_max_tracks: 50000
+  small_dims: 64
+  attribution:
+    onion: "Music4All-Onion (Moscati et al., CIKM 2022), Zenodo 6609677 / 15394646, CC BY 4.0"
+    mbid_stack: "MusicBrainz canonical dump (CC0), ListenBrainz, AcousticBrainz (CC0), LRCLIB (aggregate features only)"

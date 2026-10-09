@@ -1,0 +1,15 @@
+{
+  "coverage": 1.0,
+  "n_labelled": 599,
+  "failed_requests": 0,
+  "budget_hit": false,
+  "n_annotated": 599,
+  "spent_usd": 0.0,
+  "prompt_version": "annotate_v1",
+  "excluded_dims": [],
+  "category_counts": {
+    "Rock": 301,
+    "Hip-Hop": 180,
+    "Electronic/Dance": 118
+  }
+}

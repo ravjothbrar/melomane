@@ -1,0 +1,3 @@
+# S8 - SLERP
+
+H7: {"claim": "precision@10 of the pole tag increases with theta up to 60 deg for >= 80% of poles", "share_by_model": {"cooc": 0.6923076923076923, "composition": 0.9130434782608695, "core": 0.8461538461538461, "composition_acoustic": 0.96, "composition_lyric": 0.6666666666666666, "cooc_artistmasked": 0.7083333333333334}, "status": "supported"}

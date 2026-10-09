@@ -1,0 +1,4882 @@
+{
+  "models": {
+    "cooc": {
+      "n_pairs": 60,
+      "n_poles": 28,
+      "increasing_share_60": {
+        "share": 0.6923076923076923,
+        "ci_low": 0.5,
+        "ci_high": 0.8461538461538461,
+        "n": 26,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.37870149235288425,
+        "median_rho": 0.6668859288553503,
+        "share_positive": 0.6923076923076923,
+        "share_negative": 0.23076923076923078,
+        "n_groups": 26,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.25833333333333336,
+          "cos_pole": 0.19672004481156666,
+          "cos_seed": 0.9925996323426565,
+          "prevalence": 0.3226588628762542
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.32166666666666666,
+          "cos_pole": 0.24977859280382594,
+          "cos_seed": 0.9856369962294896,
+          "prevalence": 0.3226588628762542
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.38166666666666665,
+          "cos_pole": 0.317349825904239,
+          "cos_seed": 0.940112774570783,
+          "prevalence": 0.3226588628762542
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.545,
+          "cos_pole": 0.48866601965079703,
+          "cos_seed": 0.724920965731144,
+          "prevalence": 0.3226588628762542
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.5950000000000001,
+          "cos_pole": 0.6136862520128489,
+          "cos_seed": 0.5312390573322773,
+          "prevalence": 0.3226588628762542
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.62,
+          "cos_pole": 0.65174830108881,
+          "cos_seed": 0.4093322848280271,
+          "prevalence": 0.3226588628762542
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.61,
+          "cos_pole": 0.6472658902406693,
+          "cos_seed": 0.381913211196661,
+          "prevalence": 0.3226588628762542
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.08888888888888888,
+        "mean_joint_precision_theta60": 0.08888888888888889,
+        "n_combos": 9
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "dim:production_polish+",
+          "snr_median": 7.343602565078033,
+          "snr_mean": 8.328927458514206,
+          "snr_total_median": 0.1596435340234355,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:density+",
+          "snr_median": 5.994376386077092,
+          "snr_mean": 6.4251744581556025,
+          "snr_total_median": 0.1303125301321107,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "dim:space+",
+          "snr_median": 5.170402760249097,
+          "snr_mean": 4.389967049307846,
+          "snr_total_median": 0.11240006000541514,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "dim:aggression+",
+          "snr_median": 4.153753774760098,
+          "snr_mean": 5.863816465262105,
+          "snr_total_median": 0.09029899510348038,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "dim:valence+",
+          "snr_median": 4.092903870272783,
+          "snr_mean": 3.984956022475751,
+          "snr_total_median": 0.08897617109288658,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "dim:tempo_feel+",
+          "snr_median": 3.7297723303696655,
+          "snr_mean": 4.654903091451685,
+          "snr_total_median": 0.08108200718194926,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "dim:warmth+",
+          "snr_median": 3.610686736287655,
+          "snr_mean": 3.0601317438197126,
+          "snr_total_median": 0.07849318991929685,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:acousticness+",
+          "snr_median": 3.6031424535718064,
+          "snr_mean": 3.825155135065907,
+          "snr_total_median": 0.07832918377330014,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "dim:brightness+",
+          "snr_median": 3.502923403529322,
+          "snr_mean": 4.6746654337815245,
+          "snr_total_median": 0.07615050877237656,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "dim:energy+",
+          "snr_median": 2.87059692430761,
+          "snr_mean": 4.387155400901411,
+          "snr_total_median": 0.06240428096320891,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 1.6025723351635714,
+      "examples": [
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0062 River",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 10004 - Song 0358 Dust",
+              "Artist 10000 - Song 0018 Blue"
+            ],
+            "30": [
+              "Artist 10000 - Song 0039 Fire",
+              "Artist 10005 - Song 0474 Blue",
+              "Artist 10005 - Song 0417 Fire",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 10004 - Song 0379 Night"
+            ],
+            "60": [
+              "Artist 40000 - Song 0160 Dust",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40001 - Song 0202 Dust",
+              "Artist 40001 - Song 0219 Fire",
+              "Artist 40003 - Song 0441 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0062 River",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 10004 - Song 0358 Dust",
+              "Artist 10000 - Song 0018 Blue"
+            ],
+            "30": [
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 10000 - Song 0081 Fire",
+              "Artist 10005 - Song 0459 Fire",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10005 - Song 0425 Glass"
+            ],
+            "60": [
+              "Artist 4 - Song 0170 River",
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 2 - Song 0092 River",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 10002 - Song 0199 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0062 River",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 10004 - Song 0358 Dust",
+              "Artist 10000 - Song 0018 Blue"
+            ],
+            "30": [
+              "Artist 10005 - Song 0457 Night",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10004 - Song 0399 Fire",
+              "Artist 10006 - Song 0521 Glass"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10005 - Song 0457 Night",
+              "Artist 7 - Song 0289 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 11 - Song 0452 River",
+              "Artist 1 - Song 0047 Glass",
+              "Artist 0 - Song 0024 Blue",
+              "Artist 12 - Song 0463 Night",
+              "Artist 0 - Song 0007 Night"
+            ],
+            "30": [
+              "Artist 1 - Song 0066 Blue",
+              "Artist 0 - Song 0029 Glass",
+              "Artist 15 - Song 0592 Dust",
+              "Artist 7 - Song 0258 Blue",
+              "Artist 10 - Song 0411 Fire"
+            ],
+            "60": [
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40001 - Song 0194 River",
+              "Artist 40001 - Song 0219 Fire",
+              "Artist 40003 - Song 0427 Night",
+              "Artist 40001 - Song 0267 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 11 - Song 0452 River",
+              "Artist 1 - Song 0047 Glass",
+              "Artist 0 - Song 0024 Blue",
+              "Artist 12 - Song 0463 Night",
+              "Artist 0 - Song 0007 Night"
+            ],
+            "30": [
+              "Artist 8 - Song 0333 Fire",
+              "Artist 2 - Song 0089 Glass",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 12 - Song 0469 Night"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 12 - Song 0488 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 11 - Song 0452 River",
+              "Artist 1 - Song 0047 Glass",
+              "Artist 0 - Song 0024 Blue",
+              "Artist 12 - Song 0463 Night",
+              "Artist 0 - Song 0007 Night"
+            ],
+            "30": [
+              "Artist 7 - Song 0262 Dust",
+              "Artist 7 - Song 0289 Night",
+              "Artist 4 - Song 0175 Night",
+              "Artist 9 - Song 0341 Glass",
+              "Artist 10 - Song 0411 Fire"
+            ],
+            "60": [
+              "Artist 7 - Song 0262 Dust",
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0289 Night",
+              "Artist 4 - Song 0175 Night",
+              "Artist 9 - Song 0341 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10004 - Song 0410 River",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10003 - Song 0290 River"
+            ],
+            "30": [
+              "Artist 10000 - Song 0039 Fire",
+              "Artist 10005 - Song 0474 Blue",
+              "Artist 10005 - Song 0417 Fire",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 10004 - Song 0379 Night"
+            ],
+            "60": [
+              "Artist 40000 - Song 0160 Dust",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40003 - Song 0441 Fire",
+              "Artist 40001 - Song 0219 Fire",
+              "Artist 40001 - Song 0267 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10004 - Song 0410 River",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10003 - Song 0290 River"
+            ],
+            "30": [
+              "Artist 10000 - Song 0081 Fire",
+              "Artist 10005 - Song 0459 Fire",
+              "Artist 10005 - Song 0425 Glass",
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 10003 - Song 0305 Glass"
+            ],
+            "60": [
+              "Artist 4 - Song 0170 River",
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 10002 - Song 0199 Night",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10000 - Song 0081 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10004 - Song 0410 River",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10003 - Song 0290 River"
+            ],
+            "30": [
+              "Artist 10005 - Song 0457 Night",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10004 - Song 0399 Fire",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10006 - Song 0513 Fire"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10005 - Song 0457 Night",
+              "Artist 10000 - Song 0069 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 5 - Song 0207 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 7 - Song 0301 Night",
+              "Artist 0 - Song 0040 Dust"
+            ],
+            "30": [
+              "Artist 11 - Song 0443 Glass",
+              "Artist 15 - Song 0597 Fire",
+              "Artist 8 - Song 0337 Night",
+              "Artist 12 - Song 0460 Dust",
+              "Artist 13 - Song 0509 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0194 River",
+              "Artist 40003 - Song 0436 Dust",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40003 - Song 0427 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 5 - Song 0207 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 7 - Song 0301 Night",
+              "Artist 0 - Song 0040 Dust"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 12 - Song 0488 River"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 4 - Song 0170 River",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 5 - Song 0207 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 7 - Song 0301 Night",
+              "Artist 0 - Song 0040 Dust"
+            ],
+            "30": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 0 - Song 0000 Blue",
+              "Artist 2 - Song 0092 River",
+              "Artist 1 - Song 0075 Fire",
+              "Artist 4 - Song 0189 Fire"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 7 - Song 0289 Night",
+              "Artist 4 - Song 0175 Night",
+              "Artist 3 - Song 0121 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 30001 - Song 0088 Dust",
+              "Artist 30002 - Song 0260 River",
+              "Artist 30000 - Song 0032 River",
+              "Artist 30003 - Song 0408 Blue",
+              "Artist 30003 - Song 0271 Night"
+            ],
+            "30": [
+              "Artist 50002 - Song 0404 River",
+              "Artist 50001 - Song 0255 Fire",
+              "Artist 30005 - Song 0575 Glass",
+              "Artist 30000 - Song 0028 Dust",
+              "Artist 30005 - Song 0560 River"
+            ],
+            "60": [
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40001 - Song 0267 Fire",
+              "Artist 40001 - Song 0202 Dust",
+              "Artist 40001 - Song 0219 Fire",
+              "Artist 40003 - Song 0427 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 30001 - Song 0088 Dust",
+              "Artist 30002 - Song 0260 River",
+              "Artist 30000 - Song 0032 River",
+              "Artist 30003 - Song 0408 Blue",
+              "Artist 30003 - Song 0271 Night"
+            ],
+            "30": [
+              "Artist 30001 - Song 0112 Dust",
+              "Artist 30000 - Song 0044 River",
+              "Artist 30003 - Song 0313 Night",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 30005 - Song 0581 Glass"
+            ],
+            "60": [
+              "Artist 30001 - Song 0112 Dust",
+              "Artist 2 - Song 0092 River",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 7 - Song 0297 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 30001 - Song 0088 Dust",
+              "Artist 30002 - Song 0260 River",
+              "Artist 30000 - Song 0032 River",
+              "Artist 30003 - Song 0408 Blue",
+              "Artist 30003 - Song 0271 Night"
+            ],
+            "30": [
+              "Artist 30000 - Song 0057 Fire",
+              "Artist 30000 - Song 0010 Dust",
+              "Artist 30003 - Song 0336 Blue",
+              "Artist 30001 - Song 0112 Dust",
+              "Artist 30000 - Song 0025 Night"
+            ],
+            "60": [
+              "Artist 10 - Song 0421 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 3 - Song 0121 Night",
+              "Artist 4 - Song 0169 Night",
+              "Artist 1 - Song 0055 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0117 Fire",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 7 - Song 0296 River"
+            ],
+            "30": [
+              "Artist 11 - Song 0443 Glass",
+              "Artist 15 - Song 0597 Fire",
+              "Artist 8 - Song 0337 Night",
+              "Artist 12 - Song 0460 Dust",
+              "Artist 13 - Song 0509 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0194 River",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40003 - Song 0427 Night",
+              "Artist 40001 - Song 0219 Fire",
+              "Artist 40003 - Song 0436 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0117 Fire",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 7 - Song 0296 River"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 12 - Song 0488 River"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 4 - Song 0170 River",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0117 Fire",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 7 - Song 0296 River"
+            ],
+            "30": [
+              "Artist 0 - Song 0000 Blue",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 4 - Song 0189 Fire",
+              "Artist 9 - Song 0356 River",
+              "Artist 1 - Song 0075 Fire"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 7 - Song 0289 Night",
+              "Artist 4 - Song 0175 Night",
+              "Artist 9 - Song 0341 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0117 Fire",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 10 - Song 0403 Night",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 12 - Song 0469 Night"
+            ],
+            "30": [
+              "Artist 11 - Song 0443 Glass",
+              "Artist 15 - Song 0597 Fire",
+              "Artist 8 - Song 0337 Night",
+              "Artist 12 - Song 0460 Dust",
+              "Artist 13 - Song 0509 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0194 River",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40003 - Song 0436 Dust",
+              "Artist 40003 - Song 0427 Night",
+              "Artist 40001 - Song 0219 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0117 Fire",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 10 - Song 0403 Night",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 12 - Song 0469 Night"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 12 - Song 0488 River"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 4 - Song 0170 River",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0117 Fire",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 10 - Song 0403 Night",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 12 - Song 0469 Night"
+            ],
+            "30": [
+              "Artist 11 - Song 0447 Fire",
+              "Artist 10 - Song 0395 Glass",
+              "Artist 4 - Song 0189 Fire",
+              "Artist 9 - Song 0369 Fire",
+              "Artist 1 - Song 0075 Fire"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 7 - Song 0289 Night",
+              "Artist 4 - Song 0175 Night",
+              "Artist 9 - Song 0341 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 8 - Song 0333 Fire",
+              "Artist 4 - Song 0163 Night",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 2 - Song 0089 Glass"
+            ],
+            "30": [
+              "Artist 11 - Song 0443 Glass",
+              "Artist 15 - Song 0597 Fire",
+              "Artist 8 - Song 0337 Night",
+              "Artist 12 - Song 0460 Dust",
+              "Artist 13 - Song 0509 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0194 River",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40003 - Song 0427 Night",
+              "Artist 40001 - Song 0219 Fire",
+              "Artist 40001 - Song 0267 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 8 - Song 0333 Fire",
+              "Artist 4 - Song 0163 Night",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 2 - Song 0089 Glass"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 12 - Song 0488 River"
+            ],
+            "60": [
+              "Artist 4 - Song 0170 River",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 7 - Song 0279 Fire",
+              "Artist 7 - Song 0298 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 8 - Song 0333 Fire",
+              "Artist 4 - Song 0163 Night",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 2 - Song 0089 Glass"
+            ],
+            "30": [
+              "Artist 11 - Song 0447 Fire",
+              "Artist 10 - Song 0395 Glass",
+              "Artist 9 - Song 0369 Fire",
+              "Artist 8 - Song 0332 River",
+              "Artist 0 - Song 0019 Night"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 7 - Song 0289 Night",
+              "Artist 4 - Song 0175 Night",
+              "Artist 9 - Song 0341 Glass"
+            ]
+          }
+        }
+      ]
+    },
+    "composition": {
+      "n_pairs": 60,
+      "n_poles": 28,
+      "increasing_share_60": {
+        "share": 0.9130434782608695,
+        "ci_low": 0.782608695652174,
+        "ci_high": 1.0,
+        "n": 23,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.8093072105449165,
+        "median_rho": 0.9746794344808964,
+        "share_positive": 0.9130434782608695,
+        "share_negative": 0.08695652173913043,
+        "n_groups": 23,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.26999999999999996,
+          "cos_pole": 0.11135860097128898,
+          "cos_seed": 0.6051955764492353,
+          "prevalence": 0.308082497212932
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.35333333333333333,
+          "cos_pole": 0.18114923269798358,
+          "cos_seed": 0.5956859936316808,
+          "prevalence": 0.308082497212932
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.49,
+          "cos_pole": 0.27526210188904465,
+          "cos_seed": 0.5527338733275732,
+          "prevalence": 0.308082497212932
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.63,
+          "cos_pole": 0.3740350781008601,
+          "cos_seed": 0.46973932832479476,
+          "prevalence": 0.308082497212932
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.75,
+          "cos_pole": 0.4632649530967077,
+          "cos_seed": 0.3251528531312943,
+          "prevalence": 0.308082497212932
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.7583333333333333,
+          "cos_pole": 0.5101182242234548,
+          "cos_seed": 0.16438407259605203,
+          "prevalence": 0.308082497212932
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.73,
+          "cos_pole": 0.509016661842664,
+          "cos_seed": 0.050806397354851165,
+          "prevalence": 0.308082497212932
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": 0.05454545454545456,
+        "mean_joint_precision_theta60": 0.3181818181818182,
+        "n_combos": 11
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "dim:warmth+",
+          "snr_median": 1.0960218128858674,
+          "snr_mean": 1.221910010737522,
+          "snr_total_median": 0.023826561149692775,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:grit+",
+          "snr_median": 1.0468358231849484,
+          "snr_mean": 1.110882012520513,
+          "snr_total_median": 0.022757300504020615,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "dim:brightness+",
+          "snr_median": 1.0047536161650883,
+          "snr_mean": 1.0302322598440017,
+          "snr_total_median": 0.02184246991663235,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "dim:punch+",
+          "snr_median": 0.9690734097466327,
+          "snr_mean": 0.9707090899344795,
+          "snr_total_median": 0.021066813255361583,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "era:1960s",
+          "snr_median": 0.8634947627392486,
+          "snr_mean": 0.9150708782173196,
+          "snr_total_median": 0.018771625276940193,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "dim:tempo_feel+",
+          "snr_median": 0.8586658163019789,
+          "snr_mean": 0.9328235462594477,
+          "snr_total_median": 0.0186666481804778,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "dim:vocal_prominence+",
+          "snr_median": 0.773396602399363,
+          "snr_mean": 0.8895833801504146,
+          "snr_total_median": 0.01681296961737746,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:space+",
+          "snr_median": 0.7732424777879955,
+          "snr_mean": 0.8652801779502595,
+          "snr_total_median": 0.01680961908234773,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "era:1990s",
+          "snr_median": 0.7339586551398121,
+          "snr_mean": 0.7058774975050501,
+          "snr_total_median": 0.015955622937822003,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "category:Electronic/Dance",
+          "snr_median": 0.7025516264350888,
+          "snr_mean": 0.8599148380840678,
+          "snr_total_median": 0.015272861444241063,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 0.6328127431241873,
+      "examples": [
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10006 - Song 0536 River",
+              "Artist 10003 - Song 0338 River",
+              "Artist 30005 - Song 0557 Glass"
+            ],
+            "30": [
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 10003 - Song 0338 River",
+              "Artist 30005 - Song 0557 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0277 Night",
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40001 - Song 0266 River",
+              "Artist 40000 - Song 0108 Blue",
+              "Artist 40000 - Song 0137 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10006 - Song 0536 River",
+              "Artist 10003 - Song 0338 River",
+              "Artist 30005 - Song 0557 Glass"
+            ],
+            "30": [
+              "Artist 10006 - Song 0536 River",
+              "Artist 10005 - Song 0440 River",
+              "Artist 10005 - Song 0446 River",
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 10006 - Song 0515 Glass"
+            ],
+            "60": [
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 10006 - Song 0515 Glass",
+              "Artist 10002 - Song 0265 Night",
+              "Artist 10002 - Song 0286 Dust",
+              "Artist 40002 - Song 0383 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10006 - Song 0536 River",
+              "Artist 10003 - Song 0338 River",
+              "Artist 30005 - Song 0557 Glass"
+            ],
+            "30": [
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10002 - Song 0242 River",
+              "Artist 10003 - Song 0338 River"
+            ],
+            "60": [
+              "Artist 10002 - Song 0242 River",
+              "Artist 0 - Song 0007 Night",
+              "Artist 14 - Song 0561 Fire",
+              "Artist 40000 - Song 0070 Dust",
+              "Artist 10005 - Song 0478 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 5 - Song 0192 Blue",
+              "Artist 12 - Song 0480 Blue",
+              "Artist 15 - Song 0592 Dust",
+              "Artist 0 - Song 0000 Blue"
+            ],
+            "30": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 5 - Song 0192 Blue",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 4 - Song 0175 Night",
+              "Artist 6 - Song 0249 Fire"
+            ],
+            "60": [
+              "Artist 40001 - Song 0277 Night",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40000 - Song 0108 Blue",
+              "Artist 40001 - Song 0266 River",
+              "Artist 40003 - Song 0427 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 5 - Song 0192 Blue",
+              "Artist 12 - Song 0480 Blue",
+              "Artist 15 - Song 0592 Dust",
+              "Artist 0 - Song 0000 Blue"
+            ],
+            "30": [
+              "Artist 5 - Song 0192 Blue",
+              "Artist 5 - Song 0201 Fire",
+              "Artist 0 - Song 0000 Blue",
+              "Artist 6 - Song 0241 Night",
+              "Artist 10006 - Song 0505 Night"
+            ],
+            "60": [
+              "Artist 5 - Song 0201 Fire",
+              "Artist 7 - Song 0291 Fire",
+              "Artist 0 - Song 0019 Night",
+              "Artist 2 - Song 0089 Glass",
+              "Artist 12 - Song 0469 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 5 - Song 0192 Blue",
+              "Artist 12 - Song 0480 Blue",
+              "Artist 15 - Song 0592 Dust",
+              "Artist 0 - Song 0000 Blue"
+            ],
+            "30": [
+              "Artist 5 - Song 0192 Blue",
+              "Artist 14 - Song 0537 Fire",
+              "Artist 9 - Song 0353 Glass",
+              "Artist 13 - Song 0506 River",
+              "Artist 0 - Song 0007 Night"
+            ],
+            "60": [
+              "Artist 0 - Song 0007 Night",
+              "Artist 14 - Song 0561 Fire",
+              "Artist 9 - Song 0353 Glass",
+              "Artist 10001 - Song 0087 Fire",
+              "Artist 40001 - Song 0300 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 20004 - Song 0372 Blue",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10004 - Song 0366 Blue",
+              "Artist 10003 - Song 0310 Dust"
+            ],
+            "30": [
+              "Artist 40000 - Song 0070 Dust",
+              "Artist 50002 - Song 0549 Fire",
+              "Artist 40002 - Song 0357 Fire",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 20004 - Song 0372 Blue"
+            ],
+            "60": [
+              "Artist 40001 - Song 0266 River",
+              "Artist 40000 - Song 0070 Dust",
+              "Artist 40001 - Song 0277 Night",
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40002 - Song 0311 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 20004 - Song 0372 Blue",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10004 - Song 0366 Blue",
+              "Artist 10003 - Song 0310 Dust"
+            ],
+            "30": [
+              "Artist 20004 - Song 0372 Blue",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 10006 - Song 0571 Night",
+              "Artist 10006 - Song 0531 Fire",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "60": [
+              "Artist 10000 - Song 0008 River",
+              "Artist 10006 - Song 0531 Fire",
+              "Artist 10006 - Song 0571 Night",
+              "Artist 40002 - Song 0383 Glass",
+              "Artist 10006 - Song 0564 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 20004 - Song 0372 Blue",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10004 - Song 0366 Blue",
+              "Artist 10003 - Song 0310 Dust"
+            ],
+            "30": [
+              "Artist 12 - Song 0466 Dust",
+              "Artist 20004 - Song 0372 Blue",
+              "Artist 40000 - Song 0070 Dust",
+              "Artist 0 - Song 0029 Glass",
+              "Artist 0 - Song 0007 Night"
+            ],
+            "60": [
+              "Artist 0 - Song 0007 Night",
+              "Artist 14 - Song 0561 Fire",
+              "Artist 0 - Song 0029 Glass",
+              "Artist 12 - Song 0488 River",
+              "Artist 40000 - Song 0070 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 20003 - Song 0335 Glass"
+            ],
+            "30": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 13 - Song 0502 Dust"
+            ],
+            "60": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 40000 - Song 0108 Blue",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40003 - Song 0456 Blue",
+              "Artist 40004 - Song 0584 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 20003 - Song 0335 Glass"
+            ],
+            "30": [
+              "Artist 11 - Song 0438 Blue",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 2 - Song 0085 Night",
+              "Artist 3 - Song 0129 Fire",
+              "Artist 3 - Song 0143 Glass"
+            ],
+            "60": [
+              "Artist 40002 - Song 0383 Glass",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 2 - Song 0092 River",
+              "Artist 2 - Song 0085 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 20003 - Song 0335 Glass"
+            ],
+            "30": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 11 - Song 0438 Blue"
+            ],
+            "60": [
+              "Artist 8 - Song 0317 Glass",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 10 - Song 0403 Night",
+              "Artist 10003 - Song 0305 Glass",
+              "Artist 3 - Song 0143 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 9 - Song 0349 Night",
+              "Artist 30003 - Song 0347 Glass",
+              "Artist 30005 - Song 0560 River"
+            ],
+            "30": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 40003 - Song 0436 Dust",
+              "Artist 9 - Song 0349 Night",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 30005 - Song 0575 Glass"
+            ],
+            "60": [
+              "Artist 40003 - Song 0436 Dust",
+              "Artist 40001 - Song 0266 River",
+              "Artist 40001 - Song 0267 Fire",
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40001 - Song 0277 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 9 - Song 0349 Night",
+              "Artist 30003 - Song 0347 Glass",
+              "Artist 30005 - Song 0560 River"
+            ],
+            "30": [
+              "Artist 2 - Song 0095 Glass",
+              "Artist 30005 - Song 0544 Dust",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 20003 - Song 0281 Glass"
+            ],
+            "60": [
+              "Artist 40002 - Song 0383 Glass",
+              "Artist 2 - Song 0085 Night",
+              "Artist 2 - Song 0092 River",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 3 - Song 0114 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 9 - Song 0349 Night",
+              "Artist 30003 - Song 0347 Glass",
+              "Artist 30005 - Song 0560 River"
+            ],
+            "30": [
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 9 - Song 0349 Night",
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 2 - Song 0107 Glass"
+            ],
+            "60": [
+              "Artist 11 - Song 0435 Fire",
+              "Artist 50002 - Song 0518 River",
+              "Artist 30001 - Song 0068 River",
+              "Artist 40000 - Song 0070 Dust",
+              "Artist 8 - Song 0317 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 30003 - Song 0400 Dust",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 15 - Song 0587 Glass"
+            ],
+            "30": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 12 - Song 0488 River",
+              "Artist 6 - Song 0251 Glass"
+            ],
+            "60": [
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40000 - Song 0108 Blue",
+              "Artist 40000 - Song 0070 Dust",
+              "Artist 40001 - Song 0277 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 30003 - Song 0400 Dust",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 15 - Song 0587 Glass"
+            ],
+            "30": [
+              "Artist 2 - Song 0085 Night",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 3 - Song 0134 River",
+              "Artist 10000 - Song 0008 River",
+              "Artist 3 - Song 0129 Fire"
+            ],
+            "60": [
+              "Artist 40002 - Song 0383 Glass",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 15 - Song 0563 Glass",
+              "Artist 40001 - Song 0295 Night",
+              "Artist 2 - Song 0092 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 30003 - Song 0400 Dust",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 15 - Song 0587 Glass"
+            ],
+            "30": [
+              "Artist 8 - Song 0317 Glass",
+              "Artist 12 - Song 0488 River",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 30003 - Song 0400 Dust"
+            ],
+            "60": [
+              "Artist 0 - Song 0007 Night",
+              "Artist 12 - Song 0488 River",
+              "Artist 14 - Song 0561 Fire",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 0 - Song 0029 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 13 - Song 0493 Night"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 11 - Song 0434 River",
+              "Artist 10 - Song 0398 River"
+            ],
+            "60": [
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40000 - Song 0108 Blue",
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40004 - Song 0570 Blue",
+              "Artist 40002 - Song 0362 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 13 - Song 0493 Night"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 8 - Song 0337 Night",
+              "Artist 7 - Song 0285 Fire"
+            ],
+            "60": [
+              "Artist 11 - Song 0443 Glass",
+              "Artist 40002 - Song 0383 Glass",
+              "Artist 8 - Song 0337 Night",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 7 - Song 0291 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 13 - Song 0493 Night"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 7 - Song 0285 Fire",
+              "Artist 11 - Song 0434 River",
+              "Artist 30002 - Song 0214 Dust"
+            ],
+            "60": [
+              "Artist 6 - Song 0251 Glass",
+              "Artist 10 - Song 0403 Night",
+              "Artist 12 - Song 0488 River",
+              "Artist 30002 - Song 0214 Dust",
+              "Artist 11 - Song 0434 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 2 - Song 0092 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 30004 - Song 0426 Blue"
+            ],
+            "30": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 40002 - Song 0380 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 30000 - Song 0025 Night"
+            ],
+            "60": [
+              "Artist 40002 - Song 0380 River",
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40002 - Song 0311 Glass",
+              "Artist 40001 - Song 0194 River",
+              "Artist 40001 - Song 0266 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 2 - Song 0092 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 30004 - Song 0426 Blue"
+            ],
+            "30": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 2 - Song 0092 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 15 - Song 0563 Glass",
+              "Artist 20002 - Song 0176 River"
+            ],
+            "60": [
+              "Artist 40002 - Song 0383 Glass",
+              "Artist 2 - Song 0092 River",
+              "Artist 15 - Song 0563 Glass",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 13 - Song 0501 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 2 - Song 0092 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 30004 - Song 0426 Blue"
+            ],
+            "30": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 30004 - Song 0416 River",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue"
+            ],
+            "60": [
+              "Artist 6 - Song 0251 Glass",
+              "Artist 12 - Song 0488 River",
+              "Artist 0 - Song 0007 Night",
+              "Artist 12 - Song 0491 Glass",
+              "Artist 11 - Song 0435 Fire"
+            ]
+          }
+        }
+      ]
+    },
+    "core": {
+      "n_pairs": 60,
+      "n_poles": 28,
+      "increasing_share_60": {
+        "share": 0.8461538461538461,
+        "ci_low": 0.6923076923076923,
+        "ci_high": 0.9615384615384616,
+        "n": 26,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.6672125902912017,
+        "median_rho": 0.924341649025257,
+        "share_positive": 0.8461538461538461,
+        "share_negative": 0.11538461538461539,
+        "n_groups": 26,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.2833333333333333,
+          "cos_pole": 0.04975411655905191,
+          "cos_seed": 0.6720700055360794,
+          "prevalence": 0.31744704570791527
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.3016666666666667,
+          "cos_pole": 0.0886400810132424,
+          "cos_seed": 0.6659618695576985,
+          "prevalence": 0.31744704570791527
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.41333333333333333,
+          "cos_pole": 0.18479809898417443,
+          "cos_seed": 0.6217532088359197,
+          "prevalence": 0.31744704570791527
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.5766666666666667,
+          "cos_pole": 0.3342565030635645,
+          "cos_seed": 0.5027758243183295,
+          "prevalence": 0.31744704570791527
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.6799999999999999,
+          "cos_pole": 0.45751605244974297,
+          "cos_seed": 0.33331343593696755,
+          "prevalence": 0.31744704570791527
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.6966666666666667,
+          "cos_pole": 0.5084488925834497,
+          "cos_seed": 0.17702324986457824,
+          "prevalence": 0.31744704570791527
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.7383333333333333,
+          "cos_pole": 0.5187153324484826,
+          "cos_seed": 0.061297662049764765,
+          "prevalence": 0.31744704570791527
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.06363636363636362,
+        "mean_joint_precision_theta60": 0.24545454545454548,
+        "n_combos": 11
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "dim:grit+",
+          "snr_median": 1.1449627362813224,
+          "snr_mean": 1.2405338485006547,
+          "snr_total_median": 0.02489049426698527,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:density+",
+          "snr_median": 1.024443901029792,
+          "snr_mean": 1.0162514645315768,
+          "snr_total_median": 0.022270519587604176,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "dim:brightness+",
+          "snr_median": 0.920089212937315,
+          "snr_mean": 0.9345262607345193,
+          "snr_total_median": 0.020001939411680762,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "dim:acousticness+",
+          "snr_median": 0.9175466890058932,
+          "snr_mean": 0.9080774724921307,
+          "snr_total_median": 0.019946667152302023,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "dim:valence+",
+          "snr_median": 0.9102091698556899,
+          "snr_mean": 1.0063884986694454,
+          "snr_total_median": 0.01978715586642804,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "dim:warmth+",
+          "snr_median": 0.9032300669677461,
+          "snr_mean": 1.0124905888527869,
+          "snr_total_median": 0.01963543623842926,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "dim:space+",
+          "snr_median": 0.8523725600488862,
+          "snr_mean": 0.9813355394261258,
+          "snr_total_median": 0.01852983826193231,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "era:1980s",
+          "snr_median": 0.8503530097883671,
+          "snr_mean": 1.0712738348247774,
+          "snr_total_median": 0.018485934995399286,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "dim:punch+",
+          "snr_median": 0.8293824980089874,
+          "snr_mean": 0.9027565389318388,
+          "snr_total_median": 0.018030054304543207,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "dim:tempo_feel+",
+          "snr_median": 0.7944978971741217,
+          "snr_mean": 0.9786671661289817,
+          "snr_total_median": 0.01727169341682873,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 0.6704230660163855,
+      "examples": [
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10004 - Song 0402 Blue",
+              "Artist 10002 - Song 0278 River",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10002 - Song 0227 Glass"
+            ],
+            "30": [
+              "Artist 10004 - Song 0402 Blue",
+              "Artist 10002 - Song 0278 River",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10000 - Song 0018 Blue"
+            ],
+            "60": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 40002 - Song 0360 Blue",
+              "Artist 40000 - Song 0049 Night",
+              "Artist 50001 - Song 0348 Blue",
+              "Artist 40004 - Song 0520 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10004 - Song 0402 Blue",
+              "Artist 10002 - Song 0278 River",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10002 - Song 0227 Glass"
+            ],
+            "30": [
+              "Artist 10000 - Song 0018 Blue",
+              "Artist 10005 - Song 0446 River",
+              "Artist 10004 - Song 0384 Blue",
+              "Artist 10000 - Song 0005 Glass",
+              "Artist 10006 - Song 0536 River"
+            ],
+            "60": [
+              "Artist 10006 - Song 0515 Glass",
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 10000 - Song 0005 Glass",
+              "Artist 10004 - Song 0384 Blue",
+              "Artist 10002 - Song 0265 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10004 - Song 0402 Blue",
+              "Artist 10002 - Song 0278 River",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10002 - Song 0227 Glass"
+            ],
+            "30": [
+              "Artist 10002 - Song 0278 River",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 10004 - Song 0402 Blue"
+            ],
+            "60": [
+              "Artist 10002 - Song 0278 River",
+              "Artist 10002 - Song 0206 River",
+              "Artist 10004 - Song 0366 Blue",
+              "Artist 10002 - Song 0288 Blue",
+              "Artist 10005 - Song 0478 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0480 Blue",
+              "Artist 6 - Song 0249 Fire",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 13 - Song 0506 River",
+              "Artist 14 - Song 0537 Fire"
+            ],
+            "30": [
+              "Artist 12 - Song 0480 Blue",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 6 - Song 0249 Fire",
+              "Artist 1 - Song 0063 Fire",
+              "Artist 13 - Song 0506 River"
+            ],
+            "60": [
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 40000 - Song 0108 Blue",
+              "Artist 40002 - Song 0360 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0480 Blue",
+              "Artist 6 - Song 0249 Fire",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 13 - Song 0506 River",
+              "Artist 14 - Song 0537 Fire"
+            ],
+            "30": [
+              "Artist 5 - Song 0192 Blue",
+              "Artist 8 - Song 0308 River",
+              "Artist 12 - Song 0480 Blue",
+              "Artist 2 - Song 0109 Night",
+              "Artist 13 - Song 0495 Fire"
+            ],
+            "60": [
+              "Artist 15 - Song 0579 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 7 - Song 0272 River",
+              "Artist 1 - Song 0060 Blue",
+              "Artist 10 - Song 0428 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0480 Blue",
+              "Artist 6 - Song 0249 Fire",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 13 - Song 0506 River",
+              "Artist 14 - Song 0537 Fire"
+            ],
+            "30": [
+              "Artist 12 - Song 0480 Blue",
+              "Artist 14 - Song 0537 Fire",
+              "Artist 9 - Song 0368 River",
+              "Artist 9 - Song 0342 Blue",
+              "Artist 5 - Song 0191 Glass"
+            ],
+            "60": [
+              "Artist 0 - Song 0029 Glass",
+              "Artist 9 - Song 0368 River",
+              "Artist 1 - Song 0050 River",
+              "Artist 11 - Song 0449 Glass",
+              "Artist 14 - Song 0540 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10003 - Song 0310 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10002 - Song 0288 Blue",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "30": [
+              "Artist 10003 - Song 0310 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10002 - Song 0288 Blue",
+              "Artist 10003 - Song 0334 Dust",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "60": [
+              "Artist 40001 - Song 0266 River",
+              "Artist 40003 - Song 0418 Dust",
+              "Artist 40000 - Song 0070 Dust",
+              "Artist 40002 - Song 0311 Glass",
+              "Artist 40001 - Song 0277 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10003 - Song 0310 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10002 - Song 0288 Blue",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "30": [
+              "Artist 10005 - Song 0425 Glass",
+              "Artist 10003 - Song 0310 Dust",
+              "Artist 10006 - Song 0547 Night",
+              "Artist 10004 - Song 0379 Night",
+              "Artist 10002 - Song 0288 Blue"
+            ],
+            "60": [
+              "Artist 10005 - Song 0425 Glass",
+              "Artist 10006 - Song 0547 Night",
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 10000 - Song 0031 Night",
+              "Artist 10004 - Song 0379 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10003 - Song 0310 Dust",
+              "Artist 10004 - Song 0401 Glass",
+              "Artist 10002 - Song 0288 Blue",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "30": [
+              "Artist 10002 - Song 0288 Blue",
+              "Artist 10002 - Song 0206 River",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10003 - Song 0310 Dust",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "60": [
+              "Artist 0 - Song 0029 Glass",
+              "Artist 3 - Song 0135 Fire",
+              "Artist 14 - Song 0561 Fire",
+              "Artist 14 - Song 0540 Blue",
+              "Artist 1 - Song 0050 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 6 - Song 0241 Night",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 7 - Song 0301 Night"
+            ],
+            "30": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40001 - Song 0208 Dust",
+              "Artist 50001 - Song 0282 Blue"
+            ],
+            "60": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 40001 - Song 0208 Dust",
+              "Artist 40004 - Song 0584 River",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40004 - Song 0534 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 6 - Song 0241 Night",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 7 - Song 0301 Night"
+            ],
+            "30": [
+              "Artist 8 - Song 0333 Fire",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 7 - Song 0301 Night",
+              "Artist 6 - Song 0241 Night",
+              "Artist 1 - Song 0060 Blue"
+            ],
+            "60": [
+              "Artist 1 - Song 0060 Blue",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 8 - Song 0332 River",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 5 - Song 0226 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 3 - Song 0143 Glass",
+              "Artist 6 - Song 0241 Night",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 7 - Song 0301 Night"
+            ],
+            "30": [
+              "Artist 11 - Song 0435 Fire",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 10 - Song 0403 Night",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 8 - Song 0317 Glass"
+            ],
+            "60": [
+              "Artist 11 - Song 0435 Fire",
+              "Artist 10 - Song 0403 Night",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 13 - Song 0510 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 30001 - Song 0153 Fire",
+              "Artist 30005 - Song 0575 Glass",
+              "Artist 30002 - Song 0260 River",
+              "Artist 30003 - Song 0355 Night",
+              "Artist 30001 - Song 0072 Blue"
+            ],
+            "30": [
+              "Artist 30005 - Song 0575 Glass",
+              "Artist 30003 - Song 0355 Night",
+              "Artist 30001 - Song 0072 Blue",
+              "Artist 30001 - Song 0153 Fire",
+              "Artist 40004 - Song 0584 River"
+            ],
+            "60": [
+              "Artist 40004 - Song 0584 River",
+              "Artist 50001 - Song 0348 Blue",
+              "Artist 40002 - Song 0360 Blue",
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 40004 - Song 0534 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 30001 - Song 0153 Fire",
+              "Artist 30005 - Song 0575 Glass",
+              "Artist 30002 - Song 0260 River",
+              "Artist 30003 - Song 0355 Night",
+              "Artist 30001 - Song 0072 Blue"
+            ],
+            "30": [
+              "Artist 30005 - Song 0544 Dust",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 30005 - Song 0553 Night",
+              "Artist 30000 - Song 0067 Night"
+            ],
+            "60": [
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30005 - Song 0553 Night",
+              "Artist 30005 - Song 0544 Dust",
+              "Artist 30003 - Song 0275 Glass",
+              "Artist 30005 - Song 0567 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 30001 - Song 0153 Fire",
+              "Artist 30005 - Song 0575 Glass",
+              "Artist 30002 - Song 0260 River",
+              "Artist 30003 - Song 0355 Night",
+              "Artist 30001 - Song 0072 Blue"
+            ],
+            "30": [
+              "Artist 30003 - Song 0355 Night",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30005 - Song 0575 Glass",
+              "Artist 30001 - Song 0153 Fire"
+            ],
+            "60": [
+              "Artist 3 - Song 0110 River",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30000 - Song 0010 Dust",
+              "Artist 30000 - Song 0028 Dust",
+              "Artist 30003 - Song 0280 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 13 - Song 0502 Dust",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 3 - Song 0134 River",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 3 - Song 0110 River"
+            ],
+            "30": [
+              "Artist 13 - Song 0502 Dust",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 3 - Song 0134 River",
+              "Artist 13 - Song 0492 Blue",
+              "Artist 11 - Song 0435 Fire"
+            ],
+            "60": [
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40001 - Song 0194 River",
+              "Artist 40003 - Song 0494 River",
+              "Artist 40004 - Song 0593 Glass",
+              "Artist 40001 - Song 0300 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 13 - Song 0502 Dust",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 3 - Song 0134 River",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 3 - Song 0110 River"
+            ],
+            "30": [
+              "Artist 1 - Song 0060 Blue",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 3 - Song 0134 River",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 3 - Song 0129 Fire"
+            ],
+            "60": [
+              "Artist 1 - Song 0060 Blue",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 8 - Song 0332 River",
+              "Artist 3 - Song 0129 Fire",
+              "Artist 5 - Song 0226 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 13 - Song 0502 Dust",
+              "Artist 8 - Song 0317 Glass",
+              "Artist 3 - Song 0134 River",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 3 - Song 0110 River"
+            ],
+            "30": [
+              "Artist 8 - Song 0317 Glass",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 3 - Song 0110 River",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 12 - Song 0488 River"
+            ],
+            "60": [
+              "Artist 0 - Song 0029 Glass",
+              "Artist 12 - Song 0488 River",
+              "Artist 14 - Song 0540 Blue",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 11 - Song 0435 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 5 - Song 0201 Fire",
+              "Artist 2 - Song 0097 Night"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 5 - Song 0201 Fire",
+              "Artist 11 - Song 0443 Glass"
+            ],
+            "60": [
+              "Artist 40003 - Song 0494 River",
+              "Artist 40004 - Song 0534 Blue",
+              "Artist 40004 - Song 0523 Night",
+              "Artist 40000 - Song 0091 Night",
+              "Artist 40000 - Song 0108 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 5 - Song 0201 Fire",
+              "Artist 2 - Song 0097 Night"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 2 - Song 0089 Glass",
+              "Artist 1 - Song 0060 Blue"
+            ],
+            "60": [
+              "Artist 1 - Song 0060 Blue",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 8 - Song 0332 River",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 2 - Song 0089 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 5 - Song 0201 Fire",
+              "Artist 2 - Song 0097 Night"
+            ],
+            "30": [
+              "Artist 13 - Song 0501 Fire",
+              "Artist 15 - Song 0562 Dust",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 9 - Song 0376 Dust",
+              "Artist 11 - Song 0434 River"
+            ],
+            "60": [
+              "Artist 12 - Song 0488 River",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 11 - Song 0434 River",
+              "Artist 13 - Song 0501 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 4 - Song 0163 Night",
+              "Artist 3 - Song 0117 Fire"
+            ],
+            "30": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 4 - Song 0163 Night"
+            ],
+            "60": [
+              "Artist 40001 - Song 0194 River",
+              "Artist 40000 - Song 0160 Dust",
+              "Artist 40002 - Song 0380 River",
+              "Artist 50001 - Song 0223 Night",
+              "Artist 40000 - Song 0180 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 4 - Song 0163 Night",
+              "Artist 3 - Song 0117 Fire"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 8 - Song 0332 River",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 2 - Song 0092 River",
+              "Artist 12 - Song 0491 Glass"
+            ],
+            "60": [
+              "Artist 8 - Song 0332 River",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 1 - Song 0060 Blue",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 5 - Song 0224 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0491 Glass",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 4 - Song 0163 Night",
+              "Artist 3 - Song 0117 Fire"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 3 - Song 0128 River",
+              "Artist 12 - Song 0488 River",
+              "Artist 4 - Song 0163 Night"
+            ],
+            "60": [
+              "Artist 12 - Song 0488 River",
+              "Artist 1 - Song 0076 Dust",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 0 - Song 0029 Glass",
+              "Artist 5 - Song 0226 Dust"
+            ]
+          }
+        }
+      ]
+    },
+    "composition_acoustic": {
+      "n_pairs": 60,
+      "n_poles": 28,
+      "increasing_share_60": {
+        "share": 0.96,
+        "ci_low": 0.88,
+        "ci_high": 1.0,
+        "n": 25,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.78351760583436,
+        "median_rho": 0.9,
+        "share_positive": 0.96,
+        "share_negative": 0.0,
+        "n_groups": 25,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.2783333333333333,
+          "cos_pole": 0.11870777954657873,
+          "cos_seed": 0.6370320419470469,
+          "prevalence": 0.3280379041248606
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.3383333333333333,
+          "cos_pole": 0.17666746030251185,
+          "cos_seed": 0.6284316827853521,
+          "prevalence": 0.3280379041248606
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.42833333333333334,
+          "cos_pole": 0.2535816125882169,
+          "cos_seed": 0.5955571865042051,
+          "prevalence": 0.3280379041248606
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.5066666666666666,
+          "cos_pole": 0.35502189305455734,
+          "cos_seed": 0.5147491743167242,
+          "prevalence": 0.3280379041248606
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.6116666666666667,
+          "cos_pole": 0.43983323176701866,
+          "cos_seed": 0.35421935295065243,
+          "prevalence": 0.3280379041248606
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.6533333333333334,
+          "cos_pole": 0.4792046862343947,
+          "cos_seed": 0.1656336576716664,
+          "prevalence": 0.3280379041248606
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.6333333333333333,
+          "cos_pole": 0.48071024715900423,
+          "cos_seed": 0.05560567053034902,
+          "prevalence": 0.3280379041248606
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -3.96508223080413e-18,
+        "mean_joint_precision_theta60": 0.21428571428571427,
+        "n_combos": 7
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "dim:grit+",
+          "snr_median": 1.308242785929687,
+          "snr_mean": 1.542731435683222,
+          "snr_total_median": 0.02844006056368885,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:brightness+",
+          "snr_median": 1.149846354269343,
+          "snr_mean": 1.2096780714169006,
+          "snr_total_median": 0.024996659875420497,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "region:Francophone",
+          "snr_median": 1.1182141792507097,
+          "snr_mean": 1.056376070686328,
+          "snr_total_median": 0.024309003896754555,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "dim:acousticness+",
+          "snr_median": 1.0773136427562962,
+          "snr_mean": 1.3620724418588355,
+          "snr_total_median": 0.023419861799049917,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "era:1960s",
+          "snr_median": 0.9187184947544957,
+          "snr_mean": 0.8907968829264317,
+          "snr_total_median": 0.019972141190315124,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "dim:production_polish+",
+          "snr_median": 0.8921504521637144,
+          "snr_mean": 0.879949794201111,
+          "snr_total_median": 0.019394575047037267,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "dim:punch+",
+          "snr_median": 0.8477590479722747,
+          "snr_mean": 0.943829986005851,
+          "snr_total_median": 0.018429544521136407,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:danceability+",
+          "snr_median": 0.8059812632391923,
+          "snr_mean": 0.8823794163427102,
+          "snr_total_median": 0.017521331809547656,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "era:1990s",
+          "snr_median": 0.7783506136158059,
+          "snr_mean": 0.8150912784481725,
+          "snr_total_median": 0.016920665513387084,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "region:Latin American",
+          "snr_median": 0.7766717653363151,
+          "snr_mean": 0.9597468761881688,
+          "snr_total_median": 0.016884168811659023,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 0.6905172755824963,
+      "examples": [
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 30005 - Song 0557 Glass",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 7 - Song 0276 Blue"
+            ],
+            "30": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 30005 - Song 0557 Glass",
+              "Artist 20000 - Song 0023 Glass",
+              "Artist 10004 - Song 0401 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0266 River",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 50000 - Song 0167 Glass",
+              "Artist 40001 - Song 0277 Night",
+              "Artist 5 - Song 0225 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 30005 - Song 0557 Glass",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 7 - Song 0276 Blue"
+            ],
+            "30": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 20002 - Song 0215 Glass",
+              "Artist 4 - Song 0151 Night",
+              "Artist 10 - Song 0407 Glass",
+              "Artist 7 - Song 0276 Blue"
+            ],
+            "60": [
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 40001 - Song 0269 Glass",
+              "Artist 20002 - Song 0185 Glass",
+              "Artist 6 - Song 0247 Night",
+              "Artist 40002 - Song 0383 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 30005 - Song 0557 Glass",
+              "Artist 10006 - Song 0573 Fire",
+              "Artist 7 - Song 0276 Blue"
+            ],
+            "30": [
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 10 - Song 0407 Glass",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10006 - Song 0573 Fire"
+            ],
+            "60": [
+              "Artist 10002 - Song 0242 River",
+              "Artist 10005 - Song 0478 Dust",
+              "Artist 14 - Song 0561 Fire",
+              "Artist 10002 - Song 0288 Blue",
+              "Artist 14 - Song 0540 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 12 - Song 0480 Blue",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 30001 - Song 0100 Dust"
+            ],
+            "30": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 6 - Song 0249 Fire",
+              "Artist 30002 - Song 0259 Night"
+            ],
+            "60": [
+              "Artist 40001 - Song 0266 River",
+              "Artist 50000 - Song 0167 Glass",
+              "Artist 4 - Song 0175 Night",
+              "Artist 10004 - Song 0410 River",
+              "Artist 5 - Song 0225 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 12 - Song 0480 Blue",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 30001 - Song 0100 Dust"
+            ],
+            "30": [
+              "Artist 10006 - Song 0505 Night",
+              "Artist 5 - Song 0201 Fire",
+              "Artist 0 - Song 0000 Blue",
+              "Artist 5 - Song 0192 Blue",
+              "Artist 13 - Song 0495 Fire"
+            ],
+            "60": [
+              "Artist 5 - Song 0201 Fire",
+              "Artist 11 - Song 0434 River",
+              "Artist 10 - Song 0428 River",
+              "Artist 40003 - Song 0429 Fire",
+              "Artist 10000 - Song 0008 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 12 - Song 0480 Blue",
+              "Artist 5 - Song 0191 Glass",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 30001 - Song 0100 Dust"
+            ],
+            "30": [
+              "Artist 14 - Song 0537 Fire",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 50002 - Song 0529 Night",
+              "Artist 11 - Song 0449 Glass",
+              "Artist 5 - Song 0191 Glass"
+            ],
+            "60": [
+              "Artist 14 - Song 0561 Fire",
+              "Artist 0 - Song 0029 Glass",
+              "Artist 0 - Song 0007 Night",
+              "Artist 10002 - Song 0242 River",
+              "Artist 50002 - Song 0529 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 20002 - Song 0218 River",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 10006 - Song 0527 Glass",
+              "Artist 30002 - Song 0270 Blue",
+              "Artist 30002 - Song 0240 Blue"
+            ],
+            "30": [
+              "Artist 20002 - Song 0218 River",
+              "Artist 30002 - Song 0233 Glass",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 30002 - Song 0270 Blue",
+              "Artist 10004 - Song 0401 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0266 River",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 40002 - Song 0311 Glass",
+              "Artist 5 - Song 0225 Fire",
+              "Artist 50000 - Song 0167 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 20002 - Song 0218 River",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 10006 - Song 0527 Glass",
+              "Artist 30002 - Song 0270 Blue",
+              "Artist 30002 - Song 0240 Blue"
+            ],
+            "30": [
+              "Artist 10006 - Song 0527 Glass",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 20002 - Song 0218 River",
+              "Artist 20004 - Song 0372 Blue",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "60": [
+              "Artist 3 - Song 0118 Dust",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 5 - Song 0207 Fire",
+              "Artist 20001 - Song 0171 Fire",
+              "Artist 20005 - Song 0472 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 20002 - Song 0218 River",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 10006 - Song 0527 Glass",
+              "Artist 30002 - Song 0270 Blue",
+              "Artist 30002 - Song 0240 Blue"
+            ],
+            "30": [
+              "Artist 14 - Song 0561 Fire",
+              "Artist 12 - Song 0466 Dust",
+              "Artist 20001 - Song 0120 Blue",
+              "Artist 30002 - Song 0233 Glass",
+              "Artist 10002 - Song 0288 Blue"
+            ],
+            "60": [
+              "Artist 14 - Song 0561 Fire",
+              "Artist 20001 - Song 0120 Blue",
+              "Artist 0 - Song 0007 Night",
+              "Artist 14 - Song 0540 Blue",
+              "Artist 0 - Song 0029 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 20003 - Song 0335 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 30000 - Song 0056 River",
+              "Artist 20005 - Song 0499 Night"
+            ],
+            "30": [
+              "Artist 20003 - Song 0335 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 10 - Song 0428 River"
+            ],
+            "60": [
+              "Artist 10003 - Song 0319 Night",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40000 - Song 0137 Glass",
+              "Artist 50000 - Song 0073 Night",
+              "Artist 50000 - Song 0167 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 20003 - Song 0335 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 30000 - Song 0056 River",
+              "Artist 20005 - Song 0499 Night"
+            ],
+            "30": [
+              "Artist 11 - Song 0438 Blue",
+              "Artist 20005 - Song 0499 Night",
+              "Artist 3 - Song 0114 Blue",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 10003 - Song 0303 Fire"
+            ],
+            "60": [
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 3 - Song 0114 Blue",
+              "Artist 8 - Song 0332 River",
+              "Artist 13 - Song 0502 Dust",
+              "Artist 30005 - Song 0581 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 20003 - Song 0335 Glass",
+              "Artist 11 - Song 0438 Blue",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 30000 - Song 0056 River",
+              "Artist 20005 - Song 0499 Night"
+            ],
+            "30": [
+              "Artist 20003 - Song 0335 Glass",
+              "Artist 20001 - Song 0102 Blue",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 20005 - Song 0499 Night",
+              "Artist 11 - Song 0438 Blue"
+            ],
+            "60": [
+              "Artist 20001 - Song 0102 Blue",
+              "Artist 40001 - Song 0230 River",
+              "Artist 10003 - Song 0305 Glass",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 13 - Song 0510 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 9 - Song 0349 Night",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 40003 - Song 0436 Dust"
+            ],
+            "30": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 9 - Song 0349 Night",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 40003 - Song 0436 Dust",
+              "Artist 10004 - Song 0365 Glass"
+            ],
+            "60": [
+              "Artist 40003 - Song 0436 Dust",
+              "Artist 40001 - Song 0266 River",
+              "Artist 40000 - Song 0049 Night",
+              "Artist 50001 - Song 0348 Blue",
+              "Artist 10004 - Song 0410 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 9 - Song 0349 Night",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 40003 - Song 0436 Dust"
+            ],
+            "30": [
+              "Artist 20003 - Song 0292 Dust",
+              "Artist 3 - Song 0110 River",
+              "Artist 2 - Song 0095 Glass",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 9 - Song 0349 Night"
+            ],
+            "60": [
+              "Artist 20003 - Song 0292 Dust",
+              "Artist 3 - Song 0110 River",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 50001 - Song 0318 Blue",
+              "Artist 13 - Song 0498 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 9 - Song 0349 Night",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 40003 - Song 0436 Dust"
+            ],
+            "30": [
+              "Artist 10000 - Song 0082 Dust",
+              "Artist 9 - Song 0349 Night",
+              "Artist 10007 - Song 0599 Glass",
+              "Artist 3 - Song 0110 River",
+              "Artist 10004 - Song 0365 Glass"
+            ],
+            "60": [
+              "Artist 14 - Song 0561 Fire",
+              "Artist 14 - Song 0540 Blue",
+              "Artist 20001 - Song 0102 Blue",
+              "Artist 10002 - Song 0242 River",
+              "Artist 11 - Song 0435 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 30003 - Song 0400 Dust",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 3 - Song 0134 River"
+            ],
+            "30": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 50001 - Song 0274 Dust",
+              "Artist 50000 - Song 0073 Night",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 11 - Song 0435 Fire"
+            ],
+            "60": [
+              "Artist 40001 - Song 0266 River",
+              "Artist 50000 - Song 0073 Night",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 0 - Song 0007 Night",
+              "Artist 50000 - Song 0167 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 30003 - Song 0400 Dust",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 3 - Song 0134 River"
+            ],
+            "30": [
+              "Artist 10000 - Song 0008 River",
+              "Artist 50000 - Song 0181 Night",
+              "Artist 3 - Song 0134 River",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 20001 - Song 0096 Blue"
+            ],
+            "60": [
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 30005 - Song 0581 Glass",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 10000 - Song 0008 River",
+              "Artist 7 - Song 0296 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 50000 - Song 0181 Night",
+              "Artist 15 - Song 0587 Glass",
+              "Artist 30003 - Song 0400 Dust",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 3 - Song 0134 River"
+            ],
+            "30": [
+              "Artist 12 - Song 0488 River",
+              "Artist 11 - Song 0435 Fire",
+              "Artist 10003 - Song 0305 Glass",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 14 - Song 0561 Fire"
+            ],
+            "60": [
+              "Artist 14 - Song 0561 Fire",
+              "Artist 0 - Song 0007 Night",
+              "Artist 14 - Song 0540 Blue",
+              "Artist 12 - Song 0488 River",
+              "Artist 20001 - Song 0120 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 50001 - Song 0309 Fire",
+              "Artist 10004 - Song 0379 Night",
+              "Artist 10003 - Song 0314 River",
+              "Artist 10000 - Song 0069 Fire"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 50001 - Song 0309 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 10003 - Song 0314 River",
+              "Artist 10004 - Song 0379 Night"
+            ],
+            "60": [
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 40003 - Song 0508 Dust",
+              "Artist 40001 - Song 0266 River",
+              "Artist 6 - Song 0252 Blue",
+              "Artist 10004 - Song 0401 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 50001 - Song 0309 Fire",
+              "Artist 10004 - Song 0379 Night",
+              "Artist 10003 - Song 0314 River",
+              "Artist 10000 - Song 0069 Fire"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 10000 - Song 0008 River",
+              "Artist 50001 - Song 0309 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 8 - Song 0337 Night"
+            ],
+            "60": [
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 8 - Song 0337 Night",
+              "Artist 30005 - Song 0581 Glass",
+              "Artist 20000 - Song 0027 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 50001 - Song 0309 Fire",
+              "Artist 10004 - Song 0379 Night",
+              "Artist 10003 - Song 0314 River",
+              "Artist 10000 - Song 0069 Fire"
+            ],
+            "30": [
+              "Artist 15 - Song 0562 Dust",
+              "Artist 30002 - Song 0214 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 10004 - Song 0379 Night",
+              "Artist 50001 - Song 0309 Fire"
+            ],
+            "60": [
+              "Artist 30002 - Song 0214 Dust",
+              "Artist 14 - Song 0561 Fire",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 14 - Song 0540 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 20002 - Song 0176 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 30004 - Song 0426 Blue",
+              "Artist 12 - Song 0491 Glass",
+              "Artist 30000 - Song 0025 Night"
+            ],
+            "30": [
+              "Artist 20002 - Song 0176 River",
+              "Artist 30004 - Song 0426 Blue",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30004 - Song 0416 River",
+              "Artist 12 - Song 0491 Glass"
+            ],
+            "60": [
+              "Artist 40001 - Song 0266 River",
+              "Artist 40003 - Song 0418 Dust",
+              "Artist 40002 - Song 0311 Glass",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 40003 - Song 0427 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 20002 - Song 0176 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 30004 - Song 0426 Blue",
+              "Artist 12 - Song 0491 Glass",
+              "Artist 30000 - Song 0025 Night"
+            ],
+            "30": [
+              "Artist 20002 - Song 0176 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 12 - Song 0491 Glass",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 2 - Song 0092 River"
+            ],
+            "60": [
+              "Artist 30005 - Song 0581 Glass",
+              "Artist 8 - Song 0332 River",
+              "Artist 2 - Song 0092 River",
+              "Artist 10003 - Song 0303 Fire",
+              "Artist 1 - Song 0083 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 20002 - Song 0176 River",
+              "Artist 30004 - Song 0416 River",
+              "Artist 30004 - Song 0426 Blue",
+              "Artist 12 - Song 0491 Glass",
+              "Artist 30000 - Song 0025 Night"
+            ],
+            "30": [
+              "Artist 20002 - Song 0176 River",
+              "Artist 12 - Song 0491 Glass",
+              "Artist 30004 - Song 0416 River",
+              "Artist 30004 - Song 0426 Blue",
+              "Artist 20001 - Song 0116 River"
+            ],
+            "60": [
+              "Artist 12 - Song 0488 River",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 20001 - Song 0102 Blue",
+              "Artist 0 - Song 0007 Night",
+              "Artist 20001 - Song 0120 Blue"
+            ]
+          }
+        }
+      ]
+    },
+    "composition_lyric": {
+      "n_pairs": 60,
+      "n_poles": 28,
+      "increasing_share_60": {
+        "share": 0.6666666666666666,
+        "ci_low": 0.48148148148148145,
+        "ci_high": 0.8518518518518519,
+        "n": 27,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.463355289197365,
+        "median_rho": 0.872081599272381,
+        "share_positive": 0.7407407407407407,
+        "share_negative": 0.25925925925925924,
+        "n_groups": 27,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.2916666666666667,
+          "cos_pole": 0.2827096348783622,
+          "cos_seed": 0.9103035720686118,
+          "prevalence": 0.3054626532887402
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.3016666666666667,
+          "cos_pole": 0.3265518066473305,
+          "cos_seed": 0.9041881332794826,
+          "prevalence": 0.3054626532887402
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.34833333333333333,
+          "cos_pole": 0.37696660015111166,
+          "cos_seed": 0.8737464735905329,
+          "prevalence": 0.3054626532887402
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.4483333333333333,
+          "cos_pole": 0.5327022969043659,
+          "cos_seed": 0.6426249877860148,
+          "prevalence": 0.3054626532887402
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.5283333333333333,
+          "cos_pole": 0.6322849810123443,
+          "cos_seed": 0.43925626392786704,
+          "prevalence": 0.3054626532887402
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.5483333333333333,
+          "cos_pole": 0.6573710372050603,
+          "cos_seed": 0.34309399326642354,
+          "prevalence": 0.3054626532887402
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.5549999999999999,
+          "cos_pole": 0.6447997098167737,
+          "cos_seed": 0.2952171927317977,
+          "prevalence": 0.3054626532887402
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.02857142857142858,
+        "mean_joint_precision_theta60": 0.2571428571428572,
+        "n_combos": 7
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "dim:danceability+",
+          "snr_median": 3.4017661358466516,
+          "snr_mean": 3.7339988647086626,
+          "snr_total_median": 0.07395143773579677,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:acousticness+",
+          "snr_median": 3.373263747763221,
+          "snr_mean": 3.2017224030567704,
+          "snr_total_median": 0.07333182060354829,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "dim:brightness+",
+          "snr_median": 2.544076373340296,
+          "snr_mean": 2.8459489510838716,
+          "snr_total_median": 0.055306008116093396,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "dim:tempo_feel+",
+          "snr_median": 2.3824473484260666,
+          "snr_mean": 2.2243943336959284,
+          "snr_total_median": 0.05179233366143623,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "dim:density+",
+          "snr_median": 2.148874298753152,
+          "snr_mean": 2.384546653915466,
+          "snr_total_median": 0.04671465866854678,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "dim:space+",
+          "snr_median": 1.9064331174716114,
+          "snr_mean": 2.4940403758373058,
+          "snr_total_median": 0.0414441982059046,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "dim:lyrical_explicitness+",
+          "snr_median": 1.8225314129768793,
+          "snr_mean": 2.3985798793389916,
+          "snr_total_median": 0.03962024810819303,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:vocal_prominence+",
+          "snr_median": 1.660142783428844,
+          "snr_mean": 1.8334557094040647,
+          "snr_total_median": 0.0360900605093227,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "dim:energy+",
+          "snr_median": 1.2757491761773019,
+          "snr_mean": 2.545540561282137,
+          "snr_total_median": 0.027733677742984825,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "category:Hip-Hop",
+          "snr_median": 1.1659204740421925,
+          "snr_mean": 1.3563432535465112,
+          "snr_total_median": 0.02534609726178679,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 0.7465362787493409,
+      "examples": [
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0419 Glass",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10002 - Song 0286 Dust",
+              "Artist 10006 - Song 0485 Glass"
+            ],
+            "30": [
+              "Artist 10002 - Song 0232 Dust",
+              "Artist 10004 - Song 0402 Blue",
+              "Artist 10000 - Song 0081 Fire",
+              "Artist 10002 - Song 0265 Night",
+              "Artist 10000 - Song 0069 Fire"
+            ],
+            "60": [
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40001 - Song 0277 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0419 Glass",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10002 - Song 0286 Dust",
+              "Artist 10006 - Song 0485 Glass"
+            ],
+            "30": [
+              "Artist 10002 - Song 0263 Glass",
+              "Artist 10002 - Song 0210 Blue",
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 10003 - Song 0314 River"
+            ],
+            "60": [
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10004 - Song 0409 Night",
+              "Artist 10002 - Song 0210 Blue",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 7 - Song 0301 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0419 Glass",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10002 - Song 0286 Dust",
+              "Artist 10006 - Song 0485 Glass"
+            ],
+            "30": [
+              "Artist 10005 - Song 0462 Blue",
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 10003 - Song 0338 River",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10005 - Song 0440 River"
+            ],
+            "60": [
+              "Artist 10005 - Song 0462 Blue",
+              "Artist 10006 - Song 0513 Fire",
+              "Artist 10003 - Song 0290 River",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 10004 - Song 0409 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 5 - Song 0234 Blue",
+              "Artist 14 - Song 0548 River",
+              "Artist 6 - Song 0247 Night",
+              "Artist 1 - Song 0063 Fire",
+              "Artist 8 - Song 0328 Dust"
+            ],
+            "30": [
+              "Artist 8 - Song 0308 River",
+              "Artist 7 - Song 0294 Blue",
+              "Artist 5 - Song 0200 River",
+              "Artist 12 - Song 0477 Fire",
+              "Artist 5 - Song 0234 Blue"
+            ],
+            "60": [
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40002 - Song 0360 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 5 - Song 0234 Blue",
+              "Artist 14 - Song 0548 River",
+              "Artist 6 - Song 0247 Night",
+              "Artist 1 - Song 0063 Fire",
+              "Artist 8 - Song 0328 Dust"
+            ],
+            "30": [
+              "Artist 7 - Song 0296 River",
+              "Artist 8 - Song 0337 Night",
+              "Artist 1 - Song 0075 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 15 - Song 0588 Blue"
+            ],
+            "60": [
+              "Artist 7 - Song 0298 Dust",
+              "Artist 7 - Song 0301 Night",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 0 - Song 0019 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 5 - Song 0234 Blue",
+              "Artist 14 - Song 0548 River",
+              "Artist 6 - Song 0247 Night",
+              "Artist 1 - Song 0063 Fire",
+              "Artist 8 - Song 0328 Dust"
+            ],
+            "30": [
+              "Artist 12 - Song 0465 Fire",
+              "Artist 10 - Song 0431 Glass",
+              "Artist 5 - Song 0229 Night",
+              "Artist 0 - Song 0033 Fire",
+              "Artist 8 - Song 0320 River"
+            ],
+            "60": [
+              "Artist 13 - Song 0506 River",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 11 - Song 0452 River",
+              "Artist 12 - Song 0465 Fire",
+              "Artist 4 - Song 0162 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0462 Blue",
+              "Artist 10003 - Song 0290 River",
+              "Artist 10000 - Song 0039 Fire",
+              "Artist 10005 - Song 0464 River",
+              "Artist 10003 - Song 0310 Dust"
+            ],
+            "30": [
+              "Artist 10000 - Song 0062 River",
+              "Artist 10004 - Song 0389 Glass",
+              "Artist 10000 - Song 0081 Fire",
+              "Artist 10003 - Song 0322 Dust",
+              "Artist 10004 - Song 0379 Night"
+            ],
+            "60": [
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40001 - Song 0277 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0462 Blue",
+              "Artist 10003 - Song 0290 River",
+              "Artist 10000 - Song 0039 Fire",
+              "Artist 10005 - Song 0464 River",
+              "Artist 10003 - Song 0310 Dust"
+            ],
+            "30": [
+              "Artist 10004 - Song 0409 Night",
+              "Artist 10002 - Song 0263 Glass",
+              "Artist 10002 - Song 0278 River",
+              "Artist 10006 - Song 0505 Night",
+              "Artist 10005 - Song 0432 Blue"
+            ],
+            "60": [
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10004 - Song 0409 Night",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 10002 - Song 0263 Glass",
+              "Artist 10002 - Song 0210 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0462 Blue",
+              "Artist 10003 - Song 0290 River",
+              "Artist 10000 - Song 0039 Fire",
+              "Artist 10005 - Song 0464 River",
+              "Artist 10003 - Song 0310 Dust"
+            ],
+            "30": [
+              "Artist 10005 - Song 0462 Blue",
+              "Artist 10003 - Song 0290 River",
+              "Artist 10006 - Song 0513 Fire",
+              "Artist 10005 - Song 0464 River",
+              "Artist 10002 - Song 0227 Glass"
+            ],
+            "60": [
+              "Artist 10005 - Song 0462 Blue",
+              "Artist 10006 - Song 0513 Fire",
+              "Artist 10002 - Song 0227 Glass",
+              "Artist 10003 - Song 0290 River",
+              "Artist 10005 - Song 0464 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 7 - Song 0272 River",
+              "Artist 4 - Song 0150 Blue",
+              "Artist 0 - Song 0016 Dust",
+              "Artist 8 - Song 0332 River",
+              "Artist 10 - Song 0407 Glass"
+            ],
+            "30": [
+              "Artist 14 - Song 0538 Dust",
+              "Artist 14 - Song 0541 Night",
+              "Artist 12 - Song 0469 Night",
+              "Artist 2 - Song 0089 Glass",
+              "Artist 3 - Song 0118 Dust"
+            ],
+            "60": [
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40002 - Song 0360 Blue",
+              "Artist 40000 - Song 0022 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 7 - Song 0272 River",
+              "Artist 4 - Song 0150 Blue",
+              "Artist 0 - Song 0016 Dust",
+              "Artist 8 - Song 0332 River",
+              "Artist 10 - Song 0407 Glass"
+            ],
+            "30": [
+              "Artist 13 - Song 0501 Fire",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 3 - Song 0128 River",
+              "Artist 0 - Song 0017 Glass",
+              "Artist 2 - Song 0097 Night"
+            ],
+            "60": [
+              "Artist 14 - Song 0533 Glass",
+              "Artist 7 - Song 0301 Night",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 3 - Song 0117 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 7 - Song 0272 River",
+              "Artist 4 - Song 0150 Blue",
+              "Artist 0 - Song 0016 Dust",
+              "Artist 8 - Song 0332 River",
+              "Artist 10 - Song 0407 Glass"
+            ],
+            "30": [
+              "Artist 10 - Song 0431 Glass",
+              "Artist 11 - Song 0455 Glass",
+              "Artist 0 - Song 0016 Dust",
+              "Artist 7 - Song 0272 River",
+              "Artist 3 - Song 0129 Fire"
+            ],
+            "60": [
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 10 - Song 0431 Glass",
+              "Artist 12 - Song 0465 Fire",
+              "Artist 11 - Song 0455 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 30000 - Song 0010 Dust",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30005 - Song 0553 Night",
+              "Artist 30001 - Song 0115 Night",
+              "Artist 30000 - Song 0013 Night"
+            ],
+            "30": [
+              "Artist 30000 - Song 0013 Night",
+              "Artist 30005 - Song 0553 Night",
+              "Artist 30001 - Song 0153 Fire",
+              "Artist 30000 - Song 0010 Dust",
+              "Artist 30000 - Song 0067 Night"
+            ],
+            "60": [
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40002 - Song 0360 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 30000 - Song 0010 Dust",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30005 - Song 0553 Night",
+              "Artist 30001 - Song 0115 Night",
+              "Artist 30000 - Song 0013 Night"
+            ],
+            "30": [
+              "Artist 30001 - Song 0079 Night",
+              "Artist 30005 - Song 0544 Dust",
+              "Artist 30002 - Song 0190 Dust",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30000 - Song 0028 Dust"
+            ],
+            "60": [
+              "Artist 20005 - Song 0568 Dust",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 0 - Song 0012 Blue",
+              "Artist 7 - Song 0298 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 30000 - Song 0010 Dust",
+              "Artist 30000 - Song 0025 Night",
+              "Artist 30005 - Song 0553 Night",
+              "Artist 30001 - Song 0115 Night",
+              "Artist 30000 - Song 0013 Night"
+            ],
+            "30": [
+              "Artist 30003 - Song 0408 Blue",
+              "Artist 30005 - Song 0557 Glass",
+              "Artist 30001 - Song 0068 River",
+              "Artist 30001 - Song 0072 Blue",
+              "Artist 30001 - Song 0080 River"
+            ],
+            "60": [
+              "Artist 30003 - Song 0400 Dust",
+              "Artist 10006 - Song 0527 Glass",
+              "Artist 10003 - Song 0334 Dust",
+              "Artist 10003 - Song 0343 Night",
+              "Artist 30005 - Song 0519 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0460 Dust",
+              "Artist 4 - Song 0150 Blue",
+              "Artist 1 - Song 0043 Night",
+              "Artist 9 - Song 0340 Dust",
+              "Artist 0 - Song 0016 Dust"
+            ],
+            "30": [
+              "Artist 14 - Song 0538 Dust",
+              "Artist 12 - Song 0469 Night",
+              "Artist 14 - Song 0541 Night",
+              "Artist 2 - Song 0089 Glass",
+              "Artist 6 - Song 0251 Glass"
+            ],
+            "60": [
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40002 - Song 0360 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0460 Dust",
+              "Artist 4 - Song 0150 Blue",
+              "Artist 1 - Song 0043 Night",
+              "Artist 9 - Song 0340 Dust",
+              "Artist 0 - Song 0016 Dust"
+            ],
+            "30": [
+              "Artist 14 - Song 0533 Glass",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 2 - Song 0097 Night",
+              "Artist 3 - Song 0128 River"
+            ],
+            "60": [
+              "Artist 14 - Song 0533 Glass",
+              "Artist 7 - Song 0301 Night",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 3 - Song 0117 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0460 Dust",
+              "Artist 4 - Song 0150 Blue",
+              "Artist 1 - Song 0043 Night",
+              "Artist 9 - Song 0340 Dust",
+              "Artist 0 - Song 0016 Dust"
+            ],
+            "30": [
+              "Artist 11 - Song 0455 Glass",
+              "Artist 0 - Song 0016 Dust",
+              "Artist 12 - Song 0460 Dust",
+              "Artist 8 - Song 0312 Blue",
+              "Artist 9 - Song 0340 Dust"
+            ],
+            "60": [
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 12 - Song 0465 Fire",
+              "Artist 11 - Song 0452 River",
+              "Artist 11 - Song 0455 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0538 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 6 - Song 0244 Dust"
+            ],
+            "30": [
+              "Artist 14 - Song 0541 Night",
+              "Artist 12 - Song 0469 Night",
+              "Artist 14 - Song 0538 Dust",
+              "Artist 2 - Song 0097 Night",
+              "Artist 4 - Song 0183 Fire"
+            ],
+            "60": [
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40002 - Song 0360 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0538 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 6 - Song 0244 Dust"
+            ],
+            "30": [
+              "Artist 14 - Song 0533 Glass",
+              "Artist 7 - Song 0301 Night",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 3 - Song 0128 River"
+            ],
+            "60": [
+              "Artist 7 - Song 0301 Night",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 13 - Song 0501 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0538 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 6 - Song 0251 Glass",
+              "Artist 3 - Song 0118 Dust",
+              "Artist 6 - Song 0244 Dust"
+            ],
+            "30": [
+              "Artist 7 - Song 0272 River",
+              "Artist 9 - Song 0340 Dust",
+              "Artist 10 - Song 0403 Night",
+              "Artist 4 - Song 0150 Blue",
+              "Artist 10 - Song 0407 Glass"
+            ],
+            "60": [
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 10 - Song 0431 Glass",
+              "Artist 11 - Song 0455 Glass",
+              "Artist 12 - Song 0465 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 0 - Song 0017 Glass",
+              "Artist 3 - Song 0128 River",
+              "Artist 2 - Song 0097 Night",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 1 - Song 0059 Glass"
+            ],
+            "30": [
+              "Artist 12 - Song 0469 Night",
+              "Artist 2 - Song 0097 Night",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 4 - Song 0183 Fire",
+              "Artist 7 - Song 0298 Dust"
+            ],
+            "60": [
+              "Artist 40004 - Song 0525 Fire",
+              "Artist 40003 - Song 0394 Dust",
+              "Artist 40002 - Song 0391 Night",
+              "Artist 40000 - Song 0022 Dust",
+              "Artist 40002 - Song 0360 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 0 - Song 0017 Glass",
+              "Artist 3 - Song 0128 River",
+              "Artist 2 - Song 0097 Night",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 1 - Song 0059 Glass"
+            ],
+            "30": [
+              "Artist 7 - Song 0301 Night",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 3 - Song 0128 River"
+            ],
+            "60": [
+              "Artist 7 - Song 0301 Night",
+              "Artist 7 - Song 0298 Dust",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 3 - Song 0128 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 0 - Song 0017 Glass",
+              "Artist 3 - Song 0128 River",
+              "Artist 2 - Song 0097 Night",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 1 - Song 0059 Glass"
+            ],
+            "30": [
+              "Artist 6 - Song 0244 Dust",
+              "Artist 15 - Song 0565 Night",
+              "Artist 10 - Song 0407 Glass",
+              "Artist 7 - Song 0272 River",
+              "Artist 5 - Song 0226 Dust"
+            ],
+            "60": [
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 10 - Song 0431 Glass",
+              "Artist 0 - Song 0016 Dust",
+              "Artist 11 - Song 0455 Glass"
+            ]
+          }
+        }
+      ]
+    },
+    "cooc_artistmasked": {
+      "n_pairs": 60,
+      "n_poles": 28,
+      "increasing_share_60": {
+        "share": 0.7083333333333334,
+        "ci_low": 0.5416666666666666,
+        "ci_high": 0.875,
+        "n": 24,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.317426908096692,
+        "median_rho": 0.4360407996361905,
+        "share_positive": 0.75,
+        "share_negative": 0.25,
+        "n_groups": 24,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.28,
+          "cos_pole": 0.20535584126288692,
+          "cos_seed": 0.994689233104388,
+          "prevalence": 0.3141025641025641
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.2866666666666667,
+          "cos_pole": 0.2625645268087586,
+          "cos_seed": 0.9863680044809977,
+          "prevalence": 0.3141025641025641
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.33166666666666667,
+          "cos_pole": 0.34434537356719375,
+          "cos_seed": 0.9393407801787058,
+          "prevalence": 0.3141025641025641
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.5533333333333333,
+          "cos_pole": 0.5687055025870601,
+          "cos_seed": 0.6753541837135951,
+          "prevalence": 0.3141025641025641
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.5866666666666667,
+          "cos_pole": 0.6550145545353492,
+          "cos_seed": 0.5226555710037549,
+          "prevalence": 0.3141025641025641
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.575,
+          "cos_pole": 0.6858084991574287,
+          "cos_seed": 0.41575542216499645,
+          "prevalence": 0.3141025641025641
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.5833333333333334,
+          "cos_pole": 0.6824907417098681,
+          "cos_seed": 0.36192374502619107,
+          "prevalence": 0.3141025641025641
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.06999999999999998,
+        "mean_joint_precision_theta60": 0.21000000000000002,
+        "n_combos": 10
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "dim:production_polish+",
+          "snr_median": 7.0961903727044895,
+          "snr_mean": 6.149694002427002,
+          "snr_total_median": 0.1542650081022715,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:density+",
+          "snr_median": 6.9426360375960785,
+          "snr_mean": 6.548025298451371,
+          "snr_total_median": 0.15092687038252345,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "dim:tempo_feel+",
+          "snr_median": 4.849886925690714,
+          "snr_mean": 5.404156420553514,
+          "snr_total_median": 0.10543232447153728,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "dim:vocal_prominence+",
+          "snr_median": 4.64628864951997,
+          "snr_mean": 4.868342887981209,
+          "snr_total_median": 0.10100627498956455,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "dim:danceability+",
+          "snr_median": 4.345079669516389,
+          "snr_mean": 4.545252679901948,
+          "snr_total_median": 0.09445825368513888,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "dim:brightness+",
+          "snr_median": 4.03492879672886,
+          "snr_mean": 4.9663687281843885,
+          "snr_total_median": 0.08771584340714914,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "dim:acousticness+",
+          "snr_median": 3.963921094849525,
+          "snr_mean": 4.361027964565201,
+          "snr_total_median": 0.0861721977141201,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:punch+",
+          "snr_median": 3.853601968018915,
+          "snr_mean": 4.419440861767242,
+          "snr_total_median": 0.08377395582649816,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "dim:lyrical_explicitness+",
+          "snr_median": 3.767861976158617,
+          "snr_mean": 4.741766732952454,
+          "snr_total_median": 0.08191004295996993,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "dim:warmth+",
+          "snr_median": 3.4332785009278317,
+          "snr_mean": 3.448560148283007,
+          "snr_total_median": 0.07463648915060503,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 2.572865021052139,
+      "examples": [
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0464 River",
+              "Artist 10000 - Song 0037 Night",
+              "Artist 10000 - Song 0015 Fire",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10002 - Song 0242 River"
+            ],
+            "30": [
+              "Artist 10000 - Song 0039 Fire",
+              "Artist 50002 - Song 0576 Blue",
+              "Artist 50001 - Song 0223 Night",
+              "Artist 10006 - Song 0571 Night",
+              "Artist 10005 - Song 0474 Blue"
+            ],
+            "60": [
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40001 - Song 0195 Fire",
+              "Artist 40003 - Song 0508 Dust",
+              "Artist 40000 - Song 0160 Dust",
+              "Artist 40002 - Song 0362 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0464 River",
+              "Artist 10000 - Song 0037 Night",
+              "Artist 10000 - Song 0015 Fire",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10002 - Song 0242 River"
+            ],
+            "30": [
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 10004 - Song 0384 Blue",
+              "Artist 10003 - Song 0307 Night"
+            ],
+            "60": [
+              "Artist 4 - Song 0170 River",
+              "Artist 4 - Song 0144 Blue",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 2 - Song 0092 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0145 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10005 - Song 0464 River",
+              "Artist 10000 - Song 0037 Night",
+              "Artist 10000 - Song 0015 Fire",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10002 - Song 0242 River"
+            ],
+            "30": [
+              "Artist 10005 - Song 0457 Night",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10004 - Song 0365 Glass",
+              "Artist 10003 - Song 0293 Glass"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10005 - Song 0457 Night",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10005 - Song 0432 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0559 Night",
+              "Artist 10 - Song 0392 River",
+              "Artist 5 - Song 0228 Blue",
+              "Artist 12 - Song 0477 Fire",
+              "Artist 8 - Song 0312 Blue"
+            ],
+            "30": [
+              "Artist 1 - Song 0066 Blue",
+              "Artist 0 - Song 0029 Glass",
+              "Artist 15 - Song 0592 Dust",
+              "Artist 10 - Song 0411 Fire",
+              "Artist 15 - Song 0589 Night"
+            ],
+            "60": [
+              "Artist 40003 - Song 0456 Blue",
+              "Artist 40004 - Song 0584 River",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40001 - Song 0195 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0559 Night",
+              "Artist 10 - Song 0392 River",
+              "Artist 5 - Song 0228 Blue",
+              "Artist 12 - Song 0477 Fire",
+              "Artist 8 - Song 0312 Blue"
+            ],
+            "30": [
+              "Artist 7 - Song 0296 River",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 6 - Song 0244 Dust",
+              "Artist 8 - Song 0323 Glass",
+              "Artist 9 - Song 0374 River"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 8 - Song 0323 Glass",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 4 - Song 0144 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 3 - Song 0136 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0559 Night",
+              "Artist 10 - Song 0392 River",
+              "Artist 5 - Song 0228 Blue",
+              "Artist 12 - Song 0477 Fire",
+              "Artist 8 - Song 0312 Blue"
+            ],
+            "30": [
+              "Artist 7 - Song 0262 Dust",
+              "Artist 4 - Song 0169 Night",
+              "Artist 15 - Song 0592 Dust",
+              "Artist 12 - Song 0487 Night",
+              "Artist 9 - Song 0368 River"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 15 - Song 0592 Dust",
+              "Artist 13 - Song 0495 Fire",
+              "Artist 9 - Song 0368 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 10004 - Song 0358 Dust",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10002 - Song 0206 River",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "30": [
+              "Artist 10000 - Song 0039 Fire",
+              "Artist 50002 - Song 0576 Blue",
+              "Artist 50001 - Song 0223 Night",
+              "Artist 10006 - Song 0571 Night",
+              "Artist 10005 - Song 0474 Blue"
+            ],
+            "60": [
+              "Artist 40002 - Song 0324 Blue",
+              "Artist 40001 - Song 0195 Fire",
+              "Artist 40003 - Song 0508 Dust",
+              "Artist 40000 - Song 0160 Dust",
+              "Artist 40002 - Song 0362 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 10004 - Song 0358 Dust",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10002 - Song 0206 River",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "30": [
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10006 - Song 0564 Blue",
+              "Artist 10004 - Song 0384 Blue",
+              "Artist 10003 - Song 0307 Night"
+            ],
+            "60": [
+              "Artist 4 - Song 0170 River",
+              "Artist 4 - Song 0144 Blue",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 2 - Song 0092 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10001 - Song 0087 Fire",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 10004 - Song 0358 Dust",
+              "Artist 10007 - Song 0594 Blue",
+              "Artist 10006 - Song 0485 Glass",
+              "Artist 10002 - Song 0206 River",
+              "Artist 10004 - Song 0366 Blue"
+            ],
+            "30": [
+              "Artist 10005 - Song 0457 Night",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10005 - Song 0432 Blue",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10004 - Song 0365 Glass"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 10005 - Song 0457 Night",
+              "Artist 10000 - Song 0071 Glass",
+              "Artist 10005 - Song 0432 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0552 Blue",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 6 - Song 0250 Dust",
+              "Artist 2 - Song 0097 Night"
+            ],
+            "30": [
+              "Artist 15 - Song 0597 Fire",
+              "Artist 11 - Song 0437 Glass",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 4 - Song 0183 Fire"
+            ],
+            "60": [
+              "Artist 40003 - Song 0456 Blue",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40004 - Song 0584 River",
+              "Artist 40001 - Song 0195 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0552 Blue",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 6 - Song 0250 Dust",
+              "Artist 2 - Song 0097 Night"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 10 - Song 0398 River",
+              "Artist 8 - Song 0323 Glass"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 10 - Song 0398 River",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 4 - Song 0144 Blue",
+              "Artist 0 - Song 0040 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 9 - Song 0340 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 14 - Song 0552 Blue",
+              "Artist 3 - Song 0117 Fire",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 6 - Song 0250 Dust",
+              "Artist 2 - Song 0097 Night"
+            ],
+            "30": [
+              "Artist 13 - Song 0526 Dust",
+              "Artist 10 - Song 0395 Glass",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 2 - Song 0092 River",
+              "Artist 7 - Song 0301 Night"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 13 - Song 0495 Fire",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 2 - Song 0092 River"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 30002 - Song 0231 Fire",
+              "Artist 30005 - Song 0519 Fire",
+              "Artist 30005 - Song 0545 Glass",
+              "Artist 30002 - Song 0268 Dust",
+              "Artist 30005 - Song 0544 Dust"
+            ],
+            "30": [
+              "Artist 50002 - Song 0404 River",
+              "Artist 50001 - Song 0255 Fire",
+              "Artist 50000 - Song 0073 Night",
+              "Artist 50001 - Song 0284 River",
+              "Artist 50002 - Song 0406 Dust"
+            ],
+            "60": [
+              "Artist 40002 - Song 0362 River",
+              "Artist 40002 - Song 0330 Blue",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40001 - Song 0208 Dust",
+              "Artist 40002 - Song 0324 Blue"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 30002 - Song 0231 Fire",
+              "Artist 30005 - Song 0519 Fire",
+              "Artist 30005 - Song 0545 Glass",
+              "Artist 30002 - Song 0268 Dust",
+              "Artist 30005 - Song 0544 Dust"
+            ],
+            "30": [
+              "Artist 30005 - Song 0566 River",
+              "Artist 30001 - Song 0112 Dust",
+              "Artist 30003 - Song 0271 Night",
+              "Artist 30002 - Song 0270 Blue",
+              "Artist 30005 - Song 0553 Night"
+            ],
+            "60": [
+              "Artist 10 - Song 0398 River",
+              "Artist 14 - Song 0558 Blue",
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 12 - Song 0467 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 30004 - Song 0490 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 30002 - Song 0231 Fire",
+              "Artist 30005 - Song 0519 Fire",
+              "Artist 30005 - Song 0545 Glass",
+              "Artist 30002 - Song 0268 Dust",
+              "Artist 30005 - Song 0544 Dust"
+            ],
+            "30": [
+              "Artist 30003 - Song 0355 Night",
+              "Artist 30001 - Song 0100 Dust",
+              "Artist 30001 - Song 0153 Fire",
+              "Artist 30001 - Song 0174 Blue",
+              "Artist 30001 - Song 0079 Night"
+            ],
+            "60": [
+              "Artist 10 - Song 0421 Night",
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 10003 - Song 0293 Glass",
+              "Artist 1 - Song 0055 Night"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0469 Night",
+              "Artist 3 - Song 0129 Fire",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 13 - Song 0493 Night",
+              "Artist 4 - Song 0150 Blue"
+            ],
+            "30": [
+              "Artist 15 - Song 0597 Fire",
+              "Artist 11 - Song 0437 Glass",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 1 - Song 0066 Blue"
+            ],
+            "60": [
+              "Artist 40003 - Song 0456 Blue",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40004 - Song 0584 River",
+              "Artist 40001 - Song 0195 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0469 Night",
+              "Artist 3 - Song 0129 Fire",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 13 - Song 0493 Night",
+              "Artist 4 - Song 0150 Blue"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 8 - Song 0323 Glass",
+              "Artist 12 - Song 0467 Glass"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 4 - Song 0144 Blue",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 8 - Song 0323 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 10 - Song 0403 Night",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 12 - Song 0469 Night",
+              "Artist 3 - Song 0129 Fire",
+              "Artist 3 - Song 0143 Glass",
+              "Artist 13 - Song 0493 Night",
+              "Artist 4 - Song 0150 Blue"
+            ],
+            "30": [
+              "Artist 13 - Song 0526 Dust",
+              "Artist 9 - Song 0369 Fire",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 9 - Song 0353 Glass",
+              "Artist 7 - Song 0272 River"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 13 - Song 0495 Fire",
+              "Artist 9 - Song 0369 Fire",
+              "Artist 15 - Song 0592 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0588 Blue",
+              "Artist 15 - Song 0563 Glass",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 6 - Song 0244 Dust"
+            ],
+            "30": [
+              "Artist 15 - Song 0597 Fire",
+              "Artist 11 - Song 0437 Glass",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 4 - Song 0183 Fire"
+            ],
+            "60": [
+              "Artist 40003 - Song 0456 Blue",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40004 - Song 0584 River",
+              "Artist 40001 - Song 0269 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0588 Blue",
+              "Artist 15 - Song 0563 Glass",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 6 - Song 0244 Dust"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 10 - Song 0398 River",
+              "Artist 8 - Song 0323 Glass",
+              "Artist 4 - Song 0144 Blue"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 10 - Song 0398 River",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 4 - Song 0144 Blue",
+              "Artist 8 - Song 0323 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 0 - Song 0040 Dust",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 15 - Song 0588 Blue",
+              "Artist 15 - Song 0563 Glass",
+              "Artist 14 - Song 0533 Glass",
+              "Artist 1 - Song 0083 Glass",
+              "Artist 6 - Song 0244 Dust"
+            ],
+            "30": [
+              "Artist 13 - Song 0526 Dust",
+              "Artist 2 - Song 0092 River",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 10 - Song 0395 Glass",
+              "Artist 9 - Song 0369 Fire"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 9 - Song 0369 Fire",
+              "Artist 13 - Song 0495 Fire",
+              "Artist 11 - Song 0447 Fire"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "category:Electronic/Dance",
+          "results": {
+            "0": [
+              "Artist 9 - Song 0374 River",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 9 - Song 0340 Dust",
+              "Artist 11 - Song 0435 Fire"
+            ],
+            "30": [
+              "Artist 15 - Song 0597 Fire",
+              "Artist 11 - Song 0437 Glass",
+              "Artist 11 - Song 0443 Glass",
+              "Artist 11 - Song 0447 Fire",
+              "Artist 4 - Song 0183 Fire"
+            ],
+            "60": [
+              "Artist 40003 - Song 0456 Blue",
+              "Artist 40003 - Song 0497 Glass",
+              "Artist 40001 - Song 0300 Blue",
+              "Artist 40004 - Song 0584 River",
+              "Artist 40001 - Song 0269 Glass"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:energy+",
+          "results": {
+            "0": [
+              "Artist 9 - Song 0374 River",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 9 - Song 0340 Dust",
+              "Artist 11 - Song 0435 Fire"
+            ],
+            "30": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 0 - Song 0040 Dust",
+              "Artist 8 - Song 0323 Glass",
+              "Artist 10 - Song 0398 River"
+            ],
+            "60": [
+              "Artist 5 - Song 0226 Dust",
+              "Artist 10 - Song 0398 River",
+              "Artist 15 - Song 0588 Blue",
+              "Artist 4 - Song 0144 Blue",
+              "Artist 0 - Song 0040 Dust"
+            ]
+          }
+        },
+        {
+          "seed": "Artist 14 - Song 0533 Glass",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Artist 9 - Song 0374 River",
+              "Artist 8 - Song 0333 Fire",
+              "Artist 13 - Song 0501 Fire",
+              "Artist 9 - Song 0340 Dust",
+              "Artist 11 - Song 0435 Fire"
+            ],
+            "30": [
+              "Artist 13 - Song 0526 Dust",
+              "Artist 9 - Song 0369 Fire",
+              "Artist 2 - Song 0092 River",
+              "Artist 10 - Song 0395 Glass",
+              "Artist 11 - Song 0447 Fire"
+            ],
+            "60": [
+              "Artist 4 - Song 0169 Night",
+              "Artist 7 - Song 0262 Dust",
+              "Artist 9 - Song 0369 Fire",
+              "Artist 13 - Song 0495 Fire",
+              "Artist 11 - Song 0447 Fire"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "H7": {
+    "claim": "precision@10 of the pole tag increases with theta up to 60 deg for >= 80% of poles",
+    "share_by_model": {
+      "cooc": 0.6923076923076923,
+      "composition": 0.9130434782608695,
+      "core": 0.8461538461538461,
+      "composition_acoustic": 0.96,
+      "composition_lyric": 0.6666666666666666,
+      "cooc_artistmasked": 0.7083333333333334
+    },
+    "status": "supported"
+  }
+}

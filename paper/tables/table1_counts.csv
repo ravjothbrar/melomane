@@ -1,0 +1,5 @@
+Entity,Count,Description
+Canonical Tracks (V),0,Deduplicated vocabulary
+Artists,0,Distinct artist clusters
+Eval Tracks (test),0,Artist-disjoint test split
+Probe Targets,0,Total probe targets across strata

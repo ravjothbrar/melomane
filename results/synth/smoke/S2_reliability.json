@@ -1,0 +1,125 @@
+{
+  "table": [
+    {
+      "dim": "energy",
+      "n": 59,
+      "spearman": 0.9999999999999998,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "aggression",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "valence",
+      "n": 59,
+      "spearman": 0.9999999999999998,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "danceability",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "acousticness",
+      "n": 59,
+      "spearman": 0.9999999999999998,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "vocal_prominence",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "tempo_feel",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "production_polish",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "lyrical_explicitness",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "grit",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "density",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "space",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "punch",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "warmth",
+      "n": 59,
+      "spearman": 0.9999999999999998,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "brightness",
+      "n": 59,
+      "spearman": 1.0,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "era",
+      "n": 59,
+      "spearman": 0.9999999999999998,
+      "wkappa": 1.0,
+      "exact_match": null
+    },
+    {
+      "dim": "category",
+      "n": 59,
+      "spearman": null,
+      "wkappa": null,
+      "exact_match": 1.0
+    }
+  ],
+  "excluded_dims": [],
+  "threshold": 0.6
+}

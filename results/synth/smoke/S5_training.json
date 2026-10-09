@@ -1,0 +1,148 @@
+{
+  "models": {
+    "cooc": {
+      "finite": true,
+      "participation_ratio": 3.9413299560546875,
+      "mean_pairwise_cosine": 0.4861118495464325,
+      "seeds": 2,
+      "seconds": 0.6980671882629395,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 71880,
+      "loss_first": 3.1184239326379237,
+      "loss_last": 1.828558087348938,
+      "loss_decreasing": true,
+      "neighbour_recall_at10_seed0_vs_1": 0.2842809364548495
+    },
+    "composition": {
+      "finite": true,
+      "participation_ratio": 22.14725685119629,
+      "mean_pairwise_cosine": 0.13432911038398743,
+      "seeds": 2,
+      "seconds": 5.049131155014038,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 431280,
+      "loss_first": 2.752634959983396,
+      "loss_last": 1.919643869539639,
+      "loss_decreasing": true,
+      "neighbour_recall_at10_seed0_vs_1": 0.666722408026756
+    },
+    "core": {
+      "finite": true,
+      "participation_ratio": 18.628355026245117,
+      "mean_pairwise_cosine": 0.10375882685184479,
+      "seeds": 2,
+      "seconds": 14.107980251312256,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 1150080,
+      "loss_first": 2.237636313816301,
+      "loss_last": 1.8941637854170954,
+      "loss_decreasing": true,
+      "neighbour_recall_at10_seed0_vs_1": 0.6921404682274248
+    },
+    "composition_acoustic": {
+      "finite": true,
+      "participation_ratio": 19.727510452270508,
+      "mean_pairwise_cosine": 0.15933352708816528,
+      "seeds": 1,
+      "seconds": 4.86449933052063,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 359400,
+      "loss_first": 2.7164554259715934,
+      "loss_last": 1.9687617366130536,
+      "loss_decreasing": true
+    },
+    "composition_lyric": {
+      "finite": true,
+      "participation_ratio": 5.710207939147949,
+      "mean_pairwise_cosine": 0.33455705642700195,
+      "seeds": 1,
+      "seconds": 0.8898227214813232,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 71880,
+      "loss_first": 3.141804666230173,
+      "loss_last": 1.6145609093434883,
+      "loss_decreasing": true
+    },
+    "cooc_artistmasked": {
+      "finite": true,
+      "participation_ratio": 3.890004873275757,
+      "mean_pairwise_cosine": 0.48082101345062256,
+      "seeds": 1,
+      "seconds": 1.0885426998138428,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 71880,
+      "loss_first": 3.1215319083287167,
+      "loss_last": 1.868633319170047,
+      "loss_decreasing": true
+    },
+    "core_partial30": {
+      "finite": true,
+      "participation_ratio": 9.201223373413086,
+      "mean_pairwise_cosine": 0.3592107892036438,
+      "seeds": 1,
+      "seconds": 12.09641146659851,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 1150080,
+      "loss_first": 2.095505845366102,
+      "loss_last": 1.7311353657668802,
+      "loss_decreasing": true
+    },
+    "cooc_eqtok": {
+      "finite": true,
+      "participation_ratio": 10.762628555297852,
+      "mean_pairwise_cosine": 0.28753820061683655,
+      "seeds": 1,
+      "seconds": 15.17555022239685,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 1150080,
+      "loss_first": 1.8846675910246677,
+      "loss_last": 1.7305059629755142,
+      "loss_decreasing": true
+    },
+    "composition_eqtok": {
+      "finite": true,
+      "participation_ratio": 24.867067337036133,
+      "mean_pairwise_cosine": 0.09590515494346619,
+      "seeds": 1,
+      "seconds": 14.974119424819946,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 1150080,
+      "loss_first": 2.292686077690608,
+      "loss_last": 1.8458342540103037,
+      "loss_decreasing": true
+    },
+    "core_eqtok": {
+      "finite": true,
+      "participation_ratio": 18.749439239501953,
+      "mean_pairwise_cosine": 0.10166258364915848,
+      "seeds": 1,
+      "seconds": 15.265388488769531,
+      "device": "cuda",
+      "epochs": 3,
+      "tokens_per_epoch": 1150080,
+      "loss_first": 2.2328116687294703,
+      "loss_last": 1.8961403448792065,
+      "loss_decreasing": true
+    },
+    "cooc_avg": {
+      "finite": true,
+      "participation_ratio": 3.8609871864318848,
+      "mean_pairwise_cosine": 0.4744378328323364,
+      "raw_vocab": 633
+    }
+  },
+  "seed_recall": {
+    "cooc": 0.2842809364548495,
+    "composition": 0.666722408026756,
+    "core": 0.6921404682274248
+  }
+}

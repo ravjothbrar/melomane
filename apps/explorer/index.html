@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Melomane explorer</title>
+  <meta name="description" content="Static explorer for the Melomane music-track embeddings: seed, steer with SLERP, browse modes. Runs entirely in your browser.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Melomane <span class="sub">explorer</span></h1>
+    <div id="model-toggle" class="seg" role="radiogroup" aria-label="Model"></div>
+    <span id="status" class="status" role="status" aria-live="polite"></span>
+  </header>
+
+  <div id="error" class="error" hidden></div>
+  <noscript><p class="error">The explorer needs JavaScript and WebGL2.</p></noscript>
+
+  <main id="app">
+    <aside class="panel controls" aria-label="Controls">
+      <section>
+        <h2>Seed</h2>
+        <input id="seed-search" type="search" placeholder="Search artist or title" autocomplete="off" aria-label="Search for a seed track">
+        <ul id="seed-suggest" class="suggest" role="listbox" aria-label="Matching tracks"></ul>
+        <div id="seed-card" class="card muted">Click a point on the map or search to pick a seed track.</div>
+      </section>
+
+      <section>
+        <h2>Steer</h2>
+        <div class="row">
+          <select id="pole-select" aria-label="Pole to add"></select>
+          <button id="pole-add" type="button">Add</button>
+        </div>
+        <ul id="pole-chips" class="chips" aria-label="Selected poles"></ul>
+        <label class="slider">
+          <span>&theta; = <output id="theta-out">30</output>&deg; <span class="muted" id="theta-cos"></span></span>
+          <input id="theta" type="range" min="0" max="90" step="1" value="30" aria-label="Angle theta in degrees">
+        </label>
+        <div class="row">
+          <label>Results <select id="k-select" aria-label="Number of results"><option>5</option><option selected>10</option><option>20</option><option>50</option></select></label>
+          <label class="check"><input id="exclude-artist" type="checkbox" checked> artist-disjoint</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Colour by</h2>
+        <select id="color-by" aria-label="Colour points by">
+          <option value="category">Category</option>
+          <option value="mode">Mode</option>
+          <option value="year">Year</option>
+        </select>
+        <div id="legend" class="legend"></div>
+      </section>
+    </aside>
+
+    <div id="stage" class="stage">
+      <canvas id="map" role="img" aria-label="2-D map of tracks (UMAP, visualisation only)"></canvas>
+      <div id="tooltip" class="tooltip" hidden></div>
+      <div class="zoom">
+        <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+        <button id="zoom-out" type="button" aria-label="Zoom out">&minus;</button>
+        <button id="zoom-reset" type="button" aria-label="Reset view">&#8962;</button>
+      </div>
+      <div class="hint muted">Drag to pan &middot; wheel to zoom &middot; click a point to seed. Layout is UMAP (cosine, 32 neighbours, min_dist 0.004): visualisation only.</div>
+    </div>
+
+    <aside class="panel side" aria-label="Results">
+      <div class="tabs" role="tablist">
+        <button id="tab-results" role="tab" aria-selected="true" type="button">Neighbours</button>
+        <button id="tab-modes" role="tab" aria-selected="false" type="button">Mode atlas</button>
+      </div>
+      <div id="panel-results">
+        <p id="results-head" class="muted">No seed yet.</p>
+        <ol id="results" class="results"></ol>
+      </div>
+      <div id="panel-modes" hidden>
+        <input id="mode-filter" type="search" placeholder="Filter modes" aria-label="Filter modes">
+        <ul id="mode-list" class="modes"></ul>
+        <div id="mode-detail" class="card"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot muted">
+    <p id="attribution"></p>
+    <p>Audio previews are &ldquo;search on&hellip;&rdquo; links only: nothing is fetched from streaming services. (The iTunes Search API allows about 20 requests per minute per IP, which is why the explorer never prefetches.) No lyrics, audio or per-user data are included.</p>
+  </footer>
+
+  <script type="module" src="explorer.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Written/updated by stage S0-doctor after the OpenRouter smoke test. Safe defaults until then.
+model: google/gemini-3.7-flash
+budget_usd: 20
+price_in: 0.75      # USD per M input tokens (used only when the API returns no cost field)
+price_out: 3.75
+workers: 8
+batch_size: 50      # items per request for annotation/curation prompts
+extra_body: {}      # e.g. {reasoning: {effort: none}} - set by S0 if the model supports it

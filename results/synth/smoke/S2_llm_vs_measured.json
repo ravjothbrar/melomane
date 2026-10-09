@@ -1,0 +1,33 @@
+{
+  "n_dims_with_counterpart": 3,
+  "share_positive_ci": 1.0,
+  "table": [
+    {
+      "dim": "energy",
+      "measured": "loudness_mean",
+      "n": 599,
+      "rho": 0.974913983491265,
+      "ci_lo": 0.9712728562505938,
+      "ci_hi": 0.975815479888595,
+      "ci_excludes_0": true
+    },
+    {
+      "dim": "aggression",
+      "measured": "loudness_mean",
+      "n": 599,
+      "rho": 0.8342220316886957,
+      "ci_lo": 0.810576877184949,
+      "ci_hi": 0.8485341629474442,
+      "ci_excludes_0": true
+    },
+    {
+      "dim": "era",
+      "measured": "year",
+      "n": 599,
+      "rho": 0.9799721144345874,
+      "ci_lo": 0.9790141767522976,
+      "ci_hi": 0.9800338272479945,
+      "ci_excludes_0": true
+    }
+  ]
+}

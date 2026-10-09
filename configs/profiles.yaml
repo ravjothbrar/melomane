@@ -1,0 +1,49 @@
+# Pipeline profiles.  Every profile is deep-merged onto `_base`.  Profiles:
+#   paper    - Epicure paper-2 hyper-parameters (walks_per_node 100, 20 epochs, 10x20 CV) - slow, run on subsets / when you have days
+#   standard - the overnight default for ~100k tracks on one RTX 5080 (scaled walk budget, documented in the paper)
+#   lite     - for machines with < 32 GB RAM or no GPU
+#   smoke    - tiny; used for the demo corpus, CI and first-run verification (minutes)
+_base:
+  train: {dim: 300, window: 7, negative: 5, epochs: 10, lr: 0.0025, walks_per_node: 8, walk_length: 50, ii_repeat: 10, pair_batch: 262144, walk_block: 4096}
+  vocab: {min_sessions: 20, max_vocab: 150000}
+  cooc: {min_count: 20, min_pair_count: 5, topk: 250, chunk: 1024, session_gap_minutes: 30, session_min_len: 5, session_max_len: 200}
+  compounds: {k_acoustic: 500, k_lyric: 400, top_m: 3, pca_dim: 32, partial_hub_fracs: [0.6, 0.3, 0.1]}
+  seeds: 3
+  models: [cooc, composition, core]
+  ablations: [composition_acoustic, composition_lyric, core_acoustic, cooc_artistmasked, cooc_avg, core_partial60, core_partial30, core_partial10, cooc_eqtok, composition_eqtok, core_eqtok]
+  ica: {n_components: 20, n_seeds: 10, split_half_threshold: 0.6, top_quantile: 0.75, gmm_k_range: [3, 4, 5, 6, 7], min_members: 6}
+  cv: {n_splits: 5, n_repeats: 5, paper1_n_splits: 10, paper1_n_repeats: 20, grouped_by: artist_id}
+  eval: {knn_k: 10, knn_boot: 200, perm: 10000, boot_clusters: 2000, weat_perm: 5000, max_eval_tracks: 60000}
+  slerp: {n_pairs: 500, thetas: [0, 15, 30, 45, 60, 75, 90], k: 10}
+  ext: {dims: [300, 150, 100, 64, 32, 16], dtypes: [fp32, fp16, int8], methods: [pca, rp], multiverse_tracks: 20000, cv_repeats: 1, small_thresholds: [0.95, 0.90],
+        multiverse: {k_scale: [0.5, 1.0, 2.0], top_m: [1, 3, 5], npmi_topk: [100, 250, 500]}, multiverse_train: {dim: 64, epochs: 3, walks_per_node: 4},
+        h8_tracks: 8000, agree_queries: 3000, agree_sub: 2000, temporal_min_years: 3.0}
+  llm: {annotate_batch: 50, workers: 8, annotate_max_tracks: 200000, binary_dims: [aggression, danceability, acousticness, vocal_prominence, energy],
+        reliability_frac: 0.03, mode_label_workers: 8, review_frac: 0.05, audit_n: 300}
+  limit_tracks: null
+paper:
+  train: {epochs: 20, walks_per_node: 100}
+  cv: {n_splits: 10, n_repeats: 20}
+  ext: {multiverse_tracks: 40000, h8_tracks: 12000}
+standard: {}
+lite:
+  train: {dim: 200, epochs: 6, walks_per_node: 4}
+  vocab: {max_vocab: 60000}
+  ica: {n_seeds: 5}
+  eval: {max_eval_tracks: 30000}
+  seeds: 2
+smoke:
+  train: {dim: 48, window: 5, epochs: 3, lr: 0.005, walks_per_node: 6, walk_length: 20, pair_batch: 8192}
+  vocab: {min_sessions: 8, max_vocab: 4000}
+  cooc: {min_count: 8, min_pair_count: 3, topk: 40, chunk: 512}
+  compounds: {k_acoustic: 40, k_lyric: 30, top_m: 3, pca_dim: 8, partial_hub_fracs: [0.3]}
+  seeds: 2
+  models: [cooc, composition, core]
+  ablations: [composition_acoustic, composition_lyric, cooc_artistmasked, cooc_avg, core_partial30, cooc_eqtok, composition_eqtok, core_eqtok]
+  ica: {n_components: 8, n_seeds: 3, split_half_threshold: 0.4, min_members: 4}
+  cv: {n_splits: 4, n_repeats: 2, paper1_n_splits: 4, paper1_n_repeats: 2}
+  eval: {knn_boot: 30, perm: 300, boot_clusters: 200, weat_perm: 300, max_eval_tracks: 4000}
+  slerp: {n_pairs: 60}
+  ext: {dims: [48, 24, 16], dtypes: [fp32, int8], methods: [pca], multiverse_tracks: 800, multiverse: {k_scale: [1.0, 2.0], top_m: [1, 3], npmi_topk: [20, 40]},
+        multiverse_train: {dim: 24, epochs: 2, walks_per_node: 3, walk_length: 15}, h8_tracks: 600, h8_paper_train: {epochs: 4, walks_per_node: 8}, agree_queries: 300, agree_sub: 300}
+  llm: {annotate_batch: 40, reliability_frac: 0.1, audit_n: 40}

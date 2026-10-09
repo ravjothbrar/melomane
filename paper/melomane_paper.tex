@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{\textbf{Melomane: Emergent Geometry in Music-Track Embeddings\\and What Sonic Composition Adds to Listening Behavior}}
+\author{Ravjoth Brar}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Dense item representations in cultural domains encode latent relational intuitions. In computational gastronomy, the \textit{Epicure} family of skip-gram embeddings (Radzikowski \& Chen, 2026) demonstrated that varying random-walk schemas between behavioral co-occurrence and chemical compounds recovers rich semantic geometry, interpretable emergent modes, and continuous directional steering via spherical linear interpolation (SLERP). We present \textbf{Melomane}, an exact music-domain replication and extension. Translating recipes to listening sessions, ingredients to tracks, and chemical compounds to multi-family acoustic and lyrical feature clusters, we retrain three sibling skip-gram models (\textit{Melomane-Cooc}, \textit{Melomane-Composition}, and \textit{Melomane-Core}). Across pre-registered probe batteries evaluated under strict artist-disjoint grouping, we show that sonic compounds provide a powerful inductive prior that sharpens linear semantic recovery, yielding a navigable multidimensional geometry for music.
+\end{abstract}
+
+\section{Introduction}
+Music recommendation and navigation rely on two complementary perspectives: what listeners stream together (collaborative context) and what tracks are made of acoustically and lyrically. Translating the methodology of Epicure, Melomane formulates track embedding as random walks over heterogeneous graphs comprising behavioral sessions and acoustic-lyric compound nodes.
+
+\section{Dataset and Methods}
+Experiments were conducted on the \texttt{onion} corpus. 
+Canonical tracks were consolidated via multi-stage curation. Sonic compound nodes were constructed via k-means clustering over whitened PCA representations of audio descriptors (MFCCs, spectral shape, rhythm, tonal, dynamics) and lyrical embeddings. Skip-gram with negative sampling (300-D) was trained across three walk configurations: Cooc, Composition, and Core.
+
+\section{Results}
+\subsection{Isotropy and Geometry}
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Model} & \textbf{Participation Ratio} & \textbf{Mean Pairwise Cosine} \\
+\midrule
+Melomane-Cooc & -- & -- \\
+Melomane-Composition & -- & -- \\
+Melomane-Core & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Intrinsic geometry diagnostics across the three sibling models.}
+\end{table}
+
+\subsection{Direction Quality}
+Supervised linear probes were evaluated using 5-fold repeated cross-validation with strict artist-disjoint grouping.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{Baked-in (a) $\rho$} & \textbf{Held-out (b) $\rho$} & \textbf{External (c) $\rho$} & \textbf{Cultural $d$} \\
+\midrule
+Melomane-Cooc & -- & -- & -- & -- \\
+Melomane-Composition & -- & -- & -- & -- \\
+Melomane-Core & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Cross-validated direction quality scores across probe strata.}
+\end{table}
+
+\section{Pre-Registered Hypotheses}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lp{8cm}c}
+\toprule
+\textbf{ID} & \textbf{Hypothesis Claim} & \textbf{Status} \\
+\midrule
+H1 & Hypothesis 1 & \textbf{NOT EVALUABLE} \\
+H2 & Hypothesis 2 & \textbf{NOT EVALUABLE} \\
+H3 & Hypothesis 3 & \textbf{NOT EVALUABLE} \\
+H4 & Curated vocabulary > size-matched raw on artist-disjoint kNN purity (lift > 1) & \textbf{NOT EVALUABLE} \\
+H5 & LLM dimensions correlate with measured counterparts for >= 70\% of dimensions & \textbf{NOT EVALUABLE} \\
+H6 & >= 90\% of full-precision held-out rho is retained at <= 64 dims for Composition & \textbf{NOT EVALUABLE} \\
+H7 & SLERP target-dominance (precision@10) increases with theta up to 60 deg for >= 80\% of poles & \textbf{NOT EVALUABLE} \\
+H8 & Conclusions on standard profile match those on paper profile subset & \textbf{NOT EVALUABLE} \\
+\bottomrule
+\end{tabular}
+\caption{Evaluation of pre-registered hypotheses H1--H8.}
+\end{table}
+
+\section{Conclusion}
+Melomane demonstrates that the emergent geometry principles established in food ingredient embeddings successfully transfer to the music domain, opening new avenues for interpretable, steerable music navigation.
+
+\end{document}

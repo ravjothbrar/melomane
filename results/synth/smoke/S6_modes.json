@@ -1,0 +1,206 @@
+{
+  "cooc": {
+    "n_factors_stable": 8,
+    "split_half": [
+      0.9938710130603706,
+      0.9887942976390617,
+      0.9610565754251137,
+      0.96056440569611,
+      0.9584745211097033,
+      0.8450401348697314,
+      0.5772514919640078,
+      0.4125862840565107
+    ],
+    "n_modes": 48,
+    "coherence": {
+      "coherence": 0.9537398558934873,
+      "random": 0.48427696781035856,
+      "ratio": 1.9694099023659721
+    },
+    "audit": {
+      "n": 5,
+      "agreement": 1.0,
+      "prompt_version": "modes_audit_v1"
+    },
+    "driver_counts": {
+      "behaviour": 25,
+      "lyric": 22,
+      "acoustic": 1
+    },
+    "n_supervised_poles": 28
+  },
+  "composition": {
+    "n_factors_stable": 7,
+    "split_half": [
+      0.9417786042611924,
+      0.9325560940451331,
+      0.8269504420780512,
+      0.6630899271898547,
+      0.6222554831622413,
+      0.5266156658480137,
+      0.5022984768287063
+    ],
+    "n_modes": 21,
+    "coherence": {
+      "coherence": 0.3710766962454592,
+      "random": 0.13265113228058567,
+      "ratio": 2.7973880800395445
+    },
+    "audit": {
+      "n": 5,
+      "agreement": 1.0,
+      "prompt_version": "modes_audit_v1"
+    },
+    "driver_counts": {
+      "acoustic": 14,
+      "behaviour": 6,
+      "lyric": 1
+    },
+    "n_supervised_poles": 28
+  },
+  "core": {
+    "n_factors_stable": 8,
+    "split_half": [
+      0.9646387725661839,
+      0.8797883123277289,
+      0.7781077727670354,
+      0.695851778944493,
+      0.6390447337703197,
+      0.6285459432755015,
+      0.6264373855217247,
+      0.5973937330013823
+    ],
+    "n_modes": 45,
+    "coherence": {
+      "coherence": 0.5074500537589675,
+      "random": 0.10446316459683032,
+      "ratio": 4.857693673338753
+    },
+    "audit": {
+      "n": 5,
+      "agreement": 1.0,
+      "prompt_version": "modes_audit_v1"
+    },
+    "driver_counts": {
+      "behaviour": 34,
+      "acoustic": 6,
+      "lyric": 5
+    },
+    "n_supervised_poles": 28
+  },
+  "composition_acoustic": {
+    "n_factors_stable": 8,
+    "split_half": [
+      0.9304210599091789,
+      0.892625006579906,
+      0.8331408535719318,
+      0.6173620980236335,
+      0.5617043223027732,
+      0.5442937362309336,
+      0.5327358167667363,
+      0.49638000785896513
+    ],
+    "n_modes": 24,
+    "coherence": {
+      "coherence": 0.4051208434966604,
+      "random": 0.1598082808719765,
+      "ratio": 2.5350428731612817
+    },
+    "audit": {
+      "n": 5,
+      "agreement": 1.0,
+      "prompt_version": "modes_audit_v1"
+    },
+    "driver_counts": {
+      "acoustic": 24
+    },
+    "n_supervised_poles": 28
+  },
+  "composition_lyric": {
+    "n_factors_stable": 8,
+    "split_half": [
+      0.9917725200609075,
+      0.9630017240996598,
+      0.940359373032487,
+      0.9215531097707336,
+      0.7993884443294312,
+      0.759156406578592,
+      0.6778239822879553,
+      0.6724624354205032
+    ],
+    "n_modes": 49,
+    "coherence": {
+      "coherence": 0.8908169022250563,
+      "random": 0.33957518160447947,
+      "ratio": 2.6233274705647838
+    },
+    "audit": {
+      "n": 5,
+      "agreement": 1.0,
+      "prompt_version": "modes_audit_v1"
+    },
+    "driver_counts": {
+      "lyric": 27,
+      "behaviour": 22
+    },
+    "n_supervised_poles": 28
+  },
+  "cooc_artistmasked": {
+    "n_factors_stable": 8,
+    "split_half": [
+      0.9790400741796086,
+      0.9744298717626284,
+      0.9634815087443069,
+      0.8543154357555439,
+      0.7945093824183931,
+      0.7376910284316831,
+      0.6359633294440623,
+      0.4293754853154487
+    ],
+    "n_modes": 46,
+    "coherence": {
+      "coherence": 0.949493088916794,
+      "random": 0.48339994280462373,
+      "ratio": 1.9641977684315772
+    },
+    "audit": {
+      "n": 5,
+      "agreement": 1.0,
+      "prompt_version": "modes_audit_v1"
+    },
+    "driver_counts": {
+      "behaviour": 31,
+      "lyric": 15
+    },
+    "n_supervised_poles": 28
+  },
+  "cooc_avg": {
+    "n_factors_stable": 8,
+    "split_half": [
+      0.9941524498961638,
+      0.9929695375447014,
+      0.9731200216154097,
+      0.9623430829328061,
+      0.8413709787084054,
+      0.8398760780827279,
+      0.8370518383018013,
+      0.618371305337425
+    ],
+    "n_modes": 44,
+    "coherence": {
+      "coherence": 0.9553268020902222,
+      "random": 0.47347966154641913,
+      "ratio": 2.017672309239335
+    },
+    "audit": {
+      "n": 5,
+      "agreement": 1.0,
+      "prompt_version": "modes_audit_v1"
+    },
+    "driver_counts": {
+      "behaviour": 25,
+      "lyric": 19
+    },
+    "n_supervised_poles": 28
+  }
+}

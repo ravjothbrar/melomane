@@ -1,0 +1,49 @@
+{
+  "counts": [
+    {
+      "stage": "0 raw catalogue",
+      "n": 644
+    },
+    {
+      "stage": "vocabulary (>= 8 sessions, top 4000)",
+      "n": 641
+    },
+    {
+      "stage": "1a exact-key simplification (strict)",
+      "n": 607
+    },
+    {
+      "stage": "1b keyword non-music removal",
+      "n": 599
+    },
+    {
+      "stage": "2 LLM refinement (keep/remove/consolidate)",
+      "n": 599
+    },
+    {
+      "stage": "3 LLM ultra-refinement (rule-checked merges, restores)",
+      "n": 599
+    },
+    {
+      "stage": "5 consolidation -> canonical tracks",
+      "n": 599
+    }
+  ],
+  "consolidation_ratio": 1.0701168614357262,
+  "V": 599,
+  "multi_artist_cids": 0,
+  "audit": {
+    "n": 20,
+    "prompt_version": "audit_v1",
+    "agreement_merge": 1.0,
+    "n_merge": 20,
+    "agreement_split": null,
+    "n_split": 0
+  },
+  "degraded": [],
+  "monotone_counts": true,
+  "review_queue": 5,
+  "n_removed": 8,
+  "llm_calls": 15,
+  "same_artist_share": 1.0
+}
