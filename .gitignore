@@ -21,3 +21,6 @@ release/**/*.safetensors
 docs/HANDOFF.md
 paper/_superseded_handmade/
 /release/
+results/doctor.json
+results/last_run.json
+reports/s0_doctor.md

@@ -131,3 +131,12 @@ Each entry: **decision** · why · alternatives considered. The pre-registration
 14. **S4 is PARTIAL by 0.12 percentage points** (max compound cluster = 5.12 % of tracks, limit 5 %). Recorded, not tuned (the sensitivity
     grid E8 covers k); `PLAN.md` §6 S4 acceptance is therefore reported as narrowly missed.
 15. **S3 same-artist edge share is 12.2 %** with real artists (it was 0 only because artists were unknown); the artist-masked Cooc ablation removes them.
+
+16. **Provenance of the artist/title table (answer received 2026-10-09, not reconcilable).** The owner states the table came from
+    Zenodo record 5002584. That record is *Playlist2vec* (Papreja 2020): a Spotify-API scrape (10.7 GB SQL, keyed by Spotify URIs;
+    CC BY 4.0 as licensed by its uploader). The table in the project is keyed by **Music4All-Onion track ids** and has Music4All fields
+    (`m4a_genres`, `m4a_tags`, `pseudo_caption`), which a Spotify dump cannot contain, so the two do not match. Playlist2vec is also the
+    corpus this project excludes from publication (Spotify-derived; `configs/data.yaml: release`). `names_cleared` therefore **stays false**: no
+    public site with names until the real source is identified. Options for the owner: (a) find where the table was downloaded from
+    (browser history, or the Music4All-Onion page on Hugging Face / GitHub), (b) ask the Music4All authors (`docs/email_music4all.md`),
+    (c) publish a names-free explorer.
