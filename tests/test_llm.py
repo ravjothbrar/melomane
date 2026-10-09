@@ -101,3 +101,31 @@ def test_402_out_of_credits_stops_llm_work_cleanly_and_is_not_retried(tmp_path):
         assert s.calls == 2
     finally:
         s.close()
+
+
+def test_truncated_output_is_not_retried_and_its_cost_is_counted_as_wasted(tmp_path):
+    """A reply cut off by max_tokens (finish_reason 'length') is invalid JSON; retrying the identical request truncates again and
+    pays again.  It must fail at once with a message that says what to change, and the money spent on it must be visible."""
+    from melomane.llm import LLMTruncated
+    cut = (200, {"choices": [{"finish_reason": "length", "message": {"content": '{"label": "abc'}}],
+                 "usage": {"prompt_tokens": 100, "completion_tokens": 8192, "cost": 0.031}}, {})
+    s = Server([cut])
+    try:
+        c = client(s, tmp_path)
+        with pytest.raises(LLMTruncated, match="batch"):
+            c.complete_json("sys", "too much to say", SCHEMA)
+        assert s.calls == 1                                                      # no retry of an identical, doomed request
+        assert c.wasted_usd == pytest.approx(0.031) and c.spent() == 0.0         # paid for, produced nothing, not in the cache
+    finally:
+        s.close()
+
+
+def test_invalid_json_retries_also_count_their_cost_as_wasted(tmp_path):
+    bad = (200, {"choices": [{"finish_reason": "stop", "message": {"content": "not json"}}], "usage": {"prompt_tokens": 10, "completion_tokens": 5, "cost": 0.01}}, {})
+    s = Server([bad, ok("fine", cost=0.02)])
+    try:
+        c = client(s, tmp_path)
+        assert c.complete_json("sys", "u", SCHEMA)["label"] == "fine"
+        assert c.wasted_usd == pytest.approx(0.01) and c.spent() == pytest.approx(0.02)
+    finally:
+        s.close()

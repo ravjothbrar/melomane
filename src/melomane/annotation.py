@@ -115,8 +115,16 @@ def items_payload(vocab: pd.DataFrame, idx, tag_col: str = "tags") -> list[dict]
     return out
 
 
+# Measured on the real model: ~208 output tokens per labelled track (16 dimensions + era + category + regions + flags).  A request of
+# 50 tracks therefore needs ~10.4k tokens - more than the client's 8,192 default, which truncated the reply mid-JSON and silently re-bought
+# it on every retry.  16k leaves ~50 % headroom at the profile's batch size of 50.
+ANNOTATE_MAX_TOKENS = 16384
+TOKENS_PER_TRACK = 220
+
+
 def _call(llm, system, its, name="annotate"):
-    return dict(system=system, user=json.dumps({"items": its}, ensure_ascii=False), schema=ANNOTATE_SCHEMA, name=name)
+    return dict(system=system, user=json.dumps({"items": its}, ensure_ascii=False), schema=ANNOTATE_SCHEMA, name=name,
+                max_tokens=ANNOTATE_MAX_TOKENS)
 
 
 def _parse(resp: dict, n: int) -> dict[int, dict]:

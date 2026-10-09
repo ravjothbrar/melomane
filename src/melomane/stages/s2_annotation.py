@@ -50,24 +50,29 @@ class Annotation(Stage):
         P = load_prompts(ws, {"a1": "annotate_v1", "a2": "annotate_v2", "bin": "binary_v1"})
         V, cfgl = len(vocab), prof["llm"]
         n_max = min(V, cfgl["annotate_max_tracks"])
-        spent0 = llm.spent()
+        # Which tracks get labels when the budget cannot cover all of them: a seeded random sample over the whole vocabulary, not the first
+        # rows (the most-played 9,000 tracks come from only ~1,200 artists, which would starve artist-grouped evaluation). The pilot is the
+        # head of the same permutation, so its paid answers are cache hits in the real run.
+        order = np.random.default_rng(ctx.seed("S2sample")).permutation(V)
+        spent0 = llm.spent() + getattr(llm, 'wasted_usd', 0.0)
         # ---- cost pilot: label 200, extrapolate, shrink the labelled set if it would blow the budget ----
         pilot_n = min(200, n_max)
-        sub_p = vocab.iloc[:pilot_n].reset_index(drop=True)
+        sub_p = vocab.iloc[order[:pilot_n]].reset_index(drop=True)
         _, _ = annotate(sub_p, llm, P["a1"][1], P["a1"][0], batch=cfgl["annotate_batch"], workers=cfgl["workers"])
-        per_item = (llm.spent() - spent0) / max(pilot_n, 1)
+        per_item = (llm.spent() + getattr(llm, 'wasted_usd', 0.0) - spent0) / max(pilot_n, 1)       # wasted (paid, uncached) calls count too
         remaining = getattr(llm, "budget", 1e9) - llm.spent()
         proj = per_item * n_max * 1.25 + 0.15 * per_item * n_max      # + reliability/binary passes
         res.metrics["pilot_usd_per_1k_tracks"] = per_item * 1000
         if per_item > 0 and proj > remaining:
             n_fit = int(max(pilot_n, remaining / (per_item * 1.4)))
-            res.deviations.append(f"projected LLM spend ${proj:.0f} > remaining ${remaining:.0f}: annotating the {n_fit:,} most-played tracks only")
+            res.deviations.append(f"projected LLM spend ${proj:.0f} > remaining ${remaining:.0f}: annotating a random sample of {n_fit:,} tracks only")
             n_max = min(n_max, n_fit); res.status = PARTIAL
-        sub = vocab.iloc[:n_max].reset_index(drop=True)
+        rows = order[:n_max]
+        sub = vocab.iloc[rows].reset_index(drop=True)
         lab_sub, st = annotate(sub, llm, P["a1"][1], P["a1"][0], batch=cfgl["annotate_batch"], workers=cfgl["workers"])
         lab = _empty_labels(vocab)
         for c in lab_sub.columns:
-            lab.loc[: n_max - 1, c] = lab_sub[c].to_numpy()
+            lab.loc[rows, c] = lab_sub[c].to_numpy()
         # rule category for unlabelled rows stays; labelled rows get the LLM category
         lab.loc[~lab["labelled"].astype(bool), "category"] = vocab.loc[~lab["labelled"].astype(bool), "category"]
         # ---- reliability (second prompt variant + shuffled order) ----
@@ -89,9 +94,9 @@ class Annotation(Stage):
                 res.notes.append(f"dimensions below reliability 0.6 (excluded from headline probes): {excluded}")
         # ---- binary yes/no pass on extreme levels ----
         try:
-            bin_df = binary_pass(vocab.iloc[:n_max].reset_index(drop=True), lab_sub, llm, P["bin"][1], cfgl["binary_dims"], workers=cfgl["workers"])
+            bin_df = binary_pass(sub, lab_sub, llm, P["bin"][1], cfgl["binary_dims"], workers=cfgl["workers"])
             bfull = pd.DataFrame(index=lab.index, columns=bin_df.columns, dtype=float)
-            bfull.iloc[: n_max] = bin_df.to_numpy()
+            bfull.iloc[rows] = bin_df.to_numpy()
             lab = pd.concat([lab, bfull], axis=1)
         except Exception as e:  # noqa: BLE001
             res.notes.append(f"binary pass skipped: {type(e).__name__}")
@@ -105,7 +110,7 @@ class Annotation(Stage):
         h5 = {"n_dims_with_counterpart": int(len(vm)), "share_positive_ci": float(((vm["rho"] > 0) & vm["ci_excludes_0"]).mean()) if len(vm) else None,
               "table": vm.to_dict("records")}
         ctx.save_result("S2_llm_vs_measured", h5)
-        stats = {**st, "n_annotated": int(n_max), "spent_usd": llm.spent() - spent0, "prompt_version": P["a1"][0],
+        stats = {**st, "n_annotated": int(n_max), "spent_usd": llm.spent() + getattr(llm, 'wasted_usd', 0.0) - spent0, "wasted_usd": getattr(llm, 'wasted_usd', 0.0), "prompt_version": P["a1"][0],
                  "excluded_dims": excluded, "category_counts": lab["category"].value_counts().head(25).to_dict()}
         ctx.save_result("S2_annotation", stats)
         (ctx.reports_dir / "s2_annotation.md").write_text(

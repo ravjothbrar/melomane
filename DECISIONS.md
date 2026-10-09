@@ -140,3 +140,17 @@ Each entry: **decision** · why · alternatives considered. The pre-registration
     public site with names until the real source is identified. Options for the owner: (a) find where the table was downloaded from
     (browser history, or the Music4All-Onion page on Hugging Face / GitHub), (b) ask the Music4All authors (`docs/email_music4all.md`),
     (c) publish a names-free explorer.
+
+17. **LLM labelling: cost, truncation bug, and sampling (2026-10-09).** (a) The labelling requests asked for 50 tracks at ~208 output tokens
+    each (~10.4k) against the client's 8,192 `max_tokens`: replies were truncated mid-JSON, failed validation and were re-bought on each
+    retry (≈$0.53 wasted in ten minutes; the cause of the 2026-10-06 failures). Fix: labelling requests carry `max_tokens=16384`
+    (`annotation.ANNOTATE_MAX_TOKENS`); truncated replies now raise `LLMTruncated` without retrying; paid-but-unusable spend is tracked
+    (`LLMClient.wasted_usd`). (b) The earlier cost pilot ($0.157 per 1,000 tracks) counted only successful calls. Measured cost is
+    **≈$0.82–0.86 per 1,000 tracks**, so labelling all 53,309 tracks would cost ≈$45: more than the $30 cap and more than the credit
+    available (account balance read from `/api/v1/credits`: $12.4). (c) Therefore S2 labels a **seeded random sample** that fits the budget
+    (the vocabulary prefix would be the most-played ~1,200 artists, which starves artist-grouped evaluation); unlabelled tracks keep the
+    rule-based category (used for ICA residualisation) and are never fabricated; every LLM-label result reports its coverage.
+    Adding credit later extends the sample from the cache. (d) *Known weakness, not fixed during the run:* a stage's staleness hash covers the
+    **whole profile**, so editing any profile key (e.g. `llm.annotate_batch`) marks every stage stale and would re-ingest and retrain. The
+    original author worked around it with a shortcut I removed (decision 5); the proper fix is a per-stage profile-key list, to be done
+    between runs. I avoided triggering it here by fixing the bug in code, not in the profile.

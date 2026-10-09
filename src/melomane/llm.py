@@ -17,6 +17,8 @@ class BudgetExceeded(RuntimeError): ...
 class CreditsExhausted(BudgetExceeded):
     """HTTP 402: the OpenRouter key has no credit left.  Not transient, so never retried; the client then refuses further network calls."""
 class LLMError(RuntimeError): ...
+class LLMTruncated(LLMError):
+    """The reply hit max_tokens (finish_reason 'length'): invalid JSON that an identical retry would reproduce, so it is never retried."""
 
 
 def _strip_fences(s: str) -> str:
@@ -43,7 +45,7 @@ class LLMClient:
         self.db = sqlite3.connect(cache_path, check_same_thread=False); self.lock = threading.Lock()
         self.db.execute("CREATE TABLE IF NOT EXISTS cache (k TEXT PRIMARY KEY, resp TEXT, cost REAL, tin INT, tout INT)")
         self.db.execute("CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v REAL)")
-        self.db.commit(); self.calls = 0; self.cache_hits = 0; self.credits_exhausted = False
+        self.db.commit(); self.calls = 0; self.cache_hits = 0; self.credits_exhausted = False; self.wasted_usd = 0.0
 
     # ---- accounting ----------------------------------------------------------------------------------------------
     def spent(self) -> float:
@@ -90,12 +92,20 @@ class LLMClient:
                 data = r.json()
                 if "error" in data and "choices" not in data:
                     last_err = LLMError(str(data["error"])[:300]); self._sleep(min(30, 2 ** attempt)); continue
-                content = data["choices"][0]["message"]["content"]
-                out = json.loads(_strip_fences(content))
-                jsonschema.validate(out, schema)
                 u = data.get("usage", {}) or {}
                 tin, tout = int(u.get("prompt_tokens", 0)), int(u.get("completion_tokens", 0))
                 cost = float(u["cost"]) if isinstance(u.get("cost"), (int, float)) else (tin * self.price_in + tout * self.price_out) / 1e6
+                choice = data["choices"][0]
+                content = choice["message"]["content"]
+                if choice.get("finish_reason") == "length":              # truncated: paid for, unusable, and an identical retry truncates again
+                    self.wasted_usd += cost
+                    raise LLMTruncated(f"reply truncated at max_tokens={max_tokens} (finish_reason=length): ask for less per request (smaller batch)")
+                try:
+                    out = json.loads(_strip_fences(content))
+                    jsonschema.validate(out, schema)
+                except (json.JSONDecodeError, jsonschema.ValidationError):
+                    self.wasted_usd += cost                                # the retry below is a new paid request: keep the books honest
+                    raise
                 with self.lock:
                     self.db.execute("INSERT OR REPLACE INTO cache VALUES (?,?,?,?,?)", (k, json.dumps(out), cost, tin, tout))
                     self.db.commit()
