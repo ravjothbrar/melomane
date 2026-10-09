@@ -1,5 +1,9 @@
 # Melomane
 
+[![CI](https://github.com/ravjothbrar/melomane/actions/workflows/ci.yml/badge.svg)](https://github.com/ravjothbrar/melomane/actions/workflows/ci.yml)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
+[![Data: CC BY 4.0](https://img.shields.io/badge/derived%20data-CC%20BY%204.0-lightgrey.svg)](DATA_LICENSE.md)
+
 **Do the structures that Epicure found in food embeddings also appear in music embeddings?**
 Melomane is a music-domain replication and extension of the two Epicure papers
 ([arXiv:2604.22776](https://arxiv.org/abs/2604.22776), [arXiv:2605.22391](https://arxiv.org/abs/2605.22391)).

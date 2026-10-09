@@ -24,3 +24,5 @@ paper/_superseded_handmade/
 results/doctor.json
 results/last_run.json
 reports/s0_doctor.md
+docs/_private/
+KICKOFF.md

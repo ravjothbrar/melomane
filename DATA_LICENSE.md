@@ -30,4 +30,4 @@ explorer's data note and must stay with any redistribution: *"Artist, title and 
 IWSSIP 2020) as redistributed on Hugging Face (seungheondoh/enrich-music4all)."* Because that dataset declares no licence, the
 strings are published on the basis that they are factual metadata (names of artists and tracks), not as a grant from the rights holders. If
 a rights holder objects, remove the names by setting `names_cleared: false` in `configs/publish.yaml` and redeploying a names-free build;
-the numeric embeddings are unaffected. A courtesy email to the Music4All authors is recommended (`docs/email_music4all.md`).
+the numeric embeddings are unaffected. A courtesy email to the Music4All authors (contact details on the Music4All project page) is recommended.

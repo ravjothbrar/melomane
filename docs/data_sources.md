@@ -19,7 +19,7 @@ My sandbox blocks all data hosts (egress policy), so nothing here was *downloade
 | Original Music4All (30 s clips, raw lyrics, Spotify ids, year, language, 853 genres, 19,541 tags) | by email to contact4music4all@gmail.com; terms not stated on page | V1 |
 | Overlap with LFM-2b | 56,512 tracks (≈ 51 %) | V1 (paper) |
 
-**Fallbacks if artist/title are absent** (in order): (1) mine `README.md`/other files for metadata; (2) email the Music4All authors (draft in `docs/email_music4all.md`); (3) proceed with tag/genre-only LLM labelling
+**Fallbacks if artist/title are absent** (in order): (1) mine `README.md`/other files for metadata; (2) email the Music4All authors (contact details are on the Music4All project page); (3) proceed with tag/genre-only LLM labelling
 (weaker: no per-track world knowledge) and flag every affected result. Track B (MBID-native) is unaffected.
 
 ## Track B (scale-up) — MBID-native open stack

@@ -89,7 +89,7 @@ class Ingest(Stage):
             if c.meta.get("blocker_a"):
                 res.status = PARTIAL
                 res.questions.append("Blocker-A: the open Onion release has no artist/title. Curation/annotation fall back to tags only. "
-                                     "Send docs/email_music4all.md to get the original Music4All metadata (optional).")
+                                     "Ask the Music4All authors for the original metadata (optional).")
         elif ctx.corpus == "mbid_stack":
             p = ctx.corpus_dir / "corpus.json"
             if not p.exists():

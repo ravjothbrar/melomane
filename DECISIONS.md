@@ -138,7 +138,7 @@ Each entry: **decision** · why · alternatives considered. The pre-registration
     (`m4a_genres`, `m4a_tags`, `pseudo_caption`), which a Spotify dump cannot contain, so the two do not match. Playlist2vec is also the
     corpus this project excludes from publication (Spotify-derived; `configs/data.yaml: release`). `names_cleared` therefore **stays false**: no
     public site with names until the real source is identified. Options for the owner: (a) find where the table was downloaded from
-    (browser history, or the Music4All-Onion page on Hugging Face / GitHub), (b) ask the Music4All authors (`docs/email_music4all.md`),
+    (browser history, or the Music4All-Onion page on Hugging Face / GitHub), (b) ask the Music4All authors,
     (c) publish a names-free explorer.
 
 17. **LLM labelling: cost, truncation bug, and sampling (2026-10-09).** (a) The labelling requests asked for 50 tracks at ~208 output tokens
@@ -163,7 +163,7 @@ Each entry: **decision** · why · alternatives considered. The pre-registration
     whose terms are not stated on its page, and its `pseudo_caption` column is LLM-generated text that this project drops. Artist and title
     strings are factual metadata, but their redistribution terms are *unspecified*, not granted. Therefore `names_cleared` stays **false**
     until the owner decides to publish them with attribution (Music4All, enrich-music4all) and, ideally, after a courtesy email to the
-    Music4All authors (`docs/email_music4all.md`). The fallback is a names-free explorer.
+    Music4All authors. The fallback is a names-free explorer.
 19. **Unattended tail** (`python -m melomane.unattended`): holds the machine awake (Windows `SetThreadExecutionState`, no settings changed),
     waits for the S5 manifest, then runs S6-S9 and S12-S14 with the LLM spend capped to $1.5 above what is already spent, so a night run
     cannot exceed the credit left on the account.
