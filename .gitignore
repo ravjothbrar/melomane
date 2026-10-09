@@ -9,3 +9,15 @@ logs/
 *.sqlite
 .pytest_cache/
 *.egg-info/
+
+# local-only
+.claude/
+pytest-cache-files-*/
+.scratch*
+results/**/_superseded*/
+reports/**/_superseded*/
+/release/**/bundles/
+release/**/*.safetensors
+docs/HANDOFF.md
+paper/_superseded_handmade/
+/release/

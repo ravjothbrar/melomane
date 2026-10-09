@@ -11,12 +11,19 @@
   "pre_registered_hypotheses": {
     "H1": {
       "claim": "Composition >= Cooc on mean Spearman rho of strata (b) held-out and (c) external (excluding popularity); ordering Cooc < Core < Composition on (a) baked-in and (b) held-out.",
-      "eval_strata": ["b_heldout", "c_external"],
+      "eval_strata": [
+        "b_heldout",
+        "c_external"
+      ],
       "direction": "composition_ge_cooc"
     },
     "H2": {
       "claim": "Core has the lowest participation ratio and highest mean pairwise cosine and mode coherence.",
-      "metrics": ["participation_ratio", "mean_pairwise_cosine", "mode_coherence"]
+      "metrics": [
+        "participation_ratio",
+        "mean_pairwise_cosine",
+        "mode_coherence"
+      ]
     },
     "H3": {
       "claim": "Composition >= Cooc on regional Cohen's d across cultural scenes.",
@@ -45,26 +52,71 @@
   },
   "probe_registry": {
     "stratum_a_baked_in": [
-      "bpm", "onset_rate", "danceability", "average_loudness", "dynamic_complexity",
-      "spectral_centroid", "spectral_flux", "zero_crossing_rate", "mfcc_1_mean", "mfcc_2_mean",
-      "chord_strength", "key_strength", "hpcp_entropy", "lyric_theme_pc1"
+      "bpm",
+      "onset_rate",
+      "danceability",
+      "average_loudness",
+      "dynamic_complexity",
+      "spectral_centroid",
+      "spectral_flux",
+      "zero_crossing_rate",
+      "mfcc_1_mean",
+      "mfcc_2_mean",
+      "chord_strength",
+      "key_strength",
+      "hpcp_entropy",
+      "lyric_theme_pc1"
     ],
     "stratum_b_held_out": [
-      "voice_f0_mean", "voice_jitter", "voice_shimmer", "voice_hnr",
-      "gems_wonder", "gems_transcendence", "gems_power", "gems_tenderness", "gems_nostalgia",
-      "gems_peacefulness", "gems_sadness", "gems_joy", "gems_tension",
-      "lyric_vad_valence", "lyric_vad_arousal", "lyric_vad_dominance", "lyric_sentiment_polarity"
+      "voice_f0_mean",
+      "voice_jitter",
+      "voice_shimmer",
+      "voice_hnr",
+      "gems_wonder",
+      "gems_transcendence",
+      "gems_power",
+      "gems_tenderness",
+      "gems_nostalgia",
+      "gems_peacefulness",
+      "gems_sadness",
+      "gems_joy",
+      "gems_tension",
+      "lyric_vad_valence",
+      "lyric_vad_arousal",
+      "lyric_vad_dominance",
+      "lyric_sentiment_polarity"
     ],
     "stratum_c_external": [
-      "energy", "aggression", "valence", "danceability", "acousticness",
-      "vocal_prominence", "tempo_feel", "production_polish", "lyrical_explicitness",
-      "texture_grit", "texture_density", "texture_space", "texture_punch", "texture_warmth", "texture_brightness",
-      "release_year", "popularity_log"
+      "energy",
+      "aggression",
+      "valence",
+      "danceability",
+      "acousticness",
+      "vocal_prominence",
+      "tempo_feel",
+      "production_polish",
+      "lyrical_explicitness",
+      "texture_grit",
+      "texture_density",
+      "texture_space",
+      "texture_punch",
+      "texture_warmth",
+      "texture_brightness",
+      "release_year",
+      "popularity_log"
     ],
     "cultural_regions": [
-      "anglo_american", "british_irish", "latin_american", "iberian", "francophone",
-      "germanic_central_european", "nordic", "east_asian", "south_asian",
-      "african_afro_caribbean", "middle_eastern_mediterranean"
+      "anglo_american",
+      "british_irish",
+      "latin_american",
+      "iberian",
+      "francophone",
+      "germanic_central_european",
+      "nordic",
+      "east_asian",
+      "south_asian",
+      "african_afro_caribbean",
+      "middle_eastern_mediterranean"
     ]
   },
   "safeguards": {
@@ -72,5 +124,21 @@
     "llm_free_embeddings": "100% Skip-Gram with Negative Sampling; zero LLM calls during embedding training",
     "budget_cap_usd": 20.0,
     "privacy_and_copyright": "Zero raw audio or lyrics stored, distributed, or transmitted"
-  }
+  },
+  "amendments": [
+    {
+      "at": "2026-10-09T15:05:03Z",
+      "reason": "2026-10-09 re-run from scratch after real artist metadata was ingested (artist-grouped CV was degenerate): standard profile set to 3 seeds / ii_repeat 10 / 4 walks x 6 epochs / full ablation set (was 1 seed, ii_repeat 2, ablations none); LLM budget cap 20 -> 30 USD per PLAN.md. All onion results before this date are superseded (archived under _superseded_20261006).",
+      "no_results_seen_under_new_config": true,
+      "config_hashes_sha256": {
+        "configs/data.yaml": "9a8b88fbfb9132ff0b0815c6878425a0ff3eea68c26096238f11ea65c37e102d",
+        "configs/llm.yaml": "feba2dce46fa8833b78a5f74dcdf0a67856b19547e37f4ab0b29e9c127b210db",
+        "configs/profiles.yaml": "4dff5a074ca3cce8c1747b4c54a8f91e99296ffac75fd1caee4bc45beb2780e8"
+      },
+      "changed": [
+        "configs/llm.yaml",
+        "configs/profiles.yaml"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,8 @@
+# Publishing switches.  Read by scripts/build_site.py; deliberately NOT part of the pre-registered analysis lock.
+site:
+  base_path: /melomane/          # served at https://ravjothbrar.com/melomane/ (project Pages under a custom-domain user site)
+  max_payload_mb: 50
+  # The explorer shows artist/title strings. They come from a track-metadata table that is NOT in the Zenodo release and whose
+  # origin/licence is unconfirmed (DECISIONS.md 7.2, DATA_LICENSE.md). Flip to true ONLY after the owner confirms the source and
+  # that republishing the names is permitted. While false, build_site refuses to produce a public site.
+  names_cleared: false

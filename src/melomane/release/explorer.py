@@ -44,7 +44,7 @@ log = logging.getLogger(__name__)
 
 PAYLOAD_VERSION = 1
 UMAP_PARAMS = {"metric": "cosine", "n_neighbors": 32, "min_dist": 0.004, "n_components": 2}
-APP_FILES = ("index.html", "explorer.js", "math.js", "style.css")
+APP_FILES = ("index.html", "explorer.js", "math.js", "style.css", "favicon.svg")
 MODEL_LABELS = {"cooc": "Cooc", "composition": "Composition", "core": "Core", "composition_acoustic": "Composition (acoustic only)",
                 "composition_lyric": "Composition (lyric only)", "core_acoustic": "Core (acoustic only)",
                 "cooc_artistmasked": "Cooc (artist-masked)", "cooc_avg": "Cooc (averaged)"}

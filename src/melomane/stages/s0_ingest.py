@@ -5,7 +5,7 @@ from pathlib import Path
 
 from ..corpus import read_corpus, write_corpus, write_enrichment
 from ..pipeline import Ctx, Stage, StageResult, StageSkip, register, GREEN, PARTIAL
-from ..runtime import disk_free_gb, get_logger, write_json
+from ..runtime import disk_free_gb, get_logger, read_json, write_json
 
 log = get_logger("melomane.ingest")
 
@@ -20,7 +20,11 @@ class Ingest(Stage):
 
     def params(self, ctx):
         cfg = ctx.ws.config("data").get(ctx.corpus, {})
-        p = {"v": 2, "cfg": cfg, "limit": _limit(ctx)}
+        p = {"v": 3, "cfg": cfg, "limit": _limit(ctx)}
+        if ctx.corpus == "onion":                    # a different/updated metadata table must re-run the ingest (artist ids!)
+            from ..adapters import onion
+            prov = onion.default_raw_dir(ctx.ws) / "METADATA_PROVENANCE.json"
+            p["metadata_sha256"] = read_json(prov).get("source_sha256") if prov.exists() else None
         if ctx.corpus == "synth":
             p["demo"] = ctx.opt("demo_size", 2400)
         return p
@@ -76,7 +80,7 @@ class Ingest(Stage):
                         last = e; log.warning("Zenodo record %s failed: %s", rec, e)
                 else:
                     raise RuntimeError(f"could not download Music4All-Onion: {last}")
-            inv = onion.inventory(raw)
+            inv = onion.inventory(raw, count_rows=False)
             write_json(raw / "INVENTORY.json", inv)
             kw = {}
             if _limit(ctx):

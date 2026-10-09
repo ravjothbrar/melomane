@@ -25,7 +25,17 @@ paper:
   train: {epochs: 20, walks_per_node: 100}
   cv: {n_splits: 10, n_repeats: 20}
   ext: {multiverse_tracks: 40000, h8_tracks: 12000}
-standard: {}
+standard:
+  # Spec-faithful structure (3 seeds, ii_repeat 10, identical epochs for the three main models, full ablation set) at a
+  # scaled walk budget: 4 walks/node x 6 epochs instead of the base 8 x 10.  Measured throughput on the RTX 5080 is
+  # ~440k tokens/s (~7.4M pairs/s, not the 30M pairs/s PLAN.md assumed), at which the base budget needs ~25 GPU-hours.
+  # DECISIONS.md 2026-10-09 #3; the equal-token control (E4) and the `paper`-profile subset check (H8) test the scaling.
+  train: {walks_per_node: 4, epochs: 6, ii_repeat: 10}
+  seeds: 3
+  models: [cooc, composition, core]
+  # core_eqtok is omitted: equal-token-to-core for Core *is* Core.
+  ablations: [cooc_artistmasked, composition_acoustic, composition_lyric, core_partial60, core_partial30, core_partial10,
+              cooc_eqtok, composition_eqtok, cooc_avg]
 lite:
   train: {dim: 200, epochs: 6, walks_per_node: 4}
   vocab: {max_vocab: 60000}

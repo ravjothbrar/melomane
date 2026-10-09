@@ -380,3 +380,31 @@ def test_inventory_writes_json(tmp_path):
     assert "id_bert" not in saved["expected_files_missing"] and "userid_trackid_count" in saved["expected_files_missing"]
     assert "essentia_descriptor_overlap" in f or not (onion._essentia_reference())
     assert "broken.tsv" in saved["files"]                      # unreadable files are reported, not fatal
+
+
+def test_prepare_metadata_lifts_blocker_a_and_gives_real_artist_ids(tmp_path):
+    """The Zenodo record has no artist/title; an external table is normalised by ``prepare_metadata`` and then flows through the
+    ordinary adapter path, giving one artist_id per *normalised artist name* (not one per track: that made artist-grouped
+    CV a no-op)."""
+    d = tmp_path / "onion_b"; d.mkdir()
+    truth = write_layout_b(d)
+    ids = truth["ids"]
+    src = pd.DataFrame({"track_id": ids, "tag_list": [["x"]] * len(ids), "pseudo_caption": ["a made-up caption"] * len(ids),
+                        "title": [f"Song {i}" for i in range(len(ids))], "artist_name": [("The " if i % 2 else "") + f"Band {i % 7}" for i in range(len(ids))],
+                        "release": [f"Album {i % 5}" for i in range(len(ids))], "m4a_genres": ["rock"] * len(ids), "m4a_tags": ["rock"] * len(ids)})
+    sp = tmp_path / "track_metadata.parquet"; src.to_parquet(sp)
+    rec = onion.prepare_metadata(sp, d)
+    assert rec["rows"] == len(ids) and rec["with_artist"] == len(ids) and rec["unique_artists"] == 7 and len(rec["source_sha256"]) == 64
+    kept = pd.read_parquet(d / onion.METADATA_FILE)
+    assert list(kept.columns) == ["id", "artist", "title", "album"]            # captions / tag lists are not carried over
+    c = onion.build_corpus(d, seed=1, events_engine="pandas")
+    assert c.meta["blocker_a"] is False
+    assert (c.tracks["artist"] != "").all() and c.tracks["artist_id"].nunique() == 7 and (c.tracks["artist_id"] >= 0).all()
+    same = c.tracks.groupby("artist_id")["artist"].apply(lambda s: s.map(lambda x: x.removeprefix("The ")).nunique())
+    assert (same == 1).all()                                                    # "The Band 1" and "Band 1" are one artist
+
+
+def test_prepare_metadata_rejects_a_table_without_artist(tmp_path):
+    sp = tmp_path / "m.parquet"; pd.DataFrame({"track_id": ["a"], "title": ["t"]}).to_parquet(sp)
+    with pytest.raises(ValueError, match="artist"):
+        onion.prepare_metadata(sp, tmp_path)

@@ -39,11 +39,17 @@ import gzip
 import lzma
 import math
 import re
+import sys
 import warnings
 import zipfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterator, Sequence
+
+try:
+    csv.field_size_limit(min(sys.maxsize, 2147483647))
+except (OverflowError, ValueError):
+    csv.field_size_limit(2147483647)
 
 import numpy as np
 import pandas as pd
@@ -104,7 +110,7 @@ DEFAULT_EXTERNAL = ["id_jukebox", "id_maest", "id_musicnn", "id_bert", "id_lyric
                     "id_ivec*", "id_incp*"]
 LYRIC_STEMS = ["id_lyrics_tf-idf", "id_lyrics_word2vec", "id_bert", "processed_lyrics"]
 METADATA_STEMS = ["id_information", "id_metadata", "id_meta", "id_info", "metadata", "id_lang", "id_language"]
-TAG_STEMS = ["id_genres", "id_genres_tf-idf", "id_tags*"]
+TAG_STEMS = ["id_genres", "id_genres_tf-idf", "id_tags_dict", "id_tags*"]
 HELDOUT_STEMS = {"gems": "id_gems", "sentiment": "id_lyrics_sentiment_functionals", "vad": "id_vad_bow"}
 VOICE_STEMS = ["id_compare_*", "id_emobase_*"]
 FORBIDDEN_FAMILY_STEMS = ["id_gems", "id_lyrics_sentiment_functionals", "id_vad_bow", "id_emobase*", "id_jukebox", "id_maest",
@@ -157,7 +163,7 @@ class FileIndex:
         self.root = Path(raw_dir)
         self.files: list[Path] = []
         for p in sorted(self.root.rglob("*")) if self.root.exists() else []:
-            if not p.is_file() or p.suffix.lower() in (".part", ".tmp", ".crdownload", ".md", ".pdf", ".py", ".lock"):
+            if not p.is_file() or p.suffix.lower() in (".part", ".tmp", ".crdownload", ".md", ".pdf", ".py", ".lock", ".tar") or p.name.endswith(".tar.gz"):
                 continue
             ns = norm_stem(p.name)
             if ns.startswith(("inventory", "zenodo", "readme", "license", "licence", "checksum", "md5")):
@@ -218,13 +224,22 @@ def _open_binary(path: Path):
         f.close()
 
 
-def _head_text(path: Path, nbytes: int = 1 << 16) -> str:
+def _head_text(path: Path, max_lines: int = 16, max_bytes: int = 8 * 1024 * 1024) -> str:
+    """Read the first several complete lines from a table (handles wide tables up to 8MB header)."""
+    import io
     with _open_binary(path) as f:
-        raw = f.read(nbytes)
-    text = raw.decode("utf-8-sig", errors="replace")
-    if len(raw) >= nbytes and "\n" in text:
-        text = text[: text.rindex("\n")]
-    return text
+        wrapper = io.TextIOWrapper(f, encoding="utf-8-sig", errors="replace")
+        lines = []
+        bytes_read = 0
+        for _ in range(max_lines):
+            line = wrapper.readline()
+            if not line:
+                break
+            lines.append(line)
+            bytes_read += len(line)
+            if bytes_read >= max_bytes:
+                break
+    return "".join(lines)
 
 
 def count_lines(path: Path, chunk: int = 1 << 24) -> int:
@@ -267,7 +282,15 @@ def _is_numeric_like(x: str) -> bool:
     if not x:
         return False
     if x[0] in "[(" and x[-1] in "])":
-        return True
+        inner = x[1:-1].strip()
+        if not inner:
+            return False
+        first = inner.split(",")[0].strip()
+        try:
+            float(first)
+            return True
+        except ValueError:
+            return False
     try:
         float(x)
         return True
@@ -378,12 +401,22 @@ def _parse_list_column(s: pd.Series, name: str, max_len: int = 4096) -> pd.DataF
 
 def _finalize(df: pd.DataFrame, expand_lists: bool, float32: bool, source: str = "") -> pd.DataFrame:
     """id column -> stripped str; object columns -> numeric / expanded lists / kept as strings."""
+    if df.empty or df.shape[1] == 0:
+        return df
+    df = df.copy()
+    if df.shape[1] >= 2 and str(df.columns[0]).lower() in ("id", "unnamed: 0", "index", "") and str(df.columns[1]).lower() in ("id", "track_id", "trackid"):
+        df = df.iloc[:, 1:]
     idc = df.columns[0]
-    out_cols: list = [df[idc].astype(str).str.strip().rename("id")]
-    obj_kept: list = []
-    for c in df.columns[1:]:
-        col = df[c]
-        if _is_text(col):
+    id_series = df.iloc[:, 0].astype(str).str.strip().rename("id")
+    df = df.iloc[:, 1:]
+    df.insert(0, "id", id_series)
+
+    obj_cols = [c for c in df.columns[1:] if _is_text(df[c])]
+    expanded_parts = []
+    cols_to_drop = []
+    if len(obj_cols) <= 2000:
+        for c in obj_cols:
+            col = df[c]
             nn = col.dropna()
             sample = nn.head(200).astype(str).str.strip()
             if len(sample) and sample.str.startswith(_LIST_START).mean() > 0.9:
@@ -391,26 +424,31 @@ def _finalize(df: pd.DataFrame, expand_lists: bool, float32: bool, source: str =
                     ex = _parse_list_column(col, str(c))
                     if ex is None:
                         log.warning("%s: list-valued column %r skipped (variable length / unparsable)", source, c)
+                        cols_to_drop.append(c)
                     else:
-                        out_cols.append(ex)
-                else:
-                    out_cols.append(col)
+                        expanded_parts.append(ex)
+                        cols_to_drop.append(c)
                 continue
             conv = pd.to_numeric(col, errors="coerce")
             if len(nn) and conv.notna().sum() >= 0.9 * len(nn):
-                col = conv
-        if pd.api.types.is_bool_dtype(col):
-            col = col.astype(np.float32)
-        if float32 and pd.api.types.is_float_dtype(col):
-            col = col.astype(np.float32)
-        elif float32 and pd.api.types.is_integer_dtype(col):
-            col = col.astype(np.float32) if col.abs().max() < 2 ** 24 else col.astype(np.float64)
-        out_cols.append(col)
-        if _is_text(col):
-            obj_kept.append(c)
-    res = pd.concat(out_cols, axis=1)
-    res.attrs["id_name"] = str(idc)
-    return res
+                df[c] = conv
+
+    if cols_to_drop:
+        df = df.drop(columns=cols_to_drop)
+
+    if float32:
+        f_cols = [c for c in df.columns[1:] if pd.api.types.is_float_dtype(df[c].dtype)]
+        if f_cols:
+            df[f_cols] = df[f_cols].astype(np.float32)
+        b_cols = [c for c in df.columns[1:] if pd.api.types.is_bool_dtype(df[c].dtype)]
+        if b_cols:
+            df[b_cols] = df[b_cols].astype(np.float32)
+
+    if expanded_parts:
+        df = pd.concat([df] + expanded_parts, axis=1)
+
+    df.attrs["id_name"] = str(idc)
+    return df
 
 
 def read_table(path: Path, columns: Sequence[str] | None = None, nrows: int | None = None,
@@ -443,7 +481,9 @@ def read_table(path: Path, columns: Sequence[str] | None = None, nrows: int | No
         if columns is not None:
             want = set(columns)
             usecols = [names[0]] + [c for c in names[1:] if c in want]
-        df = pd.read_csv(p, sep=lay.sep, header=0 if lay.header else None, names=names, dtype={names[0]: str},
+        id_dtype = {names[0]: str} if lay.header and names else ({0: str} if not lay.header else None)
+        df = pd.read_csv(p, sep=lay.sep, header=0 if lay.header else None, names=names if not lay.header else None,
+                         dtype=id_dtype,
                          usecols=usecols, nrows=nrows, compression="infer", on_bad_lines="warn", low_memory=False)
     df = _finalize(df, expand_lists, float32, p.name)
     df = df.rename(columns={df.columns[0]: "id"})
@@ -1020,12 +1060,14 @@ def _build_external(files: FileIndex, store: _Store, patterns: Sequence[str], in
             pos = index.get_indexer(df["id"])
             sel = np.flatnonzero(pos >= 0)
             if not cols or sel.size == 0:
+                store.evict(path)
                 continue
             M = _clean_matrix(df[cols].to_numpy(np.float32, na_value=np.nan)[sel])
             ok = np.isfinite(M).all(axis=1)
             if any(fnmatch.fnmatchcase(norm_stem(path.name), norm_stem(x)) for x in LYRIC_STEMS):
                 alive = ok & (np.abs(M).sum(axis=1) > 0)
                 lyric_ids.update(pos[sel][alive].tolist())
+            store.evict(path)
             if not ok.any():
                 continue
             r = pos[sel][ok]
@@ -1147,6 +1189,7 @@ def _build_heldout(files: FileIndex, store: _Store, index: pd.Index, report: dic
                 continue
         for name, ser in _scalarize(df, key).items():
             put(name, df["id"], ser.to_numpy(np.float32, na_value=np.nan))
+        store.evict(path)
     report["columns"] = list(cols)
     log.info("held-out scalars: %s", list(cols))
     return pd.DataFrame(cols, index=range(len(index)), dtype=np.float32) if cols else None
@@ -1178,13 +1221,33 @@ def _parse_year(s: pd.Series) -> np.ndarray:
 
 def _tags_from_frame(df: pd.DataFrame, k: int = 5) -> pd.Series | None:
     """'a|b|c' per row from a text column of tags/genres, or the top-k positive columns of a wide tag matrix."""
-    tagcol = _find_alias(df, ("tags", "toptags", "genres", "genre", "tag"))
+    tagcol = _find_alias(df, ("tags", "toptags", "genres", "genre", "tag", "tagweight"))
+    if tagcol is None and df.shape[1] == 2 and any(term in str(df.columns[1]).lower() for term in ("tag", "genre")):
+        tagcol = df.columns[1]
     if tagcol is not None and _is_text(df[tagcol]):
-        t = _as_text(df[tagcol]).str.replace(r"[\[\]'\"]", "", regex=True).str.replace(r"\s*[;,|]\s*", "|", regex=True)
+        col_s = _as_text(df[tagcol])
+        sample_str = str(col_s.iloc[0]) if len(col_s) else ""
+        if sample_str.startswith("{") and ":" in sample_str:
+            import ast
+            def _parse_dict(val):
+                if not isinstance(val, str) or not val.strip() or val[0] != "{":
+                    return ""
+                try:
+                    d = ast.literal_eval(val)
+                    if isinstance(d, dict):
+                        return "|".join(str(k) for k, _ in sorted(d.items(), key=lambda x: x[1], reverse=True)[:k])
+                except Exception:
+                    pass
+                return ""
+            parsed = col_s.apply(_parse_dict)
+            return pd.Series(parsed.to_numpy(), index=df["id"].to_numpy())
+        t = col_s.str.replace(r"[\[\]'\"]", "", regex=True).str.replace(r"\s*[;,|]\s*", "|", regex=True)
         return pd.Series(t.str.lower().str.strip("| ").to_numpy(), index=df["id"].to_numpy())
     num = _numeric_cols(df)
     if len(num) < 2 or all(re.fullmatch(r"(c?\d+|\w+\[\d+\])", str(c)) for c in num):
         return None                                        # unnamed dimensions carry no tag names
+    if len(num) > 2000:
+        return None                                        # Skip overly wide sparse matrices (e.g. 178k raw TF-IDF)
     V = np.nan_to_num(df[num].to_numpy(np.float32, na_value=np.nan))
     kk = min(k, V.shape[1])
     top = np.argpartition(-V, kk - 1, axis=1)[:, :kk]
@@ -1238,11 +1301,15 @@ def _build_tracks(files: FileIndex, store: _Store, ids: np.ndarray, report: dict
     tag_parts = []
     for stem in TAG_STEMS:
         for path in files.find_files(stem):
+            ns = norm_stem(path.name)
+            if "tag" in ns and "tfidf" in ns:
+                continue                                            # 178k columns; id_tags_dict provides exact tags cleanly
             df = store.get(path)
-            tg = None if df is None else _tags_from_frame(df, k=4 if "tag" in norm_stem(path.name) else 3)
+            tg = None if df is None else _tags_from_frame(df, k=4 if "tag" in ns else 3)
             if tg is not None:
                 tag_parts.append(tg[~tg.index.duplicated()].reindex(idx).fillna(""))
                 src["tags"] = (src.get("tags", "") + "," + path.name).strip(",")
+            store.evict(path)
     if "tags_meta" in fields:
         tag_parts.insert(0, fields.pop("tags_meta").fillna(""))
     if tag_parts:
@@ -1453,10 +1520,55 @@ def ingest(ws, raw_dir: Path | None = None, name: str = "onion", **kw) -> Corpus
 
 
 # ----------------------------------------------------------------------------------------------------------------------
+# track metadata (artist / title / album): the Zenodo v2 record ships none of it (Blocker-A)
+# ----------------------------------------------------------------------------------------------------------------------
+METADATA_FILE = "id_metadata.parquet"           # stem is in METADATA_STEMS, so ``build_corpus`` picks it up automatically
+_METADATA_SRC_COLS = {"id": ("track_id", "id", "trackid"), "artist": ("artist_name", "artist"), "title": ("title", "track_name", "name"),
+                      "album": ("release", "album", "album_name")}
+
+
+def prepare_metadata(source: Path, raw_dir: Path) -> dict:
+    """Normalise an externally obtained track-metadata table into ``<raw_dir>/id_metadata.parquet`` (columns ``id, artist,
+    title, album``) so the adapter ingests artists/titles the ordinary way (-> real ``artist_id`` = normalised artist name;
+    no more one-artist-per-track).  Only these four columns are kept: captions, tag lists and anything else in the source
+    are dropped.  Returns a provenance record (source path, sha256, row counts) for the corpus manifest.
+
+    The Zenodo record 15394646 itself contains no such table; whoever supplies one must confirm its provenance and licence
+    before any name derived from it is published."""
+    import hashlib
+
+    source = Path(source)
+    df = pd.read_parquet(source) if source.suffix.lower() == ".parquet" else pd.read_csv(source, sep=None, engine="python")
+    low = {str(c).lower(): c for c in df.columns}
+    pick = {}
+    for field_, cands in _METADATA_SRC_COLS.items():
+        hit = next((low[c] for c in cands if c in low), None)
+        if hit is None and field_ in ("id", "artist", "title"):
+            raise ValueError(f"{source.name}: no column for {field_!r} (looked for {cands}; have {list(df.columns)})")
+        pick[field_] = hit
+    out = pd.DataFrame({"id": df[pick["id"]].astype(str).str.strip()})
+    for f_ in ("artist", "title", "album"):
+        out[f_] = df[pick[f_]].fillna("").astype(str).str.strip() if pick[f_] is not None else ""
+    out = out.drop_duplicates("id").reset_index(drop=True)
+    dst = Path(raw_dir) / METADATA_FILE
+    out.to_parquet(dst, index=False)
+    h = hashlib.sha256()
+    with open(source, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 22), b""):
+            h.update(chunk)
+    rec = {"source_file": source.name, "source_sha256": h.hexdigest(), "rows": int(len(out)),
+           "with_artist": int((out["artist"] != "").sum()), "with_title": int((out["title"] != "").sum()),
+           "unique_artists": int(out.loc[out["artist"] != "", "artist"].map(normalize_artist).nunique()),
+           "written_to": str(dst.name), "provenance": "UNVERIFIED - not part of Zenodo 15394646; confirm origin and licence before publishing names"}
+    write_json(Path(raw_dir) / "METADATA_PROVENANCE.json", rec)
+    return rec
+
+
+# ----------------------------------------------------------------------------------------------------------------------
 # inventory (PLAN S0)
 # ----------------------------------------------------------------------------------------------------------------------
 def _id_pattern(ids: Sequence[str]) -> str:
-    s = [x for x in ids if x][:200]
+    s = [str(x) for x in ids if pd.notna(x) and str(x).strip()][:200]
     if not s:
         return "empty"
     if all(re.fullmatch(r"-?\d+", x) for x in s):
@@ -1480,8 +1592,8 @@ def _essentia_reference() -> set[str]:
     return set()
 
 
-def inventory(raw_dir: Path, sample_rows: int = 3, count_rows: bool | str = "auto", max_sample: int = 2000,
-              count_limit_bytes: int = 300 * 1024 ** 2) -> dict:
+def inventory(raw_dir: Path, sample_rows: int = 3, count_rows: bool | str = "auto", max_sample: int = 200,
+              count_limit_bytes: int = 10 * 1024 ** 2) -> dict:
     """Describe every data file: rows (line count, exact-or-None), #columns, header/separator, dtype summary, ``sample_rows``
     sample rows, an id-semantics guess, plus dataset-level checks (events file, timestamp unit and range, Essentia
     resemblance to AcousticBrainz, metadata availability = Blocker-A probe, expected-but-missing files).
@@ -1503,12 +1615,16 @@ def inventory(raw_dir: Path, sample_rows: int = 3, count_rows: bool | str = "aut
             info["n_columns"] = len(raw_cols)
             info["columns_head"] = [str(c) for c in raw_cols[:12]]
             kinds = {"numeric": 0, "list": 0, "string": 0}
-            for c in raw_cols[1:]:
-                if pd.api.types.is_numeric_dtype(df[c]):
-                    kinds["numeric"] += 1
-                else:
-                    s = df[c].dropna().astype(str).head(50).str.strip()
-                    kinds["list" if len(s) and s.str.startswith(_LIST_START).mean() > 0.9 else "string"] += 1
+            if len(raw_cols) <= 2000:
+                for c in raw_cols[1:]:
+                    if pd.api.types.is_numeric_dtype(df[c]):
+                        kinds["numeric"] += 1
+                    else:
+                        s = df[c].dropna().astype(str).head(50).str.strip()
+                        kinds["list" if len(s) and s.str.startswith(_LIST_START).mean() > 0.9 else "string"] += 1
+            else:
+                num_cnt = int(sum(bool(pd.api.types.is_numeric_dtype(dt)) for dt in df.dtypes[1:]))
+                kinds = {"numeric": num_cnt, "list": 0, "string": int(len(raw_cols) - 1 - num_cnt)}
             info["dtype_summary"] = kinds
             info["sample_rows"] = [[str(v)[:40] for v in row[:8]] for row in df.head(sample_rows).itertuples(index=False, name=None)]
             pat = _id_pattern(df["id"].astype(str).tolist())

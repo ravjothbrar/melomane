@@ -68,6 +68,16 @@ def check_release_bundles(release_dir: Path) -> tuple[bool, list[str]]:
     return len(warnings) == 0, warnings
 
 
+MIN_ARTIST_COVERAGE = 0.9
+
+
+def artist_coverage(m) -> float:
+    """Share of a loaded bundle's tracks that carry an artist name (a bundle without them cannot do artist-disjoint retrieval and
+    is useless in the explorer, even though it 'loads')."""
+    n = len(m.vocab)
+    return sum(1 for t in m.vocab if (t.get("artist") or "").strip()) / n if n else 0.0
+
+
 def test_bundle_loading(ctx: Ctx) -> tuple[bool, list[str]]:
     errors = []
     try:
@@ -99,6 +109,9 @@ def test_bundle_loading(ctx: Ctx) -> tuple[bool, list[str]]:
                     nbrs = m.neighbors(0, k=5)
                     if not nbrs or len(nbrs) < 1:
                         errors.append(f"Bundle {model_dir.name} returned empty neighbors query")
+                    cov = artist_coverage(m)
+                    if cov < MIN_ARTIST_COVERAGE:
+                        errors.append(f"Bundle {model_dir.name}: only {cov:.0%} of tracks carry an artist name (need >= {MIN_ARTIST_COVERAGE:.0%})")
                 except Exception as e:
                     errors.append(f"Failed loading/querying bundle {model_dir.name}: {e}")
 

@@ -211,3 +211,15 @@ def test_list_supervised_poles_and_poles(m):
     groups = {p["group"] for p in m.list_poles()}
     assert groups == {"supervised", "mode", "factor"}
     np.testing.assert_allclose(np.linalg.norm(m.pole("factor:0")), 1.0, atol=1e-5)
+
+
+def test_unknown_artists_are_not_one_big_artist():
+    """Regression: a metadata-free bundle (all artist names empty) must still answer artist-disjoint queries.
+    Previously every empty artist shared one code, so exclude_artist removed the whole catalogue and neighbors() was []."""
+    rows = [{"cid": i, "artist": "", "title": "", "category": "x"} for i in range(30)]
+    E = np.random.default_rng(1).normal(size=(30, 8)).astype(np.float32)
+    mm = Melomane(E, rows)
+    assert len(mm.neighbors(0, k=5)) == 5
+    rows[3]["artist"] = rows[4]["artist"] = "Same Artist"
+    mm = Melomane(E, rows)
+    assert 4 not in [r["cid"] for r in mm.neighbors(3, k=29)]                  # a known artist is still excluded

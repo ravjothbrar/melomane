@@ -135,6 +135,8 @@ def is_done(ctx: Ctx, stage: Stage) -> bool:
     m = read_json(mp)
     if m.get("status") not in (GREEN, PARTIAL):
         return False
+    if not all(Path(p).exists() for p in stage.outputs(ctx)):
+        return False
     if m.get("params_hash") != stable_hash({"params": stage.params(ctx), "profile": ctx.profile}):
         return False
     for d in stage.deps:
@@ -142,7 +144,7 @@ def is_done(ctx: Ctx, stage: Stage) -> bool:
             cur = _dep_hash(ctx, d)
             if cur is not None and cur != m["dep_hashes"][d]:
                 return False
-    return all(Path(p).exists() for p in stage.outputs(ctx))
+    return True
 
 
 def _topo(names: list[str]) -> list[str]:

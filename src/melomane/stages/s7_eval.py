@@ -15,6 +15,7 @@ from .common import available_models, corpus_of, labels_of, model_dir, stratum_t
 
 log = get_logger("melomane.s7")
 MAIN = ["cooc", "composition", "core"]
+MIN_REGIONS_H3 = 3                                     # H3 compares regions: fewer than 3 usable tags is not a comparison
 PRIMARY = {"ordinal": "centroid", "binary": "centroid", "continuous": "tercile_centroid"}
 
 
@@ -208,7 +209,11 @@ class Evaluation(Stage):
         if "composition" in cd and "cooc" in cd:
             regs = [r for r in cd["composition"] if r in cd["cooc"] and cd["composition"][r] == cd["composition"][r] and cd["cooc"][r] == cd["cooc"][r]]
             share = float(np.mean([cd["composition"][r] >= cd["cooc"][r] for r in regs])) if regs else float("nan")
-            H["3"] = {"claim": "Composition >= Cooc on regional Cohen's d", "status": "supported" if share >= 0.75 else ("not supported" if share <= 0.25 else "mixed"), "evidence": {"share_regions_composition_ge_cooc": share, "n_regions": len(regs)}}
+            if len(regs) < MIN_REGIONS_H3:      # one region is an anecdote, not a regional comparison
+                H["3"] = {"claim": "Composition >= Cooc on regional Cohen's d", "status": "not evaluable",
+                          "evidence": {"reason": f"only {len(regs)} region(s) with a usable tag (need >= {MIN_REGIONS_H3})", "n_regions": len(regs)}}
+            else:
+                H["3"] = {"claim": "Composition >= Cooc on regional Cohen's d", "status": "supported" if share >= 0.75 else ("not supported" if share <= 0.25 else "mixed"), "evidence": {"share_regions_composition_ge_cooc": share, "n_regions": len(regs)}}
         else:
             H["3"] = {"claim": "Composition >= Cooc on regional d", "status": "not evaluable", "evidence": "no cultural targets"}
         return H

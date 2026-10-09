@@ -137,7 +137,9 @@ class Melomane:
             a = normalize_artist(t["artist"] or "")
             self._artist_norm.append(a)
             self._title_norm.append(normalize_title(t["title"] or ""))
-            self._artist_code[i] = codes.setdefault(a, len(codes))
+            # an unknown artist (empty name) is not "the same artist" as every other unknown one: give it its own code,
+            # otherwise exclude_artist would blank out the entire catalogue of a metadata-free bundle
+            self._artist_code[i] = codes.setdefault(a, len(codes)) if a else -(i + 1)
         self._key_index: dict[tuple[str, str], list[int]] = {}
         for i, key in enumerate(zip(self._artist_norm, self._title_norm)):
             self._key_index.setdefault(key, []).append(i)
