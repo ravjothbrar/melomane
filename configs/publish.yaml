@@ -2,7 +2,7 @@
 site:
   base_path: /melomane/          # served at https://ravjothbrar.com/melomane/ (project Pages under a custom-domain user site)
   max_payload_mb: 50
-  # The explorer shows artist/title strings. They come from a track-metadata table that is NOT in the Zenodo release and whose
-  # origin/licence is unconfirmed (DECISIONS.md 7.2, DATA_LICENSE.md). Flip to true ONLY after the owner confirms the source and
-  # that republishing the names is permitted. While false, build_site refuses to produce a public site.
-  names_cleared: false
+  # The explorer shows artist/title strings. They come from the Hugging Face dataset seungheondoh/enrich-music4all (Music4All metadata),
+  # which declares no licence (DECISIONS.md 18, DATA_LICENSE.md). The owner decided on 2026-10-09 to publish them with attribution
+  # (DECISIONS.md 20). Set to false to make build_site refuse to produce a public site again.
+  names_cleared: true

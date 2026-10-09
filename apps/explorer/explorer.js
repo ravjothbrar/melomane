@@ -87,6 +87,23 @@ export async function start(env = {}) {
     zin: $("zoom-in"), zout: $("zoom-out"), zreset: $("zoom-reset"), mapLegend: $("map-legend"), splash: $("splash"), splashMsg: $("splash-msg"),
   };
 
+  // ---- large-screen gate: on a phone, show the explanation and stop before any data is fetched --------------------------------------
+  {
+    const coarse = !!(win.matchMedia && win.matchMedia("(pointer: coarse)").matches);
+    const scr = win.screen || {};
+    if (M.isPhoneLike({ coarse, screenW: scr.width, screenH: scr.height })) {
+      const gate = $("device-gate");
+      if (gate) gate.hidden = false;
+      if (doc.body && doc.body.classList) doc.body.classList.add("gated");
+      const btn = $("gate-copy");
+      if (btn) btn.addEventListener("click", async () => {
+        try { await win.navigator.clipboard.writeText(String(win.location.href).split("#")[0]); btn.textContent = "Link copied"; }
+        catch { btn.textContent = "Copy it from the address bar"; }
+      });
+      return null;
+    }
+  }
+
   const state = {
     manifest: null, tracks: null, hay: null, modelName: null, models: {}, seed: -1, poles: [], theta: 30, k: 10,
     excludeArtist: true, colorBy: "category", view: { cx: 0, cy: 0, zoom: 0.95 }, hover: -1, results: null, modeFocus: null,

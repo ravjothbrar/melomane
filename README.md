@@ -39,7 +39,7 @@ Full tables, CIs, extensions and the limitations are in [`paper/melomane_paper.m
 
 A static, dependency-free WebGL2 explorer lives in [`apps/explorer`](apps/explorer): search a track, see its neighbours in each model,
 and rotate the query toward a genre, a mode or an emergent direction. Everything is computed in the browser from a small int8 payload;
-the 2-D layout (UMAP) is for display only.
+the 2-D layout (UMAP) is for display only. It is a large-screen tool: phones are shown an explanation and a copy-link button instead (tablets, laptops, desktops and unfolded foldables work).
 
 ```bash
 python -m melomane serve --dir release/onion/standard/explorer --port 8765

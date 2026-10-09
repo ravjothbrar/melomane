@@ -167,3 +167,12 @@ Each entry: **decision** · why · alternatives considered. The pre-registration
 19. **Unattended tail** (`python -m melomane.unattended`): holds the machine awake (Windows `SetThreadExecutionState`, no settings changed),
     waits for the S5 manifest, then runs S6-S9 and S12-S14 with the LLM spend capped to $1.5 above what is already spent, so a night run
     cannot exceed the credit left on the account.
+20. **Names published (owner's decision, 2026-10-09).** After DECISIONS 18 (source identified; no licence declared) the owner instructed:
+    "Put the artist names on there." `configs/publish.yaml: names_cleared` is now **true**; the explorer's data note credits Music4All
+    (Santana et al., IWSSIP 2020) and `seungheondoh/enrich-music4all`. Basis: artist/track names are factual metadata; risk: the
+    compilation's rights holders have not granted permission. Mitigation: attribution, a removal path (`names_cleared: false` + redeploy), and a
+    recommended courtesy email to the Music4All authors. Captions and tag lists from that dataset are not used or published.
+21. **Device gate.** The explorer is a large-screen tool (point cloud, labels, steering panel). The site refuses phones and offers a link to
+    copy for a bigger screen. The test is the *physical screen* in CSS pixels, not the window, and applies only to touch-first devices:
+    `pointer: coarse` and `min(screen.width, screen.height) < 600`. So laptops/desktops (even in a small or zoomed window), iPads,
+    tablets and unfolded foldables (>= ~670 px) pass; phones and a foldable's cover screen (<= ~480 px) do not.

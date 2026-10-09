@@ -11,6 +11,19 @@
 </head>
 <body>
 
+  <!-- Large-screen gate: shown instead of the app on phones (see isPhoneLike in math.js); no data is fetched when it is shown -->
+  <section id="device-gate" class="device-gate" hidden aria-labelledby="gate-title">
+    <div class="gate-card">
+      <span class="brand-title gate-brand" role="img" aria-label="Melomane"><span aria-hidden="true">ME</span><svg class="brand-note" viewBox="0 0 40 72" aria-hidden="true"><defs><linearGradient id="ng9" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6f6"/><stop offset=".55" stop-color="#ff8be0"/><stop offset="1" stop-color="#c026d3"/></linearGradient></defs><ellipse cx="15" cy="57" rx="13.5" ry="10" transform="rotate(-22 15 57)" fill="url(#ng9)"/><rect x="25.5" y="2" width="6.2" height="54" rx="1.6" fill="url(#ng9)"/></svg><span aria-hidden="true">OMANE</span></span>
+      <h1 id="gate-title">Melomane needs a bigger screen</h1>
+      <p>Melomane is an interactive map of tens of thousands of tracks, with labels and steering controls that do not fit on a phone. Open it on a <strong>tablet, laptop or desktop</strong> (an unfolded foldable works too).</p>
+      <div class="gate-actions">
+        <button id="gate-copy" type="button" class="btn-primary">Copy link to open on a bigger screen</button>
+        <a class="gate-link" href="https://github.com/ravjothbrar/melomane" target="_blank" rel="noopener noreferrer">View the project on GitHub &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Minimal Header (Cosmograph / Obsidian Style) -->
   <header class="top">
     <div class="brand">

@@ -45,7 +45,7 @@ class Node {
 function makeEnv(base, { noGL = false, failFetch = false } = {}) {
   const byId = new Map();
   const document = {
-    getElementById: (id) => { if (!byId.has(id)) { const n = new Node("#" + id); if (id === "map") n.noGL = noGL; if (id === "error" || id === "tooltip") n.hidden = true; byId.set(id, n); } return byId.get(id); },
+    getElementById: (id) => { if (!byId.has(id)) { const n = new Node("#" + id); if (id === "map") n.noGL = noGL; if (id === "error" || id === "tooltip" || id === "device-gate") n.hidden = true; byId.set(id, n); } return byId.get(id); },
     createElement: (t) => new Node(t), createTextNode: (s) => ({ textContent: String(s) }),
   };
   const history = { hash: "", replaceState(_a, _b, h) { this.hash = h; } };
@@ -74,6 +74,17 @@ const out = {};
   const env = makeEnv(dir + "/", { noGL: true });
   const app = await start(env);
   out.nogl_returns_null = app === null; out.nogl_message = env.document.getElementById("error").textContent;
+}
+// ---- 2b. phone gate: the explanation is shown, nothing is fetched, the app does not start; an iPad-sized touch screen passes ------------
+{
+  const touch = (env, w, h) => { env.window.matchMedia = (q) => ({ matches: /coarse/.test(q) }); env.window.screen = { width: w, height: h }; return env; };
+  const env = touch(makeEnv(dir + "/"), 390, 844);
+  let fetched = 0; const f0 = env.fetch; env.fetch = async (p) => { fetched++; return f0(p); };
+  const added = []; env.document.body = { classList: { add: (c) => added.push(c) } };
+  const app = await start(env);
+  out.gate_returns_null = app === null; out.gate_fetches = fetched;
+  out.gate_visible = env.document.getElementById("device-gate").hidden === false; out.gate_body_class = added.includes("gated");
+  out.ipad_starts = (await start(touch(makeEnv(dir + "/"), 820, 1180))) !== null;
 }
 // ---- 3. full interaction ------------------------------------------------------------------------------------------------
 const env = makeEnv(dir + "/");

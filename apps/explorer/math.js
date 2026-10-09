@@ -300,3 +300,15 @@ export function placeLabels(cands, W, H, { pad = 3, gap = 7, maxLabels = 120, ma
   }
   return out;
 }
+
+
+// ---- device gate ----------------------------------------------------------------------------------------------------
+/**
+ * True for a touch-first device whose *physical screen* is phone-sized.  Pure and fail-open: missing information never blocks.
+ * Uses the screen (CSS px), not the window, so a small or zoomed desktop browser is never blocked, and the shorter side, so rotating a
+ * phone does not unlock it.  A foldable's cover screen (<= ~480 px) is blocked; unfolded (>= ~670 px), tablets, laptops and desktops pass.
+ */
+export function isPhoneLike({ coarse, screenW, screenH, minDim = 600 } = {}) {
+  if (!coarse || !(screenW > 0) || !(screenH > 0)) return false;          // missing / zero / NaN is not information: fail open
+  return Math.min(screenW, screenH) < minDim;
+}

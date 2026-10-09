@@ -41,7 +41,8 @@ PROVENANCE: dict[str, dict[str, str]] = {
         "licence": "CC BY 4.0",
         "attribution": ("Derived from Music4All-Onion (Moscati et al., CIKM 2022, doi:10.1145/3511808.3557656; Zenodo), "
                         "licensed CC BY 4.0. Listening behaviour in that dataset is Last.fm-derived. This release contains "
-                        "derived embeddings and metadata only - no audio, no lyrics, no per-user data."),
+                        "derived embeddings and metadata only - no audio, no lyrics, no per-user data. Artist, title and album strings are Music4All "
+                        "metadata (Santana et al., IWSSIP 2020) as redistributed on Hugging Face (seungheondoh/enrich-music4all)."),
     },
     "mbid-stack": {
         "source": "MusicBrainz / ListenBrainz / AcousticBrainz / LRCLIB",

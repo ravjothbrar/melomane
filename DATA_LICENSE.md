@@ -25,5 +25,9 @@ its columns and its 108,363 rows; see `DECISIONS.md` 18). That dataset's card **
 (Santana et al., 2020), whose terms are not stated either. Only `track_id`, `title`, `artist_name` and `release` are used; its LLM-generated
 captions and tag lists are not.
 
-Until the owner confirms that these names may be republished (with attribution to Music4All and `seungheondoh/enrich-music4all`), the
-explorer payload and bundles are **not cleared for public release**; the numeric embeddings alone are.
+**Decision (2026-10-09):** the owner decided to publish these strings, with attribution, in the explorer. The attribution is shown in the
+explorer's data note and must stay with any redistribution: *"Artist, title and album strings are Music4All metadata (Santana et al.,
+IWSSIP 2020) as redistributed on Hugging Face (seungheondoh/enrich-music4all)."* Because that dataset declares no licence, the
+strings are published on the basis that they are factual metadata (names of artists and tracks), not as a grant from the rights holders. If
+a rights holder objects, remove the names by setting `names_cleared: false` in `configs/publish.yaml` and redeploying a names-free build;
+the numeric embeddings are unaffected. A courtesy email to the Music4All authors is recommended (`docs/email_music4all.md`).

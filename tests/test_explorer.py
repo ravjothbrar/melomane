@@ -243,6 +243,8 @@ def test_explorer_ui_smoke_under_node_with_dom_and_webgl_stubs(built):
     # failure paths
     assert o["fail_returns_null"] and o["fail_visible"] and "served over http" in o["fail_message"]
     assert o["nogl_returns_null"] and "WebGL2" in o["nogl_message"]
+    # phones are gated before any data is fetched; iPad-sized touch screens are not
+    assert o["gate_returns_null"] and o["gate_fetches"] == 0 and o["gate_visible"] and o["gate_body_class"] and o["ipad_starts"]
     # boot
     assert o["started"] and o["error_hidden"] and o["toggle_buttons"] == 3 and o["status"].startswith("Cooc: 400 tracks, 16-d int8")
     assert "Music4All-Onion" in o["attribution"] and "CC BY 4.0" in o["attribution"]

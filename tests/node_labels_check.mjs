@@ -55,4 +55,16 @@ const d = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
 let minD = 1e9; for (let i = 0; i < 12; i++) for (let j = i + 1; j < 12; j++) minD = Math.min(minD, d(pal[i], pal[j]));
 checks.first12_distinct = minD > 40;
 
+// 6. device gate: block touch-first phones (and a foldable's small cover screen), allow iPads, laptops, desktops and unfolded foldables.
+//    The test is the physical screen (CSS px), never the window, so a shrunk or zoomed desktop browser is not blocked.
+const D = (coarse, w, h) => M.isPhoneLike({ coarse, screenW: w, screenH: h });
+checks.gate_blocks_phone_portrait = D(true, 390, 844) === true && D(true, 430, 932) === true && D(true, 360, 800) === true;
+checks.gate_blocks_phone_landscape = D(true, 844, 390) === true && D(true, 932, 430) === true;     // rotating a phone does not unlock it
+checks.gate_blocks_foldable_cover_screen = D(true, 344, 882) === true;
+checks.gate_allows_ipads_and_tablets = D(true, 744, 1133) === false && D(true, 820, 1180) === false && D(true, 1024, 1366) === false && D(true, 600, 960) === false;
+checks.gate_allows_unfolded_foldables = D(true, 884, 1104) === false && D(true, 673, 841) === false && D(true, 904, 1136) === false;
+checks.gate_allows_laptops_and_desktops = D(false, 1920, 1080) === false && D(false, 1440, 900) === false && D(false, 1280, 720) === false;
+checks.gate_ignores_zoomed_desktops = D(false, 384, 216) === false;                                // 500 % browser zoom shrinks screen.width, but the pointer is fine
+checks.gate_fails_open_without_information = M.isPhoneLike({}) === false && M.isPhoneLike({ coarse: true }) === false && D(true, 0, 0) === false && D(true, NaN, 800) === false;
+
 console.log(JSON.stringify(checks));
