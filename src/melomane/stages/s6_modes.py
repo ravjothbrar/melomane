@@ -49,25 +49,28 @@ def name_modes(llm, prompt, vocab, labels, E, modes_meta, members, poles, worker
             if m.get("mode") in ids:
                 labels_out[m["mode"]] = {"label": m["label"], "property": m["property"]}
     audit = {}
-    if audit_n and audit_prompt is not None and members:
-        # second, independently ordered naming pass -> yes/no agreement judged by a third prompt
-        rng = np.random.default_rng(seed)
-        pick = rng.choice(len(members), min(audit_n, len(members)), replace=False)
-        p2 = []
-        for i in pick:
-            item = dict(payload[int(i)]); ms = list(item["members"]); rng.shuffle(ms); item["members"] = ms; item["mode"] = int(i)
-            p2.append(item)
-        r2 = llm.complete_json_many([dict(system=system, user=json.dumps({"modes": p2[j:j + 15]}, ensure_ascii=False), schema=MODES_SCHEMA, name="modes")
-                                      for j in range(0, len(p2), 15)], workers=workers)
-        second = {}
-        for r in r2:
-            if isinstance(r, Exception): continue
-            for m in r.get("modes", []): second[m["mode"]] = m["property"]
-        qs = [{"q": int(i), "a": labels_out[int(i)]["property"], "b": second[int(i)]} for i in pick if int(i) in second and labels_out[int(i)]["property"]]
-        if qs:
-            ra = llm.complete_json(audit_prompt[1], json.dumps({"pairs": qs}), AUDIT_SCHEMA, name="audit_modes")
-            yes = [a["same"] == "yes" for a in ra.get("answers", [])]
-            audit = {"n": len(yes), "agreement": float(np.mean(yes)) if yes else None, "prompt_version": audit_prompt[0]}
+    if audit_n and audit_prompt is not None and members and not getattr(llm, 'credits_exhausted', False):
+        try:
+            # second, independently ordered naming pass -> yes/no agreement judged by a third prompt
+            rng = np.random.default_rng(seed)
+            pick = rng.choice(len(members), min(audit_n, len(members)), replace=False)
+            p2 = []
+            for i in pick:
+                item = dict(payload[int(i)]); ms = list(item["members"]); rng.shuffle(ms); item["members"] = ms; item["mode"] = int(i)
+                p2.append(item)
+            r2 = llm.complete_json_many([dict(system=system, user=json.dumps({"modes": p2[j:j + 15]}, ensure_ascii=False), schema=MODES_SCHEMA, name="modes")
+                                          for j in range(0, len(p2), 15)], workers=workers)
+            second = {}
+            for r in r2:
+                if isinstance(r, Exception): continue
+                for m in r.get("modes", []): second[m["mode"]] = m["property"]
+            qs = [{"q": int(i), "a": labels_out[int(i)]["property"], "b": second[int(i)]} for i in pick if int(i) in second and labels_out[int(i)]["property"]]
+            if qs:
+                ra = llm.complete_json(audit_prompt[1], json.dumps({"pairs": qs}), AUDIT_SCHEMA, name="audit_modes")
+                yes = [a["same"] == "yes" for a in ra.get("answers", [])]
+                audit = {"n": len(yes), "agreement": float(np.mean(yes)) if yes else None, "prompt_version": audit_prompt[0]}
+        except BudgetExceeded:                      # out of budget/credit mid-audit: keep the names, skip the agreement check
+            audit = {}
     return labels_out, audit
 
 

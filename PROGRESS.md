@@ -39,3 +39,31 @@ Ran in 2099s. Key numbers: pilot_usd_per_1k_tracks=0.8142, coverage=1, spent_usd
 Deviations: projected LLM spend $61 > remaining $10: annotating a random sample of 8,504 tracks only
 Notes: dimensions below reliability 0.6 (excluded from headline probes): ['space']
 Resume: `python -m melomane run --stage S2 --corpus onion --profile standard` · disk free 1652 GB
+
+## 2026-10-09 22:49 UTC — S5 (Walks & SGNS training (models, seeds, ablations)) [onion/standard] — GREEN
+Ran in 25863s. Key numbers: models_trained=12, recall_cooc=0.573, recall_composition=0.4207, recall_core=0.4627
+Resume: `python -m melomane run --stage S5 --corpus onion --profile standard` · disk free 1650 GB
+
+## 2026-10-09 23:04 UTC — S6 (ICA, modes & poles) [onion/standard] — FAILED
+Ran in 862s. Key numbers: -
+Notes: CreditsExhausted: OpenRouter credits exhausted (HTTP 402 earlier in this run): top up the key's credit; cached answers still work
+Resume: `python -m melomane run --stage S6 --corpus onion --profile standard` · disk free 1650 GB
+
+## 2026-10-09 23:09 UTC — S12 (Products (bundles, explorer, MCP config)) [onion/standard] — PARTIAL
+Ran in 291s. Key numbers: corpora=1
+Notes: onion: bundle export failed: ValueError: embeddings have 53761 rows but vocab has 53309 | onion: explorer build failed: ValueError: cooc_raw: embeddings rows 53761 != vocab 53309
+Resume: `python -m melomane run --stage S12 --corpus onion --profile standard` · disk free 1649 GB
+
+## 2026-10-09 23:09 UTC — S13 (White paper generation (tables, figures, MD/LaTeX)) [onion/standard] — GREEN
+Ran in 3s. Key numbers: primary_corpus=onion, figures_generated=0, hypotheses_evaluated=1
+Notes: Paper generated in <repo>\paper/ (Markdown + LaTeX arXiv preprint)
+Resume: `python -m melomane run --stage S13 --corpus onion --profile standard` · disk free 1649 GB
+
+## 2026-10-09 23:09 UTC — S14 (Release QA (secrets, privacy, integrity checks)) [onion/standard] — GREEN
+Ran in 19s. Key numbers: all_passed=True, issues_count=0, secrets_hits=0
+Resume: `python -m melomane run --stage S14 --corpus onion --profile standard` · disk free 1649 GB
+
+## 2026-10-09 23:22 UTC — S6 (ICA, modes & poles) [onion/standard] — PARTIAL
+Ran in 682s. Key numbers: models=7, modes_cooc=140, modes_composition=140, modes_core=140, modes_composition_acoustic=133, modes_composition_lyric=140, modes_cooc_artistmasked=140, modes_cooc_avg=140
+Questions for Ravjoth: S6: the OpenRouter key is out of credit (HTTP 402), so the LLM part was skipped (unlabelled items stay unlabelled, results are marked degraded). Top up the key's credit limit (configs/llm.yaml caps spend at $13), then resume with `python -m melomane run --stage S6 --corpus onion --profile standard --force` (cached answers make this cheap).
+Resume: `python -m melomane run --stage S6 --corpus onion --profile standard` · disk free 1649 GB
