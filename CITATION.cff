@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use Melomane, please cite it as below. A preprint is pending; this entry will be updated when it is posted."
+title: "Melomane: emergent geometry in music-track embeddings"
+type: software
+authors:
+  - family-names: Brar
+    given-names: Ravjoth
+repository-code: "https://github.com/ravjothbrar/melomane"
+url: "https://ravjothbrar.com/melomane/"
+license: MIT
+date-released: "2026-10-09"
+keywords: [music, embeddings, skip-gram, interpretability, SLERP]

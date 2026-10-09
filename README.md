@@ -1,125 +1,88 @@
-# MELOMANE: Emergent Geometry & Multidimensional Structure in Music Embeddings
+# Melomane
 
-[![Status: Validated](https://img.shields.io/badge/Pipeline-Validated%20(S0--S14)-brightgreen.svg)]()
-[![Hardware: RTX 5080](https://img.shields.io/badge/Hardware-NVIDIA%20RTX%205080%20(sm__120)-76B900.svg)]()
-[![Platform: Windows 11](https://img.shields.io/badge/Platform-Windows%2011%20Native-0078D4.svg)]()
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)]()
+**Do the structures that Epicure found in food embeddings also appear in music embeddings?**
+Melomane is a music-domain replication and extension of the two Epicure papers
+([arXiv:2604.22776](https://arxiv.org/abs/2604.22776), [arXiv:2605.22391](https://arxiv.org/abs/2605.22391)).
+It trains three skip-gram models on the same tracks, with the same objective, that differ only in what they are allowed to read, and
+tests a set of hypotheses that were written down before training (`analysis_plan.lock.json`).
 
-> **Music-domain replication and extension of the two Epicure papers:**
-> - *Epicure I: The Multidimensional Flavor Structure of Ingredients* (arXiv:2604.22776)
-> - *Epicure II: Emergent Geometry in Ingredient Embeddings Enables Navigating the Flavor Space* (arXiv:2605.22391)
+> **Status: work in progress, preprint pending.** The numbers below are generated from the result files; nothing in this README is
+> typed by hand. Read the limitations before drawing conclusions.
 
-Melomane adapts the entire Epicure analysis stack to musical tracks: discovering canonical vocabulary, contrasting listening co-occurrence against acoustic and lyrical composition, isolating independent semantic and sonic modes via FastICA, steering playlists via spherical linear interpolation (SLERP), and publishing an automated, reproducible white paper.
-
----
-
-## Key Features
-
-1. **Controlled Three-Model Spectrum:**
-   - **Melomane-Cooc:** What people listen to together (derived from session-level positive NPMI).
-   - **Melomane-Composition:** What tracks are physically made of (sonic compound clusters: timbre, spectral shape, rhythm groove, tonal harmony, loudness dynamics + lyrical themes/lexicons).
-   - **Melomane-Core:** A 10:1 walk blend of co-occurrence and composition (`ii_repeat = 10`), matching Epicure-Core.
-2. **Methodological Rigor & Safeguards:**
-   - **Artist Leakage Protection:** Cross-validation strictly grouped by `artist_id`; kNN purity strictly artist-disjoint.
-   - **100% LLM-Free Embeddings:** Embeddings are learned strictly via GPU-accelerated Skip-Gram with Negative Sampling (SGNS). OpenRouter (Gemini Flash) is restricted to vocabulary normalization, metadata enrichment, and mode naming with a hard `$30 USD` spend cap.
-   - **Copyright & Privacy Hygiene:** Zero raw audio or lyrics are stored or redistributed.
-3. **Turnkey Publication Pipeline:**
-   - Automated paper generation (`S13`): Generates arXiv LaTeX (`paper/melomane_paper.tex`) and GitHub Markdown (`paper/melomane_paper.md`) with figures (`paper/figures/`) and tables (`paper/tables/`) read dynamically from `results/` without hand-typed figures.
-   - Automated Release QA (`S14`): Audits secret leaks, copyright compliance, placeholder absence, and bundle deserialization.
-
----
-
-## Quickstart (Windows 11 Native)
-
-The repository provides a turnkey batch launcher `run_melomane.bat` that configures environment variables (`UV_SYSTEM_CERTS=1`), manages Python dependencies, prevents system sleep during long training runs, and executes pipeline stages.
-
-### 1. Environment & API Key
-Ensure `.env` exists with your OpenRouter key:
-```bash
-OPENROUTER_API_KEY=sk-or-v1-...
-```
-*(Spend is capped at `$30 USD` in `configs/llm.yaml` and `.env`)*
-
-### 2. Verify Everything (Smoke Test in < 2 Minutes)
-Run the full S0 through S14 pipeline on the synthetic planted corpus:
-```cmd
-run_melomane.bat smoke
-```
-This runs doctor checks, builds graphs, trains GPU SGNS embeddings, extracts FastICA modes, executes the evaluation battery, evaluates SLERP arithmetic, computes compression frontiers, and compiles the white paper deliverables.
-
-### 3. Check Status
-```cmd
-run_melomane.bat status
-```
-
-### 4. Run Full Overnight Training
-To run the unattended, end-to-end training pipeline on the primary corpus:
-```cmd
-run_melomane.bat
-```
-*(or `run_melomane.bat train`)*
-
-This keeps your machine awake, checkpoints every epoch, and writes all results to `results/` and `paper/`.
-
----
-
-## Command Reference
-
-| Command | Action |
+| Model | Learns from |
 |---|---|
-| `run_melomane.bat` | Full turnkey overnight run: setup -> smoke verification -> status -> standard training |
-| `run_melomane.bat smoke` | Fast end-to-end pipeline run (S0..S14) on synthetic data |
-| `run_melomane.bat doctor` | Diagnostic audit of Python, PyTorch, CUDA 12.8 (RTX 5080 sm_120), and API keys |
-| `run_melomane.bat status` | Table of completed and pending stages across corpora |
-| `run_melomane.bat setup` | Verify and install Python dependencies via `uv` |
-| `run_melomane.bat serve` | Launch local static WebGL SLERP Explorer (port 8765) |
+| **Melomane-Cooc** | listening sessions only (which tracks the same people play in one sitting) |
+| **Melomane-Composition** | measured audio and lyric features only (clusters of timbre, rhythm, harmony, loudness and lyric descriptors), no listening data |
+| **Melomane-Core** | both, with listening weighted ten to one |
 
----
+The embeddings are LLM-free. A language model is used only to curate and tag tracks and to name the emergent modes. Lyrics and audio are
+never redistributed and never sent to a language model.
 
-## Datasets
+## What is measured
 
-- **Primary Dataset (Core):** **Music4All-Onion v2** (Zenodo, CC BY 4.0).
-  - 109,269 tracks with 253M listening interactions across 119,000 users.
-  - Aligned Essentia acoustic descriptors, lyrics word embeddings, and tags with 100% compound hub coverage.
-- **Secondary / Scaling:** Local Spotify 10.66GB MySQL dump (`spotifydbdumpshare.sql` in `~/Downloads` from Zenodo `playlist2vec`) for co-occurrence graph scaling.
-- **Synthetic Ground Truth (`synth`):** Planted multi-modal latent structure for deterministic testing and CI.
+* **Artist leakage is treated as the main trap.** Tracks by one artist share voice and audience, so every probe is cross-validated with
+  folds grouped by artist and nearest-neighbour purity excludes the query's artist.
+* **Probes come in three strata**: properties of the very descriptors that build the compound vocabulary (a), properties held out of it
+  (voice, emotion, lyric sentiment) (b), and LLM-labelled musical dimensions validated against instrument-measured features (c).
+* **Hypotheses H1–H8** are reported whatever the outcome, including the ones that fail.
+* **Steering** uses spherical interpolation (SLERP) toward a pole direction, with a quantitative test of how retrieval changes with angle.
 
----
+## Headline results
 
-## Project Structure
+<!-- BEGIN GENERATED RESULTS -->
+_Not generated yet. Run `python -m melomane run-all --corpus onion --profile standard`; stage S13 fills this section from `results/`._
+<!-- END GENERATED RESULTS -->
 
-```
-<repo>\
-|-- configs/               # Hyperparameter profiles (standard, paper, smoke), families, LLM config
-|-- data/                  # Ingested and processed datasets (git-ignored)
-|-- paper/                 # White paper deliverables
-|   |-- melomane_paper.tex # arXiv LaTeX preprint
-|   |-- melomane_paper.md  # GitHub Markdown paper
-|   |-- reproducibility.md # System manifest and run provenance
-|   |-- figures/           # Auto-generated publication charts (.png)
-|   +-- tables/            # Auto-generated CSV and Markdown tables
-|-- release/               # Model bundles (safetensors, modes, poles, config) + WebGL explorer
-|-- results/               # Single source of truth for all metrics (.json, .parquet)
-|-- scripts/               # bootstrap.py and diagnostic benchmarks
-|-- src/melomane/          # Core research library
-|   |-- pipeline/          # Orchestration engine and runner
-|   |-- stages/            # Pipeline stages S0 through S14
-|   |-- torch_sgns.py      # CUDA 12.8 GPU-accelerated Skip-Gram with Negative Sampling
-|   |-- slerp.py           # Spherical Linear Interpolation arithmetic
-|   |-- ica_modes.py       # FastICA and GMM semantic mode extraction
-|   +-- probes.py          # Artist-grouped linear and ridge probe battery
-|-- tests/                 # 60+ pytest unit and property tests
-|-- run_melomane.bat       # Native Windows one-click execution batch script
-|-- PLAN.md                # Master specification & build plan (v10)
-+-- DECISIONS.md           # Architecture and technical decisions log
+Full tables, CIs, extensions and the limitations are in [`paper/melomane_paper.md`](paper/melomane_paper.md).
+
+## Explorer
+
+A static, dependency-free WebGL2 explorer lives in [`apps/explorer`](apps/explorer): search a track, see its neighbours in each model,
+and rotate the query toward a genre, a mode or an emergent direction. Everything is computed in the browser from a small int8 payload;
+the 2-D layout (UMAP) is for display only.
+
+```bash
+python -m melomane serve --dir release/onion/standard/explorer --port 8765
 ```
 
----
+(The payload is built by stage S12. Python's stock `http.server` can drop parallel requests on Windows; use the command above.)
 
-## Hardware & Environment
+## Reproduce
 
-- **OS:** Windows 11 Home / Pro (64-bit)
-- **GPU:** NVIDIA GeForce RTX 5080 Laptop GPU (Blackwell architecture, compute capability `sm_120`)
-- **Memory:** 64 GB RAM
-- **CUDA / PyTorch:** `torch==2.11.0+cu128` (CUDA 12.8 wheel)
-- **Dependency Isolation:** Managed with `uv` and Python 3.12 (`scikit-learn` pinned to 1.5.2 for Windows Code Integrity compatibility).
+Windows 11 or Linux, Python ≥ 3.10, an NVIDIA GPU is strongly recommended (CUDA ≥ 12.8 for RTX 50-series).
+
+```bash
+uv sync                                            # or: python -m venv .venv && pip install -e ".[dev]"
+cp .env.example .env                               # optional: OPENROUTER_API_KEY for the LLM stages
+python -m melomane doctor                          # GPU, disk and LLM smoke test
+python -m melomane demo                            # whole pipeline on a synthetic corpus (minutes)
+python -m melomane run-all --corpus onion --profile standard   # the real run (hours; resumable, idempotent)
+python -m pytest -q -m "not gpu"                   # tests
+```
+
+The real run downloads Music4All-Onion (≈ 20 GB) from Zenodo. Artist and title strings are **not** part of that record; see
+[`DATA_LICENSE.md`](DATA_LICENSE.md) and [`DECISIONS.md`](DECISIONS.md) §7 for how they are handled.
+
+## Data, licences, attribution
+
+* Code: MIT ([`LICENSE`](LICENSE)). Derived artefacts: CC BY 4.0 subject to [`DATA_LICENSE.md`](DATA_LICENSE.md).
+* Built on **Music4All-Onion** (Moscati, Parada-Cabaleiro, Deldjoo, Zangerle, Schedl; CIKM 2022; Zenodo 15394646; CC BY 4.0), whose
+  listening events come from Last.fm.
+* No audio, no lyrics, no per-user data are included.
+
+## Repository map
+
+```
+src/melomane/      library: cooc, sessions, compounds, walks, torch_sgns, geometry, slerp, probes, ica_modes, llm, api, paper_text
+  adapters/        Onion, MusicBrainz-stack, Jamendo, FMA, playlist adapters
+  stages/          S0 … S14 pipeline stages (idempotent, resumable)
+  analysis/        paired statistics, WEAT, Procrustes, compression, attribution, direction test, sensitivity grid
+apps/explorer/     the static WebGL2 explorer;  apps/mcp_server/  read-only MCP server
+configs/           profiles (smoke / standard / paper), LLM and data settings
+PLAN.md            the specification;  CLAUDE.md  how the pipeline is operated;  DECISIONS.md  every decision and deviation
+results/ reports/  generated; the single source of every reported number
+```
+
+## Citing
+
+See [`CITATION.cff`](CITATION.cff). A preprint is pending; this section will be updated when it is posted.

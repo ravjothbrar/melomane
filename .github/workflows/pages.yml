@@ -1,0 +1,44 @@
+name: Deploy site to GitHub Pages
+# Deploys the committed ./site folder (built locally by scripts/build_site.py). Project Pages under a custom-domain user site are
+# served at https://<custom domain>/<repo>/, i.e. https://ravjothbrar.com/melomane/ - no CNAME file is needed in this repo.
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refuse private previews and uncleared payloads
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          p = pathlib.Path("site/BUILD.json")
+          if not p.exists():
+              sys.exit("site/BUILD.json missing: build with scripts/build_site.py")
+          b = json.loads(p.read_text())
+          if b.get("private_preview") or not b.get("names_cleared"):
+              sys.exit("site was built as a private preview / with uncleared artist names: refusing to deploy")
+          print("ok:", b["n_tracks"], "tracks,", b["models"], "built", b["built_at"])
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
