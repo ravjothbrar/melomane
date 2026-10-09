@@ -154,3 +154,16 @@ Each entry: **decision** · why · alternatives considered. The pre-registration
     **whole profile**, so editing any profile key (e.g. `llm.annotate_batch`) marks every stage stale and would re-ingest and retrain. The
     original author worked around it with a shortcut I removed (decision 5); the proper fix is a per-stage profile-key list, to be done
     between runs. I avoided triggering it here by fixing the bug in code, not in the profile.
+
+18. **Provenance of the artist/title table: identified (2026-10-09, evening).** Neither Zenodo record the owner named (5002584 Playlist2vec;
+    6609677 Onion v1, 41 files) contains artist/title. The table matches the Hugging Face dataset **`seungheondoh/enrich-music4all`**
+    (Doh; created 2024-01-07) on every checkable point: identical columns (`track_id, tag_list, pseudo_caption, title, artist_name,
+    release, m4a_genres, m4a_tags`) and identical size (86,410 train + 21,953 test = 108,363 rows = our table). The match is by schema and row
+    count (inferred, not byte-compared). The dataset card **declares no licence**; its metadata derive from Music4All (Santana et al. 2020),
+    whose terms are not stated on its page, and its `pseudo_caption` column is LLM-generated text that this project drops. Artist and title
+    strings are factual metadata, but their redistribution terms are *unspecified*, not granted. Therefore `names_cleared` stays **false**
+    until the owner decides to publish them with attribution (Music4All, enrich-music4all) and, ideally, after a courtesy email to the
+    Music4All authors (`docs/email_music4all.md`). The fallback is a names-free explorer.
+19. **Unattended tail** (`python -m melomane.unattended`): holds the machine awake (Windows `SetThreadExecutionState`, no settings changed),
+    waits for the S5 manifest, then runs S6-S9 and S12-S14 with the LLM spend capped to $1.5 above what is already spent, so a night run
+    cannot exceed the credit left on the account.

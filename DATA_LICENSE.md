@@ -17,9 +17,13 @@
 * audio, lyrics (raw or processed), per-user listening data, or anything that would let a user be identified;
 * MLHD+ (non-commercial) or any Spotify-API data.
 
-## Open question: artist and title strings
+## Artist and title strings
 
-The Zenodo Onion record contains **no artist or title** fields. The artist/title/album strings shown in the explorer and stored in
-the bundles come from a separate track-metadata table whose origin and licence are **not yet confirmed** (its SHA-256 is recorded
-in `data/raw/onion/METADATA_PROVENANCE.json`). Until the owner confirms where it came from and that republishing the names is
-permitted, treat the explorer payload and bundles as **not cleared for public release** (the numeric embeddings alone are).
+The Zenodo Onion records contain **no artist or title** fields. The strings shown in the explorer and stored in the bundles come from the
+Hugging Face dataset [`seungheondoh/enrich-music4all`](https://huggingface.co/datasets/seungheondoh/enrich-music4all) (identified by matching
+its columns and its 108,363 rows; see `DECISIONS.md` 18). That dataset's card **declares no licence**, and its metadata derive from Music4All
+(Santana et al., 2020), whose terms are not stated either. Only `track_id`, `title`, `artist_name` and `release` are used; its LLM-generated
+captions and tag lists are not.
+
+Until the owner confirms that these names may be republished (with attribution to Music4All and `seungheondoh/enrich-music4all`), the
+explorer payload and bundles are **not cleared for public release**; the numeric embeddings alone are.
