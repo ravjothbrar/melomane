@@ -146,7 +146,7 @@ export async function start(env = {}) {
     const [emb, scale, xy, poles, meta, modes, midx, artists] = await Promise.all([
       getBuf(f.emb.path), f.scale ? getBuf(f.scale.path) : Promise.resolve(null), getBuf(f.umap.path), getBuf(f.poles.path),
       getJSON(f.poles_meta.path), getJSON(f.modes.path), getBuf(f.mode_idx.path),
-      getJSON("data/" + name + "/artists.json").catch(() => [])
+      f.artists ? getJSON(f.artists.path) : getJSON("data/" + name + "/artists.json").catch(() => [])
     ]);
     const d = info.dim;
     const P = new Float32Array(poles);

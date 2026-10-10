@@ -31,8 +31,8 @@ def test_app_files_exist_and_are_dependency_free():
     app = default_app_dir()
     for f in APP_FILES:
         assert (app / f).exists()
-    for f in APP_FILES:
-        text = (app / f).read_text(encoding="utf-8").replace('xmlns="http://www.w3.org/2000/svg"', "")   # an XML namespace id, not a request
+    for f in (f for f in APP_FILES if not f.endswith(".png")):                       # text files only (og.png is the social-card image)
+        text = (app / f).read_text(encoding="utf-8").replace('xmlns="http://www.w3.org/2000/svg"', "").replace('xmlns="http://www.w3.org/2000/svg"', "")   # an XML namespace id, not a request
         for bad in ("cdn.", "cdnjs", "unpkg", "jsdelivr", "googleapis", "http://", "eval(", "document.write"):
             assert bad not in text, (f, bad)
         assert not re.search(r"\.(inner|outer)HTML\s*[+]?=", text), f            # payload strings only ever go in via textContent
@@ -40,6 +40,7 @@ def test_app_files_exist_and_are_dependency_free():
     assert "fetch" in js and "itunes.apple.com" not in js                           # search links only, no iTunes calls
     assert "document" not in (app / "math.js").read_text(encoding="utf-8").replace("no DOM", "")
     html = (app / "index.html").read_text(encoding="utf-8")
+    assert 'property="og:image"' in html and 'content="https://ravjothbrar.com/melomane/og.png"' in html and (app / "og.png").stat().st_size > 10_000
     assert all(f'{x}' in html for x in ("explorer.js", "style.css", "theta", "color-by", "pole-select", "mode-list", "model-toggle"))
 
 
@@ -283,3 +284,46 @@ def test_label_placement_and_palette_under_node():
     assert r.returncode == 0, r.stderr
     checks = json.loads(r.stdout)
     assert all(checks.values()), {k: v for k, v in checks.items() if not v}
+
+
+def test_social_preview_image_is_1200x630_and_deterministic(built, tmp_path):
+    """The og:image is drawn from the explorer's own payload (no mock-up): right size, real pixels, reproducible."""
+    import matplotlib.image as mpimg
+    from melomane.release.preview import NOTE_W, render_preview, word_layout
+    out, _ = built
+    a = render_preview(out, tmp_path / "a.png")
+    b = render_preview(out, tmp_path / "b.png")
+    img = mpimg.imread(a)
+    assert img.shape[0] == 630 and img.shape[1] == 1200
+    assert float(img[..., :3].std()) > 0.03                                          # not a blank card
+    assert np.array_equal(mpimg.imread(b), img)                                      # deterministic
+    cells, cols, note_col = word_layout()
+    assert cols == 7 * 5 + NOTE_W + 7 and note_col == 2 * 6 and len(cells) > 100       # 7 letters, a 3-column slot for the crotchet at the L, 7 gaps
+
+
+def test_artist_landmarks_rank_by_catalogue_size_and_sit_at_the_median_of_their_tracks():
+    """The floating labels: biggest artists first, median position (robust to a stray track), first track as the click target, blanks skipped."""
+    from melomane.release.explorer import artist_landmarks
+    names = ["Big", "", "Mid", "Tiny"]
+    idx = [0, 2, 0, 1, 0, 2, 0, 3, 0, 1]                      # Big x5, "" x2, Mid x2, Tiny x1
+    xy = np.zeros((len(idx), 2), np.float32)
+    for i, (x, y) in enumerate([(0, 0), (5, 5), (1, 0), (9, 9), (2, 0), (5, 7), (100, 0), (3, 3), (3, 0), (9, 9)]):
+        xy[i] = (x, y)
+    out = artist_landmarks(idx, names, xy, max_n=10, min_tracks=2)
+    assert [o["name"] for o in out] == ["Big", "Mid"]                              # blank skipped, 1-track artist below min_tracks
+    big = out[0]
+    assert big["x"] == 2.0 and big["y"] == 0.0 and big["top_track_idx"] == 0 and big["n"] == 5     # median ignores the stray at x=100
+    assert out[1]["top_track_idx"] == 1 and out[1]["n"] == 2
+    assert len(artist_landmarks(idx, names, xy, max_n=1, min_tracks=1)) == 1
+
+
+def test_built_payload_ships_artist_landmarks_listed_in_the_manifest(built):
+    import hashlib
+    out, man = built
+    for m in man["models"]:
+        ent = m["files"]["artists"]
+        p = out / ent["path"]
+        arts = json.loads(p.read_text(encoding="utf-8"))
+        assert arts and set(arts[0]) == {"name", "x", "y", "top_track_idx", "n"}
+        assert hashlib.sha256(p.read_bytes()).hexdigest() == ent["sha256"]           # integrity-checked like every other file
+        assert all(-1.5 <= a["x"] <= 1.5 and 0 <= a["top_track_idx"] < man["n"] for a in arts)

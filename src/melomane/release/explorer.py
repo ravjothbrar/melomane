@@ -44,7 +44,7 @@ log = logging.getLogger(__name__)
 
 PAYLOAD_VERSION = 1
 UMAP_PARAMS = {"metric": "cosine", "n_neighbors": 32, "min_dist": 0.004, "n_components": 2}
-APP_FILES = ("index.html", "explorer.js", "math.js", "style.css", "favicon.svg")
+APP_FILES = ("index.html", "explorer.js", "math.js", "style.css", "favicon.svg", "og.png")
 MODEL_LABELS = {"cooc": "Cooc", "composition": "Composition", "core": "Core", "composition_acoustic": "Composition (acoustic only)",
                 "composition_lyric": "Composition (lyric only)", "core_acoustic": "Core (acoustic only)",
                 "cooc_artistmasked": "Cooc (artist-masked)", "cooc_avg": "Cooc (averaged)"}
@@ -113,6 +113,27 @@ def _write(path: Path, arr: np.ndarray, dtype: str) -> None:
 def _file_entry(path: Path, root: Path, **extra: Any) -> dict:
     return {"path": path.relative_to(root).as_posix(), "bytes": path.stat().st_size,
             "sha256": hashlib.sha256(path.read_bytes()).hexdigest(), **extra}
+
+
+def artist_landmarks(artist_idx: Sequence[int], artist_names: Sequence[str], xy: np.ndarray, max_n: int = 150, min_tracks: int = 2) -> list[dict]:
+    """The labels floating over the map: the ``max_n`` artists with the most tracks in the payload, each placed at the *median* of its
+    tracks' positions in the model's 2-D layout (robust to a few strays), most important first.  ``top_track_idx`` is the artist's first
+    track in payload order (payload order is most-listened first), used when the label is clicked.  Unnamed artists are skipped."""
+    idx = np.asarray(artist_idx, dtype=np.int64)
+    counts = np.bincount(idx, minlength=len(artist_names))
+    first: dict[int, int] = {}
+    for i, a in enumerate(idx.tolist()):
+        first.setdefault(a, i)
+    out: list[dict] = []
+    for a in np.argsort(-counts, kind="stable"):
+        if counts[a] < min_tracks or len(out) >= max_n:
+            break
+        name = str(artist_names[a]).strip()
+        if not name:
+            continue
+        pts = xy[np.flatnonzero(idx == a)]
+        out.append({"name": name, "x": float(np.median(pts[:, 0])), "y": float(np.median(pts[:, 1])), "top_track_idx": int(first[int(a)]), "n": int(counts[a])})
+    return out
 
 
 def build_explorer(run_dir: str | Path, out_dir: str | Path, models: Sequence[str] | None = None, max_tracks: int = 50000,
@@ -216,9 +237,10 @@ def build_explorer(run_dir: str | Path, out_dir: str | Path, models: Sequence[st
         (md / "poles.json").write_text(json.dumps(pole_meta, ensure_ascii=False), encoding="utf-8")
         (md / "modes.json").write_text(json.dumps(modes_out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         _write(md / "mode_idx.bin", mode_idx, "<i2")
+        (md / "artists.json").write_text(json.dumps(artist_landmarks(art_idx, art_names, xy), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
         files = {"emb": "emb.bin", "umap": "umap.bin", "poles": "poles.bin", "poles_meta": "poles.json",
-                 "modes": "modes.json", "mode_idx": "mode_idx.bin"}
+                 "modes": "modes.json", "mode_idx": "mode_idx.bin", "artists": "artists.json"}
         if dtype == "int8":
             files["scale"] = "scale.bin"
         manifest_models.append({

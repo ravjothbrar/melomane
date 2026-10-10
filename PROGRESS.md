@@ -133,3 +133,7 @@ Resume: `python -m melomane run --stage S13 --corpus onion --profile standard` �
 ## 2026-10-10 12:31 UTC — S14 (Release QA (secrets, privacy, integrity checks)) [onion/standard] — GREEN
 Ran in 17s. Key numbers: all_passed=True, issues_count=0, secrets_hits=0
 Resume: `python -m melomane run --stage S14 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:40 UTC — S12 (Products (bundles, explorer, MCP config)) [onion/standard] — GREEN
+Ran in 157s. Key numbers: corpora=1
+Resume: `python -m melomane run --stage S12 --corpus onion --profile standard` · disk free 1646 GB
