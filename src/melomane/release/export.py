@@ -117,10 +117,14 @@ def project_directions(poles: np.ndarray, components: np.ndarray) -> np.ndarray:
 # --------------------------------------------------------------------------------------------------------------------------
 # run access
 # --------------------------------------------------------------------------------------------------------------------------
+# S5 products that are not releasable models: `cooc_raw` is trained on the raw (pre-curation) vocabulary and only exists to be averaged onto canonical tracks
+INTERMEDIATE_MODELS = ("cooc_raw",)
+
+
 def list_models(run_dir: str | Path) -> list[str]:
     """Model names with an ``S5/models/<name>/embeddings.npy`` in the run (main models first, then ablations A-Z)."""
     root = Path(run_dir) / "S5" / "models"
-    names = [p.name for p in sorted(root.iterdir()) if (p / "embeddings.npy").exists()] if root.is_dir() else []
+    names = [p.name for p in sorted(root.iterdir()) if (p / "embeddings.npy").exists() and p.name not in INTERMEDIATE_MODELS] if root.is_dir() else []
     return sorted(names, key=lambda n: (MODEL_ORDER.index(n) if n in MODEL_ORDER else len(MODEL_ORDER), n))
 
 

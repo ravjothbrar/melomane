@@ -11,7 +11,13 @@ from ..pipeline import Ctx, Stage, StageResult, StageSkip, register, PARTIAL
 from ..runtime import get_logger, jsonable, read_json, write_json
 
 log = get_logger("melomane.s12")
+# PLAN section 9: the explorer toggles Cooc / Core / Composition and acoustic-only / lyric-only; the other ablations are bundled but not shown
+EXPLORER_MODELS = ("cooc", "composition", "core", "composition_acoustic", "composition_lyric")
 SOURCE_KEY = {"onion": "music4all-onion", "mbid_stack": "mbid-stack", "playlist2vec": "playlist2vec"}
+
+
+def explorer_models(available: list[str]) -> list[str]:
+    return [m for m in EXPLORER_MODELS if m in available]
 
 
 def release_dir(ctx: Ctx, corpus: str) -> Path:
@@ -76,7 +82,7 @@ class Products(Stage):
                 res.notes.append(f"{c}: bundle export failed: {type(e).__name__}: {e}")
                 log.exception("bundle export failed for %s", c)
             try:
-                man = build_explorer(run_dir, out / "explorer", max_tracks=cfg.get("explorer_max_tracks", 50000), seed=ctx.seed("S12", c) % 10_000, sources=[SOURCE_KEY[c]])
+                man = build_explorer(run_dir, out / "explorer", models=explorer_models(list_models(run_dir)), max_tracks=cfg.get("explorer_max_tracks", 50000), seed=ctx.seed("S12", c) % 10_000, sources=[SOURCE_KEY[c]])
                 entry["explorer"] = {"dir": str((out / "explorer").relative_to(ctx.ws.root)), "n_tracks": man.get("n")}
             except Exception as e:  # noqa: BLE001
                 res.status = PARTIAL

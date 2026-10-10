@@ -202,3 +202,20 @@ def test_metrics_are_rendered_into_bundle_readme(fake_run, tmp_path):
 
 def test_provenance_constants():
     assert "CC BY 4.0" in PROVENANCE["music4all-onion"]["licence"] and "unofficial" in PROVENANCE["playlist2vec"]["attribution"]
+
+
+def test_list_models_skips_intermediate_models_and_s12_picks_the_documented_explorer_models(tmp_path):
+    """Regression: S5's `cooc_raw` (raw-vocabulary Cooc, only used to average onto canonical tracks) has a different row count than the
+    vocabulary, which made bundle export fail; and the explorer must show Cooc/Composition/Core + acoustic-only/lyric-only, not every control."""
+    import numpy as np
+    from melomane.release.export import list_models
+    from melomane.stages.s12_products import EXPLORER_MODELS, explorer_models
+    root = tmp_path / "S5" / "models"
+    for n in ("core", "cooc", "composition", "cooc_raw", "core_partial30", "composition_lyric", "composition_acoustic", "cooc_eqtok"):
+        (root / n).mkdir(parents=True)
+        np.save(root / n / "embeddings.npy", np.zeros((2, 2), np.float32))
+    names = list_models(tmp_path)
+    assert "cooc_raw" not in names and names[:3] == ["cooc", "composition", "core"]
+    assert "core_partial30" in names and "cooc_eqtok" in names                      # controls are still bundled
+    assert explorer_models(names) == ["cooc", "composition", "core", "composition_acoustic", "composition_lyric"]
+    assert explorer_models(["cooc"]) == ["cooc"] and EXPLORER_MODELS[:3] == ("cooc", "composition", "core")

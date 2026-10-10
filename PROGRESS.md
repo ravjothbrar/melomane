@@ -67,3 +67,20 @@ Resume: `python -m melomane run --stage S14 --corpus onion --profile standard` �
 Ran in 682s. Key numbers: models=7, modes_cooc=140, modes_composition=140, modes_core=140, modes_composition_acoustic=133, modes_composition_lyric=140, modes_cooc_artistmasked=140, modes_cooc_avg=140
 Questions for Ravjoth: S6: the OpenRouter key is out of credit (HTTP 402), so the LLM part was skipped (unlabelled items stay unlabelled, results are marked degraded). Top up the key's credit limit (configs/llm.yaml caps spend at $13), then resume with `python -m melomane run --stage S6 --corpus onion --profile standard --force` (cached answers make this cheap).
 Resume: `python -m melomane run --stage S6 --corpus onion --profile standard` · disk free 1649 GB
+
+## 2026-10-10 00:47 UTC — S7 (Evaluation battery) [onion/standard] — GREEN
+Ran in 5108s. Key numbers: models=12, targets=90, H1=not supported, H2=not supported, H3=not supported
+Resume: `python -m melomane run --stage S7 --corpus onion --profile standard` · disk free 1649 GB
+
+## 2026-10-10 00:48 UTC — S8 (SLERP & direction arithmetic) [onion/standard] — GREEN
+Ran in 18s. Key numbers: H7=supported, share60_cooc=0.9388, share60_composition=0.7959, share60_core=0.9388, share60_composition_acoustic=0.8367, share60_composition_lyric=0.5714, share60_cooc_artistmasked=0.9184
+Resume: `python -m melomane run --stage S8 --corpus onion --profile standard` · disk free 1649 GB
+
+## 2026-10-10 06:38 UTC — S12 (Products (bundles, explorer, MCP config)) [onion/standard] — PARTIAL
+Ran in 241s. Key numbers: corpora=1
+Notes: onion: bundle export failed: ValueError: embeddings have 53761 rows but vocab has 53309 | onion: explorer build failed: ValueError: cooc_raw: embeddings rows 53761 != vocab 53309
+Resume: `python -m melomane run --stage S12 --corpus onion --profile standard` · disk free 1648 GB
+
+## 2026-10-10 06:42 UTC — S12 (Products (bundles, explorer, MCP config)) [onion/standard] — GREEN
+Ran in 159s. Key numbers: corpora=1
+Resume: `python -m melomane run --stage S12 --corpus onion --profile standard` · disk free 1647 GB
