@@ -1,8 +1,8 @@
 # Reproducibility manifest
 
-- **Date:** 2026-10-10 12:31 UTC
+- **Date:** 2026-10-10 12:55 UTC
 - **Corpus / profile:** `onion` / `standard`
-- **Code version (git):** `41c67b9`
+- **Code version (git):** `80b443b`
 - **Host:** Windows-11-10.0.26200-SP0 (32 CPUs)
 - **Python / PyTorch:** 3.12.13 / 2.11.0+cu128
 - **GPU:** NVIDIA GeForce RTX 5080 Laptop GPU (compute capability 12.0)

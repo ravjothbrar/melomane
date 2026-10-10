@@ -1,37 +1,56 @@
+<p align="center">
+  <img src="apps/explorer/og.png" alt="Melomane: a map of music, drawn from the real embedding behind a pixel-block logo with a crotchet" width="760">
+</p>
+
 # Melomane
+
+**A map of music, by how it is listened to and what it is made of.**
 
 [![CI](https://github.com/ravjothbrar/melomane/actions/workflows/ci.yml/badge.svg)](https://github.com/ravjothbrar/melomane/actions/workflows/ci.yml)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/derived%20data-CC%20BY%204.0-lightgrey.svg)](DATA_LICENSE.md)
 
-**Do the structures that Epicure found in food embeddings also appear in music embeddings?**
-Melomane is a music-domain replication and extension of the two Epicure papers
-([arXiv:2604.22776](https://arxiv.org/abs/2604.22776), [arXiv:2605.22391](https://arxiv.org/abs/2605.22391)).
-It trains three skip-gram models on the same tracks, with the same objective, that differ only in what they are allowed to read, and
-tests a set of hypotheses that were written down before training (`analysis_plan.lock.json`).
+### → [Explore the map: ravjothbrar.com/melomane](https://ravjothbrar.com/melomane/)
 
-> **Status: work in progress, preprint pending.** The numbers below are generated from the result files; nothing in this README is
-> typed by hand. Read the limitations before drawing conclusions.
+*A large-screen tool: tablet, laptop or desktop (an unfolded foldable works too).*
 
-| Model | Learns from |
-|---|---|
-| **Melomane-Cooc** | listening sessions only (which tracks the same people play in one sitting) |
-| **Melomane-Composition** | measured audio and lyric features only (clusters of timbre, rhythm, harmony, loudness and lyric descriptors), no listening data |
-| **Melomane-Core** | both, with listening weighted ten to one |
+---
 
-The embeddings are LLM-free. A language model is used only to curate and tag tracks and to name the emergent modes. Lyrics and audio are
-never redistributed and never sent to a language model.
+## What is this?
 
-## What is measured
+Melomane is an interactive map of tens of thousands of tracks. Three models learn from the same tracks in the same way and differ only in what they are allowed to read. Pick any track to see its neighbours in each model, then steer the query toward a genre or an emergent direction.
 
-* **Artist leakage is treated as the main trap.** Tracks by one artist share voice and audience, so every probe is cross-validated with
-  folds grouped by artist and nearest-neighbour purity excludes the query's artist.
-* **Probes come in three strata**: properties of the very descriptors that build the compound vocabulary (a), properties held out of it
-  (voice, emotion, lyric sentiment) (b), and LLM-labelled musical dimensions validated against instrument-measured features (c).
-* **Hypotheses H1–H8** are reported whatever the outcome, including the ones that fail.
-* **Steering** uses spherical interpolation (SLERP) toward a pole direction, with a quantitative test of how retrieval changes with angle.
+## Why?
 
-## Headline results
+Music recommenders are black boxes: they tell you what to play next, never why. Melomane makes that geometry inspectable, so you can see whether two tracks sit together because people play them together or because of what they are made of.
+
+The two reasons are very different. Listening data carries popularity, scenes and culture, along with their biases; audio and lyrics carry how the music actually sounds. Most systems blend the two invisibly. Melomane trains three models on the same tracks, with the same objective, changing *only* what each one may read, so any difference between their maps can be attributed to its source. And because the spaces have directions you can name (a genre, or a "mode" that emerges from the data), you can steer from a song toward an idea and watch what changes, instead of accepting a ranking you cannot question.
+
+Everything is open: the code (MIT), the derived data (CC BY 4.0) and the decision log, so the comparison can be checked and argued with.
+
+## The three models
+
+| **Melomane-Cooc**<br>*Streaming habits* | **Melomane-Composition**<br>*Pure sound* | **Melomane-Core**<br>*The hybrid* |
+|---|---|---|
+| Learned only from listening sessions: two tracks are close when the same people play them in the same sitting. | Learned only from measured audio and lyric features (timbre, rhythm, harmony, loudness, lyric themes), with no listening data at all. | Listening sessions and measured features together, with listening weighted ten to one. |
+
+The embeddings themselves are LLM-free. A language model is used only to curate and tag tracks and to name the emergent modes, and it never sees lyrics or audio.
+
+## Using the map
+
+- **Click a point or search** for an artist or track: its nearest neighbours appear, with the links between them drawn on the map.
+- **Switch model** (Cooc, Composition, Core, plus acoustic-only and lyric-only Composition) and watch the same track move into a different neighbourhood.
+- **Steer**: choose a direction (a genre, or an emergent mode) and rotate the query toward it with the angle slider (spherical interpolation). At 0° you get the track's own neighbours; as the angle grows, results move toward the direction while staying close to the seed.
+- **Take the guided tour** from the pop-up for a worked example. Its text is computed from the data, never typed in.
+
+The 2-D layout (UMAP) is for display only; neighbours and steering are computed in the full embedding space, in your browser, from a small int8 payload.
+
+## What was measured
+
+The map is backed by a pre-registered comparison of the three models ([`analysis_plan.lock.json`](analysis_plan.lock.json)), reported whatever the outcome, nulls and failures included. The one methodological trap that matters most for music is **artist leakage**: tracks by one artist share voice and audience, so every probe is cross-validated with folds grouped by artist and nearest-neighbour purity excludes the query's own artist. The numbers below are generated from `results/` by the pipeline; nothing here is typed by hand.
+
+<details>
+<summary>Generated results</summary>
 
 <!-- BEGIN GENERATED RESULTS -->
 _Generated by stage S13 from `results/` on 2026-10-10 · corpus `onion` · profile `standard` · 53,309 tracks, 9,872 artists. Do not edit by hand._
@@ -90,56 +109,50 @@ Probes per stratum: a_baked: 17, b_heldout: 50, c_external: 15, cultural: 8. Eva
 - H8 (8,000-track subset): Composition minus Cooc ρ is 0.092 at the standard budget and 0.070 at the paper budget; same ρ ordering (yes), same lowest-PR model (yes).
 <!-- END GENERATED RESULTS -->
 
-Full tables, CIs, extensions and the limitations are in [`paper/melomane_paper.md`](paper/melomane_paper.md).
+</details>
 
-## Explorer
+Full tables and per-hypothesis detail are in [`results/`](results) and [`reports/`](reports). The code ships with a first-pass write-up in [`paper/`](paper), which is a draft and not yet reviewed.
 
-A static, dependency-free WebGL2 explorer lives in [`apps/explorer`](apps/explorer): search a track, see its neighbours in each model,
-and rotate the query toward a genre, a mode or an emergent direction. Everything is computed in the browser from a small int8 payload;
-the 2-D layout (UMAP) is for display only. It is a large-screen tool: phones are shown an explanation and a copy-link button instead (tablets, laptops, desktops and unfolded foldables work).
+## Run it yourself
 
-```bash
-python -m melomane serve --dir release/onion/standard/explorer --port 8765
-```
-
-(The payload is built by stage S12. Python's stock `http.server` can drop parallel requests on Windows; use the command above.)
-
-## Reproduce
-
-Windows 11 or Linux, Python ≥ 3.10, an NVIDIA GPU is strongly recommended (CUDA ≥ 12.8 for RTX 50-series).
+Windows 11 or Linux, Python 3.10 or newer; an NVIDIA GPU is strongly recommended for training (CUDA 12.8 or newer for RTX 50-series cards).
 
 ```bash
 uv sync                                            # or: python -m venv .venv && pip install -e ".[dev]"
-cp .env.example .env                               # optional: OPENROUTER_API_KEY for the LLM stages
+cp .env.example .env                               # optional: OPENROUTER_API_KEY, only for the LLM stages
 python -m melomane doctor                          # GPU, disk and LLM smoke test
-python -m melomane demo                            # whole pipeline on a synthetic corpus (minutes)
+python -m melomane demo                            # the whole pipeline on a synthetic corpus (minutes)
 python -m melomane run-all --corpus onion --profile standard   # the real run (hours; resumable, idempotent)
 python -m pytest -q -m "not gpu"                   # tests
+python -m melomane serve --dir release/onion/standard/explorer # the explorer, locally
 ```
 
-The real run downloads Music4All-Onion (≈ 20 GB) from Zenodo. Artist and title strings are **not** part of that record; see
-[`DATA_LICENSE.md`](DATA_LICENSE.md) and [`DECISIONS.md`](DECISIONS.md) §7 for how they are handled.
+The real run downloads Music4All-Onion (about 20 GB) from Zenodo. Artist and title strings are not part of that record; see [`DATA_LICENSE.md`](DATA_LICENSE.md) and [`DECISIONS.md`](DECISIONS.md) for where they come from and how they are handled.
+
+## A similar approach
+
+The method follows the approach of the Epicure papers on food-ingredient embeddings ([arXiv:2604.22776](https://arxiv.org/abs/2604.22776), [arXiv:2605.22391](https://arxiv.org/abs/2605.22391)): hold the learning objective fixed, vary only what the model reads, then look for interpretable directions and steer along them. Melomane applies that idea to music, and adds controls for problems music has that food does not, chiefly artist leakage.
 
 ## Data, licences, attribution
 
-* Code: MIT ([`LICENSE`](LICENSE)). Derived artefacts: CC BY 4.0 subject to [`DATA_LICENSE.md`](DATA_LICENSE.md).
-* Built on **Music4All-Onion** (Moscati, Parada-Cabaleiro, Deldjoo, Zangerle, Schedl; CIKM 2022; Zenodo 15394646; CC BY 4.0), whose
-  listening events come from Last.fm.
-* No audio, no lyrics, no per-user data are included.
+- Code: MIT ([`LICENSE`](LICENSE)). Derived artefacts: CC BY 4.0, subject to [`DATA_LICENSE.md`](DATA_LICENSE.md).
+- Built on **Music4All-Onion** (Moscati, Parada-Cabaleiro, Deldjoo, Zangerle, Schedl; CIKM 2022; Zenodo 15394646; CC BY 4.0), whose listening events come from Last.fm.
+- Artist, title and album strings are Music4All metadata (Santana et al., IWSSIP 2020) as redistributed on Hugging Face ([`seungheondoh/enrich-music4all`](https://huggingface.co/datasets/seungheondoh/enrich-music4all)), shown with attribution.
+- No audio, no lyrics and no per-user data are included.
 
 ## Repository map
 
 ```
-src/melomane/      library: cooc, sessions, compounds, walks, torch_sgns, geometry, slerp, probes, ica_modes, llm, api, paper_text
-  adapters/        Onion, MusicBrainz-stack, Jamendo, FMA, playlist adapters
-  stages/          S0 … S14 pipeline stages (idempotent, resumable)
+src/melomane/      the library: sessions, cooc, compounds, walks, torch_sgns, geometry, slerp, probes, ica_modes, llm, api
+  adapters/        data adapters (Music4All-Onion, MusicBrainz stack, Jamendo, FMA, playlists)
+  stages/          the pipeline, S0 to S14: idempotent and resumable
   analysis/        paired statistics, WEAT, Procrustes, compression, attribution, direction test, sensitivity grid
-apps/explorer/     the static WebGL2 explorer;  apps/mcp_server/  read-only MCP server
-configs/           profiles (smoke / standard / paper), LLM and data settings
-PLAN.md            the specification;  CLAUDE.md  how the pipeline is operated;  DECISIONS.md  every decision and deviation
-results/ reports/  generated; the single source of every reported number
+apps/explorer/     the static WebGL2 map (no dependencies);  apps/mcp_server/  a read-only MCP server
+configs/           profiles (smoke, standard, paper), LLM and data settings
+results/ reports/  generated outputs: the single source of every reported number
+PLAN.md            the specification;  DECISIONS.md  every decision and deviation;  CLAUDE.md  how the pipeline is operated
 ```
 
 ## Citing
 
-See [`CITATION.cff`](CITATION.cff). A preprint is pending; this section will be updated when it is posted.
+See [`CITATION.cff`](CITATION.cff).
