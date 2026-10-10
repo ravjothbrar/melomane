@@ -88,6 +88,9 @@ def load_all_results(ctx: Ctx, corpus: str) -> dict[str, Any]:
             break
     data.setdefault("s9_hyp", {})
 
+    p2 = rd / "S2_annotation.json"
+    st2 = read_json(p2) if p2.exists() else {}
+    data["s2_stats"] = {k: st2.get(k) for k in ("n_labelled", "coverage", "excluded_dims", "spent_usd", "wasted_usd")}
     for key, fname in (("s1", "S1_curation"), ("s3", "S3_behaviour"), ("s4", "S4_compounds"), ("s5", "S5_training"), ("s6", "S6_modes")):
         p = rd / f"{fname}.json"
         data[key] = read_json(p) if p.exists() else {}
@@ -100,7 +103,9 @@ def load_all_results(ctx: Ctx, corpus: str) -> dict[str, Any]:
             import pandas as pd
             df = pd.read_parquet(vocab_p)
             data["vocab_count"] = len(df)
-            data["artist_count"] = df["artist_id"].nunique() if "artist_id" in df else 0
+            named = df[df["artist_id"] >= 0] if "artist_id" in df else df.iloc[0:0]
+            data["artist_count"] = int(named["artist_id"].nunique())          # named artists; unknown artists get unique negative ids
+            data["unknown_artist_tracks"] = int((df["artist_id"] < 0).sum()) if "artist_id" in df else 0
         except Exception:
             data["vocab_count"] = 0
             data["artist_count"] = 0
@@ -108,6 +113,9 @@ def load_all_results(ctx: Ctx, corpus: str) -> dict[str, Any]:
         data["vocab_count"] = 0
         data["artist_count"] = 0
 
+    n_lab, n_voc = (data.get("s2_stats") or {}).get("n_labelled"), data.get("vocab_count")
+    if n_lab and n_voc:                                              # S2's own `coverage` is within its sample; the paper needs the share of the vocabulary
+        data["s2_stats"]["coverage_of_vocab"] = n_lab / n_voc
     return data
 
 
@@ -176,7 +184,7 @@ def make_figures(data: dict, out_dir: Path) -> list[str]:
     summary = s7.get("summary_by_model", {})
     models = [m for m in ["cooc", "composition", "core"] if m in summary]
     if models:
-        strata_keys = [("a_baked|rho", "Baked-in (a)"), ("b_heldout|rho", "Held-out (b)"), ("c_external|rho", "External (c)"), ("cultural|cohen_d", "Cultural (d)")]
+        strata_keys = [("a_baked|rho", "Baked-in (a)"), ("b_heldout|rho", "Held-out (b)"), ("c_external|rho", "External (c)"), ("cultural|d", "Cultural (d)")]
         present_keys = [(k, l) for k, l in strata_keys if any(k in summary[m] for m in models)]
         if present_keys:
             plt.figure(figsize=(8, 4.5))
@@ -301,19 +309,27 @@ def build_latex_paper(data: dict, hyp: dict, fig_paths: list[str] | None = None)
 
 
 def build_reproducibility(data: dict) -> str:
-    h = host_info()
-    return f"""# Reproducibility Manifest
+    from .. import paper_text
+    return paper_text.reproducibility_text(data, host_info(), time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()))
 
-- **Date:** {time.strftime('%Y-%m-%d %H:%M:%S UTC')}
-- **Corpus:** `{data['corpus']}`
-- **Profile:** `{data['profile']}`
-- **Host:** {h.get('os')} ({h.get('arch')})
-- **Python:** {sys.version.split()[0]}
-- **Hardware:** {data.get('doctor', {}).get('checks', {}).get('cuda', 'CPU/Generic')}
-- **Vocabulary Size:** {data.get('vocab_count', 0):,} canonical tracks
-- **Seed Protocol:** Multi-seed Hungarian matching for ICA; deterministic per-stage hashing
-- **OpenRouter Spend:** ${data.get('doctor', {}).get('spent_usd', 0.0):.2f} USD
-"""
+
+def _collect_run_facts(ctx: Ctx, data: dict) -> None:
+    """Facts for the reproducibility manifest, read from files on disk (cache, configs, lock, git)."""
+    import sqlite3, subprocess
+    data["train"] = dict(ctx.profile.get("train", {})); data["seeds"] = ctx.profile.get("seeds")
+    cfg = ctx.ws.config("llm")
+    data["llm_model"] = cfg.get("model"); data["llm_budget_usd"] = cfg.get("budget_usd")
+    db = ctx.ws.cache / "llm.sqlite"
+    if db.exists():
+        with sqlite3.connect(str(db)) as con:
+            data["llm_cache_spend_usd"] = float(con.execute("SELECT COALESCE(SUM(cost),0) FROM cache").fetchone()[0])
+    lock = ctx.ws.root / "analysis_plan.lock.json"
+    if lock.exists():
+        data["lock_amendments"] = len(read_json(lock).get("amendments", []))
+    try:
+        data["git_commit"] = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ctx.ws.root, capture_output=True, text=True, timeout=10).stdout.strip() or None
+    except Exception:  # noqa: BLE001
+        data["git_commit"] = None
 
 
 @register
@@ -333,6 +349,7 @@ class Paper(Stage):
         log.info("Generating paper for primary corpus: %s (profile: %s)", primary_corpus, ctx.profile_name)
 
         data = load_all_results(ctx, primary_corpus)
+        _collect_run_facts(ctx, data)
         hyp = collate_hypotheses(data)
 
         paper_dir = ctx.ws.root / "paper"

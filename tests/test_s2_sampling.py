@@ -49,3 +49,12 @@ def test_annotation_requests_leave_room_for_a_full_batch_of_labels():
     batch = prof["_base"]["llm"]["annotate_batch"]
     assert batch * TOKENS_PER_TRACK <= ANNOTATE_MAX_TOKENS * 0.75              # at least 25 % headroom at the shipped batch size
     assert _call(None, "sys", [{"id": 0}])["max_tokens"] == ANNOTATE_MAX_TOKENS
+
+
+def test_coverage_is_reported_against_the_vocabulary_not_against_the_sample(tmp_path):
+    """Regression: `coverage` was the share labelled *within the annotated sample* (always 1.0), so a 16 % random sample read as '100 %'."""
+    ctx, samp = _run(tmp_path / "cov", max_tracks=90)
+    V = len(vocab_of(ctx))
+    st = ctx.load_result("S2_annotation")
+    n = int(samp["labelled"].sum())
+    assert st["n_labelled"] == n and abs(st["coverage_of_vocab"] - n / V) < 1e-9 and st["coverage_of_vocab"] < 0.5

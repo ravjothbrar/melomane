@@ -110,15 +110,15 @@ class Annotation(Stage):
         h5 = {"n_dims_with_counterpart": int(len(vm)), "share_positive_ci": float(((vm["rho"] > 0) & vm["ci_excludes_0"]).mean()) if len(vm) else None,
               "table": vm.to_dict("records")}
         ctx.save_result("S2_llm_vs_measured", h5)
-        stats = {**st, "n_annotated": int(n_max), "spent_usd": llm.spent() + getattr(llm, 'wasted_usd', 0.0) - spent0, "wasted_usd": getattr(llm, 'wasted_usd', 0.0), "prompt_version": P["a1"][0],
+        stats = {**st, "coverage_of_vocab": st["n_labelled"] / V, "n_annotated": int(n_max), "spent_usd": llm.spent() + getattr(llm, 'wasted_usd', 0.0) - spent0, "wasted_usd": getattr(llm, 'wasted_usd', 0.0), "prompt_version": P["a1"][0],
                  "excluded_dims": excluded, "category_counts": lab["category"].value_counts().head(25).to_dict()}
         ctx.save_result("S2_annotation", stats)
         (ctx.reports_dir / "s2_annotation.md").write_text(
-            "# S2 - annotation\n\n" + f"Labelled {st['n_labelled']:,}/{V:,} (coverage {st['coverage']:.1%}); spent ${stats['spent_usd']:.2f}.\n\n"
+            "# S2 - annotation\n\n" + f"Labelled {st['n_labelled']:,}/{V:,} (coverage of the vocabulary {stats['coverage_of_vocab']:.1%}; within the annotated sample {st['coverage']:.1%}); spent ${stats['spent_usd']:.2f}.\n\n"
             + "## Reliability (second prompt variant)\n\n" + (rel.to_markdown(index=False) if len(rel) else "n/a") + "\n\n## LLM vs measured\n\n"
             + (vm.to_markdown(index=False) if len(vm) else "no measured counterparts available") + "\n", encoding="utf-8")
-        res.metrics.update({"coverage": st["coverage"], "spent_usd": stats["spent_usd"], "h5_share": h5["share_positive_ci"]})
-        if st["coverage"] < 0.999:
-            res.status = PARTIAL; res.notes.append(f"coverage {st['coverage']:.1%} (<100%): unlabelled rows stay NaN, never fabricated")
+        res.metrics.update({"coverage_of_vocab": stats["coverage_of_vocab"], "spent_usd": stats["spent_usd"], "h5_share": h5["share_positive_ci"]})
+        if stats["coverage_of_vocab"] < 0.999:
+            res.status = PARTIAL; res.notes.append(f"labels cover {stats['coverage_of_vocab']:.1%} of the vocabulary (<100%): unlabelled rows stay NaN, never fabricated")
         credit_gate(ctx, llm, res, "S2")
         return res

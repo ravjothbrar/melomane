@@ -19,7 +19,7 @@ from typing import Any, Sequence
 MODELS = ("cooc", "composition", "core")
 NAME = {"cooc": "Melomane-Cooc", "composition": "Melomane-Composition", "core": "Melomane-Core"}
 STRATA = (("a_baked|rho", "Baked-in (a) ρ"), ("b_heldout|rho", "Held-out (b) ρ"), ("c_external|rho", "External (c) ρ"),
-          ("cultural|cohen_d", "Cultural d"))
+          ("cultural|d", "Cultural d"))
 NA = "n/a"
 
 
@@ -87,11 +87,34 @@ def _hyp_sentence(k: str, h: dict) -> str:
     return f"{k} ({h.get('status', 'pending')})"
 
 
+def _stratum_phrase(ev: dict | None) -> tuple[list[str], list[str], list[str]]:
+    """(beat, lost, tied) stratum labels for Composition - Cooc from the H1 evidence (CI vs 0)."""
+    names = (("a", "baked-in"), ("b", "held-out"), ("c", "LLM-label"))
+    beat, lost, tied = [], [], []
+    for k, label in names:
+        e = (ev or {}).get(k)
+        if not isinstance(e, dict) or not _ok(e.get("delta_rho")):
+            continue
+        (beat if e.get("ci_low", -1) > 0 else lost if e.get("ci_high", 1) < 0 else tied).append(label)
+    return beat, lost, tied
+
+
+def _a_an(number_text: str) -> str:
+    """'an 8,000' / 'an 11,000' / 'a 12,000' (article by how the number is pronounced)."""
+    return ("an " if number_text.startswith(("8", "11", "18")) else "a ") + number_text
+
+
+def _join(xs: list[str]) -> str:
+    return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1]
+
+
 def abstract(data: dict, hyp: dict) -> str:
-    """Abstract assembled from the numbers and the statuses.  Each clause appears only if the data support writing it."""
+    """Abstract assembled from the numbers and the statuses.  Each clause appears only if the data support writing it, and findings are
+    stated from the *evidence* (which strata, what size), never merely from a hypothesis verdict."""
     corp = data.get("corpus", "?")
     V, A = data.get("vocab_count"), data.get("artist_count")
     sc = status_counts(hyp)
+    other = sum(v for k, v in sc.items() if k not in ("supported", "not supported", "not evaluable"))
     parts = [
         "Melomane transfers the Epicure methodology (Radzikowski & Chen, arXiv:2604.22776, arXiv:2605.22391) from food ingredients to "
         "music tracks: three skip-gram models share one vocabulary and one training objective and differ only in the random-walk schema "
@@ -99,23 +122,41 @@ def abstract(data: dict, hyp: dict) -> str:
         f"We train them on {integer(V)} tracks by {integer(A)} artists (corpus `{corp}`) and test eight pre-registered hypotheses with "
         "artist-grouped cross-validation."
     ]
-    n_sup, n_not, n_ne = sc.get("supported", 0), sc.get("not supported", 0), sc.get("not evaluable", 0)
-    parts.append(f"Outcome: {n_sup} supported, {n_not} not supported, {n_ne} not evaluable"
-                 + (f", {sum(v for k, v in sc.items() if k not in ('supported', 'not supported', 'not evaluable'))} mixed/inconclusive"
-                    if sum(v for k, v in sc.items() if k not in ('supported', 'not supported', 'not evaluable')) else "") + ".")
+    parts.append(f"Outcome: {sc.get('supported', 0)} supported, {sc.get('not supported', 0)} not supported, {sc.get('not evaluable', 0)} not evaluable"
+                 + (f", {other} mixed/inconclusive" if other else "") + ".")
     h1 = hyp.get("H1", {})
-    ev_b = get(h1, "evidence", "b")
-    if h1.get("status") == "supported" and isinstance(ev_b, dict):
-        parts.append(f"Measured-feature structure is recovered better by the Composition model than by Cooc on held-out acoustic properties "
-                     f"(Δρ = {num(ev_b.get('delta_rho'))}, 95% CI {ci(ev_b.get('ci_low'), ev_b.get('ci_high'))}, artist-clustered bootstrap).")
-    elif h1.get("status") == "not supported":
-        parts.append("Contrary to the Epicure ordering, the Composition model did not exceed Cooc on the held-out strata (H1 not supported).")
-    elif h1.get("status") in ("inconclusive", "mixed"):
-        parts.append("The Composition-versus-Cooc comparison on the held-out strata was inconclusive (H1).")
+    ev = h1.get("evidence") if isinstance(h1.get("evidence"), dict) else {}
+    if ev:
+        beat, lost, tied = _stratum_phrase(ev)
+        bits = []
+        for k, label in (("a", "baked-in"), ("b", "held-out"), ("c", "LLM-label")):
+            e = ev.get(k)
+            if isinstance(e, dict) and _ok(e.get("delta_rho")):
+                bits.append(f"{label} Δρ = {num(e['delta_rho'])} {ci(e.get('ci_low'), e.get('ci_high'))}")
+        verdict = []
+        if beat:
+            verdict.append(f"the Composition model beat Cooc on {_join(beat)} probes")
+        if lost:
+            verdict.append(f"{'but ' if beat else ''}fell behind it on {_join(lost)} probes")
+        if tied:
+            verdict.append(f"and was indistinguishable on {_join(tied)} probes")
+        parts.append(("On held-out artists, " + " ".join(verdict) + f" ({'; '.join(bits)}; artist-clustered bootstrap), so H1 is "
+                      f"{str(h1.get('status', '')).replace('_', ' ')}.") if verdict else f"H1 is {h1.get('status')}.")
+    sm = (data.get("s7") or {}).get("summary_by_model", {})
+    cd = {m: get(sm, m, "cultural|d", "mean") for m in ("cooc", "composition", "core")}
+    if all(_ok(v) for v in cd.values()):
+        parts.append(f"Regional (cultural) structure is carried mostly by listening behaviour: Cohen's d is {num(cd['cooc'], 2)} for Cooc, "
+                     f"{num(cd['core'], 2)} for Core and {num(cd['composition'], 2)} for Composition (H3 {hyp.get('H3', {}).get('status', 'n/a')}).")
     h7 = hyp.get("H7", {})
-    if h7.get("status") in ("supported", "not supported"):
-        parts.append(f"Steering by spherical interpolation {'does' if h7['status'] == 'supported' else 'does not'} reliably increase target-tag "
-                     "precision with rotation angle (H7).")
+    shares = (data.get("s8_h7") or {}).get("share_by_model", {})
+    if h7.get("status") in ("supported", "not supported") and all(_ok(shares.get(m)) for m in ("cooc", "composition", "core")):
+        parts.append(f"Steering by spherical interpolation raises target-tag precision with rotation angle for {pct(shares['cooc'])}, "
+                     f"{pct(shares['composition'])} and {pct(shares['core'])} of poles in Cooc, Composition and Core (H7 {h7['status']}).")
+    h8 = hyp.get("H8", {})
+    n8 = get(data, "s9", "H8", "n_tracks")
+    if h8.get("status") in ("supported", "not supported") and _ok(n8):
+        parts.append(f"The conclusions {'hold' if h8['status'] == 'supported' else 'do not hold'} when the scaled-down training budget is replaced by the "
+                     f"full paper budget on {_a_an(integer(n8))}-track subset (H8).")
     parts.append("The embeddings themselves are LLM-free; a language model is used only for curation, tagging and naming. "
                  "This is a preprint-pending write-up generated from the result files.")
     return " ".join(parts)
@@ -214,15 +255,36 @@ def build_blocks(data: dict, hyp: dict, fig_paths: Sequence[str] = ()) -> list[B
         hrows.append([k, h.get("claim", ""), str(h.get("status", "pending")).upper()])
     B.append(("table", ["", "Claim", "Outcome"], hrows, "Pre-registered hypotheses (analysis_plan.lock.json) and their outcomes, nulls included."))
     notes = []
+    h1e = (hyp.get("H1", {}).get("evidence") or {}) if isinstance(hyp.get("H1", {}).get("evidence"), dict) else {}
+    if h1e:
+        notes.append("H1 (Composition minus Cooc): " + "; ".join(
+            f"{lab} Δρ {num(h1e[k].get('delta_rho'))} {ci(h1e[k].get('ci_low'), h1e[k].get('ci_high'))}, "
+            f"{pct(h1e[k].get('share_targets_positive'))} of {h1e[k].get('n_targets')} probes positive"
+            for k, lab in (("a", "baked-in"), ("b", "held-out"), ("c", "LLM-label")) if isinstance(h1e.get(k), dict)) + ".")
     h2 = hyp.get("H2", {})
-    if h2.get("status") == "not supported" and isinstance(h2.get("evidence"), dict):
+    if isinstance(h2.get("evidence"), dict):
         pr = h2["evidence"].get("PR", {})
         notes.append("H2: participation ratio " + ", ".join(f"{NAME[m]} {num(pr.get(m), 1)}" for m in MODELS if m in pr) + ".")
+    cd = {m: get(summary, m, "cultural|d", "mean") for m in MODELS}
+    if all(_ok(v) for v in cd.values()):
+        notes.append("H3 (regional one-vs-rest Cohen's d, 8 regions): " + ", ".join(f"{NAME[m]} {num(cd[m], 2)}" for m in MODELS) + ".")
+    e7 = (s9.get("E7") or {}).get("H4") if isinstance(s9.get("E7"), dict) else None
+    if isinstance(e7, dict) and e7.get("verdicts"):
+        notes.append("H4 verdicts by label set: " + ", ".join(f"{k} {v}" for k, v in e7["verdicts"].items()) + ".")
     h5 = hyp.get("H5", {})
     if isinstance(h5.get("evidence"), dict) and h5["evidence"].get("n_dims"):
         e = h5["evidence"]
         notes.append(f"H5: {pct(e.get('share_positive_ci'))} of {e['n_dims']} LLM dimensions with a measured counterpart correlate positively with a CI excluding 0"
                      + (f"; wrong-sign dimensions: {', '.join(e['wrong_sign_dims'])}" if e.get("wrong_sign_dims") else "") + ".")
+    h6 = hyp.get("H6", {})
+    if isinstance(h6.get("evidence"), dict) and _ok(h6["evidence"].get("best_retention")):
+        notes.append(f"H6: best retention of full-precision held-out ρ at 64 dimensions or fewer is {pct(h6['evidence']['best_retention'])}.")
+    h8e = s9.get("H8") if isinstance(s9.get("H8"), dict) else {}
+    if h8e.get("verdict"):
+        v = h8e["verdict"]
+        notes.append(f"H8 ({integer(h8e.get('n_tracks'))}-track subset): Composition minus Cooc ρ is {num(get(v, 'standard', 'composition_minus_cooc'))} at the standard budget and "
+                     f"{num(get(v, 'paper', 'composition_minus_cooc'))} at the paper budget; same ρ ordering ({'yes' if h8e.get('same_rho_ordering') else 'no'}), "
+                     f"same lowest-PR model ({'yes' if h8e.get('same_lowest_PR') else 'no'}).")
     if notes:
         B.append(("ul", notes))
 
@@ -271,22 +333,44 @@ def build_blocks(data: dict, hyp: dict, fig_paths: Sequence[str] = ()) -> list[B
         B.append(("fig", p, next((v for k, v in cap.items() if k in p), "Figure.")))
 
     B.append(("h", 1, "5. Limitations"))
+    n_unknown = data.get("unknown_artist_tracks")
     lim = [
         "Onion's listening data come from a Last.fm-era, Western-skewed population; findings are about this catalogue, not music in general.",
-        "Only tracks with listening data can be in the three-way comparison" + (f" ({integer(cov.get('tracks_with_listening_data'))} of {integer(cov.get('tracks_with_audio_features'))})" if _ok(cov.get("tracks_with_listening_data")) else "") + ".",
-        "Artist and title strings come from a separate metadata table of unconfirmed provenance (see DATA_LICENSE.md); curation here is therefore limited to rules and cannot recover versions/remixes beyond normalised (artist, title) keys.",
+        "Only tracks with listening data can be in the three-way comparison"
+        + (f" ({integer(cov.get('tracks_with_listening_data'))} of {integer(cov.get('tracks_with_audio_features'))})" if _ok(cov.get("tracks_with_listening_data")) else "") + ".",
+        "Artist, title and album strings are Music4All metadata as redistributed on Hugging Face (`seungheondoh/enrich-music4all`), a dataset that declares no licence; "
+        "they are published with attribution (see DATA_LICENSE.md)."
+        + (f" {integer(n_unknown)} tracks have no artist name and are treated as separate artists." if _ok(n_unknown) and n_unknown else ""),
         "Artist structure: same-artist tracks are strongly correlated; all probes are artist-grouped, but unmodelled structure (label, era, collaborators) can still leak.",
-        "LLM labels are noisy; dimensions below the reliability threshold are excluded from headline probes, and the probe strata that depend on them are reported as n/a when empty.",
         "Features are track-level aggregates of 30-second clips, not frame-level audio; instrumental tracks have no lyric edges.",
         "The walk budget is scaled below the Epicure paper's (profile `" + str(prof) + "`); the equal-token control and the paper-budget subset check bound, but do not remove, this caveat.",
         "Probes target properties of the compound inputs themselves (stratum a), properties held out of them (b) and LLM labels (c); only (b) and (c) test generalisation beyond what the Composition model was given.",
     ]
+    deg = s1.get("degraded") or []
+    if deg:
+        lim.append("Curation is rules-only for this run (" + "; ".join(deg) + "), so duplicate versions are merged only by normalised (artist, title) keys; a full LLM curation pass is left as an ablation.")
+    st2 = data.get("s2_stats") or {}
+    if _ok(st2.get("n_labelled")):
+        ex = st2.get("excluded_dims") or []
+        lim.append(f"LLM labels (stratum c, supervised poles) cover a seeded random sample of {integer(st2['n_labelled'])} tracks ({pct(st2.get('coverage_of_vocab'), 0)} of the vocabulary), "
+                   "limited by the LLM budget; the rest keep a rule-based genre"
+                   + (f"; excluded as unreliable (second-prompt Spearman below 0.6): {', '.join(ex)}" if ex else "") + ".")
+    if _ok(s4.get("max_cluster_share")) and s4["max_cluster_share"] > 0.05:
+        lim.append(f"The largest compound cluster holds {pct(s4['max_cluster_share'], 2)} of tracks, narrowly above the 5% limit set in the plan (recorded, not tuned).")
+    ratios = [d["n_modes"] / d["n_factors_stable"] for d in s6.values() if isinstance(d, dict) and d.get("n_factors_stable")]
+    if ratios and max(ratios) >= 6.9:
+        lim.append(f"The number of modes is set by the model-selection range, not discovered: the GMM selected {num(sum(ratios) / len(ratios), 1)} components per factor on average "
+                   "against a ceiling of 7, i.e. it hit the ceiling for (nearly) every factor.")
+    h5e = (hyp.get("H5", {}).get("evidence") or {}) if isinstance(hyp.get("H5", {}).get("evidence"), dict) else {}
+    if h5e.get("wrong_sign_dims"):
+        lim.append(f"The pre-registered measured counterpart for {', '.join(h5e['wrong_sign_dims'])} correlates in the opposite direction to the LLM label, "
+                   "so that pairing was probably specified with the wrong sign.")
     B.append(("ul", lim))
 
     B.append(("h", 1, "6. Ethics, licences and data handling"))
     B.append(("p", "The embeddings are learned without any language model. Lyrics and audio are never redistributed and never sent to a language model; "
                    "no per-user data is released. Upstream data: Music4All-Onion (CC BY 4.0; Moscati et al., CIKM 2022), listening events from Last.fm. "
-                   "Code is MIT; derived artefacts are CC BY 4.0 subject to DATA_LICENSE.md."))
+                   "Artist and title strings are shown with attribution to Music4All and `seungheondoh/enrich-music4all` (no licence declared; see limitations). Code is MIT; derived artefacts are CC BY 4.0 subject to DATA_LICENSE.md."))
 
     B.append(("h", 1, "7. Reproducibility"))
     B.append(("p", "Every figure and table is generated from the files under `results/` by `python -m melomane run-all`; see `paper/reproducibility.md` "
@@ -304,13 +388,46 @@ def _extension_rows(s9: dict) -> list[list[str]]:
             continue
         status = str(e.get("status", "n/a"))
         detail = ""
-        if k == "E1" and isinstance(e.get("ship_small"), dict):
-            detail = "; ".join(f"{m}: {v.get('dims')}-d {v.get('dtype')} = {num(v.get('size_mb'), 1)} MB, retention {pct(v.get('retention'))}" for m, v in e["ship_small"].items() if isinstance(v, dict))
+        if status != "done":
+            detail = str(e.get("reason") or e.get("note") or "")
+        elif k == "E1" and isinstance(e.get("ship_small"), dict):
+            detail = "; ".join(f"{NAME.get(m, m).replace('Melomane-', '')}: {v.get('dims')}-d {v.get('dtype')} = {num(v.get('size_mb'), 1)} MB, retention {pct(v.get('retention'))}"
+                               for m, v in e["ship_small"].items() if isinstance(v, dict))
         elif k == "E2" and isinstance(e.get("by_stratum"), dict):
             p = e["by_stratum"].get("primary") or {}
             detail = f"gain over Cooc split: acoustic {pct(p.get('share_acoustic'))}, lyric {pct(p.get('share_lyric'))}"
-        elif status != "done":
-            detail = str(e.get("reason") or e.get("note") or "")
+        elif k == "E3":
+            detail = "; ".join(f"{int(x['pct_hub'])}% of tracks with compound links: mean ρ {num(x.get('rho_all'))} vs Cooc {num(x.get('rho_cooc_all'))} "
+                               f"(linked tracks {num(x.get('rho_hub'))} vs {num(x.get('rho_cooc_hub'))}; unlinked {num(x.get('rho_nonhub'))} vs {num(x.get('rho_cooc_nonhub'))})"
+                               for x in (e.get("systems") or []) if _ok(x.get("pct_hub")))
+        elif k == "E4":
+            m = e.get("means") or {}
+            detail = (f"H1 under equal token budgets: {e.get('H1_equal_token', 'n/a')}; held-out ρ Cooc {num(get(m, 'cooc_eqtok', 'b_heldout'))} "
+                      f"vs Composition {num(get(m, 'composition_eqtok', 'b_heldout'))}")
+        elif k == "E5":
+            by: dict[str, list[float]] = {}
+            jac: list[float] = []
+            for r in e.get("rows") or []:
+                if _ok(r.get("linear_cka")):
+                    by.setdefault(r.get("model", "?"), []).append(r["linear_cka"])
+                if _ok(r.get("knn_jaccard")):
+                    jac.append(r["knn_jaccard"])
+            if by:
+                detail = ("mean linear CKA with external audio/lyric embeddings: " + ", ".join(f"{NAME.get(m, m).replace('Melomane-', '')} {num(sum(v) / len(v), 2)}" for m, v in by.items() if m in MODELS)
+                          + (f"; top-10 neighbour overlap (Jaccard) at most {num(max(jac), 3)}, near chance" if jac and max(jac) < 0.05 else ""))
+        elif k == "E6":
+            pr, mp = e.get("procrustes") or {}, e.get("mode_persistence") or {}
+            detail = (f"Cooc trained on the early vs late half of {num(e.get('span_years'), 1)} years of sessions: Procrustes disparity {num(pr.get('disparity'), 2)} "
+                      f"(shuffled-null {num(pr.get('null_disparity_mean'), 2)}), row cosine {num(pr.get('row_cosine'), 2)}; modes: mean best-match Jaccard "
+                      f"{num(mp.get('mean_best_jaccard'), 2)} vs null {num(mp.get('null_best_jaccard_mean'), 2)}, {pct(mp.get('share_persisting'), 1)} persist")
+        elif k == "E7":
+            ls = e.get("label_sets") or {}
+            detail = "H4 " + str(get(e, "H4", "status", default="n/a")) + ": " + "; ".join(
+                f"{n} lift difference {num(v.get('lift_diff'), 2)} {ci(*(v.get('diff_ci') or [None, None]), nd=2)} ({v.get('verdict', 'n/a')})" for n, v in ls.items() if isinstance(v, dict))
+        elif k == "E8":
+            g = e.get("summary_delta_composition_minus_cooc") or {}
+            detail = (f"Composition − Cooc held-out Δρ ≥ 0 in {g.get('n_meeting')} of {g.get('n_cells')} settings of the sensitivity grid "
+                      f"(range {num(g.get('min'), 3)} to {num(g.get('max'), 3)}, median {num(g.get('median'), 3)})")
         rows.append([lab, status, detail])
     return rows
 
@@ -439,3 +556,32 @@ def inject_readme(readme: str, block: str) -> str:
         return readme
     a, b = readme.index(README_BEGIN), readme.index(README_END) + len(README_END)
     return readme[:a] + block + readme[b:]
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# reproducibility manifest
+# ---------------------------------------------------------------------------------------------------------------------
+def reproducibility_text(data: dict, host: dict, now: str) -> str:
+    """Environment, configuration and cost of the run that produced ``results/``.  Missing facts are omitted, never printed as None/0."""
+    tr = data.get("train") or {}
+    rows = [("Date", now), ("Corpus / profile", f"`{data.get('corpus', '?')}` / `{data.get('profile', '?')}`")]
+    if data.get("git_commit"):
+        rows.append(("Code version (git)", f"`{data['git_commit']}`"))
+    if host.get("platform"):
+        rows.append(("Host", f"{host['platform']} ({host.get('cpus', '?')} CPUs)"))
+    rows.append(("Python / PyTorch", f"{host.get('python', '?')} / {host.get('torch', '?')}"))
+    if host.get("gpu"):
+        rows.append(("GPU", f"{host['gpu']} (compute capability {host.get('gpu_capability', '?')})"))
+    if tr:
+        rows.append(("Training", f"{tr.get('walks_per_node')} walks/node × {tr.get('epochs')} epochs, Core `ii_repeat` {tr.get('ii_repeat')}, "
+                                 f"{data.get('seeds')} seeds for the main models, dimension {tr.get('dim', 300)}"))
+    rows.append(("Vocabulary", f"{integer(data.get('vocab_count'))} canonical tracks, {integer(data.get('artist_count'))} named artists"))
+    if data.get("llm_model"):
+        rows.append(("LLM", f"`{data['llm_model']}` via OpenRouter (curation, labelling, mode naming only; the embeddings are LLM-free)"))
+    if _ok(data.get("llm_cache_spend_usd")):
+        rows.append(("LLM spend (recorded in the cache)", f"${data['llm_cache_spend_usd']:.2f} of ${num(data.get('llm_budget_usd'), 0)} cap; calls that were paid for but "
+                                                       "produced no usable answer are not recorded (see DECISIONS.md 17)"))
+    if data.get("lock_amendments") is not None:
+        rows.append(("Pre-registration", f"`analysis_plan.lock.json` with {data['lock_amendments']} recorded amendment(s)"))
+    rows.append(("Seeds", "per-stage seeds derived from (run id, stage, name); ICA uses multi-seed Hungarian matching"))
+    return "# Reproducibility manifest\n\n" + "\n".join(f"- **{k}:** {v}" for k, v in rows) + "\n"
