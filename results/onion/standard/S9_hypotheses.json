@@ -1,0 +1,35 @@
+{
+  "4": {
+    "claim": "curated vocabulary > size-matched raw on artist-disjoint kNN purity lift (lift difference > 0)",
+    "status": "mixed / inconclusive",
+    "verdicts": {
+      "category": "inconclusive",
+      "region": "inconclusive"
+    }
+  },
+  "6": {
+    "claim": "Composition keeps >= 90% of full-precision held-out rho at <= 64 dims (fp16/int8)",
+    "status": "supported",
+    "evidence": {
+      "best_retention": 0.9420078946992926,
+      "best_config": {
+        "method": "pca",
+        "dims": 64,
+        "dtype": "fp16",
+        "size_mb": 5.442992,
+        "nn_recall": 0.3088
+      },
+      "best_retention_by_method": {
+        "pca": 0.9420078946992926,
+        "rp": 0.6713142447483508
+      }
+    }
+  },
+  "8": {
+    "claim": "conclusions on the standard training budget match those on the paper budget (subset)",
+    "status": "supported",
+    "same_H1_direction": true,
+    "same_rho_ordering": true,
+    "same_lowest_PR": true
+  }
+}

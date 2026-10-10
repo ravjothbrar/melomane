@@ -1,0 +1,161 @@
+{
+  "models": {
+    "cooc": {
+      "finite": true,
+      "participation_ratio": 45.7973747253418,
+      "mean_pairwise_cosine": 0.15200400352478027,
+      "seeds": 3,
+      "seconds": 226.52914190292358,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 10661800,
+      "loss_first": 2.3143526117006936,
+      "loss_last": 1.739674911008659,
+      "loss_decreasing": true,
+      "neighbour_recall_at10_seed0_vs_1": 0.573
+    },
+    "composition": {
+      "finite": true,
+      "participation_ratio": 199.84593200683594,
+      "mean_pairwise_cosine": 0.07026877999305725,
+      "seeds": 3,
+      "seconds": 1161.2841560840607,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 85294400,
+      "loss_first": 1.9155135369696192,
+      "loss_last": 1.6113143064392181,
+      "loss_decreasing": true,
+      "neighbour_recall_at10_seed0_vs_1": 0.4206666666666667
+    },
+    "core": {
+      "finite": true,
+      "participation_ratio": 175.34005737304688,
+      "mean_pairwise_cosine": 0.09656006842851639,
+      "seeds": 3,
+      "seconds": 2655.44766497612,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 191912400,
+      "loss_first": 1.7728414384869424,
+      "loss_last": 1.648987423942462,
+      "loss_decreasing": true,
+      "neighbour_recall_at10_seed0_vs_1": 0.46273333333333333
+    },
+    "cooc_artistmasked": {
+      "finite": true,
+      "participation_ratio": 33.48551940917969,
+      "mean_pairwise_cosine": 0.13018736243247986,
+      "seeds": 1,
+      "seconds": 140.63944840431213,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 10661800,
+      "loss_first": 2.465093102163941,
+      "loss_last": 1.994291994180388,
+      "loss_decreasing": true
+    },
+    "composition_acoustic": {
+      "finite": true,
+      "participation_ratio": 192.8946533203125,
+      "mean_pairwise_cosine": 0.07730242609977722,
+      "seeds": 1,
+      "seconds": 897.018257856369,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 63970800,
+      "loss_first": 1.9616527220372248,
+      "loss_last": 1.7031857112284612,
+      "loss_decreasing": true
+    },
+    "composition_lyric": {
+      "finite": true,
+      "participation_ratio": 159.320556640625,
+      "mean_pairwise_cosine": 0.05728130787611008,
+      "seeds": 1,
+      "seconds": 406.2948887348175,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 31985400,
+      "loss_first": 2.058792393734777,
+      "loss_last": 1.8009572914646317,
+      "loss_decreasing": true
+    },
+    "core_partial60": {
+      "finite": true,
+      "participation_ratio": 56.6804313659668,
+      "mean_pairwise_cosine": 0.07031402736902237,
+      "seeds": 1,
+      "seconds": 2198.1997377872467,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 191912400,
+      "loss_first": 1.7633110380075017,
+      "loss_last": 1.6135310031610146,
+      "loss_decreasing": true
+    },
+    "core_partial30": {
+      "finite": true,
+      "participation_ratio": 49.43280792236328,
+      "mean_pairwise_cosine": 0.11801964789628983,
+      "seeds": 1,
+      "seconds": 1859.0625121593475,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 191912400,
+      "loss_first": 1.7710572645576164,
+      "loss_last": 1.618226424079727,
+      "loss_decreasing": true
+    },
+    "core_partial10": {
+      "finite": true,
+      "participation_ratio": 77.69297790527344,
+      "mean_pairwise_cosine": 0.12985408306121826,
+      "seeds": 1,
+      "seconds": 1637.8076658248901,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 191912400,
+      "loss_first": 1.786659753526806,
+      "loss_last": 1.6534748088180748,
+      "loss_decreasing": true
+    },
+    "cooc_eqtok": {
+      "finite": true,
+      "participation_ratio": 95.00640106201172,
+      "mean_pairwise_cosine": 0.10031406581401825,
+      "seeds": 1,
+      "seconds": 2735.5113775730133,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 191912400,
+      "loss_first": 1.770661326693305,
+      "loss_last": 1.7229435741549124,
+      "loss_decreasing": true
+    },
+    "composition_eqtok": {
+      "finite": true,
+      "participation_ratio": 199.93264770507812,
+      "mean_pairwise_cosine": 0.07882509380578995,
+      "seeds": 1,
+      "seconds": 2572.3605177402496,
+      "device": "cuda",
+      "epochs": 6,
+      "tokens_per_epoch": 191912400,
+      "loss_first": 1.7619846479009311,
+      "loss_last": 1.6106003339276955,
+      "loss_decreasing": true
+    },
+    "cooc_avg": {
+      "finite": true,
+      "participation_ratio": 53.97572326660156,
+      "mean_pairwise_cosine": 0.13780096173286438,
+      "raw_vocab": 53761
+    }
+  },
+  "seed_recall": {
+    "cooc": 0.573,
+    "composition": 0.4206666666666667,
+    "core": 0.46273333333333333
+  }
+}

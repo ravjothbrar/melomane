@@ -84,3 +84,52 @@ Resume: `python -m melomane run --stage S12 --corpus onion --profile standard` �
 ## 2026-10-10 06:42 UTC — S12 (Products (bundles, explorer, MCP config)) [onion/standard] — GREEN
 Ran in 159s. Key numbers: corpora=1
 Resume: `python -m melomane run --stage S12 --corpus onion --profile standard` · disk free 1647 GB
+
+## 2026-10-10 12:19 UTC — S9 (Extensions (E1-E8, H4, H6, H8)) [onion/standard] — GREEN
+Ran in 41461s. Key numbers: E1=done, E2=done, E3=done, E4=done, E5=done, E6=done, E7=done, E8=done
+Resume: `python -m melomane run --stage S9 --corpus onion --profile standard` · disk free 1647 GB
+
+## 2026-10-10 12:22 UTC — S12 (Products (bundles, explorer, MCP config)) [onion/standard] — GREEN
+Ran in 159s. Key numbers: corpora=1
+Resume: `python -m melomane run --stage S12 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:22 UTC — S13 (White paper generation (tables, figures, MD/LaTeX)) [onion/standard] — GREEN
+Ran in 4s. Key numbers: primary_corpus=onion, figures_generated=2, hypotheses_evaluated=7
+Notes: Paper generated in <repo>\paper/ (Markdown + LaTeX arXiv preprint)
+Resume: `python -m melomane run --stage S13 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:23 UTC — S14 (Release QA (secrets, privacy, integrity checks)) [onion/standard] — GREEN
+Ran in 18s. Key numbers: all_passed=True, issues_count=0, secrets_hits=0
+Resume: `python -m melomane run --stage S14 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:27 UTC — S13 (White paper generation (tables, figures, MD/LaTeX)) [onion/standard] — GREEN
+Ran in 2s. Key numbers: primary_corpus=onion, figures_generated=2, hypotheses_evaluated=7
+Notes: Paper generated in <repo>\paper/ (Markdown + LaTeX arXiv preprint)
+Resume: `python -m melomane run --stage S13 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:28 UTC — S14 (Release QA (secrets, privacy, integrity checks)) [onion/standard] — GREEN
+Ran in 16s. Key numbers: all_passed=True, issues_count=0, secrets_hits=0
+Resume: `python -m melomane run --stage S14 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:28 UTC — S13 (White paper generation (tables, figures, MD/LaTeX)) [onion/standard] — GREEN
+Ran in 2s. Key numbers: primary_corpus=onion, figures_generated=2, hypotheses_evaluated=7
+Notes: Paper generated in <repo>\paper/ (Markdown + LaTeX arXiv preprint)
+Resume: `python -m melomane run --stage S13 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:29 UTC — S13 (White paper generation (tables, figures, MD/LaTeX)) [onion/standard] — GREEN
+Ran in 2s. Key numbers: primary_corpus=onion, figures_generated=2, hypotheses_evaluated=7
+Notes: Paper generated in <repo>\paper/ (Markdown + LaTeX arXiv preprint)
+Resume: `python -m melomane run --stage S13 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:29 UTC — S14 (Release QA (secrets, privacy, integrity checks)) [onion/standard] — GREEN
+Ran in 16s. Key numbers: all_passed=True, issues_count=0, secrets_hits=0
+Resume: `python -m melomane run --stage S14 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:31 UTC — S13 (White paper generation (tables, figures, MD/LaTeX)) [onion/standard] — GREEN
+Ran in 2s. Key numbers: primary_corpus=onion, figures_generated=2, hypotheses_evaluated=7
+Notes: Paper generated in <repo>\paper/ (Markdown + LaTeX arXiv preprint)
+Resume: `python -m melomane run --stage S13 --corpus onion --profile standard` · disk free 1646 GB
+
+## 2026-10-10 12:31 UTC — S14 (Release QA (secrets, privacy, integrity checks)) [onion/standard] — GREEN
+Ran in 17s. Key numbers: all_passed=True, issues_count=0, secrets_hits=0
+Resume: `python -m melomane run --stage S14 --corpus onion --profile standard` · disk free 1646 GB

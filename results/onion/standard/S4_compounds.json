@@ -1,0 +1,40 @@
+{
+  "n_compounds": 3300,
+  "coverage": {
+    "dynamics_loudness": 1.0,
+    "harmony_tonal": 1.0,
+    "lyric_lexicon": 0.9018739800033765,
+    "lyric_theme": 0.9029994935189181,
+    "rhythm_groove": 0.9999812414414077,
+    "spectral_shape": 0.9999624828828153,
+    "timbre": 1.0
+  },
+  "max_cluster_share": 0.05124838207432141,
+  "cluster_size_median": 303.0,
+  "empty_clusters": 0,
+  "cluster_label_mi": {
+    "dynamics_loudness": {
+      "category": 0.09333792481687021
+    },
+    "harmony_tonal": {
+      "category": 0.09293316387679051
+    },
+    "lyric_lexicon": {
+      "category": 0.041520688089036674
+    },
+    "lyric_theme": {
+      "category": 0.0702811864108562
+    },
+    "rhythm_groove": {
+      "category": 0.09231399505345508
+    },
+    "spectral_shape": {
+      "category": 0.10839243272894589
+    },
+    "timbre": {
+      "category": 0.09763199898438905
+    }
+  },
+  "lyric_coverage": 0.9018739800033765,
+  "tracks_with_any_compound": 1.0
+}

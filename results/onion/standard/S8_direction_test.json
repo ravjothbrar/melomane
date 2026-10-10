@@ -1,0 +1,4882 @@
+{
+  "models": {
+    "cooc": {
+      "n_pairs": 500,
+      "n_poles": 49,
+      "increasing_share_60": {
+        "share": 0.9387755102040817,
+        "ci_low": 0.8571428571428571,
+        "ci_high": 1.0,
+        "n": 49,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.8419180212311486,
+        "median_rho": 0.9,
+        "share_positive": 0.9791666666666666,
+        "share_negative": 0.020833333333333332,
+        "n_groups": 49,
+        "n_undefined": 1,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.035800000000000005,
+          "cos_pole": 0.20500565345038194,
+          "cos_seed": 0.7472412754297256,
+          "prevalence": 0.04717317226052766
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.042800000000000005,
+          "cos_pole": 0.2367587372682756,
+          "cos_seed": 0.7422356504201889,
+          "prevalence": 0.04717317226052766
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.07560000000000001,
+          "cos_pole": 0.2975661625217181,
+          "cos_seed": 0.7105329531431198,
+          "prevalence": 0.04717317226052766
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.24020000000000002,
+          "cos_pole": 0.5309880905593746,
+          "cos_seed": 0.4763584190160036,
+          "prevalence": 0.04717317226052766
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.32080000000000003,
+          "cos_pole": 0.6690162538588047,
+          "cos_seed": 0.2503125543803908,
+          "prevalence": 0.04717317226052766
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.3212,
+          "cos_pole": 0.6866454751491546,
+          "cos_seed": 0.17275438640383073,
+          "prevalence": 0.04717317226052766
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.3122,
+          "cos_pole": 0.6823741000294685,
+          "cos_seed": 0.12076392646995374,
+          "prevalence": 0.04717317226052766
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": 0.009677419354838712,
+        "mean_joint_precision_theta60": 0.06451612903225806,
+        "n_combos": 31
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "region:Anglo-American",
+          "snr_median": 7.203039551887423,
+          "snr_mean": 7.891109417963804,
+          "snr_total_median": 0.024171273664051758,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:brightness+",
+          "snr_median": 3.4743778912613177,
+          "snr_mean": 3.7015284086770612,
+          "snr_total_median": 0.0116589862122863,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "dim:warmth+",
+          "snr_median": 3.0886150839761,
+          "snr_mean": 5.494728166731805,
+          "snr_total_median": 0.010364480147570805,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "region:British-Irish",
+          "snr_median": 2.8526669872259927,
+          "snr_mean": 3.8023174844250476,
+          "snr_total_median": 0.009572708010825479,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "dim:production_polish+",
+          "snr_median": 2.757912221266504,
+          "snr_mean": 3.516390745186824,
+          "snr_total_median": 0.009254738997538602,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "era:2010s",
+          "snr_median": 2.7209237292123136,
+          "snr_mean": 3.367464245868022,
+          "snr_total_median": 0.009130616540980917,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "era:2000s",
+          "snr_median": 2.6912702669996236,
+          "snr_mean": 3.673938069883094,
+          "snr_total_median": 0.009031108278522226,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:danceability+",
+          "snr_median": 2.601099710390757,
+          "snr_mean": 4.207196540821617,
+          "snr_total_median": 0.008728522518089789,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "dim:density+",
+          "snr_median": 2.5098937069405913,
+          "snr_mean": 3.364518754085696,
+          "snr_total_median": 0.008422462103827487,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "dim:vocal_prominence+",
+          "snr_median": 2.352727676634764,
+          "snr_mean": 3.5422097618084614,
+          "snr_total_median": 0.007895059317566323,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 1.3811984847831975,
+      "examples": [
+        {
+          "seed": " - ",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Jefre Cantu-Ledesma - Agate Beach",
+              "Smif-n-Wessun - Let's Git it on",
+              "Ry Cooder - Feelin' Bad Blues",
+              "Nana Caymmi - História Pro Sinhôzinho",
+              "Georges Brassens - Les Passantes"
+            ],
+            "30": [
+              "Di-rect - Devil Don't Care",
+              "Georges Brassens - Les Passantes",
+              "Jeanne Mas - Toute première fois",
+              "João Do Vale - Carcará",
+              "макулатура - 30 лет как мeртв"
+            ],
+            "60": [
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Deaf Center - Thread",
+              "Chihei Hatakeyama - Morning Arrive on the Island",
+              "Brian McBride - Piano ABG",
+              "Jóhann Jóhannsson - The Border"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Jefre Cantu-Ledesma - Agate Beach",
+              "Smif-n-Wessun - Let's Git it on",
+              "Ry Cooder - Feelin' Bad Blues",
+              "Nana Caymmi - História Pro Sinhôzinho",
+              "Georges Brassens - Les Passantes"
+            ],
+            "30": [
+              "Georges Brassens - Les Passantes",
+              "Jefre Cantu-Ledesma - Agate Beach",
+              "Smif-n-Wessun - Let's Git it on",
+              "Miriam Rodríguez - Lo Haremos Bien",
+              "Sneaky Pete Kleinow - Sleepwalk"
+            ],
+            "60": [
+              "Alfred García - Que nos sigan las luces",
+              "Cala Vento - Historias de bufanda",
+              "Carolina Durante - Necromántico",
+              "El Canto del Loco - Acabado en A",
+              "Carolina Durante - 300 Golpes"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Jefre Cantu-Ledesma - Agate Beach",
+              "Smif-n-Wessun - Let's Git it on",
+              "Ry Cooder - Feelin' Bad Blues",
+              "Nana Caymmi - História Pro Sinhôzinho",
+              "Georges Brassens - Les Passantes"
+            ],
+            "30": [
+              "Claude Nougaro - Nougayork",
+              "Orchestral Manoeuvres in the Dark - Genetic Engineering",
+              "Cássia Eller - Blues Da Piedade",
+              "Luan Santana - Acertou a Mão",
+              "Xuxa - Parabéns da Xuxa"
+            ],
+            "60": [
+              "David Vendetta - Love to Love You Baby",
+              "Conchita Wurst - Up for Air",
+              "Booty Luv - Shine",
+              "Adam Hicks - Turn Up the Music",
+              "S Club Juniors - One Step Closer"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Antonio Pinto - Soul Inside",
+              "Jayme Dee - Tip Toes",
+              "Alesso - Years",
+              "Melendi - Tu jardín con enanitos"
+            ],
+            "30": [
+              "Bastille - Bad Blood",
+              "Jayme Dee - Tip Toes",
+              "Vance Joy - Riptide",
+              "Lorde - Royals",
+              "Eliza Doolittle - Big When I Was Little"
+            ],
+            "60": [
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Deaf Center - Thread",
+              "Julianna Barwick - Cloudbank",
+              "Chihei Hatakeyama - Morning Arrive on the Island",
+              "Brian McBride - Overture (for Other Halfs)"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Antonio Pinto - Soul Inside",
+              "Jayme Dee - Tip Toes",
+              "Alesso - Years",
+              "Melendi - Tu jardín con enanitos"
+            ],
+            "30": [
+              "Bastille - Bad Blood",
+              "Prince Royce - Te Robaré",
+              "Melendi - Tu jardín con enanitos",
+              "Antonio Pinto - Soul Inside",
+              "Rozalén - Comiendote A Besos"
+            ],
+            "60": [
+              "Rozalén - Vuelves",
+              "Carolina Durante - Necromántico",
+              "El Canto del Loco - Acabado en A",
+              "Rozalén - 80 veces",
+              "Alfred García - Que nos sigan las luces"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Antonio Pinto - Soul Inside",
+              "Jayme Dee - Tip Toes",
+              "Alesso - Years",
+              "Melendi - Tu jardín con enanitos"
+            ],
+            "30": [
+              "Antonio Pinto - Soul Inside",
+              "Bastille - Bad Blood",
+              "Pablo Alborán - Quién",
+              "Melendi - Tu jardín con enanitos",
+              "Ivo Pessoa - Uma Vez Mais"
+            ],
+            "60": [
+              "Ivo Pessoa - Uma Vez Mais",
+              "Eli Lieb - Born To Die",
+              "Pablo Alborán - Quién",
+              "Jesse McCartney - Anybody",
+              "Big Time Rush - Love Me Again"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Pearl Jam - Alive",
+              "Pearl Jam - Jeremy",
+              "Temple of the Dog - Times Of Trouble",
+              "L7 - Fuel My Fire",
+              "L7 - Diet Pill"
+            ],
+            "30": [
+              "Blind Melon - Car Seat (God's Presents)",
+              "Screaming Trees - Winter Song",
+              "Temple of the Dog - Times Of Trouble",
+              "Temple of the Dog - Your Savior",
+              "Pearl Jam - Jeremy"
+            ],
+            "60": [
+              "Chihei Hatakeyama - Morning Arrive on the Island",
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Deaf Center - Thread",
+              "Loscil - Endless Falls",
+              "Stars of the Lid - Dopamine Clouds Over Craven Cottage"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Pearl Jam - Alive",
+              "Pearl Jam - Jeremy",
+              "Temple of the Dog - Times Of Trouble",
+              "L7 - Fuel My Fire",
+              "L7 - Diet Pill"
+            ],
+            "30": [
+              "Emmanuel - Quiero Dormir Cansado",
+              "Sentidos Opuestos - Tú Y Yo",
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Vilma Palma E Vampiros - Auto Rojo",
+              "Luis Miguel - La Chica Del Bikini Azul"
+            ],
+            "60": [
+              "El Canto del Loco - Acabado en A",
+              "Emmanuel - Quiero Dormir Cansado",
+              "Amaral - Kamikaze",
+              "Carolina Durante - Necromántico",
+              "Estopa - El Del Medio De Los Chichos"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Pearl Jam - Alive",
+              "Pearl Jam - Jeremy",
+              "Temple of the Dog - Times Of Trouble",
+              "L7 - Fuel My Fire",
+              "L7 - Diet Pill"
+            ],
+            "30": [
+              "Dallas Smith - Somebody Somewhere",
+              "Smash Mouth - Can't Get Enough of You Baby",
+              "Los Colorados - Du hast",
+              "Sugar Ray - When It's Over",
+              "Pearl Jam - Alive"
+            ],
+            "60": [
+              "Smash Mouth - Can't Get Enough of You Baby",
+              "Toy-Box - Best Friend",
+              "Virgin - Szansa",
+              "Nylon Beat - Rakastuin mä looseriin",
+              "Trzeci Wymiar - Dla mnie masz stajla"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Passion Pit - Take a Walk",
+              "Young the Giant - My Body",
+              "Miike Snow - Animal",
+              "The Temper Trap - Sweet Disposition",
+              "Young the Giant - Cough Syrup"
+            ],
+            "30": [
+              "360 - Killer",
+              "Miike Snow - Animal",
+              "Passion Pit - Sleepyhead",
+              "Passion Pit - Take a Walk",
+              "Young the Giant - My Body"
+            ],
+            "60": [
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Julianna Barwick - Cloudbank",
+              "Billy Changer - Band Of Brothers",
+              "Jóhann Jóhannsson - The Border",
+              "Chihei Hatakeyama - Morning Arrive on the Island"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Passion Pit - Take a Walk",
+              "Young the Giant - My Body",
+              "Miike Snow - Animal",
+              "The Temper Trap - Sweet Disposition",
+              "Young the Giant - Cough Syrup"
+            ],
+            "30": [
+              "Hidrogenesse - Disfraz de tigre",
+              "Sidonie - El Incendio",
+              "Rozalén - 80 veces",
+              "The Temper Trap - Sweet Disposition",
+              "Rozalén - Vuelves"
+            ],
+            "60": [
+              "Carolina Durante - Necromántico",
+              "El Canto del Loco - Acabado en A",
+              "La Bien Querida - Dinamita",
+              "Carolina Durante - La Noche de los Muertos Vivientes",
+              "Rozalén - Vuelves"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Passion Pit - Take a Walk",
+              "Young the Giant - My Body",
+              "Miike Snow - Animal",
+              "The Temper Trap - Sweet Disposition",
+              "Young the Giant - Cough Syrup"
+            ],
+            "30": [
+              "Neon Trees - Animal",
+              "Alesso - Years",
+              "Tokyo Police Club - Gone",
+              "Jorge & Mateus - Pra Ter o Seu Amor",
+              "Imagine Dragons - On Top of the World"
+            ],
+            "60": [
+              "Ivo Pessoa - Uma Vez Mais",
+              "Eli Lieb - Born To Die",
+              "Atomic Kitten - See Ya",
+              "Forever the Sickest Kids - Ritalin (Born In America)",
+              "Timbaland - Release"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Limp Bizkit - My Way",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Saliva - Click Click Boom",
+              "Limp Bizkit - Eat You Alive",
+              "Limp Bizkit - Take a Look Around"
+            ],
+            "30": [
+              "Limp Bizkit - Behind Blue Eyes",
+              "Limp Bizkit - Take a Look Around",
+              "Limp Bizkit - My Way",
+              "Dead By Sunrise - Too Late",
+              "Limp Bizkit - Eat You Alive"
+            ],
+            "60": [
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Chihei Hatakeyama - Morning Arrive on the Island",
+              "Deaf Center - Thread",
+              "Jóhann Jóhannsson - The Border",
+              "Harold Budd - Three Faces West (Billy Al Bengston's)"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Limp Bizkit - My Way",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Saliva - Click Click Boom",
+              "Limp Bizkit - Eat You Alive",
+              "Limp Bizkit - Take a Look Around"
+            ],
+            "30": [
+              "Limp Bizkit - Take a Look Around",
+              "Sentidos Opuestos - Tú Y Yo",
+              "Kudai - Calendario",
+              "Juanes - Y No Regresas",
+              "Limp Bizkit - My Way"
+            ],
+            "60": [
+              "El Canto del Loco - Acabado en A",
+              "Amaral - Kamikaze",
+              "Carolina Durante - Necromántico",
+              "Rozalén - Vuelves",
+              "Emmanuel - Quiero Dormir Cansado"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Limp Bizkit - My Way",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Saliva - Click Click Boom",
+              "Limp Bizkit - Eat You Alive",
+              "Limp Bizkit - Take a Look Around"
+            ],
+            "30": [
+              "Trzeci Wymiar - Dla mnie masz stajla",
+              "Virgin - Szansa",
+              "Pandora - La Usurpadora",
+              "Young Money - EveryGirl In The World",
+              "Nickelback - Someday"
+            ],
+            "60": [
+              "Trzeci Wymiar - Dla mnie masz stajla",
+              "Virgin - Szansa",
+              "Nylon Beat - Rakastuin mä looseriin",
+              "Video - Sorry",
+              "Patrycja Markowska - Hallo, Hallo"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Anaïs Mitchell - Nothing Changes",
+              "Ash - Pacific Palisades",
+              "The Last Shadow Puppets - The Time Has Come Again",
+              "The Last Shadow Puppets - Les Cactus",
+              "Uppermost - Different"
+            ],
+            "30": [
+              "Uppermost - Different",
+              "The Last Shadow Puppets - Les Cactus",
+              "The Last Shadow Puppets - The Time Has Come Again",
+              "Ash - Pacific Palisades",
+              "Anaïs Mitchell - Nothing Changes"
+            ],
+            "60": [
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Billy Changer - Band Of Brothers",
+              "Deaf Center - Thread",
+              "Julianna Barwick - Cloudbank",
+              "Brian McBride - Piano ABG"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Anaïs Mitchell - Nothing Changes",
+              "Ash - Pacific Palisades",
+              "The Last Shadow Puppets - The Time Has Come Again",
+              "The Last Shadow Puppets - Les Cactus",
+              "Uppermost - Different"
+            ],
+            "30": [
+              "The Last Shadow Puppets - The Time Has Come Again",
+              "The Last Shadow Puppets - Les Cactus",
+              "Bebe - Como Los Olivos",
+              "Miss Caffeina - Mi Rutina Preferida",
+              "Sidonie - El Incendio"
+            ],
+            "60": [
+              "Carolina Durante - Necromántico",
+              "El Canto del Loco - Acabado en A",
+              "La Bien Querida - Dinamita",
+              "Carolina Durante - La Noche de los Muertos Vivientes",
+              "Carolina Durante - 300 Golpes"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Anaïs Mitchell - Nothing Changes",
+              "Ash - Pacific Palisades",
+              "The Last Shadow Puppets - The Time Has Come Again",
+              "The Last Shadow Puppets - Les Cactus",
+              "Uppermost - Different"
+            ],
+            "30": [
+              "Ash - Pacific Palisades",
+              "Anaïs Mitchell - Nothing Changes",
+              "The Lonely Island - Incredible Thoughts",
+              "eleventwelfth - later on",
+              "Foster the People - Call It What You Want (Planet of Sound Remix)"
+            ],
+            "60": [
+              "Forever the Sickest Kids - Ritalin (Born In America)",
+              "David Vendetta - Love to Love You Baby",
+              "Atomic Kitten - See Ya",
+              "Deolinda - Corzinha de Verão",
+              "You Me at Six - Finders Keepers"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Icona Pop - All Night",
+              "Ellie Goulding - Burn",
+              "will.i.am - Feelin' Myself",
+              "Eliza Doolittle - Big When I Was Little"
+            ],
+            "30": [
+              "Icona Pop - All Night",
+              "Eliza Doolittle - No Man Can",
+              "Quadron - Crush",
+              "Bastille - Bad Blood",
+              "De Hofnar - Zonnestraal"
+            ],
+            "60": [
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Deaf Center - Thread",
+              "Julianna Barwick - Cloudbank",
+              "Brian McBride - Piano ABG",
+              "Chihei Hatakeyama - Morning Arrive on the Island"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Icona Pop - All Night",
+              "Ellie Goulding - Burn",
+              "will.i.am - Feelin' Myself",
+              "Eliza Doolittle - Big When I Was Little"
+            ],
+            "30": [
+              "Bastille - Bad Blood",
+              "Prince Royce - Te Robaré",
+              "Melendi - Tu jardín con enanitos",
+              "Romeo Santos - Amigo",
+              "will.i.am - Feelin' Myself"
+            ],
+            "60": [
+              "El Canto del Loco - Acabado en A",
+              "Carolina Durante - Necromántico",
+              "Rozalén - Vuelves",
+              "La Bien Querida - Dinamita",
+              "Alfred García - Que nos sigan las luces"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Icona Pop - All Night",
+              "Ellie Goulding - Burn",
+              "will.i.am - Feelin' Myself",
+              "Eliza Doolittle - Big When I Was Little"
+            ],
+            "30": [
+              "Ellie Goulding - Burn",
+              "Victor & Leo - Na Linha do Tempo",
+              "Bastille - Bad Blood",
+              "Pablo Alborán - Quién",
+              "Hedley - Pocket Full Of Dreams"
+            ],
+            "60": [
+              "Eli Lieb - Born To Die",
+              "Ivo Pessoa - Uma Vez Mais",
+              "Pablo Alborán - Quién",
+              "Victor & Leo - Na Linha do Tempo",
+              "Madison Beer - Melodies"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Faust - Miss Fortune",
+              "Ash - Oh Yeah",
+              "Soundgarden - Spoonman",
+              "Soundgarden - Jesus Christ Pose",
+              "Local H - All The Kids Are Right"
+            ],
+            "30": [
+              "Faust - Miss Fortune",
+              "Local H - All The Kids Are Right",
+              "Soundgarden - Jesus Christ Pose",
+              "Soundgarden - Spoonman",
+              "Ash - Oh Yeah"
+            ],
+            "60": [
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Chihei Hatakeyama - Morning Arrive on the Island",
+              "Deaf Center - Thread",
+              "Brian McBride - Piano ABG",
+              "Deaf Center - Fiction Dawn"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Faust - Miss Fortune",
+              "Ash - Oh Yeah",
+              "Soundgarden - Spoonman",
+              "Soundgarden - Jesus Christ Pose",
+              "Local H - All The Kids Are Right"
+            ],
+            "30": [
+              "Faust - Miss Fortune",
+              "Ash - Oh Yeah",
+              "Soundgarden - Jesus Christ Pose",
+              "Emmanuel - Quiero Dormir Cansado",
+              "Amaral - Kamikaze"
+            ],
+            "60": [
+              "Amaral - Kamikaze",
+              "El Canto del Loco - Acabado en A",
+              "Carolina Durante - Necromántico",
+              "Emmanuel - Quiero Dormir Cansado",
+              "Estopa - El Del Medio De Los Chichos"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Faust - Miss Fortune",
+              "Ash - Oh Yeah",
+              "Soundgarden - Spoonman",
+              "Soundgarden - Jesus Christ Pose",
+              "Local H - All The Kids Are Right"
+            ],
+            "30": [
+              "Faust - Miss Fortune",
+              "Smash Mouth - Can't Get Enough of You Baby",
+              "Sugar Ray - When It's Over",
+              "The Presidents of the United States of America - Some Postman",
+              "Dallas Smith - Somebody Somewhere"
+            ],
+            "60": [
+              "Forever the Sickest Kids - Ritalin (Born In America)",
+              "Smash Mouth - Can't Get Enough of You Baby",
+              "David Vendetta - Love to Love You Baby",
+              "This Century - Hopeful Romantic",
+              "Atomic Kitten - See Ya"
+            ]
+          }
+        }
+      ]
+    },
+    "composition": {
+      "n_pairs": 500,
+      "n_poles": 49,
+      "increasing_share_60": {
+        "share": 0.7959183673469388,
+        "ci_low": 0.673469387755102,
+        "ci_high": 0.8979591836734694,
+        "n": 49,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.6428547637385343,
+        "median_rho": 0.8944271909999159,
+        "share_positive": 0.8367346938775511,
+        "share_negative": 0.14285714285714285,
+        "n_groups": 49,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.042,
+          "cos_pole": 0.1794552833941707,
+          "cos_seed": 0.4117730952501297,
+          "prevalence": 0.04549831899253519
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.05740000000000001,
+          "cos_pole": 0.21676019225781784,
+          "cos_seed": 0.40629280418157576,
+          "prevalence": 0.04549831899253519
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.095,
+          "cos_pole": 0.2790835908968002,
+          "cos_seed": 0.3773598688840866,
+          "prevalence": 0.04549831899253519
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.1384,
+          "cos_pole": 0.3629878124445677,
+          "cos_seed": 0.3012259176671505,
+          "prevalence": 0.04549831899253519
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.18480000000000002,
+          "cos_pole": 0.42898026829957964,
+          "cos_seed": 0.18339854772388936,
+          "prevalence": 0.04549831899253519
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.2142,
+          "cos_pole": 0.44748252698779106,
+          "cos_seed": 0.10587751732766629,
+          "prevalence": 0.04549831899253519
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.21780000000000002,
+          "cos_pole": 0.44595110845565794,
+          "cos_seed": 0.05485378044015966,
+          "prevalence": 0.04549831899253519
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.029999999999999995,
+        "mean_joint_precision_theta60": 0.02666666666666667,
+        "n_combos": 30
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "region:British-Irish",
+          "snr_median": 1.0985028123587217,
+          "snr_mean": 1.2873672338258773,
+          "snr_total_median": 0.0036862510481836305,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:warmth+",
+          "snr_median": 0.9534689919005674,
+          "snr_mean": 0.9438915632961187,
+          "snr_total_median": 0.00319956037550526,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "category:Country",
+          "snr_median": 0.8710471005392728,
+          "snr_mean": 0.9472142477239303,
+          "snr_total_median": 0.0029229768474472247,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "category:Folk/Acoustic",
+          "snr_median": 0.8427638797962111,
+          "snr_mean": 0.9290813206067543,
+          "snr_total_median": 0.0028280667107255415,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "region:East Asian",
+          "snr_median": 0.8410088633216526,
+          "snr_mean": 0.8858433569391027,
+          "snr_total_median": 0.002822177393696821,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "region:Latin American",
+          "snr_median": 0.830241963479581,
+          "snr_mean": 0.8774107276516767,
+          "snr_total_median": 0.00278604685731403,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "region:Middle-Eastern/Mediterranean",
+          "snr_median": 0.8196066443308451,
+          "snr_mean": 1.0091670333090852,
+          "snr_total_median": 0.00275035786688203,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:density+",
+          "snr_median": 0.777832910942312,
+          "snr_mean": 0.7877339579632336,
+          "snr_total_median": 0.0026101775534976912,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "category:Electronic/Dance",
+          "snr_median": 0.751777643785564,
+          "snr_mean": 0.8948231043735972,
+          "snr_total_median": 0.0025227437710924963,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "region:Anglo-American",
+          "snr_median": 0.7499226569357911,
+          "snr_mean": 0.7903402934731729,
+          "snr_total_median": 0.00251651898300601,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 0.5601991784253223,
+      "examples": [
+        {
+          "seed": " - ",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Pink Floyd - Echoes",
+              "Young Thug - Halftime",
+              "Xiu Xiu - Pink City",
+              "Ozzy Osbourne - Killer of Giants",
+              "HO99O9 - United States of Horror"
+            ],
+            "30": [
+              "Pink Floyd - Echoes",
+              "Johann Sebastian Bach - Sheep May Safely Graze",
+              "Heinali - Sway, Sway",
+              "Helios - Emancipation",
+              "Seas of Years - In Collusion With The Waves"
+            ],
+            "60": [
+              "Patrick Doyle - The Story Continues",
+              "Stars of the Lid - Piano Aquieu",
+              "Grouper - Being Her Shadow",
+              "C418 - Floating Trees",
+              "deadmau5 - camilla"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Pink Floyd - Echoes",
+              "Young Thug - Halftime",
+              "Xiu Xiu - Pink City",
+              "Ozzy Osbourne - Killer of Giants",
+              "HO99O9 - United States of Horror"
+            ],
+            "30": [
+              "Xiu Xiu - Pink City",
+              "Pink Floyd - Echoes",
+              "Young Thug - Halftime",
+              "HO99O9 - United States of Horror",
+              "YG - TOO COCKY"
+            ],
+            "60": [
+              "The Armed - Ultraglass",
+              "Nasum - Stormshield",
+              "Deftones - Deathblow",
+              "Protest the Hero - Blindfolds Aside",
+              "Once Human - Terminal"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Pink Floyd - Echoes",
+              "Young Thug - Halftime",
+              "Xiu Xiu - Pink City",
+              "Ozzy Osbourne - Killer of Giants",
+              "HO99O9 - United States of Horror"
+            ],
+            "30": [
+              "Godsmack - Unforgettable",
+              "BTOB - Blowin’ Up",
+              "HO99O9 - United States of Horror",
+              "Young Thug - Halftime",
+              "Our Last Night - Humble."
+            ],
+            "60": [
+              "Godsmack - Unforgettable",
+              "BTOB - Blowin’ Up",
+              "Rak-Su - I Want You to Freak",
+              "Limp Bizkit - Ready To Go",
+              "EXO-K - Run"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Kunzite - VAPORS",
+              "Delaporte - Un Jardín",
+              "Stone Sour - Absolute Zero",
+              "I See Stars - Portals",
+              "Angra - Winds of Destination"
+            ],
+            "30": [
+              "Ramin Djawadi - The Long Farewell",
+              "Black Crown Initiate - Stench of the Iron Age",
+              "Beyond Creation - The Deported",
+              "Neil Young - Organ Solo",
+              "The Flaming Lips - Virgo Self-Esteem Broadcast"
+            ],
+            "60": [
+              "Stars of the Lid - Piano Aquieu",
+              "Grouper - Being Her Shadow",
+              "Patrick Doyle - The Story Continues",
+              "C418 - Floating Trees",
+              "Neil Young - Organ Solo"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Kunzite - VAPORS",
+              "Delaporte - Un Jardín",
+              "Stone Sour - Absolute Zero",
+              "I See Stars - Portals",
+              "Angra - Winds of Destination"
+            ],
+            "30": [
+              "Kunzite - VAPORS",
+              "Borgore - 100s",
+              "Black Crown Initiate - Stench of the Iron Age",
+              "Beyond Creation - The Deported",
+              "Delaporte - Un Jardín"
+            ],
+            "60": [
+              "Ana Guerra - Vete De Mí",
+              "Nasum - Stormshield",
+              "Black Sabbath - Age of Reason",
+              "Skepta - I Spy",
+              "Nocturnus - Droid Sector"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Kunzite - VAPORS",
+              "Delaporte - Un Jardín",
+              "Stone Sour - Absolute Zero",
+              "I See Stars - Portals",
+              "Angra - Winds of Destination"
+            ],
+            "30": [
+              "Borgore - 100s",
+              "As I Lay Dying - A Greater Foundation",
+              "Bishop Briggs - White Flag",
+              "Margaret - Cool Me Down",
+              "Venom - Over My Dead Body"
+            ],
+            "60": [
+              "Bishop Briggs - White Flag",
+              "As I Lay Dying - A Greater Foundation",
+              "Dead by April - Can You See The Red",
+              "BTOB - Beep Beep",
+              "Bridgit Mendler - Hurricane"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "The Chameleons - Nostalgia",
+              "Megadeth - Ecstasy",
+              "Jimi Hendrix - Third Stone From The Sun",
+              "Pet Shop Boys - Beautiful People",
+              "The Flaming Lips - Convinced of the Hex"
+            ],
+            "30": [
+              "Jimi Hendrix - Third Stone From The Sun",
+              "Megadeth - Ecstasy",
+              "Seven Lions - Leaving Earth",
+              "The Chameleons - Nostalgia",
+              "Tim Hecker - Black Refraction"
+            ],
+            "60": [
+              "Patrick Doyle - The Story Continues",
+              "Labradford - P",
+              "Grouper - Being Her Shadow",
+              "Brian McBride - Piano ABG",
+              "Stars of the Lid - Piano Aquieu"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "The Chameleons - Nostalgia",
+              "Megadeth - Ecstasy",
+              "Jimi Hendrix - Third Stone From The Sun",
+              "Pet Shop Boys - Beautiful People",
+              "The Flaming Lips - Convinced of the Hex"
+            ],
+            "30": [
+              "The Chameleons - Nostalgia",
+              "Megadeth - Ecstasy",
+              "Red Hot Chili Peppers - Deep Kick",
+              "Jimi Hendrix - Third Stone From The Sun",
+              "Rush - Animate"
+            ],
+            "60": [
+              "Haken - Veil",
+              "Red Hot Chili Peppers - Deep Kick",
+              "The Chameleons - Nostalgia",
+              "Protest the Hero - No Stars Over Bethlehem",
+              "Black Sabbath - Age of Reason"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "The Chameleons - Nostalgia",
+              "Megadeth - Ecstasy",
+              "Jimi Hendrix - Third Stone From The Sun",
+              "Pet Shop Boys - Beautiful People",
+              "The Flaming Lips - Convinced of the Hex"
+            ],
+            "30": [
+              "The Chameleons - Nostalgia",
+              "The Osmonds - Crazy Horses",
+              "Sum 41 - In Too Deep",
+              "James Morrison - Under the Influence",
+              "Megadeth - Ecstasy"
+            ],
+            "60": [
+              "NOFX - Seeing Double at the Triple Rock",
+              "The Chameleons - Nostalgia",
+              "Ryan Star - Start a Fire",
+              "EXO-K - Run",
+              "Gloria Estefan - Turn the Beat Around"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Tracy Chapman - Bang Bang Bang",
+              "Primus - Here Come The Bastards",
+              "Glee Cast - Run the World (Girls)",
+              "The Police - Too Much Information",
+              "Pink Floyd - Sum"
+            ],
+            "30": [
+              "Baroness - Collapse",
+              "Pink Floyd - Sum",
+              "Angelo Badalamenti - The Black Dog Runs at Night",
+              "Manual - Awash",
+              "The Police - Too Much Information"
+            ],
+            "60": [
+              "Grouper - Being Her Shadow",
+              "M83 - At the Party",
+              "Max Richter - Only Questions",
+              "Justin Hurwitz - Engagement Party",
+              "This Will Destroy You - The Mighty Rio Grande"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Tracy Chapman - Bang Bang Bang",
+              "Primus - Here Come The Bastards",
+              "Glee Cast - Run the World (Girls)",
+              "The Police - Too Much Information",
+              "Pink Floyd - Sum"
+            ],
+            "30": [
+              "The Police - Too Much Information",
+              "Baroness - Collapse",
+              "EXO-K - Run",
+              "The Jackson 5 - Lookin' Through The Windows",
+              "Mc Tha - Rito de Passá"
+            ],
+            "60": [
+              "Fangoria - El día a día de mi psicopatía",
+              "Faith No More - Stripsearch",
+              "Red Hot Chili Peppers - Go Robot",
+              "Mc Tha - Rito de Passá",
+              "BaianaSystem - Playsom"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Tracy Chapman - Bang Bang Bang",
+              "Primus - Here Come The Bastards",
+              "Glee Cast - Run the World (Girls)",
+              "The Police - Too Much Information",
+              "Pink Floyd - Sum"
+            ],
+            "30": [
+              "EXO-K - Run",
+              "Primus - Here Come The Bastards",
+              "Laura Nyro - Once It Was Alright Now (Farmer Joe)",
+              "Madonna - I Know It",
+              "Little Dragon - Runabout"
+            ],
+            "60": [
+              "EXO-K - Run",
+              "RuPaul - Destiny Is Mine",
+              "Vanessa Williams - Running Back To You",
+              "Amaranthe - 1.000.000 Lightyears",
+              "OneRepublic - Love Runs Out"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Cher - SOS",
+              "State Champs - Something About You",
+              "Manchester Orchestra - Simple Math",
+              "American Authors - Think About It",
+              "Real Friends - Stand Steady"
+            ],
+            "30": [
+              "Breaking Benjamin - Give Me A Sign",
+              "Cher - SOS",
+              "Manchester Orchestra - Simple Math",
+              "American Authors - Think About It",
+              "State Champs - Something About You"
+            ],
+            "60": [
+              "This Will Destroy You - The Mighty Rio Grande",
+              "Patrick Doyle - The Story Continues",
+              "Grouper - Being Her Shadow",
+              "Stars of the Lid - Piano Aquieu",
+              "M83 - At the Party"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Cher - SOS",
+              "State Champs - Something About You",
+              "Manchester Orchestra - Simple Math",
+              "American Authors - Think About It",
+              "Real Friends - Stand Steady"
+            ],
+            "30": [
+              "State Champs - Something About You",
+              "American Authors - Think About It",
+              "Cher - SOS",
+              "Real Friends - Stand Steady",
+              "Carrie Underwood - I Just Can't Live a Lie"
+            ],
+            "60": [
+              "From Indian Lakes - Happy Machines",
+              "State Champs - Something About You",
+              "Marduk - Narva",
+              "Trivium - Rain",
+              "Ana Guerra - Vete De Mí"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Cher - SOS",
+              "State Champs - Something About You",
+              "Manchester Orchestra - Simple Math",
+              "American Authors - Think About It",
+              "Real Friends - Stand Steady"
+            ],
+            "30": [
+              "Cher - SOS",
+              "State Champs - Something About You",
+              "The Letter Black - My Disease",
+              "Real Friends - Stand Steady",
+              "American Authors - Think About It"
+            ],
+            "60": [
+              "State Champs - Something About You",
+              "Spice Girls - Tell Me Why",
+              "Flyleaf - Set Apart This Dream",
+              "Cher - SOS",
+              "Carly Rae Jepsen - Higher"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "SONAMOO - Friday Night",
+              "Mother Mother - Give Me Back The Night",
+              "Maroon 5 - Makes Me Wonder",
+              "Carly Rae Jepsen - Body Language",
+              "Jennifer Rush - Ring Of Ice"
+            ],
+            "30": [
+              "Jan Jelinek - Planeten in Halbtrauer",
+              "Stars of the Lid - I Will Surround You",
+              "John Talabot - Last Land",
+              "Bonobo - Second Sun",
+              "Meek Mill - R.I.C.O. (feat. Drake)"
+            ],
+            "60": [
+              "Patrick Doyle - The Story Continues",
+              "This Will Destroy You - The Mighty Rio Grande",
+              "Stars of the Lid - Piano Aquieu",
+              "M83 - At the Party",
+              "deadmau5 - camilla"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "SONAMOO - Friday Night",
+              "Mother Mother - Give Me Back The Night",
+              "Maroon 5 - Makes Me Wonder",
+              "Carly Rae Jepsen - Body Language",
+              "Jennifer Rush - Ring Of Ice"
+            ],
+            "30": [
+              "SONAMOO - Friday Night",
+              "Carly Rae Jepsen - Body Language",
+              "Forfun - Quem Vai, Vai",
+              "Cut Copy - Counting Down",
+              "Red Hot Chili Peppers - Hump de Bump"
+            ],
+            "60": [
+              "From Indian Lakes - Happy Machines",
+              "Ellie Goulding - Goodness Gracious",
+              "Skank - As Noites",
+              "Ana Guerra - Vete De Mí",
+              "Red Hot Chili Peppers - Hump de Bump"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "SONAMOO - Friday Night",
+              "Mother Mother - Give Me Back The Night",
+              "Maroon 5 - Makes Me Wonder",
+              "Carly Rae Jepsen - Body Language",
+              "Jennifer Rush - Ring Of Ice"
+            ],
+            "30": [
+              "SONAMOO - Friday Night",
+              "Mother Mother - Give Me Back The Night",
+              "Maroon 5 - Makes Me Wonder",
+              "Fefe Dobson - Take Me Away",
+              "The Saturdays - Wordshaker"
+            ],
+            "60": [
+              "SONAMOO - Friday Night",
+              "The Saturdays - Wordshaker",
+              "Silverstein - The Afterglow",
+              "DNCE - Be Mean",
+              "NX Zero - Daqui Pra Frente"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Pentatonix - Royals",
+              "The Ting Tings - Basement",
+              "The Ting Tings - Good Grief",
+              "Jessica Pratt - Streets of Mine",
+              "Rincon Sapiência - Linhas de Soco"
+            ],
+            "30": [
+              "Run River North - Mr. Brightside",
+              "Autechre - IO",
+              "JinSang - sprung",
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Ari Lennox - yuengling"
+            ],
+            "60": [
+              "Patrick Doyle - The Story Continues",
+              "Grouper - Being Her Shadow",
+              "deadmau5 - camilla",
+              "Stars of the Lid - Piano Aquieu",
+              "Mirrorring - Drowning the Call"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Pentatonix - Royals",
+              "The Ting Tings - Basement",
+              "The Ting Tings - Good Grief",
+              "Jessica Pratt - Streets of Mine",
+              "Rincon Sapiência - Linhas de Soco"
+            ],
+            "30": [
+              "Pentatonix - Royals",
+              "The Ting Tings - Good Grief",
+              "The Ting Tings - Basement",
+              "Ivete Sangalo - Real Fantasia",
+              "Cardi B - Bronx Season"
+            ],
+            "60": [
+              "Kontra K - Farben",
+              "Skepta - I Spy",
+              "Pentatonix - Royals",
+              "The Cure - Piggy in the Mirror",
+              "Viva Belgrado - Transatlántica"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Pentatonix - Royals",
+              "The Ting Tings - Basement",
+              "The Ting Tings - Good Grief",
+              "Jessica Pratt - Streets of Mine",
+              "Rincon Sapiência - Linhas de Soco"
+            ],
+            "30": [
+              "The Ting Tings - Basement",
+              "Pentatonix - Royals",
+              "K. Michelle - V.S.O.P.",
+              "The Ting Tings - Good Grief",
+              "Youth in Revolt - Royals"
+            ],
+            "60": [
+              "The Ting Tings - Basement",
+              "Nine Inch Nails - All Time Low",
+              "Inna - Too Sexy",
+              "Pentatonix - Royals",
+              "K. Michelle - V.S.O.P."
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Bad Religion - Queen of the 21st Century",
+              "Whirr - Sway",
+              "3 Doors Down - Still Alive",
+              "Title Fight - Numb, But I Still Feel It",
+              "Slipknot - Killpop"
+            ],
+            "30": [
+              "Caspian - Arcs of Command",
+              "Tim Hecker - The Work of Art in the Age of Cultural Overproduction",
+              "Belzebong - Bong Thrower",
+              "Cloudkicker - Dysphoria",
+              "The Boo Radleys - Skyscraper"
+            ],
+            "60": [
+              "Stars of the Lid - Piano Aquieu",
+              "Mirrorring - Drowning the Call",
+              "Patrick Doyle - The Story Continues",
+              "M83 - At the Party",
+              "Grouper - Being Her Shadow"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Bad Religion - Queen of the 21st Century",
+              "Whirr - Sway",
+              "3 Doors Down - Still Alive",
+              "Title Fight - Numb, But I Still Feel It",
+              "Slipknot - Killpop"
+            ],
+            "30": [
+              "Bad Religion - Queen of the 21st Century",
+              "Ozzy Osbourne - Secret Loser",
+              "TV on the Radio - Wash The Day",
+              "Title Fight - Numb, But I Still Feel It",
+              "3 Doors Down - Still Alive"
+            ],
+            "60": [
+              "TV on the Radio - Wash The Day",
+              "Psychedelic Porn Crumpets - Found God In A Tomato",
+              "Travis - Writing To Reach You",
+              "Vreid - One Hundred Years",
+              "Black Sabbath - Age of Reason"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Bad Religion - Queen of the 21st Century",
+              "Whirr - Sway",
+              "3 Doors Down - Still Alive",
+              "Title Fight - Numb, But I Still Feel It",
+              "Slipknot - Killpop"
+            ],
+            "30": [
+              "Bad Religion - Queen of the 21st Century",
+              "Rev Theory - Far From Over",
+              "Make Them Suffer - Elegies",
+              "Wavves - Beat Me Up",
+              "Title Fight - Numb, But I Still Feel It"
+            ],
+            "60": [
+              "Bad Religion - Queen of the 21st Century",
+              "Rev Theory - Far From Over",
+              "Wavves - Beat Me Up",
+              "Make Them Suffer - Elegies",
+              "State Champs - Mine is Gold"
+            ]
+          }
+        }
+      ]
+    },
+    "core": {
+      "n_pairs": 500,
+      "n_poles": 49,
+      "increasing_share_60": {
+        "share": 0.9387755102040817,
+        "ci_low": 0.8571428571428571,
+        "ci_high": 1.0,
+        "n": 49,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.8408099893436141,
+        "median_rho": 0.9746794344808964,
+        "share_positive": 0.9591836734693877,
+        "share_negative": 0.0,
+        "n_groups": 49,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.035,
+          "cos_pole": 0.18038916518073528,
+          "cos_seed": 0.436661235332489,
+          "prevalence": 0.04636169202423689
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.06280000000000001,
+          "cos_pole": 0.22999288884806446,
+          "cos_seed": 0.4294737702012062,
+          "prevalence": 0.04636169202423689
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.13820000000000002,
+          "cos_pole": 0.32494295008759944,
+          "cos_seed": 0.38497123754024504,
+          "prevalence": 0.04636169202423689
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.27,
+          "cos_pole": 0.4454627826884389,
+          "cos_seed": 0.2765027106255293,
+          "prevalence": 0.04636169202423689
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.3324,
+          "cos_pole": 0.5010424955785274,
+          "cos_seed": 0.1804836432263255,
+          "prevalence": 0.04636169202423689
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.3488,
+          "cos_pole": 0.5143597811758518,
+          "cos_seed": 0.11986309822229668,
+          "prevalence": 0.04636169202423689
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.3546,
+          "cos_pole": 0.5120110836029053,
+          "cos_seed": 0.0768341905901907,
+          "prevalence": 0.04636169202423689
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.0035714285714285735,
+        "mean_joint_precision_theta60": 0.04642857142857144,
+        "n_combos": 28
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "category:Reggae/Dub",
+          "snr_median": 0.9379749156592152,
+          "snr_mean": 1.0695420743885042,
+          "snr_total_median": 0.003147566831071192,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "region:African/Afro-Caribbean",
+          "snr_median": 0.9106707260820294,
+          "snr_mean": 0.9586441612171915,
+          "snr_total_median": 0.0030559420338323135,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "era:1970s",
+          "snr_median": 0.8848468799919487,
+          "snr_mean": 0.9427680694397147,
+          "snr_total_median": 0.0029692848321877475,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "category:R&B/Soul",
+          "snr_median": 0.828779492753138,
+          "snr_mean": 0.861880883087584,
+          "snr_total_median": 0.0027811392374266376,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "era:1960s",
+          "snr_median": 0.8009934981961769,
+          "snr_mean": 0.8155525088292501,
+          "snr_total_median": 0.002687897644953614,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "dim:vocal_prominence+",
+          "snr_median": 0.7913180494893771,
+          "snr_mean": 0.8626648845854333,
+          "snr_total_median": 0.0026554296962730773,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "category:Pop",
+          "snr_median": 0.7869958707705662,
+          "snr_mean": 0.8739205820726426,
+          "snr_total_median": 0.002640925740840826,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "era:1980s",
+          "snr_median": 0.7457396818942328,
+          "snr_mean": 0.9023249750449569,
+          "snr_total_median": 0.0025024821540074924,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "region:Francophone",
+          "snr_median": 0.7453213372214471,
+          "snr_mean": 1.003276006842193,
+          "snr_total_median": 0.002501078312823648,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "dim:punch+",
+          "snr_median": 0.7339216436179381,
+          "snr_mean": 0.863071674116531,
+          "snr_total_median": 0.0024628243074427455,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 0.5730093907110192,
+      "examples": [
+        {
+          "seed": " - ",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Novos Baianos - Swing de Campo Grande",
+              "Ramin Djawadi - Dr. Ford",
+              "Chico Buarque - A Banda",
+              "Legião Urbana - Faroeste Caboclo",
+              "Novos Baianos - Acabou Chorare"
+            ],
+            "30": [
+              "Max Richter - Only Questions",
+              "Christian Löffler - Alpine Sketch",
+              "Jon Hopkins - Abandon Window",
+              "Tim Hecker - Sketch 4",
+              "Mark Pritchard - Sad Alron"
+            ],
+            "60": [
+              "Grouper - Disengaged",
+              "Mark Pritchard - Sad Alron",
+              "Loscil - Monument Builders",
+              "Christian Löffler - Alpine Sketch",
+              "Ben Lukas Boysen - Sleepers Beat Theme"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Novos Baianos - Swing de Campo Grande",
+              "Ramin Djawadi - Dr. Ford",
+              "Chico Buarque - A Banda",
+              "Legião Urbana - Faroeste Caboclo",
+              "Novos Baianos - Acabou Chorare"
+            ],
+            "30": [
+              "Novos Baianos - Swing de Campo Grande",
+              "Camila Cabello - Crying in the Club",
+              "La Oreja de Van Gogh - Geografía",
+              "Raul Seixas - Ouro De Tolo",
+              "Izal - Copacabana"
+            ],
+            "60": [
+              "Izal - Copacabana",
+              "Miss Caffeina - Mira Cómo Vuelo",
+              "Love of Lesbian - Planeador",
+              "Los Planetas - Espíritu Olímpico",
+              "Miss Caffeina - MM"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Novos Baianos - Swing de Campo Grande",
+              "Ramin Djawadi - Dr. Ford",
+              "Chico Buarque - A Banda",
+              "Legião Urbana - Faroeste Caboclo",
+              "Novos Baianos - Acabou Chorare"
+            ],
+            "30": [
+              "Britney Spears - Toxic",
+              "Wanessa - Worth It",
+              "Camila Cabello - Crying in the Club",
+              "Katy Perry - One of the Boys",
+              "Madonna - Vogue"
+            ],
+            "60": [
+              "Britney Spears - Toxic",
+              "Katy Perry - One of the Boys",
+              "Wanessa - Worth It",
+              "Demi Lovato - Heart Attack",
+              "Hilary Duff - With Love"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Lorde - Royals",
+              "Stone Sour - Absolute Zero",
+              "Naughty Boy - Lifted",
+              "X Ambassadors - Jungle",
+              "Lindsey Stirling - Moon Trance"
+            ],
+            "30": [
+              "Autre Ne Veut - Counting",
+              "The Glitch Mob - A Dream Within a Dream",
+              "Stone Sour - Absolute Zero",
+              "Naughty Boy - Lifted",
+              "Lorde - Royals"
+            ],
+            "60": [
+              "Grouper - Disengaged",
+              "Loscil - Monument Builders",
+              "Ben Lukas Boysen - Sleepers Beat Theme",
+              "Grouper - I Saw a Ray",
+              "Four Tet - Alap"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Lorde - Royals",
+              "Stone Sour - Absolute Zero",
+              "Naughty Boy - Lifted",
+              "X Ambassadors - Jungle",
+              "Lindsey Stirling - Moon Trance"
+            ],
+            "30": [
+              "Izal - Copacabana",
+              "Lorde - Royals",
+              "Naughty Boy - Lifted",
+              "American Authors - Believer",
+              "Twenty One Pilots - Nico and the Niners"
+            ],
+            "60": [
+              "Izal - Copacabana",
+              "Izal - El Baile",
+              "Miss Caffeina - MM",
+              "Love of Lesbian - Planeador",
+              "Miss Caffeina - Mira Cómo Vuelo"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Lorde - Royals",
+              "Stone Sour - Absolute Zero",
+              "Naughty Boy - Lifted",
+              "X Ambassadors - Jungle",
+              "Lindsey Stirling - Moon Trance"
+            ],
+            "30": [
+              "Maroon 5 - One More Night",
+              "Selena Gomez - Slow Down",
+              "Aer - Floats My Boat",
+              "Lorde - Royals",
+              "American Authors - Believer"
+            ],
+            "60": [
+              "Selena Gomez - Slow Down",
+              "Maroon 5 - One More Night",
+              "Demi Lovato - Heart Attack",
+              "Britney Spears - Toxic",
+              "Jennifer Lopez - Live It Up"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Pearl Jam - Jeremy",
+              "Pearl Jam - Black",
+              "Stone Temple Pilots - Big Bang Baby",
+              "The Osmonds - Crazy Horses",
+              "Malfunkshun - Jezebel Woman"
+            ],
+            "30": [
+              "Pearl Jam - Jeremy",
+              "Stone Temple Pilots - Big Bang Baby",
+              "Pearl Jam - Black",
+              "Reef - Place Your Hands",
+              "Slowdive - Alison"
+            ],
+            "60": [
+              "Loscil - Monument Builders",
+              "Grouper - When We Fall",
+              "Grouper - I Saw a Ray",
+              "Ben Lukas Boysen - Sleepers Beat Theme",
+              "Mark Pritchard - Sad Alron"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Pearl Jam - Jeremy",
+              "Pearl Jam - Black",
+              "Stone Temple Pilots - Big Bang Baby",
+              "The Osmonds - Crazy Horses",
+              "Malfunkshun - Jezebel Woman"
+            ],
+            "30": [
+              "Stone Temple Pilots - Big Bang Baby",
+              "Pearl Jam - Black",
+              "The Osmonds - Crazy Horses",
+              "Pearl Jam - Jeremy",
+              "Andrés Calamaro - Alta Suciedad"
+            ],
+            "60": [
+              "Miss Caffeina - Mira Cómo Vuelo",
+              "Izal - Copacabana",
+              "Love of Lesbian - Planeador",
+              "Miss Caffeina - MM",
+              "Los Planetas - Espíritu Olímpico"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Pearl Jam - Jeremy",
+              "Pearl Jam - Black",
+              "Stone Temple Pilots - Big Bang Baby",
+              "The Osmonds - Crazy Horses",
+              "Malfunkshun - Jezebel Woman"
+            ],
+            "30": [
+              "Stone Temple Pilots - Big Bang Baby",
+              "Sum 41 - In Too Deep",
+              "New Radicals - You Get What You Give",
+              "Pearl Jam - Jeremy",
+              "The Osmonds - Crazy Horses"
+            ],
+            "60": [
+              "Sum 41 - In Too Deep",
+              "Wanessa - Worth It",
+              "Nicki Minaj - Pound the Alarm",
+              "Hilary Duff - With Love",
+              "Girls Aloud - Something New"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Phoenix - Lasso",
+              "The Temper Trap - Sweet Disposition",
+              "Gotye - I Feel Better",
+              "Bronski Beat - Smalltown Boy",
+              "Two Door Cinema Club - What You Know"
+            ],
+            "30": [
+              "The Temper Trap - Sweet Disposition",
+              "Beach House - Master of None",
+              "Phoenix - Lasso",
+              "Four Tet - Locked",
+              "Generationals - Put a Light On"
+            ],
+            "60": [
+              "Loscil - Monument Builders",
+              "Grouper - Disengaged",
+              "Loscil - Stave Peak",
+              "Ben Lukas Boysen - Sleepers Beat Theme",
+              "Grouper - I Saw a Ray"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Phoenix - Lasso",
+              "The Temper Trap - Sweet Disposition",
+              "Gotye - I Feel Better",
+              "Bronski Beat - Smalltown Boy",
+              "Two Door Cinema Club - What You Know"
+            ],
+            "30": [
+              "Vetusta Morla - Valiente",
+              "The Temper Trap - Sweet Disposition",
+              "Phoenix - Lasso",
+              "Sidonie - El Incendio",
+              "Two Door Cinema Club - What You Know"
+            ],
+            "60": [
+              "Vetusta Morla - Valiente",
+              "Izal - Copacabana",
+              "Vetusta Morla - Copenhague",
+              "Izal - La Increíble Historia del Hombre Que Podía Volar Pero No Sabía Cómo",
+              "Sidonie - El Incendio"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Phoenix - Lasso",
+              "The Temper Trap - Sweet Disposition",
+              "Gotye - I Feel Better",
+              "Bronski Beat - Smalltown Boy",
+              "Two Door Cinema Club - What You Know"
+            ],
+            "30": [
+              "Two Door Cinema Club - What You Know",
+              "Maroon 5 - One More Night",
+              "Bronski Beat - Smalltown Boy",
+              "The Veronicas - Hook Me Up",
+              "OneRepublic - Love Runs Out"
+            ],
+            "60": [
+              "Britney Spears - Toxic",
+              "Girls Aloud - Something New",
+              "Jennifer Lopez - Live It Up",
+              "Britney Spears - I Wanna Go",
+              "The Veronicas - Hook Me Up"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Limp Bizkit - My Way",
+              "Breaking Benjamin - Give Me A Sign",
+              "Staind - So Far Away",
+              "American Authors - Think About It",
+              "Papa Roach - Scars"
+            ],
+            "30": [
+              "Breaking Benjamin - Give Me A Sign",
+              "Limp Bizkit - My Way",
+              "Staind - So Far Away",
+              "Art of Dying - Die Trying",
+              "Breaking Benjamin - Red Cold River"
+            ],
+            "60": [
+              "Mark Pritchard - Sad Alron",
+              "Peter Broderick - Eyes Closed And Traveling",
+              "Grouper - Disengaged",
+              "Harold Budd - Olancha Farewell",
+              "Stars of the Lid - Dungtitled (in A major)"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Limp Bizkit - My Way",
+              "Breaking Benjamin - Give Me A Sign",
+              "Staind - So Far Away",
+              "American Authors - Think About It",
+              "Papa Roach - Scars"
+            ],
+            "30": [
+              "Limp Bizkit - My Way",
+              "Nickelback - AFTER THE RAIN",
+              "Breaking Benjamin - Give Me A Sign",
+              "American Authors - Think About It",
+              "Staind - So Far Away"
+            ],
+            "60": [
+              "Love of Lesbian - Planeador",
+              "Miss Caffeina - Mira Cómo Vuelo",
+              "Izal - El Baile",
+              "Vetusta Morla - Copenhague",
+              "Izal - El Pozo"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Limp Bizkit - My Way",
+              "Breaking Benjamin - Give Me A Sign",
+              "Staind - So Far Away",
+              "American Authors - Think About It",
+              "Papa Roach - Scars"
+            ],
+            "30": [
+              "Limp Bizkit - My Way",
+              "Papa Roach - Scars",
+              "Puddle of Mudd - Blurry",
+              "American Authors - Think About It",
+              "Fall Out Boy - Champion"
+            ],
+            "60": [
+              "Katy Perry - One of the Boys",
+              "Cher Lloyd - Want U Back",
+              "Stacie Orrico - Stuck",
+              "Fall Out Boy - Champion",
+              "Sum 41 - Fat Lip"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "The Strokes - Reptilia",
+              "The Wrecks - Favorite Liar",
+              "Wallows - Pleaser",
+              "Kaiser Chiefs - The Angry Mob",
+              "The Pigeon Detectives - I Found Out"
+            ],
+            "30": [
+              "The Strokes - Reptilia",
+              "Alex Turner - Piledriver Waltz",
+              "Kaiser Chiefs - The Angry Mob",
+              "The Wrecks - Favorite Liar",
+              "Alex Turner - Stuck on the Puzzle"
+            ],
+            "60": [
+              "Grouper - Disengaged",
+              "Loscil - Monument Builders",
+              "Ben Lukas Boysen - Sleepers Beat Theme",
+              "Mark Pritchard - Sad Alron",
+              "Grouper - When We Fall"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "The Strokes - Reptilia",
+              "The Wrecks - Favorite Liar",
+              "Wallows - Pleaser",
+              "Kaiser Chiefs - The Angry Mob",
+              "The Pigeon Detectives - I Found Out"
+            ],
+            "30": [
+              "The Strokes - Reptilia",
+              "The Last Shadow Puppets - Standing Next to Me",
+              "The Fratellis - Henrietta",
+              "Miss Caffeina - Ácido",
+              "The Strokes - Under Cover of Darkness"
+            ],
+            "60": [
+              "Miss Caffeina - Mira Cómo Vuelo",
+              "Love of Lesbian - Planeador",
+              "Izal - El Baile",
+              "Vetusta Morla - Valiente",
+              "Izal - La Increíble Historia del Hombre Que Podía Volar Pero No Sabía Cómo"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "The Strokes - Reptilia",
+              "The Wrecks - Favorite Liar",
+              "Wallows - Pleaser",
+              "Kaiser Chiefs - The Angry Mob",
+              "The Pigeon Detectives - I Found Out"
+            ],
+            "30": [
+              "The Strokes - Reptilia",
+              "The Wrecks - Favorite Liar",
+              "The Pigeon Detectives - I Found Out",
+              "Wallows - Pleaser",
+              "The Fratellis - Henrietta"
+            ],
+            "60": [
+              "Fickle Friends - Glue",
+              "Girls Aloud - Something New",
+              "Ashley Tisdale - So Much for You",
+              "Stacie Orrico - Stuck",
+              "Hilary Duff - With Love"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Rihanna - Pour It Up",
+              "Imagine Dragons - Radioactive",
+              "Karmin - Acapella",
+              "Sia - Chandelier",
+              "Broken Bells - Holding on for Life"
+            ],
+            "30": [
+              "London Grammar - Strong",
+              "Bahari - Wild Ones",
+              "Imagine Dragons - Radioactive",
+              "Ry x - Berlin",
+              "James Vincent McMorrow - Higher Love"
+            ],
+            "60": [
+              "Grouper - Disengaged",
+              "Grouper - I Saw a Ray",
+              "Four Tet - Alap",
+              "Labradford - P",
+              "Grouper - When We Fall"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Rihanna - Pour It Up",
+              "Imagine Dragons - Radioactive",
+              "Karmin - Acapella",
+              "Sia - Chandelier",
+              "Broken Bells - Holding on for Life"
+            ],
+            "30": [
+              "Sia - Chandelier",
+              "Zendaya - Replay",
+              "Imagine Dragons - Radioactive",
+              "Zara Larsson - Uncover",
+              "Rihanna - Diamonds"
+            ],
+            "60": [
+              "Izal - El Baile",
+              "Izal - Copacabana",
+              "Miss Caffeina - MM",
+              "Love of Lesbian - Planeador",
+              "Varry Brava - No gires"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Rihanna - Pour It Up",
+              "Imagine Dragons - Radioactive",
+              "Karmin - Acapella",
+              "Sia - Chandelier",
+              "Broken Bells - Holding on for Life"
+            ],
+            "30": [
+              "Karmin - Acapella",
+              "Lily Allen - Hard Out Here",
+              "Britney Spears - Toxic",
+              "Sia - Chandelier",
+              "Pentatonix - Daft Punk"
+            ],
+            "60": [
+              "Britney Spears - Toxic",
+              "Rita Ora - I Will Never Let You Down",
+              "Demi Lovato - Heart Attack",
+              "Bridgit Mendler - Hurricane",
+              "Bridgit Mendler - Ready or Not"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Incubus - Wish You Were Here",
+              "3 Doors Down - Still Alive",
+              "Soundgarden - Fell on Black Days",
+              "Alter Bridge - Show Me A Sign",
+              "Wolfmother - Woman"
+            ],
+            "30": [
+              "Mazzy Star - Fade Into You",
+              "Alter Bridge - Show Me A Sign",
+              "Mark Pritchard - Sad Alron",
+              "Grouper - When We Fall",
+              "If These Trees Could Talk - Deus Ex Machina"
+            ],
+            "60": [
+              "Mark Pritchard - Sad Alron",
+              "Grouper - When We Fall",
+              "Loscil - Monument Builders",
+              "Grouper - Disengaged",
+              "Labradford - P"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Incubus - Wish You Were Here",
+              "3 Doors Down - Still Alive",
+              "Soundgarden - Fell on Black Days",
+              "Alter Bridge - Show Me A Sign",
+              "Wolfmother - Woman"
+            ],
+            "30": [
+              "Incubus - Wish You Were Here",
+              "La Oreja de Van Gogh - Perdida",
+              "Pearl Jam - Yellow Ledbetter",
+              "Velvet Revolver - Set Me Free",
+              "Silverchair - The Greatest View"
+            ],
+            "60": [
+              "Miss Caffeina - Mira Cómo Vuelo",
+              "Love of Lesbian - El Poeta Halley",
+              "Love of Lesbian - Planeador",
+              "Los Planetas - Espíritu Olímpico",
+              "Sidonie - El Incendio"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Incubus - Wish You Were Here",
+              "3 Doors Down - Still Alive",
+              "Soundgarden - Fell on Black Days",
+              "Alter Bridge - Show Me A Sign",
+              "Wolfmother - Woman"
+            ],
+            "30": [
+              "Yellowcard - Ocean Avenue",
+              "Puddle of Mudd - Blurry",
+              "Theory of a Deadman - Angel",
+              "Incubus - Wish You Were Here",
+              "3 Doors Down - Believer"
+            ],
+            "60": [
+              "Yellowcard - Ocean Avenue",
+              "You Me at Six - Underdog",
+              "Avril Lavigne - Girlfriend",
+              "Nothing More - Jenny",
+              "Egypt Central - White Rabbit"
+            ]
+          }
+        }
+      ]
+    },
+    "composition_acoustic": {
+      "n_pairs": 500,
+      "n_poles": 49,
+      "increasing_share_60": {
+        "share": 0.8367346938775511,
+        "ci_low": 0.7346938775510204,
+        "ci_high": 0.9387755102040817,
+        "n": 49,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.683789583053578,
+        "median_rho": 0.8944271909999159,
+        "share_positive": 0.875,
+        "share_negative": 0.08333333333333333,
+        "n_groups": 49,
+        "n_undefined": 1,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.0322,
+          "cos_pole": 0.18376518012525048,
+          "cos_seed": 0.4373659932613373,
+          "prevalence": 0.04347715919235664
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.0434,
+          "cos_pole": 0.2196484144963324,
+          "cos_seed": 0.432016125023365,
+          "prevalence": 0.04347715919235664
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.098,
+          "cos_pole": 0.2974309986990411,
+          "cos_seed": 0.394815658390522,
+          "prevalence": 0.04347715919235664
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.1556,
+          "cos_pole": 0.4037774765435606,
+          "cos_seed": 0.2997533372566104,
+          "prevalence": 0.04347715919235664
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.19119999999999998,
+          "cos_pole": 0.46542141151428224,
+          "cos_seed": 0.18939247712865473,
+          "prevalence": 0.04347715919235664
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.1986,
+          "cos_pole": 0.4819926729500294,
+          "cos_seed": 0.11773808075347915,
+          "prevalence": 0.04347715919235664
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.20959999999999998,
+          "cos_pole": 0.47947437804937365,
+          "cos_seed": 0.0705911362945335,
+          "prevalence": 0.04347715919235664
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.002702702702702704,
+        "mean_joint_precision_theta60": 0.013513513513513514,
+        "n_combos": 37
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "region:Iberian",
+          "snr_median": 0.9501431651042785,
+          "snr_mean": 1.2550179520270655,
+          "snr_total_median": 0.0031883998829002635,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:valence+",
+          "snr_median": 0.9389409162871483,
+          "snr_mean": 0.9471003298551851,
+          "snr_total_median": 0.003150808443916605,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "region:Francophone",
+          "snr_median": 0.9286308193995214,
+          "snr_mean": 1.1735838593211219,
+          "snr_total_median": 0.003116210803354099,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "category:Pop",
+          "snr_median": 0.867752125749987,
+          "snr_mean": 1.0341245474030598,
+          "snr_total_median": 0.00291191988506707,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "region:East Asian",
+          "snr_median": 0.7982032285075918,
+          "snr_mean": 0.653885587846663,
+          "snr_total_median": 0.0026785343238509797,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "category:Classical/Score",
+          "snr_median": 0.7969104118952184,
+          "snr_mean": 1.0017581709844021,
+          "snr_total_median": 0.0026741960130712023,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "category:World/Regional",
+          "snr_median": 0.7845981300166092,
+          "snr_mean": 0.9459068468654568,
+          "snr_total_median": 0.002632879630928219,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "dim:punch+",
+          "snr_median": 0.7833295839805059,
+          "snr_mean": 0.7261271125421097,
+          "snr_total_median": 0.0026286227650352554,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "dim:acousticness+",
+          "snr_median": 0.7757066663544386,
+          "snr_mean": 0.7832368933230403,
+          "snr_total_median": 0.0026030425045450957,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "category:Country",
+          "snr_median": 0.7611881261987814,
+          "snr_mean": 0.9278882122142029,
+          "snr_total_median": 0.002554322571136851,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 0.5163082796899426,
+      "examples": [
+        {
+          "seed": " - ",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Delain - Not Enough (live)",
+              "Pearl Jam - Deep",
+              "Ramin Djawadi - House of Black and White",
+              "Pink Floyd - Echoes",
+              "Frank Zappa - Little Umbrellas"
+            ],
+            "30": [
+              "Labradford - P",
+              "Ramin Djawadi - House of Black and White",
+              "Boards of Canada - Sundown",
+              "Ozzy Osbourne - Killer of Giants",
+              "Mike Oldfield - Red Dawn"
+            ],
+            "60": [
+              "Lights & Motion - Anomaly",
+              "Labradford - P",
+              "Grouper - Tidal Wave",
+              "Hauschka - Urban Forest",
+              "Patrick Doyle - The Story Continues"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Delain - Not Enough (live)",
+              "Pearl Jam - Deep",
+              "Ramin Djawadi - House of Black and White",
+              "Pink Floyd - Echoes",
+              "Frank Zappa - Little Umbrellas"
+            ],
+            "30": [
+              "Delain - Not Enough (live)",
+              "Pearl Jam - Deep",
+              "Idles - Colossus",
+              "Motionless in White - Underdog",
+              "Boom Boom Kid - feliz"
+            ],
+            "60": [
+              "Converge - Thaw",
+              "He Is Legend - White Bat",
+              "Nasum - I Hate People",
+              "Iced Earth - Anthem",
+              "Amon Amarth - Amon Amarth"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Delain - Not Enough (live)",
+              "Pearl Jam - Deep",
+              "Ramin Djawadi - House of Black and White",
+              "Pink Floyd - Echoes",
+              "Frank Zappa - Little Umbrellas"
+            ],
+            "30": [
+              "Delain - Not Enough (live)",
+              "Skillet - Comatose",
+              "Thursday - Between Rupture And Rapture",
+              "Pearl Jam - Deep",
+              "Hail the Sun - Suffocating Syndrome"
+            ],
+            "60": [
+              "Settle Your Scores - Worst Intentions (You Had 'Em)",
+              "Story of the Year - Wake Up",
+              "Thursday - Between Rupture And Rapture",
+              "Skillet - Comatose",
+              "Halestorm - White Dress"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Halsey - Young God",
+              "JOYNER LUCAS - Winter Blues",
+              "Beartooth - One More",
+              "As I Lay Dying - Nothing Left",
+              "Zach Hill - Ex-Ravers"
+            ],
+            "30": [
+              "The Glitch Mob - A Dream Within a Dream",
+              "Halsey - Young God",
+              "JOYNER LUCAS - Winter Blues",
+              "Stone Sour - Absolute Zero",
+              "Ramin Djawadi - The Long Farewell"
+            ],
+            "60": [
+              "Lights & Motion - Anomaly",
+              "Stellardrone - Eternity",
+              "Grouper - Tidal Wave",
+              "Mount Eerie - (synthesizer)",
+              "deadmau5 - camilla"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Halsey - Young God",
+              "JOYNER LUCAS - Winter Blues",
+              "Beartooth - One More",
+              "As I Lay Dying - Nothing Left",
+              "Zach Hill - Ex-Ravers"
+            ],
+            "30": [
+              "Beartooth - One More",
+              "JOYNER LUCAS - Winter Blues",
+              "Halsey - Young God",
+              "Zach Hill - Ex-Ravers",
+              "As I Lay Dying - Nothing Left"
+            ],
+            "60": [
+              "Nasum - I Hate People",
+              "Converge - Thaw",
+              "bbymutha - Rules",
+              "He Is Legend - White Bat",
+              "Altar of Plagues - Burnt Year"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Halsey - Young God",
+              "JOYNER LUCAS - Winter Blues",
+              "Beartooth - One More",
+              "As I Lay Dying - Nothing Left",
+              "Zach Hill - Ex-Ravers"
+            ],
+            "30": [
+              "Beartooth - One More",
+              "Wiz Khalifa - We Dem Boyz",
+              "Parkway Drive - I Hope You Rot",
+              "Oceans Ate Alaska - Entity",
+              "As I Lay Dying - Nothing Left"
+            ],
+            "60": [
+              "Cherish - Unappreciated",
+              "Wiz Khalifa - We Dem Boyz",
+              "Linkin Park - With You",
+              "Oceans Ate Alaska - Entity",
+              "The Word Alive - Light House"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Pet Shop Boys - Beautiful People",
+              "Lake of Tears - Boogie Bubble",
+              "Chris Rea - Gonna Buy A Hat",
+              "Kasabian - Good Fight",
+              "Muse - Easily"
+            ],
+            "30": [
+              "Pet Shop Boys - Beautiful People",
+              "Lake of Tears - Boogie Bubble",
+              "Cannibal Corpse - In the Midst of Ruin",
+              "Thursday - Counting 5-4-3-2-1",
+              "Slayer - Epidemic"
+            ],
+            "60": [
+              "Lights & Motion - Anomaly",
+              "Grouper - Tidal Wave",
+              "Christina Vantzou - Some Limited and Waning Memory",
+              "Labradford - P",
+              "Grouper - Giving It to You"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Pet Shop Boys - Beautiful People",
+              "Lake of Tears - Boogie Bubble",
+              "Chris Rea - Gonna Buy A Hat",
+              "Kasabian - Good Fight",
+              "Muse - Easily"
+            ],
+            "30": [
+              "Pet Shop Boys - Beautiful People",
+              "Havok - F.P.C.",
+              "Lake of Tears - Boogie Bubble",
+              "Green Day - Rusty James",
+              "Haken - Veil"
+            ],
+            "60": [
+              "Nasum - I Hate People",
+              "Converge - Thaw",
+              "He Is Legend - White Bat",
+              "Green Day - Brat",
+              "Converge - Hope Street"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Pet Shop Boys - Beautiful People",
+              "Lake of Tears - Boogie Bubble",
+              "Chris Rea - Gonna Buy A Hat",
+              "Kasabian - Good Fight",
+              "Muse - Easily"
+            ],
+            "30": [
+              "Pet Shop Boys - Beautiful People",
+              "Kasabian - Good Fight",
+              "Stone Sour - Socio",
+              "Descendents - Victim Of Me",
+              "Pennywise - Revolution"
+            ],
+            "60": [
+              "WJSN - Miracle",
+              "Kylie Minogue - Do It Again",
+              "Cherry Bullet - Q&A",
+              "Descendents - Victim Of Me",
+              "Demi Lovato - I Will Survive"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "PUTOCHINOMARICÓN - Tu puta vida nos da (un poco) igual",
+              "Boys Noize - Digitvl",
+              "The Jackson 5 - Lookin' Through The Windows",
+              "John Maus - I Want to Live",
+              "Rita Lee - Banho de Espuma"
+            ],
+            "30": [
+              "PUTOCHINOMARICÓN - Tu puta vida nos da (un poco) igual",
+              "Boys Noize - Digitvl",
+              "Jack White - Everything You've Ever Learned",
+              "Spazzkid - Getting to Know You",
+              "Fangoria - Criticar por criticar"
+            ],
+            "60": [
+              "Hauschka - Urban Forest",
+              "Lights & Motion - Anomaly",
+              "deadmau5 - Bleed",
+              "Patrick Doyle - The Story Continues",
+              "Tim Hecker - Sketch 4"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "PUTOCHINOMARICÓN - Tu puta vida nos da (un poco) igual",
+              "Boys Noize - Digitvl",
+              "The Jackson 5 - Lookin' Through The Windows",
+              "John Maus - I Want to Live",
+              "Rita Lee - Banho de Espuma"
+            ],
+            "30": [
+              "PUTOCHINOMARICÓN - Tu puta vida nos da (un poco) igual",
+              "Boys Noize - Digitvl",
+              "Spazzkid - Getting to Know You",
+              "Rita Lee - Banho de Espuma",
+              "The Jackson 5 - Lookin' Through The Windows"
+            ],
+            "60": [
+              "Converge - Thaw",
+              "Spazzkid - Getting to Know You",
+              "Nasum - I Hate People",
+              "BROCKHAMPTON - 1999 WILDFIRE",
+              "Hate - Alchemy ov Blood"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "PUTOCHINOMARICÓN - Tu puta vida nos da (un poco) igual",
+              "Boys Noize - Digitvl",
+              "The Jackson 5 - Lookin' Through The Windows",
+              "John Maus - I Want to Live",
+              "Rita Lee - Banho de Espuma"
+            ],
+            "30": [
+              "PUTOCHINOMARICÓN - Tu puta vida nos da (un poco) igual",
+              "The Jackson 5 - Lookin' Through The Windows",
+              "Boys Noize - Digitvl",
+              "Rita Lee - Banho de Espuma",
+              "INXS - Just Keep Walking"
+            ],
+            "60": [
+              "Kylie Minogue - Do It Again",
+              "Fergie - Labels Or Love",
+              "EXO-K - Run",
+              "Dulce María - Luna",
+              "Taio Cruz - Higher"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "In Flames - Where the Dead Ships Dwell",
+              "American Authors - Think About It",
+              "We Came As Romans - Memories",
+              "Rush - Second Nature",
+              "Halestorm - Innocence"
+            ],
+            "30": [
+              "In Flames - Where the Dead Ships Dwell",
+              "Good Charlotte - We Believe",
+              "American Authors - Think About It",
+              "We Came As Romans - Memories",
+              "Halestorm - Innocence"
+            ],
+            "60": [
+              "This Will Destroy You - The Mighty Rio Grande",
+              "The Ocean - The Cambrian Explosion",
+              "Lights & Motion - Anomaly",
+              "Slowdive - Cello",
+              "Stellardrone - Eternity"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "In Flames - Where the Dead Ships Dwell",
+              "American Authors - Think About It",
+              "We Came As Romans - Memories",
+              "Rush - Second Nature",
+              "Halestorm - Innocence"
+            ],
+            "30": [
+              "AFI - Silver and Cold",
+              "Halestorm - Innocence",
+              "In Flames - Where the Dead Ships Dwell",
+              "American Authors - Think About It",
+              "Too Close To Touch - Leave You Lonely"
+            ],
+            "60": [
+              "Halestorm - Daughters of Darkness",
+              "Converge - Thaw",
+              "Nasum - I Hate People",
+              "Opeth - When",
+              "Wolfbrigade - Warsaw Speedwolf"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "In Flames - Where the Dead Ships Dwell",
+              "American Authors - Think About It",
+              "We Came As Romans - Memories",
+              "Rush - Second Nature",
+              "Halestorm - Innocence"
+            ],
+            "30": [
+              "Halestorm - Innocence",
+              "American Authors - Think About It",
+              "AFI - Silver and Cold",
+              "Wearing Scars - Butterfly",
+              "CHVRCHES - Bury It"
+            ],
+            "60": [
+              "Kylie Minogue - Do It Again",
+              "Rise Against - This Is Letting Go",
+              "Wearing Scars - Butterfly",
+              "Hands Like Houses - New Romantics",
+              "Issues - Never Lose Your Flames"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "School of Seven Bells - Ablaze",
+              "Carly Rae Jepsen - Body Language",
+              "Isis - Carry",
+              "El Cuarteto De Nos - El balcón de paul",
+              "Lamb of God - Walk With Me In Hell"
+            ],
+            "30": [
+              "Slowdive - Cello",
+              "Isis - Carry",
+              "Nicholas Hooper - A Journey To Hogwarts",
+              "Alexandre Desplat - Severus and Lily",
+              "Bonobo - Second Sun"
+            ],
+            "60": [
+              "Slowdive - Cello",
+              "Grouper - Tidal Wave",
+              "Lights & Motion - Anomaly",
+              "This Will Destroy You - The Mighty Rio Grande",
+              "Hans Zimmer - Rise"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "School of Seven Bells - Ablaze",
+              "Carly Rae Jepsen - Body Language",
+              "Isis - Carry",
+              "El Cuarteto De Nos - El balcón de paul",
+              "Lamb of God - Walk With Me In Hell"
+            ],
+            "30": [
+              "Carly Rae Jepsen - Body Language",
+              "Pale Waves - Television Romance",
+              "Fefe Dobson - Take Me Away",
+              "El Cuarteto De Nos - El balcón de paul",
+              "Motion City Soundtrack - This Is For Real"
+            ],
+            "60": [
+              "Nasum - I Hate People",
+              "Deicide - Thou Begone",
+              "Converge - Thaw",
+              "Lamb of God - Desolation",
+              "Deftones - Royal"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "School of Seven Bells - Ablaze",
+              "Carly Rae Jepsen - Body Language",
+              "Isis - Carry",
+              "El Cuarteto De Nos - El balcón de paul",
+              "Lamb of God - Walk With Me In Hell"
+            ],
+            "30": [
+              "Fefe Dobson - Take Me Away",
+              "Motion City Soundtrack - This Is For Real",
+              "Carly Rae Jepsen - Body Language",
+              "Belinda - Good... Good",
+              "Pale Waves - Television Romance"
+            ],
+            "60": [
+              "Kylie Minogue - Do It Again",
+              "Max Frost - Money Problems",
+              "SISTAR - But I Love U",
+              "Hilary Duff - Reach Out (Remix)",
+              "State Champs - Sidelines"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Fletcher - Princess",
+              "Ice Cube - It Was A Good Day",
+              "Massive Attack - Silent Spring",
+              "Ariana Grande - fake smile",
+              "Carly Rae Jepsen - Tug of War"
+            ],
+            "30": [
+              "Autechre - IO",
+              "Stars of the Lid - The Evil That Never Arrived",
+              "Eddie Berman - Dancing In The Dark",
+              "Kacy Hill - Lion",
+              "Fletcher - Princess"
+            ],
+            "60": [
+              "Grouper - Tidal Wave",
+              "Gustavo Santaolalla - The Way It Was",
+              "Oneohtrix Point Never - Woe Is the Transgression I",
+              "Brian Crain - At the Ivy Gate",
+              "Loscil - Angle of List"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Fletcher - Princess",
+              "Ice Cube - It Was A Good Day",
+              "Massive Attack - Silent Spring",
+              "Ariana Grande - fake smile",
+              "Carly Rae Jepsen - Tug of War"
+            ],
+            "30": [
+              "Fletcher - Princess",
+              "Massive Attack - Silent Spring",
+              "CupcakKe - CPR",
+              "Ariana Grande - fake smile",
+              "Ice Cube - It Was A Good Day"
+            ],
+            "60": [
+              "Rashid - Coisas Dessa Vida",
+              "Nasum - I Hate People",
+              "bbymutha - Rules",
+              "He Is Legend - White Bat",
+              "Silvana Imam - Bulletproof Baby"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Fletcher - Princess",
+              "Ice Cube - It Was A Good Day",
+              "Massive Attack - Silent Spring",
+              "Ariana Grande - fake smile",
+              "Carly Rae Jepsen - Tug of War"
+            ],
+            "30": [
+              "City Girls - Period (We Live)",
+              "Loren Gray - Queen",
+              "Bebe - Con Mis Manos",
+              "The Asteroids Galaxy Tour - Navigator",
+              "Justin Bieber - One Less Lonely Girl"
+            ],
+            "60": [
+              "Kylie Minogue - City Games",
+              "Bob Sinclar - The Beat Goes On",
+              "Fire Inc. - Nowhere Fast",
+              "Joanna Pacitti - Watch Me Shine",
+              "Nina Nesbitt - 18 Candles"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Sylvaine - Abeyance",
+              "Tom Waits - LowDown",
+              "Morrissey - Trouble Loves Me",
+              "Deafcult - AKIRA",
+              "Primordial - Heathen Tribes"
+            ],
+            "30": [
+              "Sylvaine - Abeyance",
+              "Rosetta - King Ivory Tower",
+              "Primordial - Gallows Hymn",
+              "Primordial - Heathen Tribes",
+              "Swervedriver - Deep Seat"
+            ],
+            "60": [
+              "The Ocean - The Cambrian Explosion",
+              "Mount Eerie - (synthesizer)",
+              "Grouper - Tidal Wave",
+              "Lights & Motion - Anomaly",
+              "Brian Eno - Lanzarote"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Sylvaine - Abeyance",
+              "Tom Waits - LowDown",
+              "Morrissey - Trouble Loves Me",
+              "Deafcult - AKIRA",
+              "Primordial - Heathen Tribes"
+            ],
+            "30": [
+              "Sylvaine - Abeyance",
+              "Primordial - Heathen Tribes",
+              "Rosetta - King Ivory Tower",
+              "Deafcult - AKIRA",
+              "Primordial - Gallows Hymn"
+            ],
+            "60": [
+              "Opeth - When",
+              "Converge - Thaw",
+              "Slayer - Seven Faces",
+              "Rosetta - King Ivory Tower",
+              "Converge - Hope Street"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Sylvaine - Abeyance",
+              "Tom Waits - LowDown",
+              "Morrissey - Trouble Loves Me",
+              "Deafcult - AKIRA",
+              "Primordial - Heathen Tribes"
+            ],
+            "30": [
+              "Deafcult - AKIRA",
+              "Muse - New Born",
+              "Motion City Soundtrack - Feel Like Rain",
+              "Sylvaine - Abeyance",
+              "Live - All Over You"
+            ],
+            "60": [
+              "Real Friends - Colder Quicker",
+              "Motion City Soundtrack - Feel Like Rain",
+              "Sarah Brightman - Better Is One Day",
+              "Halestorm - Black Vultures",
+              "5 Seconds of Summer - Jet Black Heart"
+            ]
+          }
+        }
+      ]
+    },
+    "composition_lyric": {
+      "n_pairs": 500,
+      "n_poles": 49,
+      "increasing_share_60": {
+        "share": 0.5714285714285714,
+        "ci_low": 0.42857142857142855,
+        "ci_high": 0.6938775510204082,
+        "n": 49,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.4136385458576762,
+        "median_rho": 0.6668859288553503,
+        "share_positive": 0.6888888888888889,
+        "share_negative": 0.24444444444444444,
+        "n_groups": 49,
+        "n_undefined": 4,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.0468,
+          "cos_pole": 0.18801226358208806,
+          "cos_seed": 0.5349205541312695,
+          "prevalence": 0.04667844321613767
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.056,
+          "cos_pole": 0.21764899093820714,
+          "cos_seed": 0.530957762748003,
+          "prevalence": 0.04667844321613767
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.07840000000000001,
+          "cos_pole": 0.25566326932865197,
+          "cos_seed": 0.5136721671000123,
+          "prevalence": 0.04667844321613767
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.11120000000000001,
+          "cos_pole": 0.32253303089831026,
+          "cos_seed": 0.4538730987500385,
+          "prevalence": 0.04667844321613767
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.12940000000000002,
+          "cos_pole": 0.43040547126531603,
+          "cos_seed": 0.24523169776238501,
+          "prevalence": 0.04667844321613767
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.13440000000000002,
+          "cos_pole": 0.4663444892466068,
+          "cos_seed": 0.10168744470272213,
+          "prevalence": 0.04667844321613767
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.1352,
+          "cos_pole": 0.464881027340889,
+          "cos_seed": 0.05937876180979947,
+          "prevalence": 0.04667844321613767
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.011627906976744186,
+        "mean_joint_precision_theta60": 0.01627906976744186,
+        "n_combos": 43
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "category:Folk/Acoustic",
+          "snr_median": 4.965382150924933,
+          "snr_mean": 5.041913330049216,
+          "snr_total_median": 0.01666235621115749,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "dim:vocal_prominence+",
+          "snr_median": 4.888102598421895,
+          "snr_mean": 5.874962067207401,
+          "snr_total_median": 0.01640302885376475,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "era:2000s",
+          "snr_median": 4.5150195936282245,
+          "snr_mean": 5.117749329787663,
+          "snr_total_median": 0.015151072461839677,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "region:Anglo-American",
+          "snr_median": 4.445837634018988,
+          "snr_mean": 5.799134385817261,
+          "snr_total_median": 0.014918918234963047,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "category:Electronic/Dance",
+          "snr_median": 4.252457111546769,
+          "snr_mean": 4.556098673573932,
+          "snr_total_median": 0.014269990307203922,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "category:Rock",
+          "snr_median": 4.234593746711342,
+          "snr_mean": 5.061141419530385,
+          "snr_total_median": 0.014210046129903835,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "era:2010s",
+          "snr_median": 3.993482800305247,
+          "snr_mean": 5.347833950035826,
+          "snr_total_median": 0.013400948994312909,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "category:Indie/Alternative",
+          "snr_median": 3.8785042938254284,
+          "snr_mean": 4.975685274816743,
+          "snr_total_median": 0.013015115079951102,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "era:1990s",
+          "snr_median": 3.8639842754395963,
+          "snr_mean": 5.382545170064854,
+          "snr_total_median": 0.012966390186038915,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "region:British-Irish",
+          "snr_median": 3.715336884361474,
+          "snr_mean": 5.077832070008236,
+          "snr_total_median": 0.012467573437454612,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 2.112498093635078,
+      "examples": [
+        {
+          "seed": " - ",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Playboi Carti - Had 2",
+              "JPEGMAFIA - Curb Stomp",
+              "Skrillex - Fuck That",
+              "Bhad Bhabie - Hi Bich",
+              "Young Nudy - One Dolla"
+            ],
+            "30": [
+              "Skrillex - Fuck That",
+              "Playboi Carti - Had 2",
+              "Bhad Bhabie - Hi Bich",
+              "JPEGMAFIA - Curb Stomp",
+              "Lil Xan - Who Are You?"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Skrillex - Fuck That",
+              "Nine Inch Nails - Reptile",
+              "Jessica Pratt - Crossing",
+              "Cazuza - O Assassinato Da Flor"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Playboi Carti - Had 2",
+              "JPEGMAFIA - Curb Stomp",
+              "Skrillex - Fuck That",
+              "Bhad Bhabie - Hi Bich",
+              "Young Nudy - One Dolla"
+            ],
+            "30": [
+              "Skrillex - Fuck That",
+              "Playboi Carti - Had 2",
+              "Bhad Bhabie - Hi Bich",
+              "BROCKHAMPTON - CASH",
+              "JPEGMAFIA - Curb Stomp"
+            ],
+            "60": [
+              "Sonic Youth - Swimsuit Issue",
+              "Little Big - Lolly Bomb",
+              "CupcakKe - Meet and Greet",
+              "Fad Gadget - Make Room",
+              "Merda - Jobson é Craque"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Playboi Carti - Had 2",
+              "JPEGMAFIA - Curb Stomp",
+              "Skrillex - Fuck That",
+              "Bhad Bhabie - Hi Bich",
+              "Young Nudy - One Dolla"
+            ],
+            "30": [
+              "Injury Reserve - Wow",
+              "Skrillex - Fuck That",
+              "Playboi Carti - Had 2",
+              "Bhad Bhabie - Hi Bich",
+              "JPEGMAFIA - Curb Stomp"
+            ],
+            "60": [
+              "Blockhead - Insomniac Olympics",
+              "SCARLXRD - RUN!",
+              "Creedence Clearwater Revival - Commotion",
+              "Big K.R.I.T. - Get Away",
+              "Jakey - South Dakota"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Tiamat - 25th Floor",
+              "Agoraphobic Nosebleed - Center of the Hive",
+              "The Flaming Lips - Virgo Self-Esteem Broadcast",
+              "VLTIMAS - Total Destroy",
+              "Anathema - Wildfires"
+            ],
+            "30": [
+              "Agoraphobic Nosebleed - Center of the Hive",
+              "Anathema - Wildfires",
+              "Tiamat - 25th Floor",
+              "Destruction - Bestial Invasion",
+              "The Flaming Lips - Virgo Self-Esteem Broadcast"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Battles - Ddiamondd",
+              "Anathema - Wildfires",
+              "Delta Goodrem - Sanctuary",
+              "Alkaloid - Azagthoth"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Tiamat - 25th Floor",
+              "Agoraphobic Nosebleed - Center of the Hive",
+              "The Flaming Lips - Virgo Self-Esteem Broadcast",
+              "VLTIMAS - Total Destroy",
+              "Anathema - Wildfires"
+            ],
+            "30": [
+              "Anathema - Wildfires",
+              "Agoraphobic Nosebleed - Center of the Hive",
+              "Judas Priest - Heavy Metal",
+              "Tiamat - 25th Floor",
+              "The Flaming Lips - Virgo Self-Esteem Broadcast"
+            ],
+            "60": [
+              "A Flock of Seagulls - Messages",
+              "Anathema - Wildfires",
+              "Voivod - Pre-Ignition",
+              "Orchestral Manoeuvres in the Dark - Electricity",
+              "Nocturnus - Andromeda Strain"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Tiamat - 25th Floor",
+              "Agoraphobic Nosebleed - Center of the Hive",
+              "The Flaming Lips - Virgo Self-Esteem Broadcast",
+              "VLTIMAS - Total Destroy",
+              "Anathema - Wildfires"
+            ],
+            "30": [
+              "The Flaming Lips - Virgo Self-Esteem Broadcast",
+              "Judas Priest - Heavy Metal",
+              "Nocturnus - Andromeda Strain",
+              "Anathema - Wildfires",
+              "Tiamat - 25th Floor"
+            ],
+            "60": [
+              "John Maus - Believer",
+              "Nine Inch Nails - Shit Mirror",
+              "Nocturnus - Andromeda Strain",
+              "Santigold - Disparate Youth",
+              "A R I Z O N A - People Crying Every Night"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "The Notwist - Pick Up the Phone",
+              "Television - Prove It",
+              "Jão - A Rua",
+              "Demilich - (Within) The Chamber of Whispering Eyes",
+              "Delain - Such A Shame"
+            ],
+            "30": [
+              "The Notwist - Pick Up the Phone",
+              "Jão - A Rua",
+              "Television - Prove It",
+              "The Chameleons - Intrigue in Tangiers",
+              "Timber Timbre - Beat the Drum Slowly"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Nine Inch Nails - Reptile",
+              "Saint Agnes - Welcome to Silvertown",
+              "Eagles of Death Metal - Miss Alissa",
+              "James Blunt - Shine On"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "The Notwist - Pick Up the Phone",
+              "Television - Prove It",
+              "Jão - A Rua",
+              "Demilich - (Within) The Chamber of Whispering Eyes",
+              "Delain - Such A Shame"
+            ],
+            "30": [
+              "Jão - A Rua",
+              "Television - Prove It",
+              "Timber Timbre - Beat the Drum Slowly",
+              "The Notwist - Pick Up the Phone",
+              "Porcupine Tree - Linton Samuel Dawson"
+            ],
+            "60": [
+              "A Flock of Seagulls - Messages",
+              "Sonic Youth - Swimsuit Issue",
+              "Fad Gadget - Make Room",
+              "Gotye - State of the Art",
+              "Bella Thorne - Jersey"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "The Notwist - Pick Up the Phone",
+              "Television - Prove It",
+              "Jão - A Rua",
+              "Demilich - (Within) The Chamber of Whispering Eyes",
+              "Delain - Such A Shame"
+            ],
+            "30": [
+              "The Notwist - Pick Up the Phone",
+              "Mr. Bungle - Slowly Growing Deaf",
+              "Chevelle - Letter from a Thief",
+              "Ultimate Spinach - Mind Flowers",
+              "Toto - Stop Loving You"
+            ],
+            "60": [
+              "Ultimo - Poesia senza veli",
+              "RAINZ - Juliette",
+              "BROCKHAMPTON - FABRIC",
+              "AARON TAOS - Twisted",
+              "Fallulah - Out of It"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Motörhead - You Better Run",
+              "Frank Ocean - Forrest Gump",
+              "Dead by April - Can You See The Red",
+              "Pat Benatar - Hit Me With Your Best Shot",
+              "Daughters - Ocean Song"
+            ],
+            "30": [
+              "Motörhead - You Better Run",
+              "Frank Ocean - Forrest Gump",
+              "Dead by April - Can You See The Red",
+              "Daughters - Ocean Song",
+              "Pat Benatar - Hit Me With Your Best Shot"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Jessica Pratt - Crossing",
+              "Saint Agnes - Welcome to Silvertown",
+              "Motörhead - You Better Run",
+              "Eagles of Death Metal - Miss Alissa"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Motörhead - You Better Run",
+              "Frank Ocean - Forrest Gump",
+              "Dead by April - Can You See The Red",
+              "Pat Benatar - Hit Me With Your Best Shot",
+              "Daughters - Ocean Song"
+            ],
+            "30": [
+              "Motörhead - You Better Run",
+              "Frank Ocean - Forrest Gump",
+              "Pat Benatar - Hit Me With Your Best Shot",
+              "Dead by April - Can You See The Red",
+              "Daughters - Ocean Song"
+            ],
+            "60": [
+              "Jessica Pratt - Crossing",
+              "Steven Wilson - Raider II",
+              "Bella Thorne - Jersey",
+              "Kina Grannis - The Fire",
+              "Gorilla Biscuits - Gorilla Biscuits"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Motörhead - You Better Run",
+              "Frank Ocean - Forrest Gump",
+              "Dead by April - Can You See The Red",
+              "Pat Benatar - Hit Me With Your Best Shot",
+              "Daughters - Ocean Song"
+            ],
+            "30": [
+              "Motörhead - You Better Run",
+              "Frank Ocean - Forrest Gump",
+              "Dead by April - Can You See The Red",
+              "Dead American - Out For Blood",
+              "Marmozets - Run with the Rhythm"
+            ],
+            "60": [
+              "AARON TAOS - Twisted",
+              "Motörhead - You Better Run",
+              "Veorra - Run",
+              "Marmozets - Run with the Rhythm",
+              "Creedence Clearwater Revival - Commotion"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Nickelback - Trying Not To Love You",
+              "EXID - Foolish (Hyelin Solo)",
+              "Donna Summer - On My Honor",
+              "Tame Impala - List Of People (To Try And Forget About)",
+              "Sara Bareilles - Armor"
+            ],
+            "30": [
+              "Nickelback - Trying Not To Love You",
+              "Tame Impala - List Of People (To Try And Forget About)",
+              "EXID - Foolish (Hyelin Solo)",
+              "Donna Summer - On My Honor",
+              "Sara Bareilles - Armor"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Saint Agnes - Welcome to Silvertown",
+              "Nine Inch Nails - Reptile",
+              "Twenty One Pilots - Ride",
+              "Young the Giant - Cough Syrup"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Nickelback - Trying Not To Love You",
+              "EXID - Foolish (Hyelin Solo)",
+              "Donna Summer - On My Honor",
+              "Tame Impala - List Of People (To Try And Forget About)",
+              "Sara Bareilles - Armor"
+            ],
+            "30": [
+              "Nickelback - Trying Not To Love You",
+              "Tame Impala - List Of People (To Try And Forget About)",
+              "EXID - Foolish (Hyelin Solo)",
+              "Donna Summer - On My Honor",
+              "Sara Bareilles - Armor"
+            ],
+            "60": [
+              "Tame Impala - List Of People (To Try And Forget About)",
+              "Tom Chaplin - Quicksand",
+              "No Doubt - Sparkle",
+              "Bella Thorne - Jersey",
+              "Maria Bethânia - Detalhes"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Nickelback - Trying Not To Love You",
+              "EXID - Foolish (Hyelin Solo)",
+              "Donna Summer - On My Honor",
+              "Tame Impala - List Of People (To Try And Forget About)",
+              "Sara Bareilles - Armor"
+            ],
+            "30": [
+              "Nickelback - Trying Not To Love You",
+              "Tame Impala - List Of People (To Try And Forget About)",
+              "EXID - Foolish (Hyelin Solo)",
+              "Donna Summer - On My Honor",
+              "James Morrison - One Last Chance"
+            ],
+            "60": [
+              "Justin Bieber - Get Used To It",
+              "James Morrison - One Last Chance",
+              "Janet Jackson - What's Ur Name",
+              "Kiesza - Over Myself",
+              "Hollywood Undead - One More Bottle"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Kris Kristofferson - Darby's Castle",
+              "The Fratellis - My Friend John",
+              "Lord Huron - The Night We Met",
+              "Aretha Franklin - The House That Jack Built",
+              "Lykke Li - Hanging High"
+            ],
+            "30": [
+              "Kris Kristofferson - Darby's Castle",
+              "Lord Huron - The Night We Met",
+              "The Fratellis - My Friend John",
+              "Sky Ferreira - Boys",
+              "Aretha Franklin - The House That Jack Built"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Twenty One Pilots - Ride",
+              "Monolord - Rust",
+              "Saint Agnes - Welcome to Silvertown",
+              "Born Ruffians - I Need a Life"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Kris Kristofferson - Darby's Castle",
+              "The Fratellis - My Friend John",
+              "Lord Huron - The Night We Met",
+              "Aretha Franklin - The House That Jack Built",
+              "Lykke Li - Hanging High"
+            ],
+            "30": [
+              "Kris Kristofferson - Darby's Castle",
+              "Lord Huron - The Night We Met",
+              "Algernon Cadwallader - Some Kind of Cadwallader",
+              "Sky Ferreira - Boys",
+              "The Fratellis - My Friend John"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Jessica Pratt - Crossing",
+              "Algernon Cadwallader - Some Kind of Cadwallader",
+              "The Fall - Gramme Friday",
+              "The Maine - We All Roll Along"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Kris Kristofferson - Darby's Castle",
+              "The Fratellis - My Friend John",
+              "Lord Huron - The Night We Met",
+              "Aretha Franklin - The House That Jack Built",
+              "Lykke Li - Hanging High"
+            ],
+            "30": [
+              "Lykke Li - Hanging High",
+              "Cursive - A Gentleman Caller",
+              "Kiiara - Messy",
+              "Lord Huron - The Night We Met",
+              "Broncho - Class Historian"
+            ],
+            "60": [
+              "Maroon 5 - Misery",
+              "Justin Bieber - Get Used To It",
+              "Kelly Rowland - Comeback",
+              "Kiesza - Over Myself",
+              "The Fray - Heartbeat"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Pentatonix - Royals",
+              "Youth in Revolt - Royals",
+              "Krewella - dead af",
+              "Ladyhawke - Cellophane",
+              "Ellie Goulding - Under the Sheets"
+            ],
+            "30": [
+              "Pentatonix - Royals",
+              "Youth in Revolt - Royals",
+              "Krewella - dead af",
+              "Ladyhawke - Cellophane",
+              "Walk Off the Earth - Royals"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "Saint Agnes - Welcome to Silvertown",
+              "Nine Inch Nails - Reptile",
+              "Twenty One Pilots - Ride",
+              "Eagles of Death Metal - Miss Alissa"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Pentatonix - Royals",
+              "Youth in Revolt - Royals",
+              "Krewella - dead af",
+              "Ladyhawke - Cellophane",
+              "Ellie Goulding - Under the Sheets"
+            ],
+            "30": [
+              "Pentatonix - Royals",
+              "Youth in Revolt - Royals",
+              "Krewella - dead af",
+              "Ellie Goulding - Under the Sheets",
+              "Ladyhawke - Cellophane"
+            ],
+            "60": [
+              "Pentatonix - Royals",
+              "Timmy Thomas - Why Can't We Live Together",
+              "Bella Thorne - Jersey",
+              "Alex & Sierra - Just Kids",
+              "Halsey - New Americana"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Pentatonix - Royals",
+              "Youth in Revolt - Royals",
+              "Krewella - dead af",
+              "Ladyhawke - Cellophane",
+              "Ellie Goulding - Under the Sheets"
+            ],
+            "30": [
+              "Pentatonix - Royals",
+              "Youth in Revolt - Royals",
+              "Ladyhawke - Cellophane",
+              "Dolly Parton - Two Doors Down",
+              "Nickelback - Coin For The Ferryman"
+            ],
+            "60": [
+              "Hollywood Undead - One More Bottle",
+              "Kesha - We R Who We R",
+              "Milk - Milk it",
+              "Dolly Parton - Two Doors Down",
+              "Nickelback - Coin For The Ferryman"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "MOTHXR - Centerfold",
+              "The Last Shadow Puppets - She Does the Woods",
+              "Miley Cyrus - Scars",
+              "Paloma Faith - Beauty Remains",
+              "Dermot Kennedy - A closeness"
+            ],
+            "30": [
+              "The Last Shadow Puppets - She Does the Woods",
+              "MOTHXR - Centerfold",
+              "Dermot Kennedy - A closeness",
+              "Paloma Faith - Beauty Remains",
+              "Miley Cyrus - Scars"
+            ],
+            "60": [
+              "Faith No More - Just a Man",
+              "James Bay - Sparks",
+              "James Blunt - Shine On",
+              "Saint Agnes - Welcome to Silvertown",
+              "Nine Inch Nails - Reptile"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "MOTHXR - Centerfold",
+              "The Last Shadow Puppets - She Does the Woods",
+              "Miley Cyrus - Scars",
+              "Paloma Faith - Beauty Remains",
+              "Dermot Kennedy - A closeness"
+            ],
+            "30": [
+              "The Black Queen - Porcelain Veins",
+              "The Last Shadow Puppets - She Does the Woods",
+              "MOTHXR - Centerfold",
+              "Jessica Simpson - Forever in Your Eyes",
+              "Dermot Kennedy - A closeness"
+            ],
+            "60": [
+              "Bella Thorne - Jersey",
+              "The Kooks - See Me Now",
+              "The Cure - Anniversary",
+              "The Black Queen - Porcelain Veins",
+              "Faith No More - Just a Man"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "MOTHXR - Centerfold",
+              "The Last Shadow Puppets - She Does the Woods",
+              "Miley Cyrus - Scars",
+              "Paloma Faith - Beauty Remains",
+              "Dermot Kennedy - A closeness"
+            ],
+            "30": [
+              "Jessica Simpson - Forever in Your Eyes",
+              "MOTHXR - Centerfold",
+              "Miley Cyrus - Scars",
+              "The Black Queen - Porcelain Veins",
+              "Broods - Heartlines"
+            ],
+            "60": [
+              "Justin Bieber - Get Used To It",
+              "The Jacksons - Everybody",
+              "Janet Jackson - What's Ur Name",
+              "Jessica Simpson - Forever in Your Eyes",
+              "Hollywood Undead - One More Bottle"
+            ]
+          }
+        }
+      ]
+    },
+    "cooc_artistmasked": {
+      "n_pairs": 500,
+      "n_poles": 49,
+      "increasing_share_60": {
+        "share": 0.9183673469387755,
+        "ci_low": 0.8367346938775511,
+        "ci_high": 0.9795918367346939,
+        "n": 49,
+        "up_to": 60,
+        "criterion": "trend"
+      },
+      "monotonicity": {
+        "mean_rho": 0.7616913295155758,
+        "median_rho": 0.9,
+        "share_positive": 0.9387755102040817,
+        "share_negative": 0.061224489795918366,
+        "n_groups": 49,
+        "n_undefined": 0,
+        "metric": "precision",
+        "by": "pole"
+      },
+      "curve": [
+        {
+          "theta": 0.0,
+          "precision": 0.0422,
+          "cos_pole": 0.2021793698130641,
+          "cos_seed": 0.7533874324858189,
+          "prevalence": 0.047408437327862936
+        },
+        {
+          "theta": 15.0,
+          "precision": 0.0648,
+          "cos_pole": 0.26867937561590227,
+          "cos_seed": 0.7438581945002078,
+          "prevalence": 0.047408437327862936
+        },
+        {
+          "theta": 30.0,
+          "precision": 0.088,
+          "cos_pole": 0.33983782977215016,
+          "cos_seed": 0.7080612621586769,
+          "prevalence": 0.047408437327862936
+        },
+        {
+          "theta": 45.0,
+          "precision": 0.2246,
+          "cos_pole": 0.5672947439856362,
+          "cos_seed": 0.48244954201905055,
+          "prevalence": 0.047408437327862936
+        },
+        {
+          "theta": 60.0,
+          "precision": 0.31839999999999996,
+          "cos_pole": 0.7043439670801163,
+          "cos_seed": 0.2557349676452577,
+          "prevalence": 0.047408437327862936
+        },
+        {
+          "theta": 75.0,
+          "precision": 0.32639999999999997,
+          "cos_pole": 0.72483844435215,
+          "cos_seed": 0.16413907385570928,
+          "prevalence": 0.047408437327862936
+        },
+        {
+          "theta": 90.0,
+          "precision": 0.3286,
+          "cos_pole": 0.719286623775959,
+          "cos_seed": 0.0986179659795016,
+          "prevalence": 0.047408437327862936
+        }
+      ],
+      "multi_pole": {
+        "mean_gain_over_single_theta60": -0.0125,
+        "mean_joint_precision_theta60": 0.034375,
+        "n_combos": 32
+      },
+      "snr_top": [
+        {
+          "rank": 1,
+          "pole": "region:Anglo-American",
+          "snr_median": 5.6294368921947875,
+          "snr_mean": 8.533866831213773,
+          "snr_total_median": 0.018890727826157007,
+          "n_seeds": 20
+        },
+        {
+          "rank": 2,
+          "pole": "category:Electronic/Dance",
+          "snr_median": 4.426845767258236,
+          "snr_mean": 4.588635502199468,
+          "snr_total_median": 0.014855187138450455,
+          "n_seeds": 20
+        },
+        {
+          "rank": 3,
+          "pole": "era:1990s",
+          "snr_median": 3.21084584927696,
+          "snr_mean": 4.060742286515916,
+          "snr_total_median": 0.010774650500929395,
+          "n_seeds": 20
+        },
+        {
+          "rank": 4,
+          "pole": "region:Middle-Eastern/Mediterranean",
+          "snr_median": 3.1865367460296117,
+          "snr_mean": 3.9921285164800557,
+          "snr_total_median": 0.010693076328958427,
+          "n_seeds": 20
+        },
+        {
+          "rank": 5,
+          "pole": "region:British-Irish",
+          "snr_median": 3.078594918901138,
+          "snr_mean": 3.5398779675522265,
+          "snr_total_median": 0.010330855432554156,
+          "n_seeds": 20
+        },
+        {
+          "rank": 6,
+          "pole": "region:Francophone",
+          "snr_median": 2.91211532987895,
+          "snr_mean": 3.3321410879795943,
+          "snr_total_median": 0.009772199093553523,
+          "n_seeds": 20
+        },
+        {
+          "rank": 7,
+          "pole": "dim:danceability+",
+          "snr_median": 2.7005437702191077,
+          "snr_mean": 3.4781907990087837,
+          "snr_total_median": 0.009062227416842643,
+          "n_seeds": 20
+        },
+        {
+          "rank": 8,
+          "pole": "region:Iberian",
+          "snr_median": 2.619813862688008,
+          "snr_mean": 3.1380514207841177,
+          "snr_total_median": 0.008791321686872508,
+          "n_seeds": 20
+        },
+        {
+          "rank": 9,
+          "pole": "dim:acousticness+",
+          "snr_median": 2.4975583004523636,
+          "snr_mean": 3.3914667561686214,
+          "snr_total_median": 0.008381068122323369,
+          "n_seeds": 20
+        },
+        {
+          "rank": 10,
+          "pole": "region:Germanic-Central-European",
+          "snr_median": 2.357742856478146,
+          "snr_mean": 2.4718969885971402,
+          "snr_total_median": 0.007911888780128006,
+          "n_seeds": 20
+        }
+      ],
+      "snr_median_all": 1.8721887014360217,
+      "examples": [
+        {
+          "seed": " - ",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Joni Mitchell - The Magdalene Laundries",
+              "Ednardo - Alazão (Clarões)",
+              "O Rappa - Fronteira (D.U.C.A.)",
+              "Rouge - Confia em Mim (I Promise You)",
+              "The Gathering - Probably Built in the Fifties"
+            ],
+            "30": [
+              "Milton Nascimento - Amigo, Amiga",
+              "Sandy e Junior - DIG-DIG-JOY",
+              "Dr. Dog - Night",
+              "Jake Bugg - Strange Creatures",
+              "O Rappa - Fronteira (D.U.C.A.)"
+            ],
+            "60": [
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Steve Hauschildt - Vicinities",
+              "Biosphere - Novelty Waves",
+              "Tim Hecker - Sketch 4",
+              "Tim Hecker - Sketch 9"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Joni Mitchell - The Magdalene Laundries",
+              "Ednardo - Alazão (Clarões)",
+              "O Rappa - Fronteira (D.U.C.A.)",
+              "Rouge - Confia em Mim (I Promise You)",
+              "The Gathering - Probably Built in the Fifties"
+            ],
+            "30": [
+              "Cher - Needles and Pins",
+              "Shania Twain - You Lay A Whole Lot Of Love On Me",
+              "Animal Collective - Blue Noses",
+              "Dr. Dog - Night",
+              "Shania Twain - Forget Me"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Luis Miguel - Encadenados",
+              "Alfred García - Que nos sigan las luces",
+              "Estopa - Cacho A Cacho",
+              "Rozalén - La Puerta Violeta"
+            ]
+          }
+        },
+        {
+          "seed": " - ",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Joni Mitchell - The Magdalene Laundries",
+              "Ednardo - Alazão (Clarões)",
+              "O Rappa - Fronteira (D.U.C.A.)",
+              "Rouge - Confia em Mim (I Promise You)",
+              "The Gathering - Probably Built in the Fifties"
+            ],
+            "30": [
+              "Luan Santana - Cê Topa",
+              "Kelly Key - Escuta Aqui Rapaz",
+              "Vitão - Te Liguei",
+              "Cidadão Instigado - Até Que Enfim",
+              "Alceu Valença - Maria dos Santos"
+            ],
+            "60": [
+              "Cyndi Lauper - Early in the Mornin'",
+              "coldrain - The Maze",
+              "Kelly Key - Por Causa De Você",
+              "Le Youth - Me Without You",
+              "Las Ketchup - Kusha Las Payas"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Hunter Hayes - When Did You Stop Loving Me",
+              "Antonio Pinto - Soul Inside",
+              "Alesso - Years",
+              "Lorde - Royals"
+            ],
+            "30": [
+              "Hunter Hayes - When Did You Stop Loving Me",
+              "Bastille - Bad Blood",
+              "Antonio Pinto - Soul Inside",
+              "Lorde - Royals",
+              "Mabel Matiz - Gel"
+            ],
+            "60": [
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Steve Hauschildt - Vicinities",
+              "Tim Hecker - Sketch 4",
+              "Biosphere - Novelty Waves",
+              "Hammock - Now He's Our Father (Reinterpretation)"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Hunter Hayes - When Did You Stop Loving Me",
+              "Antonio Pinto - Soul Inside",
+              "Alesso - Years",
+              "Lorde - Royals"
+            ],
+            "30": [
+              "Antonio Pinto - Soul Inside",
+              "Mabel Matiz - Gel",
+              "Hunter Hayes - When Did You Stop Loving Me",
+              "Inspector - Y Que",
+              "Wisin & Yandel - Algo Me Gusta De Ti"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Estopa - Cacho A Cacho",
+              "Miss Caffeina - Mi Rutina Preferida",
+              "Luis Miguel - Encadenados",
+              "Alfred García - Que nos sigan las luces"
+            ]
+          }
+        },
+        {
+          "seed": "Imagine Dragons - Radioactive",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Hunter Hayes - When Did You Stop Loving Me",
+              "Antonio Pinto - Soul Inside",
+              "Alesso - Years",
+              "Lorde - Royals"
+            ],
+            "30": [
+              "Alesso - Years",
+              "Antonio Pinto - Soul Inside",
+              "Bastille - Bad Blood",
+              "Victor & Leo - Na Linha do Tempo",
+              "Hunter Hayes - When Did You Stop Loving Me"
+            ],
+            "60": [
+              "A*Teens - All My Love",
+              "Le Youth - Me Without You",
+              "Alesso - Years",
+              "Jesse McCartney - Anybody",
+              "Big Time Rush - Invisible"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Pearl Jam - Alive",
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Pearl Jam - Jeremy",
+              "Temple of the Dog - Say Hello 2 Heaven - 25th Anniversary Mix",
+              "Pet Shop Boys - Young Offender"
+            ],
+            "30": [
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Pet Shop Boys - Young Offender",
+              "Pearl Jam - Jeremy",
+              "Pearl Jam - Alive",
+              "Temple of the Dog - Hunger Strike"
+            ],
+            "60": [
+              "Steve Hauschildt - Vicinities",
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Tim Hecker - Sketch 4",
+              "Biosphere - Novelty Waves",
+              "Deaf Center - Thread"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Pearl Jam - Alive",
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Pearl Jam - Jeremy",
+              "Temple of the Dog - Say Hello 2 Heaven - 25th Anniversary Mix",
+              "Pet Shop Boys - Young Offender"
+            ],
+            "30": [
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Soda Stereo - Persiana Americana",
+              "Pearl Jam - Alive",
+              "Danza Invisible - Sin Aliento",
+              "Foo Fighters - All My Life"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Estopa - Cacho A Cacho",
+              "Luis Miguel - Encadenados",
+              "Amaral - Kamikaze",
+              "Alfred García - Que nos sigan las luces"
+            ]
+          }
+        },
+        {
+          "seed": "Nirvana - Come as You Are",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Pearl Jam - Alive",
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Pearl Jam - Jeremy",
+              "Temple of the Dog - Say Hello 2 Heaven - 25th Anniversary Mix",
+              "Pet Shop Boys - Young Offender"
+            ],
+            "30": [
+              "Foo Fighters - All My Life",
+              "Zé Ramalho - Canção Agalopada",
+              "Foo Fighters - Everlong",
+              "Foo Fighters - In Your Honor",
+              "Foo Fighters - Learn to Fly"
+            ],
+            "60": [
+              "A*Teens - All My Love",
+              "Velvet - Chemistry (Radio Version)",
+              "Electric Light Orchestra - Daybreaker",
+              "Glee Cast - Over the Rainbow",
+              "Casting Crowns - Oh My Soul"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Two Door Cinema Club - What You Know",
+              "The Brian Jonestown Massacre - Animal Wisdom",
+              "Coldplay - Paradise",
+              "Passion Pit - Take a Walk",
+              "Empire of the Sun - Walking on a Dream"
+            ],
+            "30": [
+              "Two Door Cinema Club - What You Know",
+              "Miike Snow - Animal",
+              "The Brian Jonestown Massacre - Animal Wisdom",
+              "Lana Del Rey - Video Games (White Lies C-Mix)",
+              "Passion Pit - Sleepyhead"
+            ],
+            "60": [
+              "Steve Hauschildt - Vicinities",
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Tim Hecker - Sketch 4",
+              "Tim Hecker - Sketch 9",
+              "Biosphere - Novelty Waves"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Two Door Cinema Club - What You Know",
+              "The Brian Jonestown Massacre - Animal Wisdom",
+              "Coldplay - Paradise",
+              "Passion Pit - Take a Walk",
+              "Empire of the Sun - Walking on a Dream"
+            ],
+            "30": [
+              "The Brian Jonestown Massacre - Animal Wisdom",
+              "Two Door Cinema Club - What You Know",
+              "Miss Caffeina - Mi Rutina Preferida",
+              "Estopa - Cacho A Cacho",
+              "Antonio Pinto - Soul Inside"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Estopa - Cacho A Cacho",
+              "Miss Caffeina - Mi Rutina Preferida",
+              "Luis Miguel - Encadenados",
+              "Amaral - Kamikaze"
+            ]
+          }
+        },
+        {
+          "seed": "Foster the People - Pumped Up Kicks",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Two Door Cinema Club - What You Know",
+              "The Brian Jonestown Massacre - Animal Wisdom",
+              "Coldplay - Paradise",
+              "Passion Pit - Take a Walk",
+              "Empire of the Sun - Walking on a Dream"
+            ],
+            "30": [
+              "The Brian Jonestown Massacre - Animal Wisdom",
+              "Antonio Pinto - Soul Inside",
+              "Glee Cast - Man in the Mirror",
+              "Coldplay - Paradise",
+              "will.i.am - Big And Chunky"
+            ],
+            "60": [
+              "Le Youth - Me Without You",
+              "A*Teens - All My Love",
+              "Glee Cast - Over the Rainbow",
+              "will.i.am - Big And Chunky",
+              "Velvet - Chemistry (Radio Version)"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Papa Roach - Last Resort",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Limp Bizkit - Take a Look Around",
+              "The Living End - Nowhere Town",
+              "Disturbed - Stricken"
+            ],
+            "30": [
+              "Papa Roach - Last Resort",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Limp Bizkit - Take a Look Around",
+              "The Living End - Nowhere Town",
+              "Disturbed - Down With the Sickness"
+            ],
+            "60": [
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Helios - Your Zenith",
+              "Steve Hauschildt - Vicinities",
+              "Hammock - Now He's Our Father (Reinterpretation)",
+              "Tim Hecker - Sketch 4"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Papa Roach - Last Resort",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Limp Bizkit - Take a Look Around",
+              "The Living End - Nowhere Town",
+              "Disturbed - Stricken"
+            ],
+            "30": [
+              "Limp Bizkit - Behind Blue Eyes",
+              "El Canto del Loco - Peter Pan",
+              "Kudai - Lejos De La Ciudad",
+              "Goya - Tylko mnie kochaj",
+              "Estopa - El Del Medio De Los Chichos"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Estopa - Cacho A Cacho",
+              "Luis Miguel - Encadenados",
+              "Amaral - Kamikaze",
+              "El Canto del Loco - Peter Pan"
+            ]
+          }
+        },
+        {
+          "seed": "Linkin Park - In the End",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Papa Roach - Last Resort",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Limp Bizkit - Take a Look Around",
+              "The Living End - Nowhere Town",
+              "Disturbed - Stricken"
+            ],
+            "30": [
+              "Papa Roach - Last Resort",
+              "Goya - Tylko mnie kochaj",
+              "The Living End - Nowhere Town",
+              "Limp Bizkit - Behind Blue Eyes",
+              "Pandora - La Usurpadora"
+            ],
+            "60": [
+              "A*Teens - All My Love",
+              "Le Youth - Me Without You",
+              "Block B - Mental Breaker",
+              "Brie Larson - Invisible Girl",
+              "Glee Cast - Over the Rainbow"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "The Strokes - Reptilia",
+              "The Strokes - Someday",
+              "Supergrass - Your Love",
+              "The Last Shadow Puppets - The Age of the Understatement",
+              "The Strokes - Under Cover of Darkness"
+            ],
+            "30": [
+              "The Strokes - Someday",
+              "The Strokes - Hard to Explain",
+              "Supergrass - Your Love",
+              "The Strokes - Reptilia",
+              "The Last Shadow Puppets - The Age of the Understatement"
+            ],
+            "60": [
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Steve Hauschildt - Vicinities",
+              "Tim Hecker - Sketch 4",
+              "Tim Hecker - Sketch 9",
+              "Deaf Center - Thread"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "The Strokes - Reptilia",
+              "The Strokes - Someday",
+              "Supergrass - Your Love",
+              "The Last Shadow Puppets - The Age of the Understatement",
+              "The Strokes - Under Cover of Darkness"
+            ],
+            "30": [
+              "The Strokes - Reptilia",
+              "The Strokes - Someday",
+              "Beastie Boys - Sabrosa",
+              "Miss Caffeina - Ley de imposibilidad del fenómeno",
+              "Hombres G - Te Quiero"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Estopa - Cacho A Cacho",
+              "Miss Caffeina - Mi Rutina Preferida",
+              "Alfred García - Que nos sigan las luces",
+              "Luis Miguel - Encadenados"
+            ]
+          }
+        },
+        {
+          "seed": "Arctic Monkeys - Fluorescent Adolescent",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "The Strokes - Reptilia",
+              "The Strokes - Someday",
+              "Supergrass - Your Love",
+              "The Last Shadow Puppets - The Age of the Understatement",
+              "The Strokes - Under Cover of Darkness"
+            ],
+            "30": [
+              "The Strokes - Reptilia",
+              "Fresno - O Peso do Mundo",
+              "Kaiser Chiefs - The Angry Mob",
+              "The Strokes - Under Cover of Darkness",
+              "Björk - Antarctic Return"
+            ],
+            "60": [
+              "Le Youth - Me Without You",
+              "Valeria Rossi - Tre parole",
+              "Electric Light Orchestra - Daybreaker",
+              "Glee Cast - Over the Rainbow",
+              "Olivia Holt - Phoenix"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Bruno Mars - Treasure",
+              "Imagine Dragons - Demons",
+              "Justin Timberlake - Mirrors",
+              "Ellie Goulding - Burn"
+            ],
+            "30": [
+              "Bastille - Bad Blood",
+              "Andrew Belle - Santa Fe",
+              "James Blunt - Breathe",
+              "Icona Pop - All Night",
+              "Etherwood - Weightless"
+            ],
+            "60": [
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Steve Hauschildt - Vicinities",
+              "Tim Hecker - Sketch 9",
+              "Biosphere - Novelty Waves",
+              "Tim Hecker - Sketch 4"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Bruno Mars - Treasure",
+              "Imagine Dragons - Demons",
+              "Justin Timberlake - Mirrors",
+              "Ellie Goulding - Burn"
+            ],
+            "30": [
+              "Inspector - Y Que",
+              "Mabel Matiz - Gel",
+              "Rozalén - 80 veces",
+              "Bruno Mars - Treasure",
+              "Bastille - Bad Blood"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Estopa - Cacho A Cacho",
+              "Miss Caffeina - Mi Rutina Preferida",
+              "Luis Miguel - Encadenados",
+              "Amaral - Kamikaze"
+            ]
+          }
+        },
+        {
+          "seed": "Lorde - Royals",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Bastille - Bad Blood",
+              "Bruno Mars - Treasure",
+              "Imagine Dragons - Demons",
+              "Justin Timberlake - Mirrors",
+              "Ellie Goulding - Burn"
+            ],
+            "30": [
+              "Victor & Leo - Na Linha do Tempo",
+              "Bruno Mars - Treasure",
+              "Dami Im - Alive",
+              "Ellie Goulding - Burn",
+              "Francesco Renga - Vivendo adesso"
+            ],
+            "60": [
+              "A*Teens - All My Love",
+              "Manu Gavassi - Garoto Errado",
+              "Zendaya - Cry for Love",
+              "Le Youth - Me Without You",
+              "Jesse McCartney - Anybody"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "category:Ambient/Chill",
+          "results": {
+            "0": [
+              "Capsize - Over You",
+              "Pearl Jam - Alive",
+              "Queens of the Stone Age - No One Knows",
+              "Pearl Jam - Jeremy",
+              "Luis Miguel - Nos Hizo Falta Tiempo"
+            ],
+            "30": [
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Pearl Jam - Jeremy",
+              "Nirvana - Lithium",
+              "Capsize - Over You",
+              "Nirvana - Come as You Are"
+            ],
+            "60": [
+              "They Might Be Giants - Where Your Eyes Don't Go",
+              "Steve Hauschildt - Vicinities",
+              "Biosphere - Novelty Waves",
+              "Deaf Center - Thread",
+              "Tim Hecker - Sketch 4"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "region:Iberian",
+          "results": {
+            "0": [
+              "Capsize - Over You",
+              "Pearl Jam - Alive",
+              "Queens of the Stone Age - No One Knows",
+              "Pearl Jam - Jeremy",
+              "Luis Miguel - Nos Hizo Falta Tiempo"
+            ],
+            "30": [
+              "Luis Miguel - Nos Hizo Falta Tiempo",
+              "Queens of the Stone Age - No One Knows",
+              "Capsize - Over You",
+              "Daniela Romo - Celos",
+              "Danza Invisible - Sin Aliento"
+            ],
+            "60": [
+              "Celtas Cortos - Retales de una vida",
+              "Estopa - Cacho A Cacho",
+              "Luis Miguel - Encadenados",
+              "Amaral - Kamikaze",
+              "Alfred García - Que nos sigan las luces"
+            ]
+          }
+        },
+        {
+          "seed": "Foo Fighters - Everlong",
+          "pole": "dim:brightness+",
+          "results": {
+            "0": [
+              "Capsize - Over You",
+              "Pearl Jam - Alive",
+              "Queens of the Stone Age - No One Knows",
+              "Pearl Jam - Jeremy",
+              "Luis Miguel - Nos Hizo Falta Tiempo"
+            ],
+            "30": [
+              "Bon Jovi - Say It Isn't So",
+              "Zé Ramalho - Canção Agalopada",
+              "Linkin Park - In the End",
+              "Incubus - Wish You Were Here",
+              "Capsize - Over You"
+            ],
+            "60": [
+              "Le Youth - Me Without You",
+              "Velvet - Chemistry (Radio Version)",
+              "A*Teens - All My Love",
+              "Brie Larson - Invisible Girl",
+              "will.i.am - Big And Chunky"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "H7": {
+    "claim": "precision@10 of the pole tag increases with theta up to 60 deg for >= 80% of poles",
+    "share_by_model": {
+      "cooc": 0.9387755102040817,
+      "composition": 0.7959183673469388,
+      "core": 0.9387755102040817,
+      "composition_acoustic": 0.8367346938775511,
+      "composition_lyric": 0.5714285714285714,
+      "cooc_artistmasked": 0.9183673469387755
+    },
+    "status": "supported"
+  }
+}

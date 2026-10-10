@@ -1,0 +1,60 @@
+{
+  "n_dims_with_counterpart": 6,
+  "share_positive_ci": 0.8333333333333334,
+  "table": [
+    {
+      "dim": "energy",
+      "measured": "loudness",
+      "n": 8504,
+      "rho": 0.3733817714098606,
+      "ci_lo": 0.3549958984203674,
+      "ci_hi": 0.3905908500690531,
+      "ci_excludes_0": true
+    },
+    {
+      "dim": "aggression",
+      "measured": "dynamic_complexity",
+      "n": 8504,
+      "rho": -0.43661348990853827,
+      "ci_lo": -0.4562682729707938,
+      "ci_hi": -0.4183601940194509,
+      "ci_excludes_0": true
+    },
+    {
+      "dim": "danceability",
+      "measured": "danceability",
+      "n": 8504,
+      "rho": 0.2850476560749564,
+      "ci_lo": 0.26352522979013826,
+      "ci_hi": 0.30643871969079434,
+      "ci_excludes_0": true
+    },
+    {
+      "dim": "tempo_feel",
+      "measured": "bpm",
+      "n": 8504,
+      "rho": 0.0769876359226966,
+      "ci_lo": 0.054433324966495236,
+      "ci_hi": 0.09780358365785638,
+      "ci_excludes_0": true
+    },
+    {
+      "dim": "punch",
+      "measured": "onset_rate",
+      "n": 8504,
+      "rho": 0.18055950170817953,
+      "ci_lo": 0.15927979405290493,
+      "ci_hi": 0.20302424889243853,
+      "ci_excludes_0": true
+    },
+    {
+      "dim": "brightness",
+      "measured": "spectral_centroid",
+      "n": 8504,
+      "rho": 0.31808304318023856,
+      "ci_lo": 0.2997790818653599,
+      "ci_hi": 0.33552669073702285,
+      "ci_excludes_0": true
+    }
+  ]
+}

@@ -1,0 +1,5943 @@
+{
+  "n_eval_tracks": 41914,
+  "n_targets": 90,
+  "strata_sizes": {
+    "a_baked": 17,
+    "b_heldout": 50,
+    "c_external": 15,
+    "cultural": 8
+  },
+  "models": {
+    "composition": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6446778495257983,
+              "sd": 0.15182714929794228,
+              "ci_low": 0.5751149910919638,
+              "ci_high": 0.7052766414006274,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.3336646232895132,
+              "sd": 0.2086007501568594,
+              "ci_low": 0.27155046227113794,
+              "ci_high": 0.40011076012542446,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5065946916551556,
+              "sd": 0.15612000549280589,
+              "ci_low": 0.4368493848004307,
+              "ci_high": 0.5812111251661022,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 0.6434501362385779,
+              "sd": 0.3484297620393433,
+              "ci_low": 0.4391581819522628,
+              "ci_high": 0.8721215267632323,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 200.35199703861286,
+            "mean_pairwise_cosine": 0.07050209599640359,
+            "mean_norm": 3.2038036713852796
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.23930990000000002,
+              "baseline": 0.09877670999999999,
+              "lift": 2.4229314037325866,
+              "lift_sd": 0.051179889076766884,
+              "ci_low": 2.3375282050289488,
+              "ci_high": 2.52640767257811,
+              "null_lift": 0.9972124577698006
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.3986707,
+              "baseline": 0.36623593079999994,
+              "lift": 1.088570211447925,
+              "lift_sd": 0.005429341361555721,
+              "ci_low": 1.078516587982539,
+              "ci_high": 1.0988002016717593,
+              "null_lift": 0.9974666128253183
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6405135607113337,
+              "sd": 0.15014641738171383,
+              "ci_low": 0.5715310302273817,
+              "ci_high": 0.7010364716862832,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.33191919239175655,
+              "sd": 0.2061642702352431,
+              "ci_low": 0.271085393639523,
+              "ci_high": 0.39717617927845006,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5008928865663306,
+              "sd": 0.15465757082941067,
+              "ci_low": 0.4318648019630694,
+              "ci_high": 0.5753511907987411,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 0.6447526469618876,
+              "sd": 0.36484249938416535,
+              "ci_low": 0.43596903480313814,
+              "ci_high": 0.8957940688422246,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 198.67561903030392,
+            "mean_pairwise_cosine": 0.07737311697309751,
+            "mean_norm": 3.211208100569497
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.2386899,
+              "baseline": 0.09895369239999999,
+              "lift": 2.4123372738831765,
+              "lift_sd": 0.052077197944289555,
+              "ci_low": 2.3109753977740715,
+              "ci_high": 2.5137189823144683,
+              "null_lift": 1.0009577338845415
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.3979415,
+              "baseline": 0.36596528559999997,
+              "lift": 1.0873819737998809,
+              "lift_sd": 0.005296996222438263,
+              "ci_low": 1.0779601869245958,
+              "ci_high": 1.0970942580194678,
+              "null_lift": 1.000561275055427
+            }
+          ]
+        },
+        {
+          "seed": 2,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6424097834141234,
+              "sd": 0.15104857255254298,
+              "ci_low": 0.5731046315707188,
+              "ci_high": 0.702748066988204,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.333408266329914,
+              "sd": 0.20675909487493055,
+              "ci_low": 0.27155750686141367,
+              "ci_high": 0.3987063199643524,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5069689897966271,
+              "sd": 0.15996205266532712,
+              "ci_low": 0.43539503162197296,
+              "ci_high": 0.5807864044074466,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 0.6356137503210577,
+              "sd": 0.3149046119976341,
+              "ci_low": 0.44900046798215915,
+              "ci_high": 0.826911903486931,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 201.513256613166,
+            "mean_pairwise_cosine": 0.07433492244643844,
+            "mean_norm": 3.208348479306302
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.2394002,
+              "baseline": 0.09872963760000002,
+              "lift": 2.4249225150948415,
+              "lift_sd": 0.0488273946759525,
+              "ci_low": 2.323476697976261,
+              "ci_high": 2.515317864356002,
+              "null_lift": 0.9995332493345822
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.395822,
+              "baseline": 0.3659494684,
+              "lift": 1.08164009925038,
+              "lift_sd": 0.0050820332654833945,
+              "ci_low": 1.0720997932613858,
+              "ci_high": 1.0920597120981272,
+              "null_lift": 1.0003634872825897
+            }
+          ]
+        }
+      ]
+    },
+    "composition_acoustic": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6436959382311943,
+              "sd": 0.1520738732760748,
+              "ci_low": 0.5736025389996414,
+              "ci_high": 0.7046265920002077,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.23597199480824246,
+              "sd": 0.1772935757863564,
+              "ci_low": 0.1870716464707398,
+              "ci_high": 0.29214180455653643,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.4978276974363045,
+              "sd": 0.15401080099377934,
+              "ci_low": 0.4285992199232119,
+              "ci_high": 0.5697832621498198,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 0.4911736347565577,
+              "sd": 0.26111863375239813,
+              "ci_low": 0.33445136824844834,
+              "ci_high": 0.6456820578837589,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 192.91048506964273,
+            "mean_pairwise_cosine": 0.077644645278312,
+            "mean_norm": 3.325407861526815
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.23668440000000002,
+              "baseline": 0.098858766,
+              "lift": 2.394253056863228,
+              "lift_sd": 0.048611658010094136,
+              "ci_low": 2.312891497995241,
+              "ci_high": 2.4969572712881063,
+              "null_lift": 1.0023514986542617
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.3939338,
+              "baseline": 0.3659578684,
+              "lift": 1.0764524064623586,
+              "lift_sd": 0.005063938160205861,
+              "ci_low": 1.0658659613026609,
+              "ci_high": 1.086717493956135,
+              "null_lift": 1.005949235318266
+            }
+          ]
+        }
+      ]
+    },
+    "composition_eqtok": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6459852061247775,
+              "sd": 0.15328817238137027,
+              "ci_low": 0.575728828250509,
+              "ci_high": 0.7070917777455554,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.332662866366333,
+              "sd": 0.20829435662369702,
+              "ci_low": 0.27205164176320745,
+              "ci_high": 0.3982715432998889,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.503221903303812,
+              "sd": 0.1578585846122272,
+              "ci_low": 0.43176459828551855,
+              "ci_high": 0.5784261514045742,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 0.6584463714068542,
+              "sd": 0.32256416535930965,
+              "ci_low": 0.46082874258502593,
+              "ci_high": 0.8604574449345518,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 200.7905367871124,
+            "mean_pairwise_cosine": 0.0791408795500796,
+            "mean_norm": 3.2110555554892892
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.2387177,
+              "baseline": 0.09877796839999999,
+              "lift": 2.4168493775246436,
+              "lift_sd": 0.04900608376090873,
+              "ci_low": 2.3129297976935774,
+              "ci_high": 2.510639518147888,
+              "null_lift": 1.0059458591986536
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.39878820000000004,
+              "baseline": 0.3663550816,
+              "lift": 1.0885367956013021,
+              "lift_sd": 0.005513873346878086,
+              "ci_low": 1.0770682068469475,
+              "ci_high": 1.098604617758487,
+              "null_lift": 0.9965626557936588
+            }
+          ]
+        }
+      ]
+    },
+    "composition_lyric": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.2102143004092038,
+              "sd": 0.07353526920388107,
+              "ci_low": 0.17389486948009766,
+              "ci_high": 0.24226563500010695,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.31432013923808305,
+              "sd": 0.20639090603382934,
+              "ci_low": 0.2517307366430478,
+              "ci_high": 0.37429722234766033,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.2762904792843766,
+              "sd": 0.11007154350371984,
+              "ci_low": 0.22514634101566958,
+              "ci_high": 0.32598295309734177,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 0.5699051839505651,
+              "sd": 0.3867598108019564,
+              "ci_low": 0.34937535387000845,
+              "ci_high": 0.8390409608587469,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 160.11852243496645,
+            "mean_pairwise_cosine": 0.057552571071924755,
+            "mean_norm": 3.0782878079013076
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.1586186,
+              "baseline": 0.098730324,
+              "lift": 1.6066461898583453,
+              "lift_sd": 0.03625831746839687,
+              "ci_low": 1.543692613923536,
+              "ci_high": 1.6814557160299684,
+              "null_lift": 1.0020445005897196
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.39203150000000003,
+              "baseline": 0.3655044136,
+              "lift": 1.072579427550836,
+              "lift_sd": 0.0049470988871913825,
+              "ci_low": 1.0632588606985494,
+              "ci_high": 1.0817287667952526,
+              "null_lift": 1.003041749812113
+            }
+          ]
+        }
+      ]
+    },
+    "cooc": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.38544899385511555,
+              "sd": 0.13326076868473047,
+              "ci_low": 0.3219627316433532,
+              "ci_high": 0.4436229681627363,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.24011891894379678,
+              "sd": 0.14937755043828668,
+              "ci_low": 0.19696964478943324,
+              "ci_high": 0.2870416311743463,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.548455461437324,
+              "sd": 0.10501957268233907,
+              "ci_low": 0.49733045721650776,
+              "ci_high": 0.5972320363653989,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.8449620501543351,
+              "sd": 1.0837560479946469,
+              "ci_low": 1.1825159202489648,
+              "ci_high": 2.5260977794078014,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 45.018773833424696,
+            "mean_pairwise_cosine": 0.15256525631078718,
+            "mean_norm": 3.3202699784986556
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.47454139999999995,
+              "baseline": 0.0988410764,
+              "lift": 4.8015916327236425,
+              "lift_sd": 0.07766789714950309,
+              "ci_low": 4.667360045927959,
+              "ci_high": 4.953581751859494,
+              "null_lift": 1.0008950512900299
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.6472172,
+              "baseline": 0.36620333279999995,
+              "lift": 1.7674648438422265,
+              "lift_sd": 0.0141966225647619,
+              "ci_low": 1.7392923977175616,
+              "ci_high": 1.7942322211207489,
+              "null_lift": 1.0019181004520816
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.3854763511065505,
+              "sd": 0.13264963397847568,
+              "ci_low": 0.3231612808952608,
+              "ci_high": 0.4434232669262203,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.24083148588790845,
+              "sd": 0.1500004341031747,
+              "ci_low": 0.19757198752242958,
+              "ci_high": 0.2877382856710069,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5502080537151539,
+              "sd": 0.10236951533359656,
+              "ci_low": 0.500386574336443,
+              "ci_high": 0.5975322529987993,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.8363670612661056,
+              "sd": 1.0885298212304926,
+              "ci_low": 1.1864014589517642,
+              "ci_high": 2.5522083796140502,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 44.75467778799509,
+            "mean_pairwise_cosine": 0.15360416664476523,
+            "mean_norm": 3.315731142117992
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.47260760000000007,
+              "baseline": 0.09871651919999999,
+              "lift": 4.78793797072125,
+              "lift_sd": 0.07128154569207265,
+              "ci_low": 4.652960348405467,
+              "ci_high": 4.933114977858898,
+              "null_lift": 1.0059867601006482
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.6465394000000001,
+              "baseline": 0.3660696744,
+              "lift": 1.766247511055273,
+              "lift_sd": 0.01339057609135978,
+              "ci_low": 1.7419948925632314,
+              "ci_high": 1.792858946537037,
+              "null_lift": 0.9959279424780869
+            }
+          ]
+        },
+        {
+          "seed": 2,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.3855699831621423,
+              "sd": 0.13294868635404863,
+              "ci_low": 0.32289785112477637,
+              "ci_high": 0.4436524594239586,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.23895643761373797,
+              "sd": 0.15063077993490254,
+              "ci_low": 0.19519910707207802,
+              "ci_high": 0.2863654118620553,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5509121769161136,
+              "sd": 0.10333078478881229,
+              "ci_low": 0.500670273716559,
+              "ci_high": 0.5987280863606497,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.8336229089938734,
+              "sd": 1.1029552038131842,
+              "ci_low": 1.1775931273220432,
+              "ci_high": 2.5640995365991173,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 45.20176505718402,
+            "mean_pairwise_cosine": 0.15330840899489026,
+            "mean_norm": 3.318528465373193
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.47394450000000005,
+              "baseline": 0.0986118604,
+              "lift": 4.806572086984639,
+              "lift_sd": 0.07576321330441764,
+              "ci_low": 4.663600672768554,
+              "ci_high": 4.947263930544944,
+              "null_lift": 0.9972925194790513
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.6456448,
+              "baseline": 0.3659424848,
+              "lift": 1.7644118378052351,
+              "lift_sd": 0.013322607973192046,
+              "ci_low": 1.738175266528664,
+              "ci_high": 1.7897769186692623,
+              "null_lift": 0.994757951251098
+            }
+          ]
+        }
+      ]
+    },
+    "cooc_artistmasked": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.364560729053911,
+              "sd": 0.12774979136402856,
+              "ci_low": 0.3040021425383416,
+              "ci_high": 0.4201284474901436,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.2251585384135285,
+              "sd": 0.13946214227009981,
+              "ci_low": 0.1848524940587544,
+              "ci_high": 0.2690893520461962,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5190236277801755,
+              "sd": 0.10337169664800748,
+              "ci_low": 0.4696024177997715,
+              "ci_high": 0.5683757756324507,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.4916631867859238,
+              "sd": 0.7932186750492497,
+              "ci_low": 1.0144482169456441,
+              "ci_high": 2.012750437173704,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 33.12356489775509,
+            "mean_pairwise_cosine": 0.13104316006868338,
+            "mean_norm": 2.7406132136337016
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.43350120000000003,
+              "baseline": 0.0988325588,
+              "lift": 4.386679149911957,
+              "lift_sd": 0.07731283753016399,
+              "ci_low": 4.248249075743842,
+              "ci_high": 4.532443434927333,
+              "null_lift": 0.9946250101504518
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.5894578,
+              "baseline": 0.3657529008,
+              "lift": 1.611690003777683,
+              "lift_sd": 0.011106237146020013,
+              "ci_low": 1.592687487065307,
+              "ci_high": 1.629913059754221,
+              "null_lift": 1.0014021180886221
+            }
+          ]
+        }
+      ]
+    },
+    "cooc_avg": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.38548590285941325,
+              "sd": 0.1315510929756669,
+              "ci_low": 0.32387348834733226,
+              "ci_high": 0.4427239314181544,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.23932384998669246,
+              "sd": 0.15153144939304053,
+              "ci_low": 0.19521846693577327,
+              "ci_high": 0.28689329642680766,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5497887355099766,
+              "sd": 0.10047919269257137,
+              "ci_low": 0.5016973699388501,
+              "ci_high": 0.5960234678323756,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.955759067966544,
+              "sd": 1.2691386255538002,
+              "ci_low": 1.1944124110978382,
+              "ci_high": 2.795687935645489,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 52.96507294080044,
+            "mean_pairwise_cosine": 0.13824769037705453,
+            "mean_norm": 3.360449966546063
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.473048,
+              "baseline": 0.0989378716,
+              "lift": 4.7816423589467405,
+              "lift_sd": 0.06951066606957175,
+              "ci_low": 4.634048613201064,
+              "ci_high": 4.900267375457136,
+              "null_lift": 1.0018172282037439
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.6480700999999999,
+              "baseline": 0.3659651220000001,
+              "lift": 1.7709223289041773,
+              "lift_sd": 0.01299299896260269,
+              "ci_low": 1.7485536348271697,
+              "ci_high": 1.7964812260513805,
+              "null_lift": 1.0014904715736521
+            }
+          ]
+        }
+      ]
+    },
+    "cooc_eqtok": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.3837063532678937,
+              "sd": 0.13264345881892017,
+              "ci_low": 0.32086383182950423,
+              "ci_high": 0.4419739240301514,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.23931829446229094,
+              "sd": 0.15022373690677812,
+              "ci_low": 0.1958672947969254,
+              "ci_high": 0.2865560351650417,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5497593792577151,
+              "sd": 0.10653784089103868,
+              "ci_low": 0.49829258743996235,
+              "ci_high": 0.5989796099347497,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.8922756336168558,
+              "sd": 1.2102593404931763,
+              "ci_low": 1.1703485724572582,
+              "ci_high": 2.6951318891811424,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 93.59117838791566,
+            "mean_pairwise_cosine": 0.10048507410926029,
+            "mean_norm": 3.4316214999610373
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.47246180000000004,
+              "baseline": 0.0987836068,
+              "lift": 4.78318835186688,
+              "lift_sd": 0.06408344610007766,
+              "ci_low": 4.672835059352401,
+              "ci_high": 4.9062060589006995,
+              "null_lift": 0.9873895294546647
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.6439327,
+              "baseline": 0.365791868,
+              "lift": 1.7604577869864664,
+              "lift_sd": 0.012014826235064958,
+              "ci_low": 1.738105449815574,
+              "ci_high": 1.781538385940775,
+              "null_lift": 1.0064369154906214
+            }
+          ]
+        }
+      ]
+    },
+    "core": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6451001298735312,
+              "sd": 0.1501884648299378,
+              "ci_low": 0.5757145303970271,
+              "ci_high": 0.7055173249255465,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.32831860286779985,
+              "sd": 0.20103007517098395,
+              "ci_low": 0.27100801692231985,
+              "ci_high": 0.3913170535376733,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5447563969159676,
+              "sd": 0.12210989004617077,
+              "ci_low": 0.4861353451108226,
+              "ci_high": 0.6014619783342589,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.6115477001324985,
+              "sd": 0.9457227348329551,
+              "ci_low": 1.0445852552071169,
+              "ci_high": 2.2345465778518556,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 174.7937912455486,
+            "mean_pairwise_cosine": 0.09722247402368402,
+            "mean_norm": 2.968773795453493
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.3729292,
+              "baseline": 0.0988214712,
+              "lift": 3.774051806926815,
+              "lift_sd": 0.0585238852222348,
+              "ci_low": 3.6658698567903065,
+              "ci_high": 3.8811775765519445,
+              "null_lift": 0.9955514065990689
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.5310124999999999,
+              "baseline": 0.36629803600000005,
+              "lift": 1.4497320941678806,
+              "lift_sd": 0.010263367420650586,
+              "ci_low": 1.4311267345579093,
+              "ci_high": 1.4700285463306582,
+              "null_lift": 1.0005672682534164
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6407386418347251,
+              "sd": 0.15045247240042514,
+              "ci_low": 0.572100946780708,
+              "ci_high": 0.7006163634479279,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.32567253414844355,
+              "sd": 0.20017111998769846,
+              "ci_low": 0.26755766406122183,
+              "ci_high": 0.38902860836709396,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5601479555426393,
+              "sd": 0.12166399562512906,
+              "ci_low": 0.5030576683956413,
+              "ci_high": 0.6193768281504936,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.6530534867093183,
+              "sd": 0.9886636707983728,
+              "ci_low": 1.054648239828725,
+              "ci_high": 2.3146309919793726,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 175.2856230603315,
+            "mean_pairwise_cosine": 0.08111806498631279,
+            "mean_norm": 2.9364676087348083
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.36898519999999996,
+              "baseline": 0.09872858879999999,
+              "lift": 3.7376152001341474,
+              "lift_sd": 0.05932353837125693,
+              "ci_low": 3.6234204335074507,
+              "ci_high": 3.850121646982089,
+              "null_lift": 0.9922982689965675
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.5200941,
+              "baseline": 0.3664535112,
+              "lift": 1.4193124463570366,
+              "lift_sd": 0.00975456238342235,
+              "ci_low": 1.3991185093151275,
+              "ci_high": 1.438488970962742,
+              "null_lift": 0.9975063673616053
+            }
+          ]
+        },
+        {
+          "seed": 2,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.6482027728633251,
+              "sd": 0.15160633273447968,
+              "ci_low": 0.579233274640312,
+              "ci_high": 0.7093331010742094,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.32458727697456746,
+              "sd": 0.20134229185401883,
+              "ci_low": 0.26591023856325224,
+              "ci_high": 0.38730216245686877,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.545164968336007,
+              "sd": 0.12197734310159045,
+              "ci_low": 0.4860607475136644,
+              "ci_high": 0.6006936776880484,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.6829651923792421,
+              "sd": 1.0001939860774693,
+              "ci_low": 1.072207349001137,
+              "ci_high": 2.3364175321572853,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 178.9524692487522,
+            "mean_pairwise_cosine": 0.09559764450900574,
+            "mean_norm": 2.9276901991492155
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.37151309999999993,
+              "baseline": 0.0988160444,
+              "lift": 3.7599877705833866,
+              "lift_sd": 0.06315878511800795,
+              "ci_low": 3.6391489358329725,
+              "ci_high": 3.881683735875121,
+              "null_lift": 0.9967689875048649
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.5228997,
+              "baseline": 0.36588459,
+              "lift": 1.4291852466768808,
+              "lift_sd": 0.009118679575847685,
+              "ci_low": 1.4141756812399755,
+              "ci_high": 1.4465441581678122,
+              "null_lift": 0.9929708973171006
+            }
+          ]
+        }
+      ]
+    },
+    "core_partial10": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.3836207563708578,
+              "sd": 0.1299536556326421,
+              "ci_low": 0.3225045393079103,
+              "ci_high": 0.44018721611816203,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.23717859819528428,
+              "sd": 0.1485021615190438,
+              "ci_low": 0.19430432296598693,
+              "ci_high": 0.2840002187815569,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5402727196444858,
+              "sd": 0.10780771075987049,
+              "ci_low": 0.4882225500349286,
+              "ci_high": 0.5901087228868567,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.8693620498764534,
+              "sd": 1.2299984143381921,
+              "ci_low": 1.1513010571838511,
+              "ci_high": 2.688427480059279,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 76.50273500068303,
+            "mean_pairwise_cosine": 0.129814368508786,
+            "mean_norm": 3.415882352812783
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.4592889,
+              "baseline": 0.0990075944,
+              "lift": 4.639262473009417,
+              "lift_sd": 0.062483082796656236,
+              "ci_low": 4.526109171447667,
+              "ci_high": 4.763544170408776,
+              "null_lift": 1.0088722783447972
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.6278212999999999,
+              "baseline": 0.365833036,
+              "lift": 1.716218532538509,
+              "lift_sd": 0.01262268408702862,
+              "ci_low": 1.6916304100432937,
+              "ci_high": 1.7413617097180838,
+              "null_lift": 0.9934073560350948
+            }
+          ]
+        }
+      ]
+    },
+    "core_partial30": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.4263279423257062,
+              "sd": 0.12971173686886017,
+              "ci_low": 0.36341268735357735,
+              "ci_high": 0.481743399722952,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.24537528403038994,
+              "sd": 0.15216805303936934,
+              "ci_low": 0.20278573945133346,
+              "ci_high": 0.29332509333654344,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.5011557730484288,
+              "sd": 0.13744472756549003,
+              "ci_low": 0.43755722777707834,
+              "ci_high": 0.5668229204947058,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.7711257354567345,
+              "sd": 1.1953264439705882,
+              "ci_low": 1.083790857453958,
+              "ci_high": 2.5782740113695763,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 49.11960576715278,
+            "mean_pairwise_cosine": 0.11847010323531754,
+            "mean_norm": 3.415961132939288
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.4308712,
+              "baseline": 0.0987945896,
+              "lift": 4.361715720395232,
+              "lift_sd": 0.06780168300589831,
+              "ci_low": 4.234916553620537,
+              "ci_high": 4.4994873183846416,
+              "null_lift": 1.000726057011418
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.6015252,
+              "baseline": 0.36606005839999994,
+              "lift": 1.6433060344032042,
+              "lift_sd": 0.010897653308808812,
+              "ci_low": 1.6236344687081115,
+              "ci_high": 1.6688361054342644,
+              "null_lift": 0.9979816627405255
+            }
+          ]
+        }
+      ]
+    },
+    "core_partial60": {
+      "seeds": [
+        0
+      ],
+      "per_seed": [
+        {
+          "seed": 0,
+          "strata": [
+            {
+              "stratum": "a_baked",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.5346597602361493,
+              "sd": 0.13612639419288508,
+              "ci_low": 0.47054805354764245,
+              "ci_high": 0.591899810147844,
+              "n_targets": 17
+            },
+            {
+              "stratum": "b_heldout",
+              "reading": "tercile_centroid",
+              "metric": "rho",
+              "mean": 0.2812710348522605,
+              "sd": 0.17275265065079862,
+              "ci_low": 0.23220275679629007,
+              "ci_high": 0.3363832646897014,
+              "n_targets": 41
+            },
+            {
+              "stratum": "c_external",
+              "reading": "centroid",
+              "metric": "rho",
+              "mean": 0.50940065706286,
+              "sd": 0.14661964234069863,
+              "ci_low": 0.44002692579762254,
+              "ci_high": 0.5732308815500523,
+              "n_targets": 15
+            },
+            {
+              "stratum": "cultural",
+              "reading": "centroid",
+              "metric": "d",
+              "mean": 1.6169231176863375,
+              "sd": 0.8732815273672792,
+              "ci_low": 1.0766067290056334,
+              "ci_high": 2.1751029536749624,
+              "n_targets": 8
+            }
+          ],
+          "geometry": {
+            "n": 41914,
+            "dim": 300,
+            "participation_ratio": 56.28242372311456,
+            "mean_pairwise_cosine": 0.07071429462522877,
+            "mean_norm": 3.169182356102374
+          },
+          "knn": [
+            {
+              "label_set": "category",
+              "n_tagged": 41201,
+              "n_classes": 19,
+              "m": 5000,
+              "purity": 0.38554230000000006,
+              "baseline": 0.0986324772,
+              "lift": 3.9092286110925967,
+              "lift_sd": 0.062172780929077916,
+              "ci_low": 3.780269043280441,
+              "ci_high": 4.0334097575607295,
+              "null_lift": 0.9946001339348852
+            },
+            {
+              "label_set": "region",
+              "n_tagged": 6342,
+              "n_classes": 10,
+              "m": 5000,
+              "purity": 0.5476186,
+              "baseline": 0.36583414319999996,
+              "lift": 1.4969466353864602,
+              "lift_sd": 0.009337386114121052,
+              "ci_low": 1.4812489956737762,
+              "ci_high": 1.514494965685318,
+              "null_lift": 1.002448574626379
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "summary_by_model": {
+    "composition": {
+      "a_baked|rho": {
+        "mean": 0.6425337312170851,
+        "sd": 0.0017023214788366857,
+        "n_seeds": 3
+      },
+      "b_heldout|rho": {
+        "mean": 0.3329973606703946,
+        "sd": 0.0007695300949192753,
+        "n_seeds": 3
+      },
+      "c_external|rho": {
+        "mean": 0.5048188560060377,
+        "sd": 0.0027802819768041787,
+        "n_seeds": 3
+      },
+      "cultural|d": {
+        "mean": 0.6412721778405077,
+        "sd": 0.004036292444041217,
+        "n_seeds": 3
+      },
+      "PR": {
+        "mean": 200.18029089402762,
+        "sd": 1.1648058530599508,
+        "n_seeds": 3
+      },
+      "mean_cos": {
+        "mean": 0.07407004513864651,
+        "sd": 0.0028113285479383007,
+        "n_seeds": 3
+      },
+      "knn_lift|category": {
+        "mean": 2.4200637309035353,
+        "sd": 0.0055235697804836715,
+        "n_seeds": 3
+      },
+      "knn_lift|region": {
+        "mean": 1.0858640948327287,
+        "sd": 0.0030259523224744254,
+        "n_seeds": 3
+      }
+    },
+    "composition_acoustic": {
+      "a_baked|rho": {
+        "mean": 0.6436959382311943,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.23597199480824246,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.4978276974363045,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 0.4911736347565577,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 192.91048506964273,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.077644645278312,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 2.394253056863228,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.0764524064623586,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "composition_eqtok": {
+      "a_baked|rho": {
+        "mean": 0.6459852061247775,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.332662866366333,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.503221903303812,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 0.6584463714068542,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 200.7905367871124,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.0791408795500796,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 2.4168493775246436,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.0885367956013021,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "composition_lyric": {
+      "a_baked|rho": {
+        "mean": 0.2102143004092038,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.31432013923808305,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.2762904792843766,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 0.5699051839505651,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 160.11852243496645,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.057552571071924755,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 1.6066461898583453,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.072579427550836,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "cooc": {
+      "a_baked|rho": {
+        "mean": 0.38549844270793604,
+        "sd": 5.180496914736788e-05,
+        "n_seeds": 3
+      },
+      "b_heldout|rho": {
+        "mean": 0.2399689474818144,
+        "sd": 0.0007727958277899256,
+        "n_seeds": 3
+      },
+      "c_external|rho": {
+        "mean": 0.5498585640228638,
+        "sd": 0.001032947246053352,
+        "n_seeds": 3
+      },
+      "cultural|d": {
+        "mean": 1.8383173401381045,
+        "sd": 0.004830232659899797,
+        "n_seeds": 3
+      },
+      "PR": {
+        "mean": 44.991738892867936,
+        "sd": 0.18352097532413683,
+        "n_seeds": 3
+      },
+      "mean_cos": {
+        "mean": 0.15315927731681422,
+        "sd": 0.0004370460414845127,
+        "n_seeds": 3
+      },
+      "knn_lift|category": {
+        "mean": 4.798700563476511,
+        "sd": 0.007877236540528486,
+        "n_seeds": 3
+      },
+      "knn_lift|region": {
+        "mean": 1.7660413975675782,
+        "sd": 0.0012548767649543998,
+        "n_seeds": 3
+      }
+    },
+    "cooc_artistmasked": {
+      "a_baked|rho": {
+        "mean": 0.364560729053911,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.2251585384135285,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.5190236277801755,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 1.4916631867859238,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 33.12356489775509,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.13104316006868338,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 4.386679149911957,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.611690003777683,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "cooc_avg": {
+      "a_baked|rho": {
+        "mean": 0.38548590285941325,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.23932384998669246,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.5497887355099766,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 1.955759067966544,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 52.96507294080044,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.13824769037705453,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 4.7816423589467405,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.7709223289041773,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "cooc_eqtok": {
+      "a_baked|rho": {
+        "mean": 0.3837063532678937,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.23931829446229094,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.5497593792577151,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 1.8922756336168558,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 93.59117838791566,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.10048507410926029,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 4.78318835186688,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.7604577869864664,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "core": {
+      "a_baked|rho": {
+        "mean": 0.6446805148571938,
+        "sd": 0.0030616303472147193,
+        "n_seeds": 3
+      },
+      "b_heldout|rho": {
+        "mean": 0.3261928046636036,
+        "sd": 0.0015671012064924857,
+        "n_seeds": 3
+      },
+      "c_external|rho": {
+        "mean": 0.5500231069315379,
+        "sd": 0.007161291885295966,
+        "n_seeds": 3
+      },
+      "cultural|d": {
+        "mean": 1.6491887930736862,
+        "sd": 0.029283857241108033,
+        "n_seeds": 3
+      },
+      "PR": {
+        "mean": 176.34396118487743,
+        "sd": 1.855390412282183,
+        "n_seeds": 3
+      },
+      "mean_cos": {
+        "mean": 0.09131272783966753,
+        "sd": 0.007239170337274867,
+        "n_seeds": 3
+      },
+      "knn_lift|category": {
+        "mean": 3.757218259214783,
+        "sd": 0.015003537884034544,
+        "n_seeds": 3
+      },
+      "knn_lift|region": {
+        "mean": 1.4327432624005993,
+        "sd": 0.012671052314932079,
+        "n_seeds": 3
+      }
+    },
+    "core_partial10": {
+      "a_baked|rho": {
+        "mean": 0.3836207563708578,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.23717859819528428,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.5402727196444858,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 1.8693620498764534,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 76.50273500068303,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.129814368508786,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 4.639262473009417,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.716218532538509,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "core_partial30": {
+      "a_baked|rho": {
+        "mean": 0.4263279423257062,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.24537528403038994,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.5011557730484288,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 1.7711257354567345,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 49.11960576715278,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.11847010323531754,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 4.361715720395232,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.6433060344032042,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    },
+    "core_partial60": {
+      "a_baked|rho": {
+        "mean": 0.5346597602361493,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "b_heldout|rho": {
+        "mean": 0.2812710348522605,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "c_external|rho": {
+        "mean": 0.50940065706286,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "cultural|d": {
+        "mean": 1.6169231176863375,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "PR": {
+        "mean": 56.28242372311456,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "mean_cos": {
+        "mean": 0.07071429462522877,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|category": {
+        "mean": 3.9092286110925967,
+        "sd": 0.0,
+        "n_seeds": 1
+      },
+      "knn_lift|region": {
+        "mean": 1.4969466353864602,
+        "sd": 0.0,
+        "n_seeds": 1
+      }
+    }
+  },
+  "paired": {
+    "composition_minus_cooc": {
+      "targets": {
+        "a_baked:bpm": {
+          "delta_rho": 0.41898528849896655,
+          "rho_a": 0.5224383313341667,
+          "rho_b": 0.10345304283520022,
+          "n": 41904,
+          "ci_low": 0.4047553538057564,
+          "ci_high": 0.43360264539175775
+        },
+        "a_baked:onset_rate": {
+          "delta_rho": 0.3406990731705654,
+          "rho_a": 0.7418017225547215,
+          "rho_b": 0.4011026493841562,
+          "n": 41904,
+          "ci_low": 0.32394617244197443,
+          "ci_high": 0.3582701404149347
+        },
+        "a_baked:danceability": {
+          "delta_rho": 0.3526697293660448,
+          "rho_a": 0.5988978588099444,
+          "rho_b": 0.24622812944389957,
+          "n": 41904,
+          "ci_low": 0.33795229517831,
+          "ci_high": 0.36839869548495474
+        },
+        "a_baked:loudness": {
+          "delta_rho": 0.28366590025365906,
+          "rho_a": 0.6180421767609259,
+          "rho_b": 0.3343762765072668,
+          "n": 41904,
+          "ci_low": 0.267888066809221,
+          "ci_high": 0.29961986021378595
+        },
+        "a_baked:loudness_ebu128": {
+          "delta_rho": 0.14847821719624232,
+          "rho_a": 0.6135448603337305,
+          "rho_b": 0.4650666431374882,
+          "n": 41904,
+          "ci_low": 0.13154025509664735,
+          "ci_high": 0.16667289493210463
+        },
+        "a_baked:loudness_range": {
+          "delta_rho": 0.30442997635144725,
+          "rho_a": 0.5819502355716589,
+          "rho_b": 0.27752025922021173,
+          "n": 41904,
+          "ci_low": 0.28887031031917754,
+          "ci_high": 0.32030786135858613
+        },
+        "a_baked:dynamic_complexity": {
+          "delta_rho": 0.25475580663622943,
+          "rho_a": 0.7320122230249059,
+          "rho_b": 0.4772564163886764,
+          "n": 41904,
+          "ci_low": 0.23885853059567375,
+          "ci_high": 0.27215700295372214
+        },
+        "a_baked:spectral_centroid": {
+          "delta_rho": 0.2584194824540704,
+          "rho_a": 0.7952952729517304,
+          "rho_b": 0.53687579049766,
+          "n": 41904,
+          "ci_low": 0.2408183982752814,
+          "ci_high": 0.276099139624191
+        },
+        "a_baked:spectral_flux": {
+          "delta_rho": 0.2757649706326614,
+          "rho_a": 0.7376155854911483,
+          "rho_b": 0.46185061485848683,
+          "n": 41904,
+          "ci_low": 0.25795657044989845,
+          "ci_high": 0.29494230068712485
+        },
+        "a_baked:zero_crossing_rate": {
+          "delta_rho": 0.24489727677540518,
+          "rho_a": 0.7376594685809573,
+          "rho_b": 0.4927621918055522,
+          "n": 41904,
+          "ci_low": 0.22764431499611854,
+          "ci_high": 0.2619977770460869
+        },
+        "a_baked:beats_loudness": {
+          "delta_rho": 0.22438979103889573,
+          "rho_a": 0.6146113605729718,
+          "rho_b": 0.39022156953407616,
+          "n": 41904,
+          "ci_low": 0.20536305719029074,
+          "ci_high": 0.2433373516942215
+        },
+        "a_baked:chords_strength": {
+          "delta_rho": 0.0691796632040341,
+          "rho_a": 0.2781698031016666,
+          "rho_b": 0.2089901398976325,
+          "n": 41904,
+          "ci_low": 0.056450705004795335,
+          "ci_high": 0.08328048672362912
+        },
+        "a_baked:chords_change_rate": {
+          "delta_rho": 0.2547727294798366,
+          "rho_a": 0.5571405599309364,
+          "rho_b": 0.3023678304510998,
+          "n": 41904,
+          "ci_low": 0.24023419353317782,
+          "ci_high": 0.2702757339907208
+        },
+        "a_baked:key_strength": {
+          "delta_rho": 0.1293031167999402,
+          "rho_a": 0.4051055164894406,
+          "rho_b": 0.2758023996895004,
+          "n": 41904,
+          "ci_low": 0.11672626423351977,
+          "ci_high": 0.14219141245740136
+        },
+        "a_baked:hpcp_entropy": {
+          "delta_rho": 0.24705254225744946,
+          "rho_a": 0.7746807415997786,
+          "rho_b": 0.5276281993423292,
+          "n": 41904,
+          "ci_low": 0.22987734047434408,
+          "ci_high": 0.2643571874583226
+        },
+        "a_baked:mfcc1_mean": {
+          "delta_rho": 0.3105666776712827,
+          "rho_a": 0.8790865350315504,
+          "rho_b": 0.5685198573602677,
+          "n": 41904,
+          "ci_low": 0.29285154480926606,
+          "ci_high": 0.32974025689944575
+        },
+        "a_baked:mfcc2_mean": {
+          "delta_rho": 0.27712152881011115,
+          "rho_a": 0.7749722741676135,
+          "rho_b": 0.4978507453575023,
+          "n": 41904,
+          "ci_low": 0.26011903149141175,
+          "ci_high": 0.2940724826128526
+        },
+        "b_heldout:voice_f0": {
+          "delta_rho": 0.30066013925847884,
+          "rho_a": 0.6523682877462206,
+          "rho_b": 0.35170814848774173,
+          "n": 41913,
+          "ci_low": 0.2839965841354665,
+          "ci_high": 0.3166091826261563
+        },
+        "b_heldout:voice_hnr": {
+          "delta_rho": 0.19318593308132653,
+          "rho_a": 0.4924192885131468,
+          "rho_b": 0.2992333554318202,
+          "n": 41913,
+          "ci_low": 0.18252459881532626,
+          "ci_high": 0.20397167134936517
+        },
+        "b_heldout:voice_jitter": {
+          "delta_rho": 0.2392367123081643,
+          "rho_a": 0.40293834154345387,
+          "rho_b": 0.1637016292352897,
+          "n": 41913,
+          "ci_low": 0.22505175620942552,
+          "ci_high": 0.25346557456435653
+        },
+        "b_heldout:voice_shimmer": {
+          "delta_rho": 0.21881308741039712,
+          "rho_a": 0.585749496454258,
+          "rho_b": 0.3669364090438608,
+          "n": 41913,
+          "ci_low": 0.2045504933675738,
+          "ci_high": 0.23419658359743425
+        },
+        "b_heldout:voice_voicing": {
+          "delta_rho": 0.259751396215723,
+          "rho_a": 0.7948067418080988,
+          "rho_b": 0.5350553455923759,
+          "n": 41913,
+          "ci_low": 0.2433011048968792,
+          "ci_high": 0.27807968806124284
+        },
+        "b_heldout:gems_0": {
+          "delta_rho": 0.01154627638841831,
+          "rho_a": -0.0004978041140803426,
+          "rho_b": -0.012044080502498654,
+          "n": 41914,
+          "ci_low": -0.0025684105649759143,
+          "ci_high": 0.026149411305618615
+        },
+        "b_heldout:gems_1": {
+          "delta_rho": 0.0049181333447646585,
+          "rho_a": 0.0010894177829992857,
+          "rho_b": -0.003828715561765373,
+          "n": 41914,
+          "ci_low": -0.005475027118301242,
+          "ci_high": 0.01655355124468455
+        },
+        "b_heldout:gems_2": {
+          "delta_rho": 0.008530141138218414,
+          "rho_a": 0.004892065121031763,
+          "rho_b": -0.003638076017186653,
+          "n": 41914,
+          "ci_low": -0.0034146325792801142,
+          "ci_high": 0.02067222233877554
+        },
+        "b_heldout:gems_3": {
+          "delta_rho": 0.010306277729937008,
+          "rho_a": 0.00044742375140976656,
+          "rho_b": -0.00985885397852724,
+          "n": 41914,
+          "ci_low": -0.002882744308337616,
+          "ci_high": 0.02383444817825982
+        },
+        "b_heldout:gems_4": {
+          "delta_rho": 0.008443105509928757,
+          "rho_a": 0.005029178753996795,
+          "rho_b": -0.003413926755931964,
+          "n": 41914,
+          "ci_low": -0.003561582685319733,
+          "ci_high": 0.020638851839342734
+        },
+        "b_heldout:gems_5": {
+          "delta_rho": -0.007581572754824908,
+          "rho_a": -0.0072615140067547315,
+          "rho_b": 0.00032005874807017776,
+          "n": 41914,
+          "ci_low": -0.019089614526903918,
+          "ci_high": 0.004834754002509761
+        },
+        "b_heldout:gems_6": {
+          "delta_rho": 0.006948191574896676,
+          "rho_a": 0.004770467989980431,
+          "rho_b": -0.0021777235849162425,
+          "n": 41914,
+          "ci_low": -0.00475226737368313,
+          "ci_high": 0.01710056808329843
+        },
+        "b_heldout:gems_7": {
+          "delta_rho": 0.0009378818421291241,
+          "rho_a": 0.0041723622086442935,
+          "rho_b": 0.00323448036651517,
+          "n": 41914,
+          "ci_low": -0.009942398208935822,
+          "ci_high": 0.012214243115989369
+        },
+        "b_heldout:gems_8": {
+          "delta_rho": 0.006607665579894799,
+          "rho_a": -0.0037436269124702117,
+          "rho_b": -0.010351292492365013,
+          "n": 41914,
+          "ci_low": -0.006159746348621402,
+          "ci_high": 0.019818308994542885
+        },
+        "b_heldout:sentiment_V_median": {
+          "delta_rho": 0.15379665709391085,
+          "rho_a": 0.5321572209465091,
+          "rho_b": 0.3783605638525983,
+          "n": 41914,
+          "ci_low": 0.14078919961322536,
+          "ci_high": 0.16661744355711378
+        },
+        "b_heldout:sentiment_V_mean": {
+          "delta_rho": 0.143848123816587,
+          "rho_a": 0.578321548463748,
+          "rho_b": 0.434473424647161,
+          "n": 41914,
+          "ci_low": 0.13048417029739806,
+          "ci_high": 0.1572706175657814
+        },
+        "b_heldout:sentiment_V_gmean": {
+          "delta_rho": 0.15058760295420884,
+          "rho_a": 0.5669776220642934,
+          "rho_b": 0.41639001911008455,
+          "n": 41914,
+          "ci_low": 0.13678812023517636,
+          "ci_high": 0.16361002575782232
+        },
+        "b_heldout:sentiment_A_median": {
+          "delta_rho": 0.19582553091689636,
+          "rho_a": 0.4737858022412986,
+          "rho_b": 0.27796027132440226,
+          "n": 41914,
+          "ci_low": 0.18023331941113338,
+          "ci_high": 0.21085756192618957
+        },
+        "b_heldout:sentiment_A_mean": {
+          "delta_rho": 0.19637822293624332,
+          "rho_a": 0.4963626490060185,
+          "rho_b": 0.2999844260697751,
+          "n": 41914,
+          "ci_low": 0.18083344580707736,
+          "ci_high": 0.21112595844363297
+        },
+        "b_heldout:sentiment_A_gmean": {
+          "delta_rho": 0.21709303106643804,
+          "rho_a": 0.49213973445215586,
+          "rho_b": 0.27504670338571796,
+          "n": 41914,
+          "ci_low": 0.20287322042955436,
+          "ci_high": 0.23064043534690576
+        },
+        "b_heldout:sentiment_D_median": {
+          "delta_rho": 0.12768681229741952,
+          "rho_a": 0.4358013622027113,
+          "rho_b": 0.3081145499052919,
+          "n": 41914,
+          "ci_low": 0.11417620045876403,
+          "ci_high": 0.1394444144074034
+        },
+        "b_heldout:sentiment_D_mean": {
+          "delta_rho": 0.11853940437910275,
+          "rho_a": 0.46797822689916635,
+          "rho_b": 0.3494388225200636,
+          "n": 41914,
+          "ci_low": 0.1051230303398533,
+          "ci_high": 0.13129670714374042
+        },
+        "b_heldout:sentiment_D_gmean": {
+          "delta_rho": 0.09823271108874716,
+          "rho_a": 0.46814980506702947,
+          "rho_b": 0.36991709397828226,
+          "n": 41914,
+          "ci_low": 0.08404960921511209,
+          "ci_high": 0.11149607680043087
+        },
+        "b_heldout:sentiment_P_mean": {
+          "delta_rho": 0.0762366932701241,
+          "rho_a": 0.405490368846622,
+          "rho_b": 0.32925367557649793,
+          "n": 41914,
+          "ci_low": 0.06534133306075582,
+          "ci_high": 0.08655244656021256
+        },
+        "b_heldout:sentiment_P_gmean": {
+          "delta_rho": 0.08882560223568738,
+          "rho_a": 0.41266801943567666,
+          "rho_b": 0.32384241719998924,
+          "n": 41914,
+          "ci_low": 0.07874133413045084,
+          "ci_high": 0.099225345386269
+        },
+        "b_heldout:vad_VADB000": {
+          "delta_rho": 0.0903629232425629,
+          "rho_a": 0.43697178257308855,
+          "rho_b": 0.34660885933052565,
+          "n": 41914,
+          "ci_low": 0.07507473291271285,
+          "ci_high": 0.10464268669893749
+        },
+        "b_heldout:vad_VADB002": {
+          "delta_rho": 0.07532689561500025,
+          "rho_a": 0.3102071080036245,
+          "rho_b": 0.23488021238862425,
+          "n": 41914,
+          "ci_low": 0.06314063572575461,
+          "ci_high": 0.08793280081313917
+        },
+        "b_heldout:vad_VADB003": {
+          "delta_rho": 0.09476743632568757,
+          "rho_a": 0.31662138856334365,
+          "rho_b": 0.2218539522376561,
+          "n": 41914,
+          "ci_low": 0.07955988946292095,
+          "ci_high": 0.10895372092014859
+        },
+        "b_heldout:vad_VADB007": {
+          "delta_rho": 0.06151546654891586,
+          "rho_a": 0.2901376196276687,
+          "rho_b": 0.22862215307875283,
+          "n": 41914,
+          "ci_low": 0.04900190425249344,
+          "ci_high": 0.07475623128750357
+        },
+        "b_heldout:vad_VADB008": {
+          "delta_rho": 0.061185525626298455,
+          "rho_a": 0.3295552882819426,
+          "rho_b": 0.26836976265564416,
+          "n": 41914,
+          "ci_low": 0.04669824633763977,
+          "ci_high": 0.07529927346512245
+        },
+        "b_heldout:vad_VADB009": {
+          "delta_rho": 0.008624023673042233,
+          "rho_a": 0.41854684196777825,
+          "rho_b": 0.4099228182947359,
+          "n": 41914,
+          "ci_low": -0.010241257443118542,
+          "ci_high": 0.0260523895807831
+        },
+        "b_heldout:vad_VADB010": {
+          "delta_rho": 0.029462394777072735,
+          "rho_a": 0.4353443738111565,
+          "rho_b": 0.40588197903408374,
+          "n": 41914,
+          "ci_low": 0.012120286725120529,
+          "ci_high": 0.04561754322778767
+        },
+        "b_heldout:vad_VADB012": {
+          "delta_rho": 0.01825521062031344,
+          "rho_a": 0.31445305402903506,
+          "rho_b": 0.2961978434087217,
+          "n": 41914,
+          "ci_low": 0.0024439085965728396,
+          "ci_high": 0.033511493963618015
+        },
+        "b_heldout:vad_VADB014": {
+          "delta_rho": 0.038116226947642294,
+          "rho_a": 0.20712059739060484,
+          "rho_b": 0.16900437044296254,
+          "n": 41914,
+          "ci_low": 0.02365393083033812,
+          "ci_high": 0.052773147855203824
+        },
+        "b_heldout:vad_VADB015": {
+          "delta_rho": 0.07715747354417833,
+          "rho_a": 0.34899227071371075,
+          "rho_b": 0.2718347971695324,
+          "n": 41914,
+          "ci_low": 0.06452462854901625,
+          "ci_high": 0.08956689137350236
+        },
+        "b_heldout:vad_VADB016": {
+          "delta_rho": 0.12837928306150753,
+          "rho_a": 0.3393379163391048,
+          "rho_b": 0.2109586332775973,
+          "n": 41914,
+          "ci_low": 0.11367397474821024,
+          "ci_high": 0.1423906404710861
+        },
+        "b_heldout:vad_VADB017": {
+          "delta_rho": 0.010937318416909534,
+          "rho_a": 0.3554928748739602,
+          "rho_b": 0.34455555645705066,
+          "n": 41914,
+          "ci_low": -0.004557021625393951,
+          "ci_high": 0.02618808770709422
+        },
+        "b_heldout:vad_VADB019": {
+          "delta_rho": 0.08509602166884156,
+          "rho_a": 0.3356204375491061,
+          "rho_b": 0.25052441588026453,
+          "n": 41914,
+          "ci_low": 0.07230622113157882,
+          "ci_high": 0.09831969140337267
+        },
+        "b_heldout:vad_VADB021": {
+          "delta_rho": 0.0648879136441684,
+          "rho_a": 0.2595985710347124,
+          "rho_b": 0.19471065739054402,
+          "n": 41914,
+          "ci_low": 0.05124934591506496,
+          "ci_high": 0.07777210096544543
+        },
+        "b_heldout:vad_VADB022": {
+          "delta_rho": 0.0917670742705045,
+          "rho_a": 0.39475482711982435,
+          "rho_b": 0.3029877528493199,
+          "n": 41914,
+          "ci_low": 0.08003991155065122,
+          "ci_high": 0.10339980289029786
+        },
+        "b_heldout:vad_VADB023": {
+          "delta_rho": 0.08480502792188967,
+          "rho_a": 0.33919950431250007,
+          "rho_b": 0.25439447639061036,
+          "n": 41914,
+          "ci_low": 0.07040953514580617,
+          "ci_high": 0.09941024606281475
+        },
+        "c_llm:energy": {
+          "delta_rho": 0.046994995539162844,
+          "rho_a": 0.5944308789336826,
+          "rho_b": 0.54743588339452,
+          "n": 6684,
+          "ci_low": 0.02007506427558396,
+          "ci_high": 0.07458215185881721
+        },
+        "c_llm:aggression": {
+          "delta_rho": -0.01863744860174057,
+          "rho_a": 0.6831658457134812,
+          "rho_b": 0.7018032943152218,
+          "n": 6684,
+          "ci_low": -0.04248934654660988,
+          "ci_high": 0.004665920385866402
+        },
+        "c_llm:valence": {
+          "delta_rho": -0.03522198528040446,
+          "rho_a": 0.5068460605471802,
+          "rho_b": 0.5420680458275848,
+          "n": 6684,
+          "ci_low": -0.05618741574467116,
+          "ci_high": -0.011336816702589108
+        },
+        "c_llm:danceability": {
+          "delta_rho": 0.04781533563151073,
+          "rho_a": 0.650117105818672,
+          "rho_b": 0.6023017701871612,
+          "n": 6684,
+          "ci_low": 0.02169974218481316,
+          "ci_high": 0.0749666277808257
+        },
+        "c_llm:acousticness": {
+          "delta_rho": -0.005388874025069891,
+          "rho_a": 0.6093890650128255,
+          "rho_b": 0.6147779390378955,
+          "n": 6684,
+          "ci_low": -0.033267100065465245,
+          "ci_high": 0.020269307780110064
+        },
+        "c_llm:vocal_prominence": {
+          "delta_rho": -0.028621263653481565,
+          "rho_a": 0.4976346297095517,
+          "rho_b": 0.5262558933630332,
+          "n": 6684,
+          "ci_low": -0.05213760490496932,
+          "ci_high": -0.004496317897987408
+        },
+        "c_llm:tempo_feel": {
+          "delta_rho": 0.11815639979067367,
+          "rho_a": 0.5329259928602641,
+          "rho_b": 0.4147695930695905,
+          "n": 6684,
+          "ci_low": 0.09286811521755822,
+          "ci_high": 0.14465868982467353
+        },
+        "c_llm:production_polish": {
+          "delta_rho": -0.2152626551722943,
+          "rho_a": 0.3467851007163152,
+          "rho_b": 0.5620477558886096,
+          "n": 6684,
+          "ci_low": -0.24367075515479866,
+          "ci_high": -0.1843143017140614
+        },
+        "c_llm:lyrical_explicitness": {
+          "delta_rho": -0.009020803473342096,
+          "rho_a": 0.34716570916146505,
+          "rho_b": 0.35618651263480716,
+          "n": 6684,
+          "ci_low": -0.03683057177225406,
+          "ci_high": 0.02239124714489697
+        },
+        "c_llm:grit": {
+          "delta_rho": -0.06994997623791022,
+          "rho_a": 0.6757600449825045,
+          "rho_b": 0.7457100212204149,
+          "n": 6684,
+          "ci_low": -0.09456799276737672,
+          "ci_high": -0.045933802291244274
+        },
+        "c_llm:density": {
+          "delta_rho": 0.02533164843760706,
+          "rho_a": 0.5689292937112251,
+          "rho_b": 0.5435976452736182,
+          "n": 6684,
+          "ci_low": -0.0024205097422963185,
+          "ci_high": 0.055030474857857704
+        },
+        "c_llm:punch": {
+          "delta_rho": 0.0551212235708187,
+          "rho_a": 0.6014537953935958,
+          "rho_b": 0.5463325718227771,
+          "n": 6684,
+          "ci_low": 0.026998385483158964,
+          "ci_high": 0.08162186332339595
+        },
+        "c_llm:warmth": {
+          "delta_rho": 0.002960178826315934,
+          "rho_a": 0.5708165594983671,
+          "rho_b": 0.5678563806720512,
+          "n": 6684,
+          "ci_low": -0.022009121970670203,
+          "ci_high": 0.02954284501492974
+        },
+        "c_llm:brightness": {
+          "delta_rho": -0.1009628736365671,
+          "rho_a": 0.30347301829687606,
+          "rho_b": 0.40443589193344315,
+          "n": 6684,
+          "ci_low": -0.13355200112977753,
+          "ci_high": -0.06968016762468446
+        },
+        "c_llm:era": {
+          "delta_rho": -0.46462827029032194,
+          "rho_a": 0.16960297151564,
+          "rho_b": 0.6342312418059619,
+          "n": 6682,
+          "ci_low": -0.5038752923931827,
+          "ci_high": -0.4277032610587952
+        }
+      },
+      "strata": {
+        "a_baked": {
+          "delta_rho": 0.25853833944687277,
+          "ci_low": 0.2502490854228593,
+          "ci_high": 0.268127090118833,
+          "p_boot": 0.001,
+          "n_targets": 17,
+          "share_targets_positive": 1.0
+        },
+        "b_heldout": {
+          "delta_rho": 0.09390243845335007,
+          "ci_low": 0.08799977946906307,
+          "ci_high": 0.0993763870388814,
+          "p_boot": 0.001,
+          "n_targets": 41,
+          "share_targets_positive": 0.975609756097561
+        },
+        "c_external": {
+          "delta_rho": -0.0434209579050029,
+          "ci_low": -0.055061335266370144,
+          "ci_high": -0.031206178172903356,
+          "p_boot": 0.001,
+          "n_targets": 15,
+          "share_targets_positive": 0.4
+        }
+      }
+    },
+    "core_minus_cooc": {
+      "targets": {
+        "a_baked:bpm": {
+          "delta_rho": 0.38593478802343134,
+          "rho_a": 0.4893878308586316,
+          "rho_b": 0.10345304283520022,
+          "n": 41904,
+          "ci_low": 0.37320842147344524,
+          "ci_high": 0.3997065081070936
+        },
+        "a_baked:onset_rate": {
+          "delta_rho": 0.33209766299880417,
+          "rho_a": 0.7332003123829604,
+          "rho_b": 0.4011026493841562,
+          "n": 41904,
+          "ci_low": 0.3164402727585059,
+          "ci_high": 0.3484410999187949
+        },
+        "a_baked:danceability": {
+          "delta_rho": 0.34701284503659185,
+          "rho_a": 0.5932409744804914,
+          "rho_b": 0.24622812944389957,
+          "n": 41904,
+          "ci_low": 0.33318379376074314,
+          "ci_high": 0.36116770423992794
+        },
+        "a_baked:loudness": {
+          "delta_rho": 0.2814077723700172,
+          "rho_a": 0.615784048877284,
+          "rho_b": 0.3343762765072668,
+          "n": 41904,
+          "ci_low": 0.26659668185935625,
+          "ci_high": 0.2976188255679412
+        },
+        "a_baked:loudness_ebu128": {
+          "delta_rho": 0.1963041118412551,
+          "rho_a": 0.6613707549787433,
+          "rho_b": 0.4650666431374882,
+          "n": 41904,
+          "ci_low": 0.18164404020937977,
+          "ci_high": 0.21234873511779226
+        },
+        "a_baked:loudness_range": {
+          "delta_rho": 0.29607009653960886,
+          "rho_a": 0.5735903557598205,
+          "rho_b": 0.27752025922021173,
+          "n": 41904,
+          "ci_low": 0.28070200404352175,
+          "ci_high": 0.3117601266351556
+        },
+        "a_baked:dynamic_complexity": {
+          "delta_rho": 0.25138197011429786,
+          "rho_a": 0.7286383865029743,
+          "rho_b": 0.4772564163886764,
+          "n": 41904,
+          "ci_low": 0.2370665549092131,
+          "ci_high": 0.26693557668895973
+        },
+        "a_baked:spectral_centroid": {
+          "delta_rho": 0.253828220685122,
+          "rho_a": 0.790704011182782,
+          "rho_b": 0.53687579049766,
+          "n": 41904,
+          "ci_low": 0.23796958869242132,
+          "ci_high": 0.2709546335877415
+        },
+        "a_baked:spectral_flux": {
+          "delta_rho": 0.2876273932771399,
+          "rho_a": 0.7494780081356268,
+          "rho_b": 0.46185061485848683,
+          "n": 41904,
+          "ci_low": 0.2712179594282945,
+          "ci_high": 0.30573886176889103
+        },
+        "a_baked:zero_crossing_rate": {
+          "delta_rho": 0.25335958982215584,
+          "rho_a": 0.7461217816277081,
+          "rho_b": 0.4927621918055522,
+          "n": 41904,
+          "ci_low": 0.23721781324279198,
+          "ci_high": 0.269253083761607
+        },
+        "a_baked:beats_loudness": {
+          "delta_rho": 0.2329403712350707,
+          "rho_a": 0.6231619407691469,
+          "rho_b": 0.39022156953407616,
+          "n": 41904,
+          "ci_low": 0.2165058947978951,
+          "ci_high": 0.249555083787819
+        },
+        "a_baked:chords_strength": {
+          "delta_rho": 0.08536897671692367,
+          "rho_a": 0.29435911661455616,
+          "rho_b": 0.2089901398976325,
+          "n": 41904,
+          "ci_low": 0.0747983179658822,
+          "ci_high": 0.09675806924668232
+        },
+        "a_baked:chords_change_rate": {
+          "delta_rho": 0.24655346726029842,
+          "rho_a": 0.5489212977113982,
+          "rho_b": 0.3023678304510998,
+          "n": 41904,
+          "ci_low": 0.23296507458446417,
+          "ci_high": 0.26089594097638474
+        },
+        "a_baked:key_strength": {
+          "delta_rho": 0.13551152313084083,
+          "rho_a": 0.41131392282034124,
+          "rho_b": 0.2758023996895004,
+          "n": 41904,
+          "ci_low": 0.12549761791401615,
+          "ci_high": 0.1462040354377017
+        },
+        "a_baked:hpcp_entropy": {
+          "delta_rho": 0.23913274474365437,
+          "rho_a": 0.7667609440859836,
+          "rho_b": 0.5276281993423292,
+          "n": 41904,
+          "ci_low": 0.2232518688079786,
+          "ci_high": 0.2560754612070777
+        },
+        "a_baked:mfcc1_mean": {
+          "delta_rho": 0.30311809780688115,
+          "rho_a": 0.8716379551671489,
+          "rho_b": 0.5685198573602677,
+          "n": 41904,
+          "ci_low": 0.28615333206244026,
+          "ci_high": 0.32185434454257306
+        },
+        "a_baked:mfcc2_mean": {
+          "delta_rho": 0.27821577889854016,
+          "rho_a": 0.7760665242560424,
+          "rho_b": 0.4978507453575023,
+          "n": 41904,
+          "ci_low": 0.26225715236317704,
+          "ci_high": 0.2942236919906918
+        },
+        "b_heldout:voice_f0": {
+          "delta_rho": 0.3111222646386845,
+          "rho_a": 0.6628304131264262,
+          "rho_b": 0.35170814848774173,
+          "n": 41913,
+          "ci_low": 0.2966199150621522,
+          "ci_high": 0.3249685017278102
+        },
+        "b_heldout:voice_hnr": {
+          "delta_rho": 0.18339362058880046,
+          "rho_a": 0.4826269760206207,
+          "rho_b": 0.2992333554318202,
+          "n": 41913,
+          "ci_low": 0.1734287472617272,
+          "ci_high": 0.1938415455641736
+        },
+        "b_heldout:voice_jitter": {
+          "delta_rho": 0.21930795518366064,
+          "rho_a": 0.38300958441895033,
+          "rho_b": 0.1637016292352897,
+          "n": 41913,
+          "ci_low": 0.20615667195067283,
+          "ci_high": 0.23295289468542954
+        },
+        "b_heldout:voice_shimmer": {
+          "delta_rho": 0.2208720321797283,
+          "rho_a": 0.5878084412235891,
+          "rho_b": 0.3669364090438608,
+          "n": 41913,
+          "ci_low": 0.20745876071506025,
+          "ci_high": 0.23632701494210828
+        },
+        "b_heldout:voice_voicing": {
+          "delta_rho": 0.25281293016287376,
+          "rho_a": 0.7878682757552496,
+          "rho_b": 0.5350553455923759,
+          "n": 41913,
+          "ci_low": 0.23739416114812695,
+          "ci_high": 0.27016186028527883
+        },
+        "b_heldout:gems_0": {
+          "delta_rho": 0.023170464591387576,
+          "rho_a": 0.011126384088888925,
+          "rho_b": -0.012044080502498654,
+          "n": 41914,
+          "ci_low": 0.010364116329754232,
+          "ci_high": 0.03609648790211738
+        },
+        "b_heldout:gems_1": {
+          "delta_rho": 0.010998949051668849,
+          "rho_a": 0.007170233489903478,
+          "rho_b": -0.003828715561765373,
+          "n": 41914,
+          "ci_low": 0.0005737883927067215,
+          "ci_high": 0.022280785732656468
+        },
+        "b_heldout:gems_2": {
+          "delta_rho": 0.0158501313147288,
+          "rho_a": 0.012212055297542147,
+          "rho_b": -0.003638076017186653,
+          "n": 41914,
+          "ci_low": 0.004194722531912718,
+          "ci_high": 0.02664888076694428
+        },
+        "b_heldout:gems_3": {
+          "delta_rho": 0.01795035435779535,
+          "rho_a": 0.00809150037926811,
+          "rho_b": -0.00985885397852724,
+          "n": 41914,
+          "ci_low": 0.0057415423564429885,
+          "ci_high": 0.03037041414780768
+        },
+        "b_heldout:gems_4": {
+          "delta_rho": 0.01764960331522639,
+          "rho_a": 0.01423567655929442,
+          "rho_b": -0.003413926755931964,
+          "n": 41914,
+          "ci_low": 0.006635762391610473,
+          "ci_high": 0.028285624290342027
+        },
+        "b_heldout:gems_5": {
+          "delta_rho": -0.003957648025401042,
+          "rho_a": -0.0036375892773308637,
+          "rho_b": 0.00032005874807017776,
+          "n": 41914,
+          "ci_low": -0.014316360219872436,
+          "ci_high": 0.006554373824379676
+        },
+        "b_heldout:gems_6": {
+          "delta_rho": 0.015237797870751671,
+          "rho_a": 0.013060074285835426,
+          "rho_b": -0.0021777235849162425,
+          "n": 41914,
+          "ci_low": 0.0046864582294228315,
+          "ci_high": 0.025471695402704393
+        },
+        "b_heldout:gems_7": {
+          "delta_rho": 0.01290456801330263,
+          "rho_a": 0.016139048379817802,
+          "rho_b": 0.00323448036651517,
+          "n": 41914,
+          "ci_low": 0.002965521947569397,
+          "ci_high": 0.022587799251542386
+        },
+        "b_heldout:gems_8": {
+          "delta_rho": 0.01113170259185764,
+          "rho_a": 0.0007804100994926243,
+          "rho_b": -0.010351292492365013,
+          "n": 41914,
+          "ci_low": -0.002055869068246981,
+          "ci_high": 0.02359088959937421
+        },
+        "b_heldout:sentiment_V_median": {
+          "delta_rho": 0.11258251188598747,
+          "rho_a": 0.49094307573858575,
+          "rho_b": 0.3783605638525983,
+          "n": 41914,
+          "ci_low": 0.10201898892145056,
+          "ci_high": 0.12332487612217007
+        },
+        "b_heldout:sentiment_V_mean": {
+          "delta_rho": 0.1107781377229047,
+          "rho_a": 0.5452515623700658,
+          "rho_b": 0.434473424647161,
+          "n": 41914,
+          "ci_low": 0.09988366774332577,
+          "ci_high": 0.1220493405836185
+        },
+        "b_heldout:sentiment_V_gmean": {
+          "delta_rho": 0.11482074397528445,
+          "rho_a": 0.5312107630853689,
+          "rho_b": 0.41639001911008455,
+          "n": 41914,
+          "ci_low": 0.10419046665609119,
+          "ci_high": 0.12570885768574458
+        },
+        "b_heldout:sentiment_A_median": {
+          "delta_rho": 0.1512103774345979,
+          "rho_a": 0.4291706487590002,
+          "rho_b": 0.27796027132440226,
+          "n": 41914,
+          "ci_low": 0.13965990522244787,
+          "ci_high": 0.1619370756104263
+        },
+        "b_heldout:sentiment_A_mean": {
+          "delta_rho": 0.1550630199740867,
+          "rho_a": 0.4550474460438618,
+          "rho_b": 0.2999844260697751,
+          "n": 41914,
+          "ci_low": 0.142708832289611,
+          "ci_high": 0.16648092782194812
+        },
+        "b_heldout:sentiment_A_gmean": {
+          "delta_rho": 0.16241043745915795,
+          "rho_a": 0.4374571408448759,
+          "rho_b": 0.27504670338571796,
+          "n": 41914,
+          "ci_low": 0.15027066022828428,
+          "ci_high": 0.17398603426359086
+        },
+        "b_heldout:sentiment_D_median": {
+          "delta_rho": 0.0983327979947499,
+          "rho_a": 0.4064473479000418,
+          "rho_b": 0.3081145499052919,
+          "n": 41914,
+          "ci_low": 0.0881240766675765,
+          "ci_high": 0.108326829518853
+        },
+        "b_heldout:sentiment_D_mean": {
+          "delta_rho": 0.09500567783754811,
+          "rho_a": 0.4444445003576116,
+          "rho_b": 0.3494388225200636,
+          "n": 41914,
+          "ci_low": 0.0845081106327709,
+          "ci_high": 0.10485372957735496
+        },
+        "b_heldout:sentiment_D_gmean": {
+          "delta_rho": 0.08745960545932786,
+          "rho_a": 0.4573766994376101,
+          "rho_b": 0.36991709397828226,
+          "n": 41914,
+          "ci_low": 0.07679274069333757,
+          "ci_high": 0.0980405838785632
+        },
+        "b_heldout:sentiment_P_mean": {
+          "delta_rho": 0.061987784566449496,
+          "rho_a": 0.39124146014294736,
+          "rho_b": 0.32925367557649793,
+          "n": 41914,
+          "ci_low": 0.05360336633910909,
+          "ci_high": 0.0705145526569537
+        },
+        "b_heldout:sentiment_P_gmean": {
+          "delta_rho": 0.06904799861223439,
+          "rho_a": 0.3928904158122236,
+          "rho_b": 0.32384241719998924,
+          "n": 41914,
+          "ci_low": 0.061430644612211,
+          "ci_high": 0.07777333269332322
+        },
+        "b_heldout:vad_VADB000": {
+          "delta_rho": 0.08661153047335142,
+          "rho_a": 0.4332203898038771,
+          "rho_b": 0.34660885933052565,
+          "n": 41914,
+          "ci_low": 0.07634776105326159,
+          "ci_high": 0.09726751007205356
+        },
+        "b_heldout:vad_VADB002": {
+          "delta_rho": 0.06817653297889668,
+          "rho_a": 0.303056745367521,
+          "rho_b": 0.23488021238862425,
+          "n": 41914,
+          "ci_low": 0.0559023481157302,
+          "ci_high": 0.07885413526378543
+        },
+        "b_heldout:vad_VADB003": {
+          "delta_rho": 0.08383672976292621,
+          "rho_a": 0.3056906820005823,
+          "rho_b": 0.2218539522376561,
+          "n": 41914,
+          "ci_low": 0.07127529620840053,
+          "ci_high": 0.09661922859681855
+        },
+        "b_heldout:vad_VADB007": {
+          "delta_rho": 0.06271487864708139,
+          "rho_a": 0.29133703172583425,
+          "rho_b": 0.22862215307875283,
+          "n": 41914,
+          "ci_low": 0.05242417546636528,
+          "ci_high": 0.0726199286893856
+        },
+        "b_heldout:vad_VADB008": {
+          "delta_rho": 0.0702600372726042,
+          "rho_a": 0.3386297999282483,
+          "rho_b": 0.26836976265564416,
+          "n": 41914,
+          "ci_low": 0.05733814282063574,
+          "ci_high": 0.08278233334678022
+        },
+        "b_heldout:vad_VADB009": {
+          "delta_rho": 0.06263891232744485,
+          "rho_a": 0.4725617306221809,
+          "rho_b": 0.4099228182947359,
+          "n": 41914,
+          "ci_low": 0.05045738565798977,
+          "ci_high": 0.0755823876748645
+        },
+        "b_heldout:vad_VADB010": {
+          "delta_rho": 0.06780129144705456,
+          "rho_a": 0.47368327048113834,
+          "rho_b": 0.40588197903408374,
+          "n": 41914,
+          "ci_low": 0.05621772683274334,
+          "ci_high": 0.0791357608823217
+        },
+        "b_heldout:vad_VADB012": {
+          "delta_rho": 0.05389393969308529,
+          "rho_a": 0.35009178310180694,
+          "rho_b": 0.2961978434087217,
+          "n": 41914,
+          "ci_low": 0.041263332127142394,
+          "ci_high": 0.06568082765101017
+        },
+        "b_heldout:vad_VADB014": {
+          "delta_rho": 0.01942255796074199,
+          "rho_a": 0.18842692840370454,
+          "rho_b": 0.16900437044296254,
+          "n": 41914,
+          "ci_low": 0.006381369102611042,
+          "ci_high": 0.03219571537663061
+        },
+        "b_heldout:vad_VADB015": {
+          "delta_rho": 0.0712202008300008,
+          "rho_a": 0.34305499799953326,
+          "rho_b": 0.2718347971695324,
+          "n": 41914,
+          "ci_low": 0.06008437915124131,
+          "ci_high": 0.08209494040847302
+        },
+        "b_heldout:vad_VADB016": {
+          "delta_rho": 0.09862257632948189,
+          "rho_a": 0.3095812096070792,
+          "rho_b": 0.2109586332775973,
+          "n": 41914,
+          "ci_low": 0.0861133358176344,
+          "ci_high": 0.11063767966582437
+        },
+        "b_heldout:vad_VADB017": {
+          "delta_rho": 0.05943535410083569,
+          "rho_a": 0.40399091055788633,
+          "rho_b": 0.34455555645705066,
+          "n": 41914,
+          "ci_low": 0.0470961274590817,
+          "ci_high": 0.0711878820199319
+        },
+        "b_heldout:vad_VADB019": {
+          "delta_rho": 0.08168186594617284,
+          "rho_a": 0.33220628182643736,
+          "rho_b": 0.25052441588026453,
+          "n": 41914,
+          "ci_low": 0.07004071689011036,
+          "ci_high": 0.09362165314190696
+        },
+        "b_heldout:vad_VADB021": {
+          "delta_rho": 0.06798761781500598,
+          "rho_a": 0.26269827520555,
+          "rho_b": 0.19471065739054402,
+          "n": 41914,
+          "ci_low": 0.05667172829487551,
+          "ci_high": 0.07839100157536492
+        },
+        "b_heldout:vad_VADB022": {
+          "delta_rho": 0.07334081713831696,
+          "rho_a": 0.3763285699876368,
+          "rho_b": 0.3029877528493199,
+          "n": 41914,
+          "ci_low": 0.06418368947651448,
+          "ci_high": 0.0823327841466572
+        },
+        "b_heldout:vad_VADB023": {
+          "delta_rho": 0.08162358266347663,
+          "rho_a": 0.33601805905408705,
+          "rho_b": 0.25439447639061036,
+          "n": 41914,
+          "ci_low": 0.06892711068672419,
+          "ci_high": 0.09440145612471447
+        },
+        "c_llm:energy": {
+          "delta_rho": 0.02556087468337904,
+          "rho_a": 0.572996758077899,
+          "rho_b": 0.54743588339452,
+          "n": 6684,
+          "ci_low": 0.0006020836530258722,
+          "ci_high": 0.051156515849398294
+        },
+        "c_llm:aggression": {
+          "delta_rho": -0.013576912028614887,
+          "rho_a": 0.6882263822866069,
+          "rho_b": 0.7018032943152218,
+          "n": 6684,
+          "ci_low": -0.035514090257711274,
+          "ci_high": 0.007827903900061155
+        },
+        "c_llm:valence": {
+          "delta_rho": 0.011312755974980954,
+          "rho_a": 0.5533808018025658,
+          "rho_b": 0.5420680458275848,
+          "n": 6684,
+          "ci_low": -0.005883927779377,
+          "ci_high": 0.02960631873479786
+        },
+        "c_llm:danceability": {
+          "delta_rho": 0.08013336507015348,
+          "rho_a": 0.6824351352573148,
+          "rho_b": 0.6023017701871612,
+          "n": 6684,
+          "ci_low": 0.05736001075802466,
+          "ci_high": 0.10402252163100281
+        },
+        "c_llm:acousticness": {
+          "delta_rho": 0.015473542321862252,
+          "rho_a": 0.6302514813597577,
+          "rho_b": 0.6147779390378955,
+          "n": 6684,
+          "ci_low": -0.009623823099508275,
+          "ci_high": 0.03865567860048899
+        },
+        "c_llm:vocal_prominence": {
+          "delta_rho": 0.004125446804031722,
+          "rho_a": 0.530381340167065,
+          "rho_b": 0.5262558933630332,
+          "n": 6684,
+          "ci_low": -0.015574083830184535,
+          "ci_high": 0.024114678083633736
+        },
+        "c_llm:tempo_feel": {
+          "delta_rho": 0.10840772205722175,
+          "rho_a": 0.5231773151268122,
+          "rho_b": 0.4147695930695905,
+          "n": 6684,
+          "ci_low": 0.08380167753720448,
+          "ci_high": 0.13398099830876237
+        },
+        "c_llm:production_polish": {
+          "delta_rho": -0.04561205037476128,
+          "rho_a": 0.5164357055138483,
+          "rho_b": 0.5620477558886096,
+          "n": 6684,
+          "ci_low": -0.06326265482750505,
+          "ci_high": -0.025079098557014755
+        },
+        "c_llm:lyrical_explicitness": {
+          "delta_rho": 0.01350266564060947,
+          "rho_a": 0.3696891782754166,
+          "rho_b": 0.35618651263480716,
+          "n": 6684,
+          "ci_low": -0.00841023402988347,
+          "ci_high": 0.035400694233466104
+        },
+        "c_llm:grit": {
+          "delta_rho": -0.0399786942564518,
+          "rho_a": 0.7057313269639631,
+          "rho_b": 0.7457100212204149,
+          "n": 6684,
+          "ci_low": -0.060846812375732966,
+          "ci_high": -0.019313161076282753
+        },
+        "c_llm:density": {
+          "delta_rho": 0.035467349425340904,
+          "rho_a": 0.579064994698959,
+          "rho_b": 0.5435976452736182,
+          "n": 6684,
+          "ci_low": 0.010041107721067841,
+          "ci_high": 0.06327417373236338
+        },
+        "c_llm:punch": {
+          "delta_rho": 0.0699589412607418,
+          "rho_a": 0.616291513083519,
+          "rho_b": 0.5463325718227771,
+          "n": 6684,
+          "ci_low": 0.04486986685822631,
+          "ci_high": 0.09381497252540007
+        },
+        "c_llm:warmth": {
+          "delta_rho": -0.013120310253171879,
+          "rho_a": 0.5547360704188793,
+          "rho_b": 0.5678563806720512,
+          "n": 6684,
+          "ci_low": -0.03719560911819591,
+          "ci_high": 0.010303772382790979
+        },
+        "c_llm:brightness": {
+          "delta_rho": -0.0011761424072179926,
+          "rho_a": 0.4032597495262252,
+          "rho_b": 0.40443589193344315,
+          "n": 6684,
+          "ci_low": -0.02361754580400485,
+          "ci_high": 0.021374174450874143
+        },
+        "c_llm:era": {
+          "delta_rho": -0.31959707013162963,
+          "rho_a": 0.3146341716743322,
+          "rho_b": 0.6342312418059619,
+          "n": 6682,
+          "ci_low": -0.351726124825829,
+          "ci_high": -0.2882176449591547
+        }
+      },
+      "strata": {
+        "a_baked": {
+          "delta_rho": 0.25916855355886126,
+          "ci_low": 0.2511686381630958,
+          "ci_high": 0.2685264082735451,
+          "p_boot": 0.001,
+          "n_targets": 17,
+          "share_targets_positive": 1.0
+        },
+        "b_heldout": {
+          "delta_rho": 0.08869298156448474,
+          "ci_low": 0.08402499067033262,
+          "ci_high": 0.09319885336853372,
+          "p_boot": 0.001,
+          "n_targets": 41,
+          "share_targets_positive": 0.975609756097561
+        },
+        "c_external": {
+          "delta_rho": -0.004607901080901707,
+          "ci_low": -0.015466972892693137,
+          "ci_high": 0.006475260605044761,
+          "p_boot": 0.448,
+          "n_targets": 15,
+          "share_targets_positive": 0.6
+        }
+      }
+    },
+    "composition_minus_core": {
+      "targets": {
+        "a_baked:bpm": {
+          "delta_rho": 0.03305050047553522,
+          "rho_a": 0.5224383313341667,
+          "rho_b": 0.4893878308586316,
+          "n": 41904,
+          "ci_low": 0.02898150782334192,
+          "ci_high": 0.03744303781973253
+        },
+        "a_baked:onset_rate": {
+          "delta_rho": 0.008601410171761201,
+          "rho_a": 0.7418017225547215,
+          "rho_b": 0.7332003123829604,
+          "n": 41904,
+          "ci_low": 0.004987342994111681,
+          "ci_high": 0.01245682462147698
+        },
+        "a_baked:danceability": {
+          "delta_rho": 0.005656884329453008,
+          "rho_a": 0.5988978588099444,
+          "rho_b": 0.5932409744804914,
+          "n": 41904,
+          "ci_low": 0.001997466532031235,
+          "ci_high": 0.009251450267213648
+        },
+        "a_baked:loudness": {
+          "delta_rho": 0.002258127883641884,
+          "rho_a": 0.6180421767609259,
+          "rho_b": 0.615784048877284,
+          "n": 41904,
+          "ci_low": -0.0005451504736132894,
+          "ci_high": 0.004991360635327451
+        },
+        "a_baked:loudness_ebu128": {
+          "delta_rho": -0.047825894645012766,
+          "rho_a": 0.6135448603337305,
+          "rho_b": 0.6613707549787433,
+          "n": 41904,
+          "ci_low": -0.05270370533833333,
+          "ci_high": -0.04276548439346581
+        },
+        "a_baked:loudness_range": {
+          "delta_rho": 0.00835987981183835,
+          "rho_a": 0.5819502355716589,
+          "rho_b": 0.5735903557598205,
+          "n": 41904,
+          "ci_low": 0.005680027411262354,
+          "ci_high": 0.011203116406656779
+        },
+        "a_baked:dynamic_complexity": {
+          "delta_rho": 0.0033738365219315404,
+          "rho_a": 0.7320122230249059,
+          "rho_b": 0.7286383865029743,
+          "n": 41904,
+          "ci_low": 2.152347687997702e-05,
+          "ci_high": 0.006810526248533489
+        },
+        "a_baked:spectral_centroid": {
+          "delta_rho": 0.004591261768948419,
+          "rho_a": 0.7952952729517304,
+          "rho_b": 0.790704011182782,
+          "n": 41904,
+          "ci_low": 0.001721525318529852,
+          "ci_high": 0.007685737899575357
+        },
+        "a_baked:spectral_flux": {
+          "delta_rho": -0.011862422644478458,
+          "rho_a": 0.7376155854911483,
+          "rho_b": 0.7494780081356268,
+          "n": 41904,
+          "ci_low": -0.014986905506089117,
+          "ci_high": -0.008700460656862148
+        },
+        "a_baked:zero_crossing_rate": {
+          "delta_rho": -0.008462313046750703,
+          "rho_a": 0.7376594685809573,
+          "rho_b": 0.7461217816277081,
+          "n": 41904,
+          "ci_low": -0.011669825363539218,
+          "ci_high": -0.005118034645788022
+        },
+        "a_baked:beats_loudness": {
+          "delta_rho": -0.008550580196174936,
+          "rho_a": 0.6146113605729718,
+          "rho_b": 0.6231619407691469,
+          "n": 41904,
+          "ci_low": -0.01341905972332434,
+          "ci_high": -0.0039386850222327295
+        },
+        "a_baked:chords_strength": {
+          "delta_rho": -0.016189313512889582,
+          "rho_a": 0.2781698031016666,
+          "rho_b": 0.29435911661455616,
+          "n": 41904,
+          "ci_low": -0.02176297655833801,
+          "ci_high": -0.010707252557072956
+        },
+        "a_baked:chords_change_rate": {
+          "delta_rho": 0.008219262219538163,
+          "rho_a": 0.5571405599309364,
+          "rho_b": 0.5489212977113982,
+          "n": 41904,
+          "ci_low": 0.004061625681901625,
+          "ci_high": 0.01214647102274962
+        },
+        "a_baked:key_strength": {
+          "delta_rho": -0.006208406330900634,
+          "rho_a": 0.4051055164894406,
+          "rho_b": 0.41131392282034124,
+          "n": 41904,
+          "ci_low": -0.01144502987249246,
+          "ci_high": -0.0009097979700829437
+        },
+        "a_baked:hpcp_entropy": {
+          "delta_rho": 0.007919797513795042,
+          "rho_a": 0.7746807415997786,
+          "rho_b": 0.7667609440859836,
+          "n": 41904,
+          "ci_low": 0.0046818564501018055,
+          "ci_high": 0.011370431629115095
+        },
+        "a_baked:mfcc1_mean": {
+          "delta_rho": 0.007448579864401599,
+          "rho_a": 0.8790865350315504,
+          "rho_b": 0.8716379551671489,
+          "n": 41904,
+          "ci_low": 0.004588856142870604,
+          "ci_high": 0.01032877366712011
+        },
+        "a_baked:mfcc2_mean": {
+          "delta_rho": -0.0010942500884289772,
+          "rho_a": 0.7749722741676135,
+          "rho_b": 0.7760665242560424,
+          "n": 41904,
+          "ci_low": -0.0041400420116010014,
+          "ci_high": 0.0023945371874985184
+        },
+        "b_heldout:voice_f0": {
+          "delta_rho": -0.010462125380205614,
+          "rho_a": 0.6523682877462206,
+          "rho_b": 0.6628304131264262,
+          "n": 41913,
+          "ci_low": -0.01488048076403453,
+          "ci_high": -0.006415719810422649
+        },
+        "b_heldout:voice_hnr": {
+          "delta_rho": 0.009792312492526099,
+          "rho_a": 0.4924192885131468,
+          "rho_b": 0.4826269760206207,
+          "n": 41913,
+          "ci_low": 0.00635161691399552,
+          "ci_high": 0.013551502541166499
+        },
+        "b_heldout:voice_jitter": {
+          "delta_rho": 0.019928757124503645,
+          "rho_a": 0.40293834154345387,
+          "rho_b": 0.38300958441895033,
+          "n": 41913,
+          "ci_low": 0.01627651456210119,
+          "ci_high": 0.02334816443609929
+        },
+        "b_heldout:voice_shimmer": {
+          "delta_rho": -0.0020589447693311774,
+          "rho_a": 0.585749496454258,
+          "rho_b": 0.5878084412235891,
+          "n": 41913,
+          "ci_low": -0.005177013930441213,
+          "ci_high": 0.001025770958030632
+        },
+        "b_heldout:voice_voicing": {
+          "delta_rho": 0.006938466052849211,
+          "rho_a": 0.7948067418080988,
+          "rho_b": 0.7878682757552496,
+          "n": 41913,
+          "ci_low": 0.004013497316463403,
+          "ci_high": 0.010114621927890527
+        },
+        "b_heldout:gems_0": {
+          "delta_rho": -0.011624188202969269,
+          "rho_a": -0.0004978041140803426,
+          "rho_b": 0.011126384088888925,
+          "n": 41914,
+          "ci_low": -0.019832434944249324,
+          "ci_high": -0.0020485880123783835
+        },
+        "b_heldout:gems_1": {
+          "delta_rho": -0.006080815706904191,
+          "rho_a": 0.0010894177829992857,
+          "rho_b": 0.007170233489903478,
+          "n": 41914,
+          "ci_low": -0.014241146811830958,
+          "ci_high": 0.0023907957811419973
+        },
+        "b_heldout:gems_2": {
+          "delta_rho": -0.007319990176510383,
+          "rho_a": 0.004892065121031763,
+          "rho_b": 0.012212055297542147,
+          "n": 41914,
+          "ci_low": -0.015088158002644682,
+          "ci_high": 0.0007460287692707822
+        },
+        "b_heldout:gems_3": {
+          "delta_rho": -0.007644076627858343,
+          "rho_a": 0.00044742375140976656,
+          "rho_b": 0.00809150037926811,
+          "n": 41914,
+          "ci_low": -0.016147286145109383,
+          "ci_high": 0.002034087569188857
+        },
+        "b_heldout:gems_4": {
+          "delta_rho": -0.009206497805297626,
+          "rho_a": 0.005029178753996795,
+          "rho_b": 0.01423567655929442,
+          "n": 41914,
+          "ci_low": -0.01672212418719478,
+          "ci_high": -0.0014806206227580801
+        },
+        "b_heldout:gems_5": {
+          "delta_rho": -0.003623924729423871,
+          "rho_a": -0.0072615140067547315,
+          "rho_b": -0.0036375892773308637,
+          "n": 41914,
+          "ci_low": -0.01162063691480667,
+          "ci_high": 0.0050079411811519165
+        },
+        "b_heldout:gems_6": {
+          "delta_rho": -0.008289606295854998,
+          "rho_a": 0.004770467989980431,
+          "rho_b": 0.013060074285835426,
+          "n": 41914,
+          "ci_low": -0.015146306974502043,
+          "ci_high": -0.0015990355324839766
+        },
+        "b_heldout:gems_7": {
+          "delta_rho": -0.011966686171173508,
+          "rho_a": 0.0041723622086442935,
+          "rho_b": 0.016139048379817802,
+          "n": 41914,
+          "ci_low": -0.018584850469893582,
+          "ci_high": -0.004404351076105007
+        },
+        "b_heldout:gems_8": {
+          "delta_rho": -0.004524037011962836,
+          "rho_a": -0.0037436269124702117,
+          "rho_b": 0.0007804100994926243,
+          "n": 41914,
+          "ci_low": -0.013177878744451938,
+          "ci_high": 0.004954735475491128
+        },
+        "b_heldout:sentiment_V_median": {
+          "delta_rho": 0.04121414520792338,
+          "rho_a": 0.5321572209465091,
+          "rho_b": 0.49094307573858575,
+          "n": 41914,
+          "ci_low": 0.03568936713913996,
+          "ci_high": 0.046809310895737026
+        },
+        "b_heldout:sentiment_V_mean": {
+          "delta_rho": 0.0330699860936823,
+          "rho_a": 0.578321548463748,
+          "rho_b": 0.5452515623700658,
+          "n": 41914,
+          "ci_low": 0.02761800229005889,
+          "ci_high": 0.03833590110633154
+        },
+        "b_heldout:sentiment_V_gmean": {
+          "delta_rho": 0.03576685897892437,
+          "rho_a": 0.5669776220642934,
+          "rho_b": 0.5312107630853689,
+          "n": 41914,
+          "ci_low": 0.030273943042363104,
+          "ci_high": 0.04114688722366575
+        },
+        "b_heldout:sentiment_A_median": {
+          "delta_rho": 0.04461515348229847,
+          "rho_a": 0.4737858022412986,
+          "rho_b": 0.4291706487590002,
+          "n": 41914,
+          "ci_low": 0.03673812081674277,
+          "ci_high": 0.053134377208481735
+        },
+        "b_heldout:sentiment_A_mean": {
+          "delta_rho": 0.041315202962156634,
+          "rho_a": 0.4963626490060185,
+          "rho_b": 0.4550474460438618,
+          "n": 41914,
+          "ci_low": 0.03356593023553128,
+          "ci_high": 0.049412527766014194
+        },
+        "b_heldout:sentiment_A_gmean": {
+          "delta_rho": 0.054682593607280075,
+          "rho_a": 0.49213973445215586,
+          "rho_b": 0.4374571408448759,
+          "n": 41914,
+          "ci_low": 0.04796986032514812,
+          "ci_high": 0.061567490690950015
+        },
+        "b_heldout:sentiment_D_median": {
+          "delta_rho": 0.029354014302669637,
+          "rho_a": 0.4358013622027113,
+          "rho_b": 0.4064473479000418,
+          "n": 41914,
+          "ci_low": 0.023183726542814493,
+          "ci_high": 0.03503038492743798
+        },
+        "b_heldout:sentiment_D_mean": {
+          "delta_rho": 0.023533726541554646,
+          "rho_a": 0.46797822689916635,
+          "rho_b": 0.4444445003576116,
+          "n": 41914,
+          "ci_low": 0.01717509338750317,
+          "ci_high": 0.029444778095486804
+        },
+        "b_heldout:sentiment_D_gmean": {
+          "delta_rho": 0.010773105629419293,
+          "rho_a": 0.46814980506702947,
+          "rho_b": 0.4573766994376101,
+          "n": 41914,
+          "ci_low": 0.0038035766454494377,
+          "ci_high": 0.017513674658815693
+        },
+        "b_heldout:sentiment_P_mean": {
+          "delta_rho": 0.014248908703674606,
+          "rho_a": 0.405490368846622,
+          "rho_b": 0.39124146014294736,
+          "n": 41914,
+          "ci_low": 0.00905289168966041,
+          "ci_high": 0.019079400857191807
+        },
+        "b_heldout:sentiment_P_gmean": {
+          "delta_rho": 0.01977760362345298,
+          "rho_a": 0.41266801943567666,
+          "rho_b": 0.3928904158122236,
+          "n": 41914,
+          "ci_low": 0.014675015424431585,
+          "ci_high": 0.024331559633259347
+        },
+        "b_heldout:vad_VADB000": {
+          "delta_rho": 0.00375139276921148,
+          "rho_a": 0.43697178257308855,
+          "rho_b": 0.4332203898038771,
+          "n": 41914,
+          "ci_low": -0.003612971477450512,
+          "ci_high": 0.010949299693526416
+        },
+        "b_heldout:vad_VADB002": {
+          "delta_rho": 0.007150362636103564,
+          "rho_a": 0.3102071080036245,
+          "rho_b": 0.303056745367521,
+          "n": 41914,
+          "ci_low": 0.0008301510569688867,
+          "ci_high": 0.013927158688827887
+        },
+        "b_heldout:vad_VADB003": {
+          "delta_rho": 0.010930706562761372,
+          "rho_a": 0.31662138856334365,
+          "rho_b": 0.3056906820005823,
+          "n": 41914,
+          "ci_low": 0.0033814690021645153,
+          "ci_high": 0.018464481435527823
+        },
+        "b_heldout:vad_VADB007": {
+          "delta_rho": -0.001199412098165529,
+          "rho_a": 0.2901376196276687,
+          "rho_b": 0.29133703172583425,
+          "n": 41914,
+          "ci_low": -0.008014826883889372,
+          "ci_high": 0.005853518651535679
+        },
+        "b_heldout:vad_VADB008": {
+          "delta_rho": -0.00907451164630574,
+          "rho_a": 0.3295552882819426,
+          "rho_b": 0.3386297999282483,
+          "n": 41914,
+          "ci_low": -0.014692305343833173,
+          "ci_high": -0.003421674615580116
+        },
+        "b_heldout:vad_VADB009": {
+          "delta_rho": -0.05401488865440262,
+          "rho_a": 0.41854684196777825,
+          "rho_b": 0.4725617306221809,
+          "n": 41914,
+          "ci_low": -0.06356532080946861,
+          "ci_high": -0.04531760599331538
+        },
+        "b_heldout:vad_VADB010": {
+          "delta_rho": -0.038338896669981845,
+          "rho_a": 0.4353443738111565,
+          "rho_b": 0.47368327048113834,
+          "n": 41914,
+          "ci_low": -0.04747019355336319,
+          "ci_high": -0.029851155245470523
+        },
+        "b_heldout:vad_VADB012": {
+          "delta_rho": -0.03563872907277186,
+          "rho_a": 0.31445305402903506,
+          "rho_b": 0.35009178310180694,
+          "n": 41914,
+          "ci_low": -0.044119826251102674,
+          "ci_high": -0.027162382204407302
+        },
+        "b_heldout:vad_VADB014": {
+          "delta_rho": 0.018693668986900308,
+          "rho_a": 0.20712059739060484,
+          "rho_b": 0.18842692840370454,
+          "n": 41914,
+          "ci_low": 0.010496994364350684,
+          "ci_high": 0.02663290203652207
+        },
+        "b_heldout:vad_VADB015": {
+          "delta_rho": 0.005937272714177525,
+          "rho_a": 0.34899227071371075,
+          "rho_b": 0.34305499799953326,
+          "n": 41914,
+          "ci_low": 0.0010221700554996912,
+          "ci_high": 0.011002561377503444
+        },
+        "b_heldout:vad_VADB016": {
+          "delta_rho": 0.029756706732025618,
+          "rho_a": 0.3393379163391048,
+          "rho_b": 0.3095812096070792,
+          "n": 41914,
+          "ci_low": 0.02279201482022398,
+          "ci_high": 0.036620927910640776
+        },
+        "b_heldout:vad_VADB017": {
+          "delta_rho": -0.048498035683926154,
+          "rho_a": 0.3554928748739602,
+          "rho_b": 0.40399091055788633,
+          "n": 41914,
+          "ci_low": -0.056293406574283125,
+          "ci_high": -0.039943084397050826
+        },
+        "b_heldout:vad_VADB019": {
+          "delta_rho": 0.003414155722668721,
+          "rho_a": 0.3356204375491061,
+          "rho_b": 0.33220628182643736,
+          "n": 41914,
+          "ci_low": -0.001043611499640288,
+          "ci_high": 0.00802749850436434
+        },
+        "b_heldout:vad_VADB021": {
+          "delta_rho": -0.0030997041708375715,
+          "rho_a": 0.2595985710347124,
+          "rho_b": 0.26269827520555,
+          "n": 41914,
+          "ci_low": -0.010964501097049089,
+          "ci_high": 0.00488168187478613
+        },
+        "b_heldout:vad_VADB022": {
+          "delta_rho": 0.01842625713218755,
+          "rho_a": 0.39475482711982435,
+          "rho_b": 0.3763285699876368,
+          "n": 41914,
+          "ci_low": 0.012586497101677049,
+          "ci_high": 0.02385512127637385
+        },
+        "b_heldout:vad_VADB023": {
+          "delta_rho": 0.0031814452584130342,
+          "rho_a": 0.33919950431250007,
+          "rho_b": 0.33601805905408705,
+          "n": 41914,
+          "ci_low": -0.0050711817808792355,
+          "ci_high": 0.011462689362127113
+        },
+        "c_llm:energy": {
+          "delta_rho": 0.02143412085578381,
+          "rho_a": 0.5944308789336826,
+          "rho_b": 0.572996758077899,
+          "n": 6684,
+          "ci_low": 0.008620310276375678,
+          "ci_high": 0.03295109284641871
+        },
+        "c_llm:aggression": {
+          "delta_rho": -0.005060536573125684,
+          "rho_a": 0.6831658457134812,
+          "rho_b": 0.6882263822866069,
+          "n": 6684,
+          "ci_low": -0.01630117306008051,
+          "ci_high": 0.006854295063802084
+        },
+        "c_llm:valence": {
+          "delta_rho": -0.04653474125538542,
+          "rho_a": 0.5068460605471802,
+          "rho_b": 0.5533808018025658,
+          "n": 6684,
+          "ci_low": -0.059260884976956085,
+          "ci_high": -0.03330449805288093
+        },
+        "c_llm:danceability": {
+          "delta_rho": -0.03231802943864276,
+          "rho_a": 0.650117105818672,
+          "rho_b": 0.6824351352573148,
+          "n": 6684,
+          "ci_low": -0.04166775310315373,
+          "ci_high": -0.022748626978772512
+        },
+        "c_llm:acousticness": {
+          "delta_rho": -0.02086241634693214,
+          "rho_a": 0.6093890650128255,
+          "rho_b": 0.6302514813597577,
+          "n": 6684,
+          "ci_low": -0.028714105079178112,
+          "ci_high": -0.012532781982070662
+        },
+        "c_llm:vocal_prominence": {
+          "delta_rho": -0.03274671045751329,
+          "rho_a": 0.4976346297095517,
+          "rho_b": 0.530381340167065,
+          "n": 6684,
+          "ci_low": -0.046544579674338685,
+          "ci_high": -0.01885731111049062
+        },
+        "c_llm:tempo_feel": {
+          "delta_rho": 0.009748677733451928,
+          "rho_a": 0.5329259928602641,
+          "rho_b": 0.5231773151268122,
+          "n": 6684,
+          "ci_low": -0.0007437570068073809,
+          "ci_high": 0.01982635344069535
+        },
+        "c_llm:production_polish": {
+          "delta_rho": -0.169650604797533,
+          "rho_a": 0.3467851007163152,
+          "rho_b": 0.5164357055138483,
+          "n": 6684,
+          "ci_low": -0.18910679171397574,
+          "ci_high": -0.1499203529570333
+        },
+        "c_llm:lyrical_explicitness": {
+          "delta_rho": -0.022523469113951564,
+          "rho_a": 0.34716570916146505,
+          "rho_b": 0.3696891782754166,
+          "n": 6684,
+          "ci_low": -0.03779161200504289,
+          "ci_high": -0.007537459320035037
+        },
+        "c_llm:grit": {
+          "delta_rho": -0.029971281981458413,
+          "rho_a": 0.6757600449825045,
+          "rho_b": 0.7057313269639631,
+          "n": 6684,
+          "ci_low": -0.04342695603373068,
+          "ci_high": -0.01785539838764245
+        },
+        "c_llm:density": {
+          "delta_rho": -0.010135700987733847,
+          "rho_a": 0.5689292937112251,
+          "rho_b": 0.579064994698959,
+          "n": 6684,
+          "ci_low": -0.019085047885646283,
+          "ci_high": -0.0010163177116109738
+        },
+        "c_llm:punch": {
+          "delta_rho": -0.014837717689923115,
+          "rho_a": 0.6014537953935958,
+          "rho_b": 0.616291513083519,
+          "n": 6684,
+          "ci_low": -0.025931935101491985,
+          "ci_high": -0.00429219503290266
+        },
+        "c_llm:warmth": {
+          "delta_rho": 0.016080489079487812,
+          "rho_a": 0.5708165594983671,
+          "rho_b": 0.5547360704188793,
+          "n": 6684,
+          "ci_low": 0.0022981685623987115,
+          "ci_high": 0.029903713257844012
+        },
+        "c_llm:brightness": {
+          "delta_rho": -0.09978673122934911,
+          "rho_a": 0.30347301829687606,
+          "rho_b": 0.4032597495262252,
+          "n": 6684,
+          "ci_low": -0.12080949214862038,
+          "ci_high": -0.07927109007246447
+        },
+        "c_llm:era": {
+          "delta_rho": -0.14503120015869228,
+          "rho_a": 0.16960297151564,
+          "rho_b": 0.3146341716743322,
+          "n": 6682,
+          "ci_low": -0.1716345729072287,
+          "ci_high": -0.11938784794133399
+        }
+      },
+      "strata": {
+        "a_baked": {
+          "delta_rho": -0.0006302141119877581,
+          "ci_low": -0.002035718757368078,
+          "ci_high": 0.0008210524235697871,
+          "p_boot": 0.392,
+          "n_targets": 17,
+          "share_targets_positive": 0.5882352941176471
+        },
+        "b_heldout": {
+          "delta_rho": 0.005209456888865393,
+          "ci_low": 0.00263240422587889,
+          "ci_high": 0.007742609098450927,
+          "p_boot": 0.001,
+          "n_targets": 41,
+          "share_targets_positive": 0.5609756097560976
+        },
+        "c_external": {
+          "delta_rho": -0.03881305682410116,
+          "ci_low": -0.04386088823338158,
+          "ci_high": -0.033544421624761775,
+          "p_boot": 0.001,
+          "n_targets": 15,
+          "share_targets_positive": 0.2
+        }
+      }
+    }
+  },
+  "cultural_d": {
+    "composition": {
+      "cultural:Anglo-American": 0.21516492630226441,
+      "cultural:British-Irish": 0.29822495746452643,
+      "cultural:East Asian": 1.2287194201387779,
+      "cultural:Francophone": 0.8175899829781906,
+      "cultural:Germanic-Central-European": 0.4058502999155555,
+      "cultural:Iberian": 0.4866611439725715,
+      "cultural:Latin American": 0.9179841607394741,
+      "cultural:Nordic": 0.7774061983972631
+    },
+    "composition_acoustic": {
+      "cultural:Anglo-American": 0.1530945913500238,
+      "cultural:British-Irish": 0.27273072097081785,
+      "cultural:East Asian": 0.7970510201776194,
+      "cultural:Francophone": 0.6503922887968404,
+      "cultural:Germanic-Central-European": 0.34611904885729866,
+      "cultural:Iberian": 0.25372771252903964,
+      "cultural:Latin American": 0.7857118332812232,
+      "cultural:Nordic": 0.6705618620895986
+    },
+    "composition_eqtok": {
+      "cultural:Anglo-American": 0.21340490952684854,
+      "cultural:British-Irish": 0.296490669654253,
+      "cultural:East Asian": 1.1157967080068276,
+      "cultural:Francophone": 0.8585539034258387,
+      "cultural:Germanic-Central-European": 0.43854288546035236,
+      "cultural:Iberian": 0.6123189972859973,
+      "cultural:Latin American": 0.9475110379090185,
+      "cultural:Nordic": 0.7849518599856974
+    },
+    "composition_lyric": {
+      "cultural:Anglo-American": 0.1859430748940396,
+      "cultural:British-Irish": 0.15802724445712282,
+      "cultural:East Asian": 1.281820502744711,
+      "cultural:Francophone": 0.6676654509024832,
+      "cultural:Germanic-Central-European": 0.3805193626914882,
+      "cultural:Iberian": 0.29428720176137796,
+      "cultural:Latin American": 0.7921303020670767,
+      "cultural:Nordic": 0.7988483320862205
+    },
+    "cooc": {
+      "cultural:Anglo-American": 0.5276194552465675,
+      "cultural:British-Irish": 0.7483960237780994,
+      "cultural:East Asian": 3.5392206914666455,
+      "cultural:Francophone": 1.6735302367007339,
+      "cultural:Germanic-Central-European": 1.2050894767145,
+      "cultural:Iberian": 2.8217406447670497,
+      "cultural:Latin American": 2.7804007932172583,
+      "cultural:Nordic": 1.4636990793438265
+    },
+    "cooc_artistmasked": {
+      "cultural:Anglo-American": 0.48159165400257864,
+      "cultural:British-Irish": 0.6812247646906476,
+      "cultural:East Asian": 2.7415383944992993,
+      "cultural:Francophone": 1.3274893777219552,
+      "cultural:Germanic-Central-European": 1.0678902411722566,
+      "cultural:Iberian": 1.8351240267754825,
+      "cultural:Latin American": 2.403413634935737,
+      "cultural:Nordic": 1.3950334004894336
+    },
+    "cooc_avg": {
+      "cultural:Anglo-American": 0.5368783443355767,
+      "cultural:British-Irish": 0.7756983728834806,
+      "cultural:East Asian": 4.276612747067187,
+      "cultural:Francophone": 1.7229812390833097,
+      "cultural:Germanic-Central-European": 1.1915020576131157,
+      "cultural:Iberian": 2.835716972229765,
+      "cultural:Latin American": 2.857679617893542,
+      "cultural:Nordic": 1.4490031926263742
+    },
+    "cooc_eqtok": {
+      "cultural:Anglo-American": 0.5095965018809432,
+      "cultural:British-Irish": 0.7414302549598324,
+      "cultural:East Asian": 4.094433211065975,
+      "cultural:Francophone": 1.7010343736984215,
+      "cultural:Germanic-Central-European": 1.1836813827409158,
+      "cultural:Iberian": 2.7142374726888074,
+      "cultural:Latin American": 2.756179563424565,
+      "cultural:Nordic": 1.4376123084753865
+    },
+    "core": {
+      "cultural:Anglo-American": 0.476303079866101,
+      "cultural:British-Irish": 0.7666433321296614,
+      "cultural:East Asian": 3.3691961799200727,
+      "cultural:Francophone": 1.412026194522977,
+      "cultural:Germanic-Central-European": 1.090869427822175,
+      "cultural:Iberian": 2.163471627332868,
+      "cultural:Latin American": 2.2952394346645995,
+      "cultural:Nordic": 1.3186323248015324
+    },
+    "core_partial10": {
+      "cultural:Anglo-American": 0.5213773586614868,
+      "cultural:British-Irish": 0.7472224026978561,
+      "cultural:East Asian": 4.231916991286621,
+      "cultural:Francophone": 1.6703040119237256,
+      "cultural:Germanic-Central-European": 1.137555617202748,
+      "cultural:Iberian": 2.5111257949734602,
+      "cultural:Latin American": 2.725970486439562,
+      "cultural:Nordic": 1.4094237358261663
+    },
+    "core_partial30": {
+      "cultural:Anglo-American": 0.4998768030490558,
+      "cultural:British-Irish": 0.706608273450724,
+      "cultural:East Asian": 4.132450858645019,
+      "cultural:Francophone": 1.6082111390827376,
+      "cultural:Germanic-Central-European": 1.0315341544340915,
+      "cultural:Iberian": 2.198400748627377,
+      "cultural:Latin American": 2.6360033902044493,
+      "cultural:Nordic": 1.355920516160423
+    },
+    "core_partial60": {
+      "cultural:Anglo-American": 0.4323131728977871,
+      "cultural:British-Irish": 0.7699961514012302,
+      "cultural:East Asian": 2.979556256227961,
+      "cultural:Francophone": 1.6316595314456657,
+      "cultural:Germanic-Central-European": 1.1262289591501349,
+      "cultural:Iberian": 2.363541146237356,
+      "cultural:Latin American": 2.307600538811771,
+      "cultural:Nordic": 1.324489185318794
+    }
+  },
+  "weat": {
+    "cooc": [
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Anglo-American",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.5467089347136156,
+        "statistic": -0.05730609092140077,
+        "p_one_sided": 0.9748050389922016,
+        "p_two_sided": 0.04779044191161767,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "British-Irish",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.01478818885119604,
+        "statistic": 0.0011714844508349115,
+        "p_one_sided": 0.4881023795240952,
+        "p_two_sided": 0.9638072385522896,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "East Asian",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.654407273140753,
+        "statistic": -0.052690999267675315,
+        "p_one_sided": 0.9904019196160768,
+        "p_two_sided": 0.01899620075984803,
+        "p_holm": 0.5128974205158968
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Francophone",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 43,
+        "n_b": 43,
+        "d": 0.25717117262302547,
+        "statistic": 0.0257357413227407,
+        "p_one_sided": 0.1821635672865427,
+        "p_two_sided": 0.36632673465306936,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Germanic-Central-European",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.07326403498193118,
+        "statistic": -0.0071382827230845915,
+        "p_one_sided": 0.6024795040991802,
+        "p_two_sided": 0.7984403119376124,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Iberian",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.3089095237291463,
+        "statistic": -0.030747377414993015,
+        "p_one_sided": 0.8552289542091581,
+        "p_two_sided": 0.28374325134973005,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Latin American",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.4443970102324966,
+        "statistic": -0.029119379854698146,
+        "p_one_sided": 0.9428114377124575,
+        "p_two_sided": 0.11997600479904019,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.1418987420873059,
+        "statistic": -0.01176405330295971,
+        "p_one_sided": 0.6854629074185163,
+        "p_two_sided": 0.6296740651869626,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Nordic",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.7087545855796621,
+        "statistic": -0.05907242074917824,
+        "p_one_sided": 0.9962007598480304,
+        "p_two_sided": 0.010997800439912017,
+        "p_holm": 0.3299340131973605
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "British-Irish",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 25,
+        "n_b": 25,
+        "d": 0.28021093838510874,
+        "statistic": 0.030236332396997613,
+        "p_one_sided": 0.0013997200559888023,
+        "p_two_sided": 0.003199360127974405,
+        "p_holm": 0.09918016396720655
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "East Asian",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 30,
+        "n_b": 30,
+        "d": 0.06661370952679826,
+        "statistic": 0.0062211777172565055,
+        "p_one_sided": 0.3473305338932214,
+        "p_two_sided": 0.6778644271145771,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Francophone",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 28,
+        "n_b": 28,
+        "d": 0.7055841537190004,
+        "statistic": 0.07820930279151715,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Germanic-Central-European",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 26,
+        "n_b": 26,
+        "d": 0.04012682297516071,
+        "statistic": 0.00448767587648588,
+        "p_one_sided": 0.35332933413317336,
+        "p_two_sided": 0.6910617876424715,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.19710098015268823,
+        "statistic": -0.018932639828887,
+        "p_one_sided": 0.8528294341131774,
+        "p_two_sided": 0.29374125174965005,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 33,
+        "n_b": 33,
+        "d": 0.1387912911757959,
+        "statistic": 0.011892563021680642,
+        "p_one_sided": 0.08278344331133773,
+        "p_two_sided": 0.17056588682263546,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 33,
+        "n_b": 33,
+        "d": 0.21977539103070723,
+        "statistic": 0.023075362832980503,
+        "p_one_sided": 0.14177164567086584,
+        "p_two_sided": 0.28794241151769645,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 29,
+        "n_b": 29,
+        "d": -0.44329177469123066,
+        "statistic": -0.04332606042063349,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "East Asian",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 37,
+        "n_b": 37,
+        "d": -0.3991491480163314,
+        "statistic": -0.030855577254329483,
+        "p_one_sided": 0.9932013597280543,
+        "p_two_sided": 0.01279744051189762,
+        "p_holm": 0.37112577484503095
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Francophone",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 35,
+        "n_b": 35,
+        "d": 0.48632462646583935,
+        "statistic": 0.05388294345567806,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Germanic-Central-European",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 35,
+        "n_b": 35,
+        "d": -0.24837604631052854,
+        "statistic": -0.026820881345566164,
+        "p_one_sided": 0.9936012797440512,
+        "p_two_sided": 0.012997400519896021,
+        "p_holm": 0.37112577484503095
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.39389922245080644,
+        "statistic": -0.03799065533850908,
+        "p_one_sided": 0.9794041191761648,
+        "p_two_sided": 0.038592281543691265,
+        "p_holm": 0.9648070385922816
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.3357621310875008,
+        "statistic": -0.036814383845149096,
+        "p_one_sided": 0.9996000799840032,
+        "p_two_sided": 0.0011997600479904018,
+        "p_holm": 0.03839232153569286
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.15788074452254916,
+        "statistic": -0.016464394147006862,
+        "p_one_sided": 0.7798440311937612,
+        "p_two_sided": 0.44471105778844233,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 36,
+        "n_b": 36,
+        "d": -0.38568068151018114,
+        "statistic": -0.03611732170722287,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0003999200159968006,
+        "p_holm": 0.013997200559888023
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Francophone",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.8586654929798347,
+        "statistic": 0.09297151491330904,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Germanic-Central-European",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.09965606288175625,
+        "statistic": 0.010146098327544541,
+        "p_one_sided": 0.26914617076584685,
+        "p_two_sided": 0.5416916616676665,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.18077831241239217,
+        "statistic": 0.015110821006951027,
+        "p_one_sided": 0.17456508698260348,
+        "p_two_sided": 0.34713057388522295,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Latin American",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.49959942846858413,
+        "statistic": 0.03729321388919715,
+        "p_one_sided": 0.0005998800239952009,
+        "p_two_sided": 0.0009998000399920016,
+        "p_holm": 0.033993201359728054
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.7413492130010387,
+        "statistic": 0.07638206314103432,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Nordic",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 41,
+        "n_b": 41,
+        "d": 0.061607584678033366,
+        "statistic": 0.006543898035419771,
+        "p_one_sided": 0.36312737452509497,
+        "p_two_sided": 0.6940611877624475,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Germanic-Central-European",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 38,
+        "n_b": 38,
+        "d": -0.9337941284126218,
+        "statistic": -0.12830598417105116,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.7959835430208319,
+        "statistic": -0.07477417226898875,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Latin American",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.7369826308145323,
+        "statistic": -0.0708305039246947,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.19754675924548573,
+        "statistic": -0.01881620024273304,
+        "p_one_sided": 0.8360327934413118,
+        "p_two_sided": 0.33353329334133175,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Nordic",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 39,
+        "n_b": 39,
+        "d": -0.9346809222542769,
+        "statistic": -0.1056439073455082,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.2554558853380726,
+        "statistic": 0.026412157694087415,
+        "p_one_sided": 0.09678064387122576,
+        "p_two_sided": 0.1857628474305139,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 42,
+        "n_b": 42,
+        "d": 0.21003234936526216,
+        "statistic": 0.021901766310712743,
+        "p_one_sided": 0.015996800639872025,
+        "p_two_sided": 0.03699260147970406,
+        "p_holm": 0.9618076384723055
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.20692595432121091,
+        "statistic": 0.021795103305876955,
+        "p_one_sided": 0.15536892621475704,
+        "p_two_sided": 0.3049390121975605,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 38,
+        "n_b": 38,
+        "d": -0.15479983150421192,
+        "statistic": -0.01790858533052899,
+        "p_one_sided": 0.9426114777044591,
+        "p_two_sided": 0.11497700459908018,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Latin American",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.06450860670765962,
+        "statistic": -0.0048736994404575615,
+        "p_one_sided": 0.623875224955009,
+        "p_two_sided": 0.7368526294741051,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 48,
+        "n_b": 48,
+        "d": 0.24086852183124302,
+        "statistic": 0.019872329483638276,
+        "p_one_sided": 0.1261747650469906,
+        "p_two_sided": 0.23895220955808838,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Nordic",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.3804650130410513,
+        "statistic": -0.030239020245118764,
+        "p_one_sided": 0.9784043191361728,
+        "p_two_sided": 0.04499100179964007,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Latin American",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 48,
+        "n_b": 48,
+        "d": 0.2785496116319321,
+        "statistic": 0.021993097547604555,
+        "p_one_sided": 0.09478104379124175,
+        "p_two_sided": 0.1791641671665667,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Latin American",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.4596345392882694,
+        "statistic": -0.04849401661000959,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Middle-Eastern/Mediterranean",
+        "region_y": "Nordic",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.6668511569441029,
+        "statistic": -0.0829840808638115,
+        "p_one_sided": 0.9998000399920016,
+        "p_two_sided": 0.0009998000399920016,
+        "p_holm": 0.033993201359728054
+      }
+    ],
+    "composition": [
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Anglo-American",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.2351978278900614,
+        "statistic": -0.012375764321507056,
+        "p_one_sided": 0.7966406718656269,
+        "p_two_sided": 0.4191161767646471,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "British-Irish",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.04853623415929432,
+        "statistic": 0.0022092352159482197,
+        "p_one_sided": 0.4397120575884823,
+        "p_two_sided": 0.8718256348730254,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "East Asian",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.49157474744454904,
+        "statistic": -0.022663951266458832,
+        "p_one_sided": 0.9592081583683263,
+        "p_two_sided": 0.07898420315936813,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Francophone",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 43,
+        "n_b": 43,
+        "d": 0.52590219698661,
+        "statistic": 0.03604563887436742,
+        "p_one_sided": 0.026794641071785644,
+        "p_two_sided": 0.05618876224755049,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Germanic-Central-European",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 44,
+        "n_b": 44,
+        "d": 0.021483631127275533,
+        "statistic": 0.0012750691392756138,
+        "p_one_sided": 0.47490501899620075,
+        "p_two_sided": 0.946010797840432,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Iberian",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.48567692178862343,
+        "statistic": -0.018043196956181572,
+        "p_one_sided": 0.9592081583683263,
+        "p_two_sided": 0.07658468306338732,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Latin American",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.2232247613438972,
+        "statistic": -0.007530700780223393,
+        "p_one_sided": 0.7802439512097581,
+        "p_two_sided": 0.4417116576684663,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.14890330685819747,
+        "statistic": -0.007801801162706717,
+        "p_one_sided": 0.7060587882423516,
+        "p_two_sided": 0.6130773845230953,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Nordic",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.5723054373716495,
+        "statistic": -0.024879462791793365,
+        "p_one_sided": 0.9784043191361728,
+        "p_two_sided": 0.04279144171165767,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "British-Irish",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 25,
+        "n_b": 25,
+        "d": 0.08170025543723343,
+        "statistic": 0.004763174935709855,
+        "p_one_sided": 0.20495900819836033,
+        "p_two_sided": 0.42031593681263746,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "East Asian",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 30,
+        "n_b": 30,
+        "d": 0.010679228159596007,
+        "statistic": 0.000696257824067837,
+        "p_one_sided": 0.47950409918016396,
+        "p_two_sided": 0.9466106778644271,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Francophone",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 28,
+        "n_b": 28,
+        "d": 0.645778001165183,
+        "statistic": 0.05032115730653014,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Germanic-Central-European",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 26,
+        "n_b": 26,
+        "d": 0.051415299641649016,
+        "statistic": 0.003584781214876905,
+        "p_one_sided": 0.2991401719656069,
+        "p_two_sided": 0.6116776644671066,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.19083660837777996,
+        "statistic": -0.009675836558969557,
+        "p_one_sided": 0.8326334733053389,
+        "p_two_sided": 0.32893421315736854,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 33,
+        "n_b": 33,
+        "d": 0.19239679140832244,
+        "statistic": 0.010136595754478067,
+        "p_one_sided": 0.028394321135772844,
+        "p_two_sided": 0.05658868226354729,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 33,
+        "n_b": 33,
+        "d": 0.19446604673086973,
+        "statistic": 0.009867796912210838,
+        "p_one_sided": 0.16736652669466107,
+        "p_two_sided": 0.3261347730453909,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 29,
+        "n_b": 29,
+        "d": -0.2995192857025934,
+        "statistic": -0.019202926204236782,
+        "p_one_sided": 0.999000199960008,
+        "p_two_sided": 0.001799640071985603,
+        "p_holm": 0.0683863227354529
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "East Asian",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 37,
+        "n_b": 37,
+        "d": -0.35564357959729326,
+        "statistic": -0.020377655583606914,
+        "p_one_sided": 0.9886022795440912,
+        "p_two_sided": 0.023795240951809637,
+        "p_holm": 0.8566286742651469
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Francophone",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 35,
+        "n_b": 35,
+        "d": 0.4216001482258264,
+        "statistic": 0.030629947123341612,
+        "p_one_sided": 0.0003999200159968006,
+        "p_two_sided": 0.0005998800239952009,
+        "p_holm": 0.025194961007798437
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Germanic-Central-European",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 35,
+        "n_b": 35,
+        "d": -0.13432490378464962,
+        "statistic": -0.007981312904481133,
+        "p_one_sided": 0.9062187562487503,
+        "p_two_sided": 0.1915616876624675,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.2883070998062045,
+        "statistic": -0.015826128985677316,
+        "p_one_sided": 0.9346130773845231,
+        "p_two_sided": 0.13177364527094582,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.11739248229927889,
+        "statistic": -0.006505600000039791,
+        "p_one_sided": 0.8830233953209358,
+        "p_two_sided": 0.2393521295740852,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.013604895478615956,
+        "statistic": 0.0007732538861696357,
+        "p_one_sided": 0.46910617876424715,
+        "p_two_sided": 0.9488102379524095,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 36,
+        "n_b": 36,
+        "d": -0.33061636731076094,
+        "statistic": -0.02017064105233985,
+        "p_one_sided": 0.9996000799840032,
+        "p_two_sided": 0.001799640071985603,
+        "p_holm": 0.0683863227354529
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Francophone",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.5684590333124206,
+        "statistic": 0.048557280698891085,
+        "p_one_sided": 0.0003999200159968006,
+        "p_two_sided": 0.0005998800239952009,
+        "p_holm": 0.025194961007798437
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Germanic-Central-European",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.11541442381691991,
+        "statistic": 0.007975000838165106,
+        "p_one_sided": 0.2451509698060388,
+        "p_two_sided": 0.47330533893221355,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.011359723283293667,
+        "statistic": -0.0006540270240665141,
+        "p_one_sided": 0.5302939412117577,
+        "p_two_sided": 0.9514097180563887,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Latin American",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.2560446345624704,
+        "statistic": 0.014827444238486169,
+        "p_one_sided": 0.052789442111577684,
+        "p_two_sided": 0.10457908418316336,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.2810606011553753,
+        "statistic": 0.017612933023986053,
+        "p_one_sided": 0.08558288342331534,
+        "p_two_sided": 0.17436512697460507,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Nordic",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 41,
+        "n_b": 41,
+        "d": -0.06429985898128338,
+        "statistic": -0.004558791742005967,
+        "p_one_sided": 0.6622675464907019,
+        "p_two_sided": 0.6704659068186363,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Germanic-Central-European",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 38,
+        "n_b": 38,
+        "d": -0.5268500198575761,
+        "statistic": -0.04319393313857876,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.6040562173948262,
+        "statistic": -0.038701589058405275,
+        "p_one_sided": 0.9998000399920016,
+        "p_two_sided": 0.0007998400319936012,
+        "p_holm": 0.03199360127974405
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Latin American",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.4146120762186769,
+        "statistic": -0.02875094803948298,
+        "p_one_sided": 0.9994001199760048,
+        "p_two_sided": 0.0009998000399920016,
+        "p_holm": 0.038992201559688064
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.43815264564999135,
+        "statistic": -0.03045081378964125,
+        "p_one_sided": 0.9864027194561088,
+        "p_two_sided": 0.03199360127974405,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Nordic",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 39,
+        "n_b": 39,
+        "d": -0.6321523218134804,
+        "statistic": -0.048740467017912764,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.014467773071061198,
+        "statistic": -0.0008123852185995643,
+        "p_one_sided": 0.5278944211157769,
+        "p_two_sided": 0.9436112777444511,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 42,
+        "n_b": 42,
+        "d": 0.12117331802238585,
+        "statistic": 0.007457820256999185,
+        "p_one_sided": 0.10897820435912818,
+        "p_two_sided": 0.23395320935812838,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.035625547471553165,
+        "statistic": -0.002334232626390902,
+        "p_one_sided": 0.5706858628274345,
+        "p_two_sided": 0.8654269146170765,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 38,
+        "n_b": 38,
+        "d": -0.1715176495900196,
+        "statistic": -0.011622287300045192,
+        "p_one_sided": 0.9582083583283343,
+        "p_two_sided": 0.08158368326334733,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Latin American",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 48,
+        "n_b": 48,
+        "d": 0.27960040520943014,
+        "statistic": 0.010789630903113264,
+        "p_one_sided": 0.06858628274345131,
+        "p_two_sided": 0.14317136572685463,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 48,
+        "n_b": 48,
+        "d": 0.1436540817435527,
+        "statistic": 0.0069385438465165965,
+        "p_one_sided": 0.24075184963007398,
+        "p_two_sided": 0.47490501899620075,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Nordic",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.21216691224918705,
+        "statistic": -0.01157348156662431,
+        "p_one_sided": 0.8634273145370925,
+        "p_two_sided": 0.2693461307738452,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Latin American",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.0734792674246559,
+        "statistic": -0.0038192731754044225,
+        "p_one_sided": 0.6382723455308938,
+        "p_two_sided": 0.7316536692661467,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Latin American",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.2179798321630331,
+        "statistic": -0.012796020565970819,
+        "p_one_sided": 0.9816036792641472,
+        "p_two_sided": 0.033593281343731254,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Middle-Eastern/Mediterranean",
+        "region_y": "Nordic",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.2939992300227143,
+        "statistic": -0.020464511632909625,
+        "p_one_sided": 0.9204159168166367,
+        "p_two_sided": 0.15396920615876825,
+        "p_holm": 1.0
+      }
+    ],
+    "core": [
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Anglo-American",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.18360139728556246,
+        "statistic": -0.011269642034642282,
+        "p_one_sided": 0.7456508698260348,
+        "p_two_sided": 0.5310937812437513,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "British-Irish",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.04786344971224014,
+        "statistic": -0.002287754760517586,
+        "p_one_sided": 0.5772845430913818,
+        "p_two_sided": 0.864627074585083,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "East Asian",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.48121070444141845,
+        "statistic": -0.023206565769145187,
+        "p_one_sided": 0.9594081183763248,
+        "p_two_sided": 0.08178364327134573,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Francophone",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 43,
+        "n_b": 43,
+        "d": 0.43620552175168176,
+        "statistic": 0.02973587658658249,
+        "p_one_sided": 0.05298940211957608,
+        "p_two_sided": 0.11397720455908818,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Germanic-Central-European",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 44,
+        "n_b": 44,
+        "d": 0.16534982786210056,
+        "statistic": 0.010110938613438224,
+        "p_one_sided": 0.2989402119576085,
+        "p_two_sided": 0.587882423515297,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Iberian",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.4754478711455667,
+        "statistic": -0.021373717973544277,
+        "p_one_sided": 0.9504099180163967,
+        "p_two_sided": 0.09438112377524495,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Latin American",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.7414076490785032,
+        "statistic": -0.029516757885350204,
+        "p_one_sided": 0.996000799840032,
+        "p_two_sided": 0.007998400319936013,
+        "p_holm": 0.28794241151769645
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 48,
+        "n_b": 48,
+        "d": -0.14855638862987677,
+        "statistic": -0.007575836743495545,
+        "p_one_sided": 0.705258948210358,
+        "p_two_sided": 0.610877824435113,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "African/Afro-Caribbean",
+        "region_y": "Nordic",
+        "n_x": 25,
+        "n_y": 25,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.35584109553051846,
+        "statistic": -0.014526074824265413,
+        "p_one_sided": 0.8966206758648271,
+        "p_two_sided": 0.20775844831033793,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "British-Irish",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 25,
+        "n_b": 25,
+        "d": 0.1163000802771988,
+        "statistic": 0.007166147248074916,
+        "p_one_sided": 0.11817636472705459,
+        "p_two_sided": 0.2445510897820436,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "East Asian",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 30,
+        "n_b": 30,
+        "d": -0.04611812624296982,
+        "statistic": -0.0029448044117003427,
+        "p_one_sided": 0.6252749450109978,
+        "p_two_sided": 0.7714457108578284,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Francophone",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 28,
+        "n_b": 28,
+        "d": 0.6056747568366263,
+        "statistic": 0.04668522070210926,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Germanic-Central-European",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 26,
+        "n_b": 26,
+        "d": -0.00597347137170734,
+        "statistic": -0.0004429001162448952,
+        "p_one_sided": 0.519496100779844,
+        "p_two_sided": 0.9538092381523695,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.39491731614325,
+        "statistic": -0.02266991713514922,
+        "p_one_sided": 0.9794041191761648,
+        "p_two_sided": 0.04019196160767846,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.15387336068809424,
+        "statistic": -0.008914271442247386,
+        "p_one_sided": 0.935612877424515,
+        "p_two_sided": 0.1255748850229954,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 33,
+        "n_b": 33,
+        "d": -0.062234954671125955,
+        "statistic": -0.0032391910682948687,
+        "p_one_sided": 0.6156768646270746,
+        "p_two_sided": 0.7594481103779244,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Anglo-American",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 29,
+        "n_b": 29,
+        "d": -0.23563184628739384,
+        "statistic": -0.01558007255552248,
+        "p_one_sided": 0.9932013597280543,
+        "p_two_sided": 0.015396920615876825,
+        "p_holm": 0.5248950209958009
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "East Asian",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 37,
+        "n_b": 37,
+        "d": -0.448648133425311,
+        "statistic": -0.025012182063062355,
+        "p_one_sided": 0.9982003599280144,
+        "p_two_sided": 0.003799240151969606,
+        "p_holm": 0.14057188562287543
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Francophone",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 35,
+        "n_b": 35,
+        "d": 0.42333978254480575,
+        "statistic": 0.03290236895727337,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0005998800239952009,
+        "p_holm": 0.023395320935812834
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Germanic-Central-European",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 35,
+        "n_b": 35,
+        "d": -0.09827752397736225,
+        "statistic": -0.006199647696019956,
+        "p_one_sided": 0.8392321535692862,
+        "p_two_sided": 0.3261347730453909,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.44173341084320616,
+        "statistic": -0.026338736863474224,
+        "p_one_sided": 0.9916016796640672,
+        "p_two_sided": 0.015996800639872025,
+        "p_holm": 0.5278944211157769
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.31552728040947975,
+        "statistic": -0.01801032903978533,
+        "p_one_sided": 0.9996000799840032,
+        "p_two_sided": 0.001799640071985603,
+        "p_holm": 0.0683863227354529
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 40,
+        "n_b": 40,
+        "d": -0.12075425260698888,
+        "statistic": -0.006920467019367105,
+        "p_one_sided": 0.7186562687462508,
+        "p_two_sided": 0.5612877424515097,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "British-Irish",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 36,
+        "n_b": 36,
+        "d": -0.19941753262142095,
+        "statistic": -0.012973431762993733,
+        "p_one_sided": 0.9782043591281744,
+        "p_two_sided": 0.04559088182363527,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Francophone",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.6626774326625421,
+        "statistic": 0.05492949061814875,
+        "p_one_sided": 0.0001999600079984003,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Germanic-Central-European",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 40,
+        "n_b": 40,
+        "d": 0.18957977052472663,
+        "statistic": 0.012685681175670965,
+        "p_one_sided": 0.118376324735053,
+        "p_two_sided": 0.236752649470106,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.012893753851253903,
+        "statistic": -0.0007275099580992747,
+        "p_one_sided": 0.5302939412117577,
+        "p_two_sided": 0.9476104779044191,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Latin American",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.1271289353374066,
+        "statistic": 0.00708622486978068,
+        "p_one_sided": 0.20535892821435714,
+        "p_two_sided": 0.4179164167166567,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.33443682525485957,
+        "statistic": 0.02054908482930583,
+        "p_one_sided": 0.05038992201559688,
+        "p_two_sided": 0.10657868426314737,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "East Asian",
+        "region_y": "Nordic",
+        "n_x": 80,
+        "n_y": 80,
+        "n_a": 41,
+        "n_b": 41,
+        "d": 0.0703784585646265,
+        "statistic": 0.004902503367652293,
+        "p_one_sided": 0.3255348930213957,
+        "p_two_sided": 0.6442711457708459,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Germanic-Central-European",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 38,
+        "n_b": 38,
+        "d": -0.600243357348726,
+        "statistic": -0.05142545490529891,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.6305644600779641,
+        "statistic": -0.04347421488671117,
+        "p_one_sided": 0.9998000399920016,
+        "p_two_sided": 0.0003999200159968006,
+        "p_holm": 0.015996800639872025
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Latin American",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.5703567893358844,
+        "statistic": -0.04110042601229958,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 43,
+        "n_b": 43,
+        "d": -0.5034713872606909,
+        "statistic": -0.03411775412739193,
+        "p_one_sided": 0.994001199760048,
+        "p_two_sided": 0.014997000599880024,
+        "p_holm": 0.5248950209958009
+      },
+      {
+        "region_x": "Francophone",
+        "region_y": "Nordic",
+        "n_x": 140,
+        "n_y": 140,
+        "n_a": 39,
+        "n_b": 39,
+        "d": -0.5583598998210756,
+        "statistic": -0.041824685934159875,
+        "p_one_sided": 1.0,
+        "p_two_sided": 0.0001999600079984003,
+        "p_holm": 0.008998200359928014
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Iberian",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 45,
+        "n_b": 45,
+        "d": 0.032997368788633095,
+        "statistic": 0.0019616565966135355,
+        "p_one_sided": 0.4385122975404919,
+        "p_two_sided": 0.869626074785043,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Latin American",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 42,
+        "n_b": 42,
+        "d": -0.07854471719634876,
+        "statistic": -0.005008856674894299,
+        "p_one_sided": 0.7678464307138573,
+        "p_two_sided": 0.4397120575884823,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 45,
+        "n_b": 45,
+        "d": -0.033025179459000645,
+        "statistic": -0.0020491016535189137,
+        "p_one_sided": 0.5630873825234953,
+        "p_two_sided": 0.8768246350729854,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Germanic-Central-European",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 38,
+        "n_b": 38,
+        "d": -0.0946711843138384,
+        "statistic": -0.006441143330745459,
+        "p_one_sided": 0.8210357928414317,
+        "p_two_sided": 0.3405318936212757,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Latin American",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 48,
+        "n_b": 48,
+        "d": 0.04855267562356961,
+        "statistic": 0.0020466691572150787,
+        "p_one_sided": 0.3997200559888022,
+        "p_two_sided": 0.7964407118576284,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 48,
+        "n_b": 48,
+        "d": 0.1812063182900993,
+        "statistic": 0.0089778921564448,
+        "p_one_sided": 0.19096180763847231,
+        "p_two_sided": 0.3799240151969606,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Iberian",
+        "region_y": "Nordic",
+        "n_x": 55,
+        "n_y": 55,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.04960369924620365,
+        "statistic": -0.002777970362261014,
+        "p_one_sided": 0.597880423915217,
+        "p_two_sided": 0.8000399920015997,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Latin American",
+        "region_y": "Middle-Eastern/Mediterranean",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 48,
+        "n_b": 48,
+        "d": 0.197480572413735,
+        "statistic": 0.009717630995925482,
+        "p_one_sided": 0.17236552689462106,
+        "p_two_sided": 0.3339332133573285,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Latin American",
+        "region_y": "Nordic",
+        "n_x": 200,
+        "n_y": 200,
+        "n_a": 44,
+        "n_b": 44,
+        "d": 0.0048480193512755515,
+        "statistic": 0.00029747673970306754,
+        "p_one_sided": 0.4833033393321336,
+        "p_two_sided": 0.9638072385522896,
+        "p_holm": 1.0
+      },
+      {
+        "region_x": "Middle-Eastern/Mediterranean",
+        "region_y": "Nordic",
+        "n_x": 48,
+        "n_y": 48,
+        "n_a": 44,
+        "n_b": 44,
+        "d": -0.11202969511998542,
+        "statistic": -0.007910442640490095,
+        "p_one_sided": 0.7050589882023596,
+        "p_two_sided": 0.5890821835632873,
+        "p_holm": 1.0
+      }
+    ]
+  },
+  "procrustes": {
+    "names": [
+      "composition",
+      "composition_acoustic",
+      "composition_lyric",
+      "cooc",
+      "cooc_artistmasked",
+      "core"
+    ],
+    "disparity": [
+      [
+        0.0,
+        0.5931024392429094,
+        0.8159353326736427,
+        0.9635766058073716,
+        0.9672874550798095,
+        0.62555612950594
+      ],
+      [
+        0.5931024392429094,
+        0.0,
+        0.9833975576834803,
+        0.9651381357548862,
+        0.9685636442766947,
+        0.7486848049827478
+      ],
+      [
+        0.8159353326736427,
+        0.9833975576834803,
+        0.0,
+        0.9789879853711643,
+        0.9815768734364084,
+        0.8795244131047385
+      ],
+      [
+        0.9635766058073716,
+        0.9651381357548862,
+        0.9789879853711643,
+        0.0,
+        0.5014576164437003,
+        0.8010031333797724
+      ],
+      [
+        0.9672874550798095,
+        0.9685636442766947,
+        0.9815768734364084,
+        0.5014576164437003,
+        0.0,
+        0.8403730566597531
+      ],
+      [
+        0.62555612950594,
+        0.7486848049827478,
+        0.8795244131047385,
+        0.8010031333797724,
+        0.8403730566597531,
+        0.0
+      ]
+    ],
+    "axis_cosine": [
+      [
+        1.0,
+        0.61384964142151,
+        0.40869533417404874,
+        0.17338258958225541,
+        0.16475231859326273,
+        0.5879718762097264
+      ],
+      [
+        0.61384964142151,
+        1.0,
+        0.12644899464577633,
+        0.16855858256799744,
+        0.16052996788350984,
+        0.4805185178120384
+      ],
+      [
+        0.40869533417404874,
+        0.12644899464577633,
+        1.0,
+        0.13612526050344034,
+        0.12715016549672573,
+        0.3309360029249434
+      ],
+      [
+        0.17338258958225541,
+        0.16855858256799744,
+        0.13612526050344034,
+        1.0,
+        0.6531755073290512,
+        0.4137238459446978
+      ],
+      [
+        0.16475231859326273,
+        0.16052996788350984,
+        0.12715016549672573,
+        0.6531755073290512,
+        1.0,
+        0.3606058249062133
+      ],
+      [
+        0.5879718762097264,
+        0.4805185178120384,
+        0.3309360029249434,
+        0.4137238459446978,
+        0.3606058249062133,
+        1.0
+      ]
+    ]
+  },
+  "hypotheses": {
+    "1": {
+      "claim": "Composition >= Cooc on held-out (b) and external (c) strata",
+      "status": "not supported",
+      "evidence": {
+        "b": {
+          "delta_rho": 0.09390243845335007,
+          "ci_low": 0.08799977946906307,
+          "ci_high": 0.0993763870388814,
+          "p_boot": 0.001,
+          "n_targets": 41,
+          "share_targets_positive": 0.975609756097561
+        },
+        "c": {
+          "delta_rho": -0.0434209579050029,
+          "ci_low": -0.055061335266370144,
+          "ci_high": -0.031206178172903356,
+          "p_boot": 0.001,
+          "n_targets": 15,
+          "share_targets_positive": 0.4
+        },
+        "a": {
+          "delta_rho": 0.25853833944687277,
+          "ci_low": 0.2502490854228593,
+          "ci_high": 0.268127090118833,
+          "p_boot": 0.001,
+          "n_targets": 17,
+          "share_targets_positive": 1.0
+        }
+      }
+    },
+    "2": {
+      "claim": "Core has the lowest participation ratio and highest mean pairwise cosine",
+      "status": "not supported",
+      "evidence": {
+        "PR": {
+          "cooc": 44.991738892867936,
+          "composition": 200.18029089402762,
+          "core": 176.34396118487743
+        },
+        "mean_cos": {
+          "cooc": 0.15315927731681422,
+          "composition": 0.07407004513864651,
+          "core": 0.09131272783966753
+        }
+      }
+    },
+    "3": {
+      "claim": "Composition >= Cooc on regional Cohen's d",
+      "status": "not supported",
+      "evidence": {
+        "share_regions_composition_ge_cooc": 0.0,
+        "n_regions": 8
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "secrets_scan": {
+    "passed": true,
+    "hits": []
+  },
+  "paper_placeholders": {
+    "passed": true,
+    "unresolved": []
+  },
+  "privacy_leakage": {
+    "passed": true,
+    "warnings": []
+  },
+  "bundle_loadability": {
+    "passed": true,
+    "errors": []
+  },
+  "llm_budget": {
+    "passed": true,
+    "spent_usd": 12.47502075,
+    "budget_cap_usd": 30
+  },
+  "all_passed": true,
+  "issues": []
+}

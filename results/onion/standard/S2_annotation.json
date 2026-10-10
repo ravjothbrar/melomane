@@ -1,0 +1,35 @@
+{
+  "coverage": 1.0,
+  "n_labelled": 8504,
+  "failed_requests": 0,
+  "budget_hit": false,
+  "n_annotated": 8504,
+  "spent_usd": 10.03925025,
+  "wasted_usd": 0.06533025,
+  "prompt_version": "annotate_v1",
+  "excluded_dims": [
+    "space"
+  ],
+  "category_counts": {
+    "Metal": 7776,
+    "Electronic/Dance": 7224,
+    "Indie/Alternative": 7146,
+    "Rock": 5204,
+    "Punk/Hardcore": 4960,
+    "Pop": 4052,
+    "Folk/Acoustic": 3557,
+    "R&B/Soul": 3325,
+    "Hip-Hop": 2442,
+    "Ambient/Chill": 1728,
+    "Soundtrack": 1003,
+    "Latin": 944,
+    "Other": 924,
+    "Country": 893,
+    "Jazz": 778,
+    "Blues": 525,
+    "Reggae/Dub": 396,
+    "Classical/Score": 359,
+    "World/Regional": 46,
+    "Gospel/Religious": 27
+  }
+}

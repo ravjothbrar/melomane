@@ -1,0 +1,7 @@
+{
+  "listening_rows": 50016042,
+  "tracks_with_listening_data": 56512,
+  "tracks_with_audio_features": 109269,
+  "tracks_with_both": 56512,
+  "source": "userid_trackid_count.tsv.bz2, id_mfcc_stats.tsv.bz2 (Zenodo 15394646)"
+}

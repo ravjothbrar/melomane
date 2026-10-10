@@ -1,0 +1,56 @@
+{
+  "1": {
+    "claim": "Composition >= Cooc on held-out (b) and external (c) strata",
+    "status": "not supported",
+    "evidence": {
+      "b": {
+        "delta_rho": 0.09390243845335007,
+        "ci_low": 0.08799977946906307,
+        "ci_high": 0.0993763870388814,
+        "p_boot": 0.001,
+        "n_targets": 41,
+        "share_targets_positive": 0.975609756097561
+      },
+      "c": {
+        "delta_rho": -0.0434209579050029,
+        "ci_low": -0.055061335266370144,
+        "ci_high": -0.031206178172903356,
+        "p_boot": 0.001,
+        "n_targets": 15,
+        "share_targets_positive": 0.4
+      },
+      "a": {
+        "delta_rho": 0.25853833944687277,
+        "ci_low": 0.2502490854228593,
+        "ci_high": 0.268127090118833,
+        "p_boot": 0.001,
+        "n_targets": 17,
+        "share_targets_positive": 1.0
+      }
+    }
+  },
+  "2": {
+    "claim": "Core has the lowest participation ratio and highest mean pairwise cosine",
+    "status": "not supported",
+    "evidence": {
+      "PR": {
+        "cooc": 44.991738892867936,
+        "composition": 200.18029089402762,
+        "core": 176.34396118487743
+      },
+      "mean_cos": {
+        "cooc": 0.15315927731681422,
+        "composition": 0.07407004513864651,
+        "core": 0.09131272783966753
+      }
+    }
+  },
+  "3": {
+    "claim": "Composition >= Cooc on regional Cohen's d",
+    "status": "not supported",
+    "evidence": {
+      "share_regions_composition_ge_cooc": 0.0,
+      "n_regions": 8
+    }
+  }
+}

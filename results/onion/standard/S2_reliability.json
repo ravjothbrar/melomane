@@ -1,0 +1,127 @@
+{
+  "table": [
+    {
+      "dim": "energy",
+      "n": 255,
+      "spearman": 0.8736589352521479,
+      "wkappa": 0.8695768195868265,
+      "exact_match": null
+    },
+    {
+      "dim": "aggression",
+      "n": 255,
+      "spearman": 0.8567974216769054,
+      "wkappa": 0.8888604644552457,
+      "exact_match": null
+    },
+    {
+      "dim": "valence",
+      "n": 255,
+      "spearman": 0.8454792203491533,
+      "wkappa": 0.8431975403535742,
+      "exact_match": null
+    },
+    {
+      "dim": "danceability",
+      "n": 255,
+      "spearman": 0.836337348536857,
+      "wkappa": 0.8370394039302261,
+      "exact_match": null
+    },
+    {
+      "dim": "acousticness",
+      "n": 255,
+      "spearman": 0.8804767109158147,
+      "wkappa": 0.8932081886039465,
+      "exact_match": null
+    },
+    {
+      "dim": "vocal_prominence",
+      "n": 255,
+      "spearman": 0.7284525479938461,
+      "wkappa": 0.864678141239374,
+      "exact_match": null
+    },
+    {
+      "dim": "tempo_feel",
+      "n": 255,
+      "spearman": 0.8332742719676272,
+      "wkappa": 0.8286290322580645,
+      "exact_match": null
+    },
+    {
+      "dim": "production_polish",
+      "n": 255,
+      "spearman": 0.7765554704242444,
+      "wkappa": 0.7907301478423832,
+      "exact_match": null
+    },
+    {
+      "dim": "lyrical_explicitness",
+      "n": 255,
+      "spearman": 0.7583376904139266,
+      "wkappa": 0.844311377245509,
+      "exact_match": null
+    },
+    {
+      "dim": "grit",
+      "n": 255,
+      "spearman": 0.8629299584185124,
+      "wkappa": 0.8714031815043844,
+      "exact_match": null
+    },
+    {
+      "dim": "density",
+      "n": 255,
+      "spearman": 0.7895184052696367,
+      "wkappa": 0.7927158988495997,
+      "exact_match": null
+    },
+    {
+      "dim": "space",
+      "n": 255,
+      "spearman": 0.2961922526629392,
+      "wkappa": 0.2685285159460461,
+      "exact_match": null
+    },
+    {
+      "dim": "punch",
+      "n": 255,
+      "spearman": 0.8456913222337138,
+      "wkappa": 0.8538722797601577,
+      "exact_match": null
+    },
+    {
+      "dim": "warmth",
+      "n": 255,
+      "spearman": 0.7817077705831033,
+      "wkappa": 0.7662018047579984,
+      "exact_match": null
+    },
+    {
+      "dim": "brightness",
+      "n": 255,
+      "spearman": 0.702943004740029,
+      "wkappa": 0.6962069098036201,
+      "exact_match": null
+    },
+    {
+      "dim": "era",
+      "n": 254,
+      "spearman": 0.9940298547912396,
+      "wkappa": 0.9854249913927114,
+      "exact_match": null
+    },
+    {
+      "dim": "category",
+      "n": 255,
+      "spearman": null,
+      "wkappa": null,
+      "exact_match": 0.9019607843137255
+    }
+  ],
+  "excluded_dims": [
+    "space"
+  ],
+  "threshold": 0.6
+}
