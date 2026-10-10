@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Melomane — a map of music</title>
+  <meta name="theme-color" content="#1a0f33">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Explore a music embedding where tracks are connected by what people listen to together and by what the tracks are made of, and steer it with spherical interpolation.">
+  <link rel="canonical" href="https://ravjothbrar.com/melomane/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Melomane">
+  <meta property="og:title" content="Melomane — a map of music">
+  <meta property="og:description" content="Explore a music embedding where tracks are connected by what people listen to together and by what they are made of, and steer it with spherical interpolation.">
+  <meta property="og:url" content="https://ravjothbrar.com/melomane/">
+  <meta property="og:image" content="https://ravjothbrar.com/melomane/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Melomane: a colourful map of tens of thousands of tracks behind a purple pixel-block logo with a crotchet">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Melomane — a map of music">
+  <meta name="twitter:description" content="Explore a music embedding where tracks are connected by what people listen to together and by what they are made of.">
+  <meta name="twitter:image" content="https://ravjothbrar.com/melomane/og.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Large-screen gate: shown instead of the app on phones (see isPhoneLike in math.js); no data is fetched when it is shown -->
+  <section id="device-gate" class="device-gate" hidden aria-labelledby="gate-title">
+    <div class="gate-card">
+      <span class="brand-title gate-brand" role="img" aria-label="Melomane"><span aria-hidden="true">ME</span><svg class="brand-note" viewBox="0 0 40 72" aria-hidden="true"><defs><linearGradient id="ng9" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6f6"/><stop offset=".55" stop-color="#ff8be0"/><stop offset="1" stop-color="#c026d3"/></linearGradient></defs><ellipse cx="15" cy="57" rx="13.5" ry="10" transform="rotate(-22 15 57)" fill="url(#ng9)"/><rect x="25.5" y="2" width="6.2" height="54" rx="1.6" fill="url(#ng9)"/></svg><span aria-hidden="true">OMANE</span></span>
+      <h1 id="gate-title">Melomane needs a bigger screen</h1>
+      <p>Melomane is an interactive map of tens of thousands of tracks, with labels and steering controls that do not fit on a phone. Open it on a <strong>tablet, laptop or desktop</strong> (an unfolded foldable works too).</p>
+      <div class="gate-actions">
+        <button id="gate-copy" type="button" class="btn-primary">Copy link to open on a bigger screen</button>
+        <a class="gate-link" href="https://github.com/ravjothbrar/melomane" target="_blank" rel="noopener noreferrer">View the project on GitHub &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Header (Cosmograph / Obsidian Style) -->
+  <header class="top">
+    <div class="brand">
+      <span class="brand-title" role="img" aria-label="Melomane"><span aria-hidden="true">ME</span><svg class="brand-note" viewBox="0 0 40 72" aria-hidden="true"><defs><linearGradient id="ng3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6f6"/><stop offset=".55" stop-color="#ff8be0"/><stop offset="1" stop-color="#c026d3"/></linearGradient></defs><ellipse cx="15" cy="57" rx="13.5" ry="10" transform="rotate(-22 15 57)" fill="url(#ng3)"/><rect x="25.5" y="2" width="6.2" height="54" rx="1.6" fill="url(#ng3)"/></svg><span aria-hidden="true">OMANE</span></span>
+    </div>
+
+    <!-- Model Switcher (Center) -->
+    <div class="model-section">
+      <div id="model-toggle" class="seg" role="radiogroup" aria-label="Model"></div>
+      <div id="model-desc" class="model-desc"></div>
+    </div>
+
+    <!-- Actions (Right) -->
+    <div class="top-actions">
+      <button id="btn-open-guide" type="button" class="btn-top-about">About</button>
+      <a href="https://ravjothbrar.com" target="_blank" rel="noopener noreferrer" class="creator-badge" title="Visit Ravjoth Brar's Website">ravjothbrar.com ↗</a>
+      <span id="status" class="status" role="status" aria-live="polite"></span>
+    </div>
+  </header>
+
+  <!-- Big Emphasised Search Bar (A Step Lower) -->
+  <div class="search-strip">
+    <div class="search-wrap">
+      <div class="search-input-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input id="seed-search" type="search" placeholder="Search tracks or artists…" autocomplete="off" aria-label="Search for a seed track">
+        <span class="search-badge-kbd">/</span>
+      </div>
+      <ul id="seed-suggest" class="suggest" role="listbox" aria-label="Matching tracks"></ul>
+    </div>
+  </div>
+
+  <!-- Minimal Floating Tour Pill -->
+  <div id="tour-banner" class="tour-pill" hidden>
+    <span id="tour-step-badge" class="tour-badge">Step 1 of 4</span>
+    <span id="tour-step-title" style="display:none;"></span>
+    <span id="tour-step-text" class="tour-text">Loading the guided tour…</span>
+    <button id="tour-action-btn" type="button" class="btn-tour-action">Next →</button>
+    <button id="tour-prev-btn" type="button" class="btn-tour-nav" style="display:none;">Back</button>
+    <button id="tour-next-btn" type="button" class="btn-tour-nav" style="display:none;">Next</button>
+    <button id="tour-exit-btn" type="button" class="btn-tour-close" aria-label="Close tutorial">&times;</button>
+  </div>
+
+  <div id="error" class="error" hidden></div>
+  <noscript><p class="error">The explorer needs JavaScript and WebGL2.</p></noscript>
+
+  <!-- Main 3-Column Interface -->
+  <main id="app">
+    <!-- Controls Column (Left) -->
+    <aside class="panel controls" aria-label="Controls">
+      <section>
+        <h2>Seed Track</h2>
+        <div id="seed-card" class="card muted">Click any point on the graph or search above.</div>
+        <div class="row" style="margin-top: 10px;">
+          <label class="check"><input id="show-artists" type="checkbox" checked> Floating Artist Labels</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Steering (SLERP)</h2>
+        <div class="row">
+          <select id="pole-select" aria-label="Pole to add"></select>
+          <button id="pole-add" type="button" class="btn-subtle">+ Add</button>
+        </div>
+        <ul id="pole-chips" class="chips" aria-label="Selected poles"></ul>
+
+        <label class="slider">
+          <div class="slider-header">
+            <span>Rotation Angle &theta;</span>
+            <span class="slider-val"><output id="theta-out">30</output>&deg; <span id="theta-cos" class="muted"></span></span>
+          </div>
+          <div class="slider-desc" id="theta-desc">(Subtle Fusion)</div>
+          <input id="theta" type="range" min="0" max="90" step="1" value="30" aria-label="Angle theta in degrees">
+        </label>
+        <div class="slider-ticks">
+          <span>0&deg; Exact</span>
+          <span>30&deg; Blend</span>
+          <span>60&deg; Bold</span>
+          <span>90&deg; Shift</span>
+        </div>
+
+        <div class="row" style="margin-top: 14px;">
+          <label>Results <select id="k-select" aria-label="Number of results"><option>5</option><option selected>10</option><option>20</option><option>50</option></select></label>
+          <label class="check"><input id="exclude-artist" type="checkbox" checked> Exclude same artist</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Color By</h2>
+        <select id="color-by" aria-label="Colour points by">
+          <option value="category">Genre</option>
+          <option value="mode">Emergent Audio Mode (FastICA)</option>
+          <option value="year">Release Year</option>
+        </select>
+        <div id="legend" class="legend"></div>
+      </section>
+
+      <div class="settings-attribution" style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line);">
+        <h2>Data & Licence</h2>
+        <span id="attribution" class="attribution muted" style="font-size: 11.5px; line-height: 1.5; display: block;">Derived from Music4All-Onion (Moscati et al., CIKM 2022, doi:10.1145/3511808.3557656; Zenodo), licensed CC BY 4.0. Listening behaviour in that dataset is Last.fm-derived. This release contains derived embeddings and metadata only - no audio, no lyrics, no per-user data. Licence: CC BY 4.0.</span>
+      </div>
+    </aside>
+
+    <!-- Center 2D UMAP Galaxy Stage (Cosmograph / Obsidian Style) -->
+    <div id="stage" class="stage">
+      <div id="splash" class="splash" aria-hidden="true"><div class="logo-wrap logo-sm" role="img" aria-label="Melomane"><pre class="logo" aria-hidden="true">██      ██  ██████████
+████  ████  ██
+██  ██  ██  ██
+██  ██  ██  ████████
+██      ██  ██
+██      ██  ██
+██      ██  ██████████</pre><svg class="logo-note" viewBox="0 0 40 72" aria-hidden="true"><defs><linearGradient id="ng2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6f6"/><stop offset=".55" stop-color="#ff8be0"/><stop offset="1" stop-color="#c026d3"/></linearGradient></defs><ellipse cx="15" cy="57" rx="13.5" ry="10" transform="rotate(-22 15 57)" fill="url(#ng2)"/><rect x="25.5" y="2" width="6.2" height="54" rx="1.6" fill="url(#ng2)"/></svg><pre class="logo" aria-hidden="true">  ██████    ██      ██      ██      ██      ██  ██████████
+██      ██  ████  ████    ██  ██    ████    ██  ██
+██      ██  ██  ██  ██  ██      ██  ████    ██  ██
+██      ██  ██  ██  ██  ██      ██  ██  ██  ██  ████████
+██      ██  ██      ██  ██████████  ██    ████  ██
+██      ██  ██      ██  ██      ██  ██    ████  ██
+  ██████    ██      ██  ██      ██  ██      ██  ██████████</pre></div><span id="splash-msg">Loading the map…</span></div>
+      <canvas id="map" role="img" aria-label="2-D map of tracks (UMAP, visualisation only)"></canvas>
+      <canvas id="overlay" aria-hidden="true"></canvas>
+      <div id="tooltip" class="tooltip" hidden></div>
+      <div class="zoom">
+        <button id="zoom-in" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+        <button id="zoom-out" type="button" aria-label="Zoom out" title="Zoom out">&minus;</button>
+        <button id="zoom-reset" type="button" aria-label="Reset view" title="Reset view">&#8962;</button>
+      </div>
+      <div id="map-legend" class="map-legend" aria-label="Colour legend"></div>
+      <div class="hint">Drag to navigate &bull; Scroll wheel to zoom &bull; Click any point to select</div>
+    </div>
+
+    <!-- Results Column (Right) -->
+    <aside class="panel side" aria-label="Results">
+      <div class="tabs" role="tablist">
+        <button id="tab-results" role="tab" aria-selected="true" type="button">Steered Tracks</button>
+        <button id="tab-modes" role="tab" aria-selected="false" type="button">Mode Atlas</button>
+      </div>
+      <div id="panel-results">
+        <p id="results-head" class="muted" style="margin-top:0; font-size:12px;">No seed yet.</p>
+        <ol id="results" class="results"></ol>
+      </div>
+      <div id="panel-modes" hidden>
+        <input id="mode-filter" type="search" placeholder="Filter emergent modes..." aria-label="Filter modes">
+        <ul id="mode-list" class="modes"></ul>
+        <div id="mode-detail" class="card"></div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- MINIMALIST WELCOME & ABOUT MODAL                                     -->
+  <!-- ===================================================================== -->
+  <div id="welcome-modal" class="modal-backdrop">
+    <div class="minimal-window" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+      <button id="close-welcome" class="btn-close-window" aria-label="Close window">&times;</button>
+
+      <div class="modal-brand">
+        <div class="logo-wrap " role="img" aria-label="Melomane"><pre class="logo" aria-hidden="true">███╗   ███╗ ███████╗
+████╗ ████║ ██╔════╝
+██╔████╔██║ █████╗
+██║╚██╔╝██║ ██╔══╝
+██║ ╚═╝ ██║ ███████╗
+╚═╝     ╚═╝ ╚══════╝</pre><svg class="logo-note" viewBox="0 0 40 72" aria-hidden="true"><defs><linearGradient id="ng1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6f6"/><stop offset=".55" stop-color="#ff8be0"/><stop offset="1" stop-color="#c026d3"/></linearGradient></defs><ellipse cx="15" cy="57" rx="13.5" ry="10" transform="rotate(-22 15 57)" fill="url(#ng1)"/><rect x="25.5" y="2" width="6.2" height="54" rx="1.6" fill="url(#ng1)"/></svg><pre class="logo" aria-hidden="true"> ██████╗  ███╗   ███╗  █████╗  ███╗   ██╗ ███████╗
+██╔═══██╗ ████╗ ████║ ██╔══██╗ ████╗  ██║ ██╔════╝
+██║   ██║ ██╔████╔██║ ███████║ ██╔██╗ ██║ █████╗
+██║   ██║ ██║╚██╔╝██║ ██╔══██║ ██║╚██╗██║ ██╔══╝
+╚██████╔╝ ██║ ╚═╝ ██║ ██║  ██║ ██║ ╚████║ ███████╗
+ ╚═════╝  ╚═╝     ╚═╝ ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚══════╝</pre></div>
+        <p id="welcome-title" class="logo-tag">A map of music, by how it is listened to and what it is made of</p>
+      </div>
+
+      <div class="modal-body">
+        <section class="modal-section">
+          <h3>What is this?</h3>
+          <p>Melomane is an interactive map of <span data-fill="n_vocab">…</span> tracks. Three models learn from the same tracks in the same way and differ only in what they are allowed to read. Pick any track to see its neighbours in each model, then steer the query toward a genre or an emergent direction.</p>
+        </section>
+
+        <section class="modal-section">
+          <h3>Why?</h3>
+          <p>Music recommenders are black boxes: they tell you what to play next, never why. Melomane makes that geometry inspectable, so you can see whether two tracks sit together because people play them together or because of what they are made of.</p>
+        </section>
+
+        <div class="modal-models-grid">
+          <div class="modal-model-card">
+            <span class="model-pill">Streaming Habits</span>
+            <strong class="model-card-title">Melomane-Cooc</strong>
+            <p class="model-card-desc">Learned only from listening sessions: two tracks are close when the same people play them in the same sitting.</p>
+          </div>
+          <div class="modal-model-card">
+            <span class="model-pill">Pure Sound</span>
+            <strong class="model-card-title">Melomane-Composition</strong>
+            <p class="model-card-desc">Learned only from measured audio and lyric features (timbre, rhythm, harmony, loudness, lyric themes), with no listening data at all.</p>
+          </div>
+          <div class="modal-model-card">
+            <span class="model-pill">The Hybrid</span>
+            <strong class="model-card-title">Melomane-Core</strong>
+            <p class="model-card-desc">Listening sessions and measured features together, with listening weighted ten to one.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="window-footer">
+        <label class="check" style="font-size: 12.5px; color: var(--muted); cursor: pointer;">
+          <input id="dont-show-welcome" type="checkbox"> Don't show again
+        </label>
+        <div class="window-footer-right">
+          <button id="btn-start-ts-demo" type="button" class="btn-subtle">Take the guided tour</button>
+          <button id="btn-explore-now" type="button" class="btn-primary">Explore the map</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="explorer.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "built_at": "2026-10-10T12:40:10Z",
+  "git_commit": "e0a4614",
+  "base_path": "/melomane/",
+  "n_tracks": 50000,
+  "models": [
+    "cooc",
+    "composition",
+    "core",
+    "composition_acoustic",
+    "composition_lyric"
+  ],
+  "payload_bytes": 29013752,
+  "names_cleared": true,
+  "private_preview": false
+}
