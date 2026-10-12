@@ -301,6 +301,34 @@ def test_social_preview_image_is_1200x630_and_deterministic(built, tmp_path):
     assert cols == 7 * 5 + NOTE_W + 7 and note_col == 2 * 6 and len(cells) > 100       # 7 letters, a 3-column slot for the crotchet at the L, 7 gaps
 
 
+def test_hero_modes_are_compact_separated_named_and_deterministic():
+    """The README hero picks its highlighted modes from the payload alone: compact, well-separated, distinctly named, never "unclear"."""
+    from melomane.release.preview import pick_hero_modes
+    rng = np.random.default_rng(0)
+    xy = rng.normal(size=(3000, 2)).astype(np.float32)
+    centres = [(-3, 0), (3, 0), (0, 3), (0, -3)]
+    modes = []
+    for j, (cx, cy) in enumerate(centres):                                            # four tight clumps, appended onto the base cloud
+        idx = np.arange(100 * j, 100 * j + 100)
+        xy[idx] = np.array([cx, cy]) + rng.normal(scale=0.1, size=(100, 2))
+        modes.append({"id": j, "label": f"Mode {j}", "coherence": 0.1 + 0.1 * j, "members": idx.tolist()})
+    modes.append({"id": 9, "label": "unclear", "coherence": 0.99, "members": list(range(100, 200))})
+    modes.append({"id": 10, "label": "Mode 3", "coherence": 0.05, "members": list(range(300, 400))})          # duplicate name, lower coherence
+    modes.append({"id": 11, "label": "Loose", "coherence": 0.9, "members": list(range(1000, 2500))})          # too diffuse
+    a = pick_hero_modes(xy, modes, k=4, min_members=50)
+    assert [m["label"] for m in a] == ["Mode 3", "Mode 2", "Mode 1", "Mode 0"]                                # by coherence; no "unclear", "Loose" or repeat
+    assert [m["id"] for m in pick_hero_modes(xy, modes, k=4, min_members=50)] == [m["id"] for m in a]
+
+
+def test_hero_card_is_2x_wide_real_and_drawn_from_the_payload(built, tmp_path):
+    import matplotlib.image as mpimg
+    from melomane.release.preview import render_hero
+    out, _ = built
+    png = render_hero(out, tmp_path / "hero.png", [("1", "tracks"), ("2", "things")])
+    img = mpimg.imread(png)
+    assert img.shape[0] == 1800 and img.shape[1] == 3200 and float(img[..., :3].std()) > 0.03
+
+
 def test_artist_landmarks_rank_by_catalogue_size_and_sit_at_the_median_of_their_tracks():
     """The floating labels: biggest artists first, median position (robust to a stray track), first track as the click target, blanks skipped."""
     from melomane.release.explorer import artist_landmarks

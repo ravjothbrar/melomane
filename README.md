@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="apps/explorer/og.png" alt="Melomane: a map of music, drawn from the real embedding behind a pixel-block logo with a crotchet" width="760">
+  <img src="docs/assets/hero.png" alt="Melomane: the real embedding map with six emergent modes picked out (ambient, piano singer-songwriters, trap, hardcore punk, death metal, deathgrind)" width="900">
 </p>
 
 # Melomane
